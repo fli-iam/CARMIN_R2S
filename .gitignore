@@ -1,0 +1,4 @@
+*.xml
+builds
+curl_test_catidb
+lib_curl
