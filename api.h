@@ -512,7 +512,7 @@ class ns1__getPipeline
 };
 
 /// "http://france-life-imaging.fr/api":getPipelineResponse is a complexType.
-class ns1__getPipelineResponse
+class ns1__getPipelineResponsef
 { public:
 /// Element return of type "http://france-life-imaging.fr/api":Response.
     ns1__Response*                       return_                        1;	///< Required element.

@@ -21,6 +21,7 @@ bool Pipelines::request(struct soap *soap, const char * study_name){
 	   config.CATIWEB_WEBSERVICE_API, study_name);
 
   std::cout << "pipelie route:" << routeBuf << std::endl;
+
   if(!CurlProcess::request(soap, routeBuf))
   {
     return false;

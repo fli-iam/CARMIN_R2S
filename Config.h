@@ -17,12 +17,12 @@ class Config
     static const char * CATIWEB_PIPELINES;
     
     static const char * COOKIE_NAME_AUTH;
-    
+
     static std::string get_route_catiweb_pipelines();
 
     static const int COOKIE_MAX_LEN=512;
     static const int URL_MAX_LEN=2083;
-    
+
     static const long VERBOSE=1L;
 
 };
