@@ -97,21 +97,7 @@ int main( int argc, char **argv )
 	return 0;
 } */
 
-int __ns1__authenticateHTTP(
-  struct soap *soap,
-  // request parameters:
-  ns1__authenticateHTTP*              ns1__authenticateHTTP_,
-  // response parameters:
-  ns1__authenticateHTTPResponse*      ns1__authenticateHTTPResponse_
-){
 
-  ns1__authenticateHTTPResponse_->return_ = soap_new_ns1__Response(soap, 1);
-  ns1__authenticateHTTPResponse_->return_->statusCode = 1;
-  ns1__authenticateHTTPResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-  (*ns1__authenticateHTTPResponse_->return_->errorMessage) = "not supported";
-
-  return SOAP_FATAL_ERROR;
-}
 
 int __ns1__authenticateSession(
   struct soap *soap,
@@ -498,6 +484,23 @@ int __ns1__getExecutionResults(
   ns1__getExecutionResultsResponse*   ns1__getExecutionResultsResponse_
 ){
   std::cout << "__ns1__getExecutionResults" << std::endl;
+  return SOAP_FATAL_ERROR;
+}
+
+/* not supported web service.........*/
+int __ns1__authenticateHTTP(
+  struct soap *soap,
+  // request parameters:
+  ns1__authenticateHTTP*              ns1__authenticateHTTP_,
+  // response parameters:
+  ns1__authenticateHTTPResponse*      ns1__authenticateHTTPResponse_
+){
+
+  ns1__authenticateHTTPResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  ns1__authenticateHTTPResponse_->return_->statusCode = 1;
+  ns1__authenticateHTTPResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+  (*ns1__authenticateHTTPResponse_->return_->errorMessage) = "not supported";
+
   return SOAP_FATAL_ERROR;
 }
 
