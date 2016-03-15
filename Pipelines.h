@@ -13,7 +13,7 @@ class Pipelines: public CurlProcess
       Pipelines();
       bool request(struct soap *soap, const char * study_name);
     public:
-      std::vector<ns1__ArrayOfPipelines*> * m_pPipelines;
+      std::vector<api__ArrayOfPipelines*> * m_pPipelines;
 };
 
 #endif

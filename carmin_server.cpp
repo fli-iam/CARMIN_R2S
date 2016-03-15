@@ -99,12 +99,12 @@ int main( int argc, char **argv )
 
 
 
-int __ns1__authenticateSession(
+int __api__authenticateSession(
   struct soap *soap,
   // request parameters:
-  ns1__authenticateSession*           ns1__authenticateSession_,
+  api__authenticateSession*           api__authenticateSession_,
   // response parameters:
-  ns1__authenticateSessionResponse*   ns1__authenticateSessionResponse_
+  api__authenticateSessionResponse*   api__authenticateSessionResponse_
 )
 {
   /*
@@ -133,19 +133,19 @@ int __ns1__authenticateSession(
   soap_set_cookie_expire(soap, "demo", 5, NULL, NULL); // cookie may expire at client-side in 5 seconds 
   */
 
-  //std::cout << "username:" << ns1__authenticateSession_->userName << std::endl;
-  //std::cout << "password:" << ns1__authenticateSession_->password << std::endl;
+  //std::cout << "username:" << api__authenticateSession_->userName << std::endl;
+  //std::cout << "password:" << api__authenticateSession_->password << std::endl;
   
   PCURL_SLIST cookies_data_list = NULL;
   CatiwebAuth catiwebAuth = CatiwebAuth();
 
   bool is_success = catiwebAuth.Login(
-      ns1__authenticateSession_->userName.c_str(),
-      ns1__authenticateSession_->password.c_str(),
+      api__authenticateSession_->userName.c_str(),
+      api__authenticateSession_->password.c_str(),
       cookies_data_list
   );
 
-  ns1__authenticateSessionResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__authenticateSessionResponse_->return_ = soap_new_api__Response(soap, 1);
 
   if (is_success){
     CookieData cookieData = CookieData();
@@ -153,315 +153,314 @@ int __ns1__authenticateSession(
     cookieData.set_curl_cookie_to_gsoap_cookie(soap, cookies_data_list);
     curl_slist_free_all(cookies_data_list);
     //std::cout << "auth success" << std::endl;
-    //std::cout << "ns1__authenticateSessionResponse_=" << ns1__authenticateSessionResponse_ << std::endl;
-    ns1__authenticateSessionResponse_->return_->statusCode = 0;
+    //std::cout << "api__authenticateSessionResponse_=" << api__authenticateSessionResponse_ << std::endl;
+    api__authenticateSessionResponse_->return_->statusCode = 0;
   }else{
     //std::cout << "auth fail" << std::endl;
-    ns1__authenticateSessionResponse_->return_->statusCode = 1;
-    ns1__authenticateSessionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__authenticateSessionResponse_->return_->errorMessage) = catiwebAuth.m_error_message;
+    api__authenticateSessionResponse_->return_->statusCode = 1;
+    api__authenticateSessionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__authenticateSessionResponse_->return_->errorMessage) = catiwebAuth.m_error_message;
   }
 
   //std::cout << "http_version:" << soap->http_version << std::endl;
-  //std::cout << "__ns1__authenticateSession" << std::endl;
+  //std::cout << "__api__authenticateSession" << std::endl;
 
   return SOAP_OK;
 }
 
 
-int __ns1__listPipelines(
+int __api__listPipelines(
   struct soap *soap,
   // request parameters:
-  ns1__listPipelines*                 ns1__listPipelines_,
+  api__listPipelines*                 api__listPipelines_,
   // response parameters:
-  ns1__listPipelinesResponse*         ns1__listPipelinesResponse_
+  api__listPipelinesResponse*         api__listPipelinesResponse_
 ){
-  ns1__listPipelinesResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__listPipelinesResponse_->return_ = soap_new_api__Response(soap, 1);
 
   Pipelines pipelines = Pipelines();
-  if(pipelines.request(soap, ns1__listPipelines_->studyIdentifier.c_str()))
+  if(pipelines.request(soap, api__listPipelines_->studyIdentifier.c_str()))
   {
-    ns1__listPipelinesResponse_->return_->statusCode = 0;
-    ns1__listPipelinesResponse_->return_->__union_Response = 7;
-    ns1__listPipelinesResponse_->return_->union_Response.returnedValueListPipelines = pipelines.m_pPipelines;
+    api__listPipelinesResponse_->return_->statusCode = 0;
+    api__listPipelinesResponse_->return_->__union_Response = 7;
+    api__listPipelinesResponse_->return_->union_Response.returnedValueListPipelines = pipelines.m_pPipelines;
   }else{
-    ns1__listPipelinesResponse_->return_->statusCode = 1;
-    ns1__listPipelinesResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__listPipelinesResponse_->return_->errorMessage) = pipelines.m_error_message;
+    api__listPipelinesResponse_->return_->statusCode = 1;
+    api__listPipelinesResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__listPipelinesResponse_->return_->errorMessage) = pipelines.m_error_message;
   }
   return SOAP_OK;
 }
 
 
-int __ns1__getPipeline(
+int __api__getPipeline(
   struct soap *soap,
   // request parameters:
-  ns1__getPipeline*                   ns1__getPipeline_,
+  api__getPipeline*                   api__getPipeline_,
   // response parameters:
-  ns1__getPipelineResponse*           ns1__getPipelineResponse_
+  api__getPipelineResponse*           api__getPipelineResponse_
 )
 {
-  ns1__getPipelineResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__getPipelineResponse_->return_ = soap_new_api__Response(soap, 1);
   
-  std::string pipelineId = ns1__getPipeline_->pipelineId;
+  std::string pipelineId = api__getPipeline_->pipelineId;
   Pipeline pipeline = Pipeline();
   bool is_success = pipeline.request(soap, pipelineId.c_str());
   
   if(is_success)
   {
-    ns1__getPipelineResponse_->return_->statusCode = 0;
-    ns1__getPipelineResponse_->return_->__union_Response = 1;
-    ns1__getPipelineResponse_->return_->union_Response.returnedValuePipeline = pipeline.m_pPipeline;
+    api__getPipelineResponse_->return_->statusCode = 0;
+    api__getPipelineResponse_->return_->__union_Response = 1;
+    api__getPipelineResponse_->return_->union_Response.returnedValuePipeline = pipeline.m_pPipeline;
   }else{
-    ns1__getPipelineResponse_->return_->statusCode = 1;
-    ns1__getPipelineResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__getPipelineResponse_->return_->errorMessage) = pipeline.m_error_message;
+    api__getPipelineResponse_->return_->statusCode = 1;
+    api__getPipelineResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__getPipelineResponse_->return_->errorMessage) = pipeline.m_error_message;
   }
 
   return SOAP_OK;
 }
 
-int __ns1__initExecution(
+int __api__initExecution(
   struct soap *soap,
   // request parameters:
-  ns1__initExecution*                 ns1__initExecution_,
+  api__initExecution*                 api__initExecution_,
   // response parameters:
-  ns1__initExecutionResponse*         ns1__initExecutionResponse_
+  api__initExecutionResponse*         api__initExecutionResponse_
 ){
-  ns1__initExecutionResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__initExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
   
   Execution execution = Execution();
-  bool is_success = execution.initExecution(soap, ns1__initExecution_);
+  bool is_success = execution.initExecution(soap, api__initExecution_);
 
   if(is_success)
   {
-    ns1__initExecutionResponse_->return_->statusCode = 0;
+    api__initExecutionResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    ns1__initExecutionResponse_->return_->__union_Response = 2;
-    ns1__initExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_ns1__Execution;
+    api__initExecutionResponse_->return_->__union_Response = 2;
+    api__initExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_api__Execution;
   }else{
-    ns1__initExecutionResponse_->return_->statusCode = 1;
-    ns1__initExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__initExecutionResponse_->return_->errorMessage) = execution.m_error_message;
+    api__initExecutionResponse_->return_->statusCode = 1;
+    api__initExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__initExecutionResponse_->return_->errorMessage) = execution.m_error_message;
   }
 
   return SOAP_OK;
 }
 
-int __ns1__deleteExecution(
+int __api__deleteExecution(
   struct soap *soap,
   // request parameters:
-  ns1__deleteExecution*               ns1__deleteExecution_,
+  api__deleteExecution*               api__deleteExecution_,
   // response parameters:
-  ns1__deleteExecutionResponse*       ns1__deleteExecutionResponse_
+  api__deleteExecutionResponse*       api__deleteExecutionResponse_
 )
 {
-  ns1__deleteExecutionResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__deleteExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
 
   Execution execution = Execution();
-  bool is_success = execution.deleteExecution(soap, ns1__deleteExecution_);
+  bool is_success = execution.deleteExecution(soap, api__deleteExecution_);
 
   if(is_success)
   {
-    ns1__deleteExecutionResponse_->return_->statusCode = 0;
+    api__deleteExecutionResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    //ns1__deleteExecutionResponse_->return_->__union_Response = 2;
-    //ns1__deleteExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_ns1__Execution;
+    //api__deleteExecutionResponse_->return_->__union_Response = 2;
+    //api__deleteExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_api__Execution;
   }else{
-    ns1__deleteExecutionResponse_->return_->statusCode = 1;
-    ns1__deleteExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__deleteExecutionResponse_->return_->errorMessage) = execution.m_error_message;
+    api__deleteExecutionResponse_->return_->statusCode = 1;
+    api__deleteExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__deleteExecutionResponse_->return_->errorMessage) = execution.m_error_message;
   }
 
   return SOAP_OK;
 }
 
-int __ns1__listExecutions(
+int __api__listExecutions(
   struct soap *soap,
   // request parameters:
-  ns1__listExecutions*                ns1__listExecutions_,
+  api__listExecutions*                api__listExecutions_,
   // response parameters:
-  ns1__listExecutionsResponse*        ns1__listExecutionsResponse_
+  api__listExecutionsResponse*        api__listExecutionsResponse_
 ){
-  ns1__listExecutionsResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__listExecutionsResponse_->return_ = soap_new_api__Response(soap, 1);
  
   Execution execution = Execution();
-  bool is_success = execution.listExecutions(soap, ns1__listExecutions_);
+  bool is_success = execution.listExecutions(soap, api__listExecutions_);
 
   if(is_success)
   {
-    ns1__listExecutionsResponse_->return_->statusCode = 0;
+    api__listExecutionsResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    ns1__listExecutionsResponse_->return_->__union_Response = 6;
-    ns1__listExecutionsResponse_->return_->union_Response.returnedValueListExecutions = execution.m_returnedValueListExecutions;
+    api__listExecutionsResponse_->return_->__union_Response = 6;
+    api__listExecutionsResponse_->return_->union_Response.returnedValueListExecutions = execution.m_returnedValueListExecutions;
   }else{
-    ns1__listExecutionsResponse_->return_->statusCode = 1;
-    ns1__listExecutionsResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__listExecutionsResponse_->return_->errorMessage) = execution.m_error_message;
+    api__listExecutionsResponse_->return_->statusCode = 1;
+    api__listExecutionsResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__listExecutionsResponse_->return_->errorMessage) = execution.m_error_message;
   }
 
   return SOAP_OK;
 }
 
-int __ns1__getExecution(
+int __api__getExecution(
   struct soap *soap,
   // request parameters:
-  ns1__getExecution*                  ns1__getExecution_,
+  api__getExecution*                  api__getExecution_,
   // response parameters:
-  ns1__getExecutionResponse*          ns1__getExecutionResponse_
+  api__getExecutionResponse*          api__getExecutionResponse_
 ){
-  ns1__getExecutionResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__getExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
  
   Execution execution = Execution();
-  bool is_success = execution.getExecution(soap, ns1__getExecution_->executionId);
+  bool is_success = execution.getExecution(soap, api__getExecution_->executionId);
 
   if(is_success)
   {
-    ns1__getExecutionResponse_->return_->statusCode = 0;
+    api__getExecutionResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    ns1__getExecutionResponse_->return_->__union_Response = 2;
-    ns1__getExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_ns1__Execution;
+    api__getExecutionResponse_->return_->__union_Response = 2;
+    api__getExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_api__Execution;
   }else{
-    ns1__getExecutionResponse_->return_->statusCode = 1;
-    ns1__getExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__getExecutionResponse_->return_->errorMessage) = execution.m_error_message;
+    api__getExecutionResponse_->return_->statusCode = 1;
+    api__getExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__getExecutionResponse_->return_->errorMessage) = execution.m_error_message;
   }
 
   return SOAP_OK;
 }
 
-int __ns1__getGlobalProperties(
+int __api__getGlobalProperties(
   struct soap *soap,
   // request parameters:
-  ns1__getGlobalProperties*           ns1__getGlobalProperties_,
+  api__getGlobalProperties*           api__getGlobalProperties_,
   // response parameters:
-  ns1__getGlobalPropertiesResponse*   ns1__getGlobalPropertiesResponse_
+  api__getGlobalPropertiesResponse*   api__getGlobalPropertiesResponse_
 ){
-  ns1__getGlobalPropertiesResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__getGlobalPropertiesResponse_->return_ = soap_new_api__Response(soap, 1);
  
   GlobalProperties globalProperties = GlobalProperties();
   bool is_success = globalProperties.request(soap);
 
   if(is_success)
   {
-    ns1__getGlobalPropertiesResponse_->return_->statusCode = 0;
+    api__getGlobalPropertiesResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    ns1__getGlobalPropertiesResponse_->return_->__union_Response = 3;
-    ns1__getGlobalPropertiesResponse_->return_->union_Response.returnedValueGlobalProp = globalProperties.m_ns1__GlobalProperties;
+    api__getGlobalPropertiesResponse_->return_->__union_Response = 3;
+    api__getGlobalPropertiesResponse_->return_->union_Response.returnedValueGlobalProp = globalProperties.m_api__GlobalProperties;
   }else{
-    ns1__getGlobalPropertiesResponse_->return_->statusCode = 1;
-    ns1__getGlobalPropertiesResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__getGlobalPropertiesResponse_->return_->errorMessage) = globalProperties.m_error_message;
+    api__getGlobalPropertiesResponse_->return_->statusCode = 1;
+    api__getGlobalPropertiesResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__getGlobalPropertiesResponse_->return_->errorMessage) = globalProperties.m_error_message;
   }
 
   return SOAP_OK;
 }
 
-int __ns1__killExecution(
+int __api__killExecution(
   struct soap *soap,
   // request parameters:
-  ns1__killExecution*                 ns1__killExecution_,
+  api__killExecution*                 api__killExecution_,
   // response parameters:
-  ns1__killExecutionResponse*         ns1__killExecutionResponse_
+  api__killExecutionResponse*         api__killExecutionResponse_
 ){
-  ns1__killExecutionResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__killExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
  
   Execution execution = Execution();
-  bool is_success = execution.killExecution(soap, ns1__killExecution_->executionId);
+  bool is_success = execution.killExecution(soap, api__killExecution_->executionId);
 
   if(is_success)
   {
-    ns1__killExecutionResponse_->return_->statusCode = 0;
+    api__killExecutionResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    //ns1__killExecutionResponse_->return_->__union_Response = 2;
-    //ns1__killExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_ns1__Execution;
+    //api__killExecutionResponse_->return_->__union_Response = 2;
+    //api__killExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_api__Execution;
   }else{
-    ns1__killExecutionResponse_->return_->statusCode = 1;
-    ns1__killExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__killExecutionResponse_->return_->errorMessage) = execution.m_error_message;
-  }
-
-  return SOAP_OK;
-}
-
-
-int __ns1__playExecution(
-  struct soap *soap,
-  // request parameters:
-  ns1__playExecution*                 ns1__playExecution_,
-  // response parameters:
-  ns1__playExecutionResponse*         ns1__playExecutionResponse_
-){
-  ns1__playExecutionResponse_->return_ = soap_new_ns1__Response(soap, 1);
- 
-  Execution execution = Execution();
-  bool is_success = execution.playExecution(soap, ns1__playExecution_->executionId);
-
-  if(is_success)
-  {
-    ns1__playExecutionResponse_->return_->statusCode = 0;
-    // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    //ns1__killExecutionResponse_->return_->__union_Response = 2;
-    //ns1__killExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_ns1__Execution;
-  }else{
-    ns1__playExecutionResponse_->return_->statusCode = 1;
-    ns1__playExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__playExecutionResponse_->return_->errorMessage) = execution.m_error_message;
+    api__killExecutionResponse_->return_->statusCode = 1;
+    api__killExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__killExecutionResponse_->return_->errorMessage) = execution.m_error_message;
   }
 
   return SOAP_OK;
 }
 
 
-int __ns1__getStdOut(
+int __api__playExecution(
   struct soap *soap,
   // request parameters:
-  ns1__getStdOut*                     ns1__getStdOut_,
+  api__playExecution*                 api__playExecution_,
   // response parameters:
-  ns1__getStdOutResponse*             ns1__getStdOutResponse_
+  api__playExecutionResponse*         api__playExecutionResponse_
 ){
-  ns1__getStdOutResponse_->return_ = soap_new_ns1__Response(soap, 1);
- 
+  api__playExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
   Execution execution = Execution();
-  bool is_success = execution.getStdOutErr(soap, ns1__getStdOut_->executionId);
+  bool is_success = execution.playExecution(soap, api__playExecution_->executionId);
 
   if(is_success)
   {
-    ns1__getStdOutResponse_->return_->statusCode = 0;
+    api__playExecutionResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    ns1__getStdOutResponse_->return_->__union_Response = 4;
-    ns1__getStdOutResponse_->return_->union_Response.returnedValueStr = execution.m_std_out;
+    //api__killExecutionResponse_->return_->__union_Response = 2;
+    //api__killExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_api__Execution;
   }else{
-    ns1__getStdOutResponse_->return_->statusCode = 1;
-    ns1__getStdOutResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__getStdOutResponse_->return_->errorMessage) = execution.m_error_message;
+    api__playExecutionResponse_->return_->statusCode = 1;
+    api__playExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__playExecutionResponse_->return_->errorMessage) = execution.m_error_message;
   }
 
   return SOAP_OK;
 }
 
-int __ns1__getStdErr(
+
+int __api__getStdOut(
   struct soap *soap,
   // request parameters:
-  ns1__getStdErr*                     ns1__getStdErr_,
+  api__getStdOut*                     api__getStdOut_,
   // response parameters:
-  ns1__getStdErrResponse*             ns1__getStdErrResponse_
+  api__getStdOutResponse*             api__getStdOutResponse_
 ){
-  ns1__getStdErrResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__getStdOutResponse_->return_ = soap_new_api__Response(soap, 1);
  
   Execution execution = Execution();
-  bool is_success = execution.getStdOutErr(soap, ns1__getStdErr_->executionId);
+  bool is_success = execution.getStdOutErr(soap, api__getStdOut_->executionId);
 
   if(is_success)
   {
-    ns1__getStdErrResponse_->return_->statusCode = 0;
+    api__getStdOutResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    ns1__getStdErrResponse_->return_->__union_Response = 4;
-    ns1__getStdErrResponse_->return_->union_Response.returnedValueStr = execution.m_std_err;
+    api__getStdOutResponse_->return_->__union_Response = 4;
+    api__getStdOutResponse_->return_->union_Response.returnedValueStr = execution.m_std_out;
   }else{
-    ns1__getStdErrResponse_->return_->statusCode = 1;
-    ns1__getStdErrResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__getStdErrResponse_->return_->errorMessage) = execution.m_error_message;
+    api__getStdOutResponse_->return_->statusCode = 1;
+    api__getStdOutResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__getStdOutResponse_->return_->errorMessage) = execution.m_error_message;
+  }
+
+  return SOAP_OK;
+}
+
+int __api__getStdErr(
+  struct soap *soap,
+  // request parameters:
+  api__getStdErr*                     api__getStdErr_,
+  // response parameters:
+  api__getStdErrResponse*             api__getStdErrResponse_
+){
+  api__getStdErrResponse_->return_ = soap_new_api__Response(soap, 1);
+ 
+  Execution execution = Execution();
+  bool is_success = execution.getStdOutErr(soap, api__getStdErr_->executionId);
+
+  if(is_success)
+  {
+    api__getStdErrResponse_->return_->statusCode = 0;
+    // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
+    api__getStdErrResponse_->return_->__union_Response = 4;
+    api__getStdErrResponse_->return_->union_Response.returnedValueStr = execution.m_std_err;
+  }else{
+    api__getStdErrResponse_->return_->statusCode = 1;
+    api__getStdErrResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__getStdErrResponse_->return_->errorMessage) = execution.m_error_message;
   }
 
   return SOAP_OK;
@@ -476,77 +475,118 @@ int __ns1__getStdErr(
  How to get pipeline results from a workflow of soma-workflow...
  
  */
-int __ns1__getExecutionResults(
+int __api__getExecutionResults(
   struct soap *soap,
   // request parameters:
-  ns1__getExecutionResults*           ns1__getExecutionResults_,
+  api__getExecutionResults*           api__getExecutionResults_,
   // response parameters:
-  ns1__getExecutionResultsResponse*   ns1__getExecutionResultsResponse_
+  api__getExecutionResultsResponse*   api__getExecutionResultsResponse_
 ){
-  std::cout << "__ns1__getExecutionResults" << std::endl;
+  std::cout << "__api__getExecutionResults" << std::endl;
   return SOAP_FATAL_ERROR;
 }
 
 /* not supported web service.........*/
-int __ns1__authenticateHTTP(
+int __api__authenticateHTTP(
   struct soap *soap,
   // request parameters:
-  ns1__authenticateHTTP*              ns1__authenticateHTTP_,
+  api__authenticateHTTP*              api__authenticateHTTP_,
   // response parameters:
-  ns1__authenticateHTTPResponse*      ns1__authenticateHTTPResponse_
+  api__authenticateHTTPResponse*      api__authenticateHTTPResponse_
 ){
 
-  ns1__authenticateHTTPResponse_->return_ = soap_new_ns1__Response(soap, 1);
-  ns1__authenticateHTTPResponse_->return_->statusCode = 1;
-  ns1__authenticateHTTPResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-  (*ns1__authenticateHTTPResponse_->return_->errorMessage) = "not supported";
+  api__authenticateHTTPResponse_->return_ = soap_new_api__Response(soap, 1);
+  api__authenticateHTTPResponse_->return_->statusCode = 1;
+  api__authenticateHTTPResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+  (*api__authenticateHTTPResponse_->return_->errorMessage) = "not supported";
 
   return SOAP_FATAL_ERROR;
 }
 
 
 /* not supported web service.........*/
-int __ns1__logout(
+int __api__logout(
   struct soap *soap,
   // request parameters:
-  ns1__logout*                        ns1__logout_,
+  api__logout*                        api__logout_,
   // response parameters:
-  ns1__logoutResponse*                ns1__logoutResponse_
+  api__logoutResponse*                api__logoutResponse_
 ){
 
-  std::cout << "__ns1__logout cannot be implemented with catidb" << std::endl;
+  std::cout << "__api__logout cannot be implemented with catidb" << std::endl;
   return SOAP_FATAL_ERROR;
 
   /*
-  ns1__logoutResponse_->return_ = soap_new_ns1__Response(soap, 1);
+  api__logoutResponse_->return_ = soap_new_api__Response(soap, 1);
  
   CatiwebLogout catiwebLogout = CatiwebLogout();
   bool is_success = catiwebLogout.request(soap);
 
   if(is_success)
   {
-    ns1__logoutResponse_->return_->statusCode = 0;
+    api__logoutResponse_->return_->statusCode = 0;
     // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
-    //ns1__logoutResponse_->return_->__union_Response = 6;
-    //ns1__logoutResponse_->return_->union_Response.returnedValueListExecutions = execution.m_returnedValueListExecutions;
+    //api__logoutResponse_->return_->__union_Response = 6;
+    //api__logoutResponse_->return_->union_Response.returnedValueListExecutions = execution.m_returnedValueListExecutions;
   }else{
-    ns1__logoutResponse_->return_->statusCode = 1;
-    ns1__logoutResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
-    (*ns1__logoutResponse_->return_->errorMessage) = catiwebLogout.m_error_message;
+    api__logoutResponse_->return_->statusCode = 1;
+    api__logoutResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    (*api__logoutResponse_->return_->errorMessage) = catiwebLogout.m_error_message;
   }
 
   return SOAP_OK;*/
 }
 
 /*not supported web service.........*/
-int __ns1__updateExecution(
+int __api__updateExecution(
   struct soap *soap,
   // request parameters:
-  ns1__updateExecution*               ns1__updateExecution_,
+  api__updateExecution*               api__updateExecution_,
   // response parameters:
-  ns1__updateExecutionResponse*       ns1__updateExecutionResponse_
+  api__updateExecutionResponse*       api__updateExecutionResponse_
 ){
-  std::cout << "__ns1__updateExecution" << std::endl;
+  api__updateExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
+ 
+  Execution execution = Execution();
+  
+  bool is_success = false;
+  
+  bool type_error = false;
+  std::string type_error_message = "For the moment, only strint value can be accepted.";
+  
+  if(api__updateExecution_->keyValuePair[0]->__union_StringKeyValuePair != 1)
+  {
+    type_error = true;
+  }
+  
+  is_success = execution.updateExecution(soap, api__updateExecution_->executionId,
+    api__updateExecution_->keyValuePair[0]->name ,
+    *(api__updateExecution_->keyValuePair[0]->union_StringKeyValuePair.valueStr)
+  );
+
+  if(is_success and (!type_error))
+  {
+    api__updateExecutionResponse_->return_->statusCode = 0;
+    // if you set __union_Response, please set the real reponse value as well. Otherwise it will produce 
+    //api__killExecutionResponse_->return_->__union_Response = 2;
+    //api__killExecutionResponse_->return_->union_Response.returnedValueExecution = execution.m_api__Execution;
+  }else{
+    api__updateExecutionResponse_->return_->statusCode = 1;
+    
+    api__updateExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
+    
+    if(type_error)
+    {
+      (*api__updateExecutionResponse_->return_->errorMessage) = type_error_message;
+    }else{
+      
+      (*api__updateExecutionResponse_->return_->errorMessage) = execution.m_error_message;
+    }
+  }
+
+  return SOAP_OK;
+  
+  std::cout << "__api__updateExecution" << std::endl;
   return SOAP_FATAL_ERROR;
 }
 

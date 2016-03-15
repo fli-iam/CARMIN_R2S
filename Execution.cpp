@@ -8,7 +8,7 @@
 
 Execution::Execution()
 {
-  this->m_ns1__Execution = NULL;
+  this->m_api__Execution = NULL;
   this->m_returnedValueListExecutions = NULL;
   
   this->m_std_out = NULL;
@@ -17,11 +17,11 @@ Execution::Execution()
 
 bool Execution::deleteExecution(
     struct soap *soap,
-    ns1__deleteExecution*	ns1__deleteExecution_
+    api__deleteExecution*	api__deleteExecution_
       )
 {
   /*
-   class ns1__deleteExecution
+   class api__deleteExecution
   { public:
   /// Element executionId of type xs:string.
       std::string                          executionId                    1;	///< Required element.
@@ -32,8 +32,8 @@ bool Execution::deleteExecution(
   };
   */
   
-  std::string executionId = ns1__deleteExecution_->executionId;
-  bool deleteFiles = ns1__deleteExecution_->deleteFiles;
+  std::string executionId = api__deleteExecution_->executionId;
+  bool deleteFiles = api__deleteExecution_->deleteFiles;
   
   Config config = Config();
   char routeBuf[config.URL_MAX_LEN];
@@ -59,15 +59,15 @@ bool Execution::deleteExecution(
 
 bool Execution::listExecutions(
   struct soap *soap,
-  ns1__listExecutions* ns1__listExecutions_
+  api__listExecutions* api__listExecutions_
 ){
-    if(ns1__listExecutions_->studyIdentifier=="")
+    if(api__listExecutions_->studyIdentifier=="")
     {
       m_error_message = "studyIdentifier cannot be empty...";
       return false;
     }
 
-    std::string studyIdentifier = ns1__listExecutions_->studyIdentifier;
+    std::string studyIdentifier = api__listExecutions_->studyIdentifier;
     
     Config config = Config();
     char routeBuf[config.URL_MAX_LEN];
@@ -92,12 +92,12 @@ bool Execution::listExecutions(
 
     if(m_returnedValueListExecutions == NULL)
     {
-      m_returnedValueListExecutions = soap_new_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, 1);
+      m_returnedValueListExecutions = soap_new_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, 1);
     }
 
     /*
       /// "http://france-life-imaging.fr/api":Execution is a complexType with complexContent extension of "http://france-life-imaging.fr/api":Object.
-      class ns1__Execution : public ns1__Object
+      class api__Execution : public api__Object
       { public:
       /// Element identifier of type xs:string.
 	  std::string                          identifier                     1;	///< Required element.
@@ -108,11 +108,11 @@ bool Execution::listExecutions(
       /// Element timeout of type xs:int.
 	  int*                                 timeout                        0;	///< Optional element.
       /// Element status of type "http://france-life-imaging.fr/api":ExecutionStatus.
-	  enum ns1__ExecutionStatus            status                         1;	///< Required element.
-      /// Vector of ns1__StringKeyParameterValuePair* with length 0..unbounded
-	  std::vector<ns1__StringKeyParameterValuePair*> inputValue                     0;
-      /// Vector of ns1__StringKeyParameterValuePair* with length 0..unbounded
-	  std::vector<ns1__StringKeyParameterValuePair*> returnedFile                   0;
+	  enum api__ExecutionStatus            status                         1;	///< Required element.
+      /// Vector of api__StringKeyParameterValuePair* with length 0..unbounded
+	  std::vector<api__StringKeyParameterValuePair*> inputValue                     0;
+      /// Vector of api__StringKeyParameterValuePair* with length 0..unbounded
+	  std::vector<api__StringKeyParameterValuePair*> returnedFile                   0;
       /// Element studyIdentifier of type xs:string.
 	  std::string*                         studyIdentifier                0;	///< Optional element.
       /// Element errorCode of type xs:int.
@@ -123,62 +123,145 @@ bool Execution::listExecutions(
 	  LONG64*                              endDate                        0;	///< Optional element.
       };
     */
-    ns1__ArrayOfExecutions * ns1__ArrayOfExecutions_ = soap_new_ns1__ArrayOfExecutions(soap, 1);
+    api__ArrayOfExecutions * api__ArrayOfExecutions_ = soap_new_api__ArrayOfExecutions(soap, 1);
     m_returnedValueListExecutions->clear();
-    m_returnedValueListExecutions->push_back(ns1__ArrayOfExecutions_);
+    m_returnedValueListExecutions->push_back(api__ArrayOfExecutions_);
 
     for(rapidjson::Value::ConstValueIterator itr = m_document.Begin(); itr != m_document.End(); ++itr)
     {
-	ns1__Execution * ns1__Execution_ = soap_new_ns1__Execution(soap, 1);
+	api__Execution * api__Execution_ = soap_new_api__Execution(soap, 1);
 	char buf_identifier[256];
 	snprintf(buf_identifier, sizeof(buf_identifier), "%d", (*itr)["id"].GetInt());
 
-	ns1__Execution_->identifier = buf_identifier;
-	ns1__Execution_->name = (*itr)["pipeline_name"].GetString();
-	ns1__Execution_->pipelineIdentifier = (*itr)["pipeline_id"].GetString();
+	api__Execution_->identifier = buf_identifier;
+	api__Execution_->name = (*itr)["pipeline_name"].GetString();
+	api__Execution_->pipelineIdentifier = (*itr)["pipeline_id"].GetString();
 
-	ns1__Execution_->status = this->convert_soma_workflow_status_to_carmin_status(
+	api__Execution_->status = this->convert_soma_workflow_status_to_carmin_status(
 	    (*itr)["status"].GetString());
 
-	ns1__ArrayOfExecutions_->item.push_back(ns1__Execution_);
+	api__ArrayOfExecutions_->item.push_back(api__Execution_);
     }
 
     return true;
 }
 
 
-ns1__ExecutionStatus Execution::convert_soma_workflow_status_to_carmin_status(std::string soma_workflow_status)
+api__ExecutionStatus Execution::convert_soma_workflow_status_to_carmin_status(std::string soma_workflow_status)
 {
-      ns1__ExecutionStatus execution_status ; 
+      api__ExecutionStatus execution_status ; 
       if(soma_workflow_status=="workflow_done")
       {
-	execution_status = ns1__ExecutionStatus__Finished;
+	execution_status = api__ExecutionStatus__Finished;
       }else if(soma_workflow_status=="worklflow_not_started")
       {
-	execution_status = ns1__ExecutionStatus__Ready;
+	execution_status = api__ExecutionStatus__Ready;
       }
       else if(soma_workflow_status=="workflow_in_progress")
       {
-	execution_status = ns1__ExecutionStatus__Running;
+	execution_status = api__ExecutionStatus__Running;
       }
       else if(soma_workflow_status=="delete_pending")
       {
-	execution_status = ns1__ExecutionStatus__Killed;
+	execution_status = api__ExecutionStatus__Killed;
       }
       else if(soma_workflow_status=="warning")
       {
-	execution_status = ns1__ExecutionStatus__ExecutionFailed;
+	execution_status = api__ExecutionStatus__ExecutionFailed;
       }
       else{
-	execution_status = ns1__ExecutionStatus__Unknown;
+	execution_status = api__ExecutionStatus__Unknown;
       }
       return execution_status;
 }
 
+bool Execution::updateExecution(struct soap *soap,
+	std::string executionId,
+	std::string name,
+	std::string value
+      )
+{
+  Config config = Config();
+
+  char routeBuf[config.URL_MAX_LEN];
+    snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
+	     config.CATIWEB_WEBSERVICE_API, executionId.c_str());
+
+  rapidjson::Document document;
+  document.SetObject();
+
+  rapidjson::Value execution_op_name;
+  rapidjson::Value execution_op_value;
+
+  execution_op_name.SetString(
+    name.c_str(),
+    name.length(),
+    document.GetAllocator()
+  );
+
+  execution_op_value.SetString(
+    value.c_str(),
+    value.length(),
+    document.GetAllocator()
+  );
+
+  document.AddMember(execution_op_name,
+		     execution_op_value,
+		     document.GetAllocator());
+
+
+  rapidjson::StringBuffer buffer;
+  rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+  document.Accept(writer);
+
+  if(config.VERBOSE)
+  {
+    std::cout << buffer.GetString() << std::endl;
+    std::cout << buffer.GetSize() << std::endl;
+  }
+
+  //char json_buffer[] = "{\"pipeline_name\": \"ProcessDemo\", \"params\":{\"ff\": 14.0}}";
+  //std::cout << json_buffer << std::endl;
+
+  if(!CurlProcess::request(soap, routeBuf, "PUT",
+			    "UpdateExecution",
+			    buffer.GetString(),
+			    buffer.GetSize()))
+  {
+    return false;
+  }
+
+  if(!CurlProcess::parse_reponse_by_json())
+  {
+    return false;
+  }
+
+  if(config.VERBOSE)
+  {
+    std::cout << "success parse_reponse_by_json" << std::endl;
+  }
+  
+  if(!m_document["is_success"].GetBool())
+  {
+    m_error_message = m_document["error_message"].GetString();
+    return false;
+  }
+
+  return true;
+}
 bool Execution::killExecution(struct soap *soap,
 	std::string executionId
       ){
+  
+    std::string name = "name";
+    std::string op = "kill";
+    return this->updateExecution(
+      soap,
+      executionId,
+      name, op
+    );
 
+    /*
     Config config = Config();
 
     char routeBuf[config.URL_MAX_LEN];
@@ -233,7 +316,7 @@ bool Execution::killExecution(struct soap *soap,
       return false;
     }
 
-    return true;
+    return true;*/
 }
 
 bool Execution::playExecution(struct soap *soap,
@@ -379,19 +462,19 @@ bool Execution::getExecution(struct soap *soap,
       return false;
     }
 
-    if(this->m_ns1__Execution==NULL)
+    if(this->m_api__Execution==NULL)
     {
-      this->m_ns1__Execution = soap_new_ns1__Execution(soap, 1);
+      this->m_api__Execution = soap_new_api__Execution(soap, 1);
     }
 
     char buf_identifier[256];
     snprintf(buf_identifier, sizeof(buf_identifier), "%d", m_document["return"]["id"].GetInt());
 
-    this->m_ns1__Execution->identifier = buf_identifier;
-    this->m_ns1__Execution->name = m_document["return"]["pipeline_name"].GetString();
-    this->m_ns1__Execution->pipelineIdentifier = m_document["return"]["pipeline_id"].GetString();
+    this->m_api__Execution->identifier = buf_identifier;
+    this->m_api__Execution->name = m_document["return"]["pipeline_name"].GetString();
+    this->m_api__Execution->pipelineIdentifier = m_document["return"]["pipeline_id"].GetString();
 
-    this->m_ns1__Execution->status = 
+    this->m_api__Execution->status = 
       this->convert_soma_workflow_status_to_carmin_status(m_document["return"]["status"].GetString());
 
     return true;
@@ -400,33 +483,33 @@ bool Execution::getExecution(struct soap *soap,
 
 bool Execution::initExecution(
       struct soap *soap,
-      ns1__initExecution* ns1__initExecution_){
+      api__initExecution* api__initExecution_){
 
-    if(ns1__initExecution_->studyId==NULL)
+    if(api__initExecution_->studyId==NULL)
     {
       m_error_message = "studyId cannot be empty...";
       return false;
     }
 
-    if(ns1__initExecution_->pipelineId=="")
+    if(api__initExecution_->pipelineId=="")
     {
       m_error_message = "pipelineId cannot be empty...";
       return false;
     }
 
-    std::string studyId = *ns1__initExecution_-> studyId;
-    std::string pipelineId = ns1__initExecution_-> pipelineId;
+    std::string studyId = *api__initExecution_-> studyId;
+    std::string pipelineId = api__initExecution_-> pipelineId;
 
     Config config = Config();
     char routeBuf[config.URL_MAX_LEN];
     snprintf(routeBuf, sizeof(routeBuf), "%s/%s/executions",
 	     config.CATIWEB_WEBSERVICE_API, studyId.c_str());
 
-    std::vector<ns1__StringKeyParameterValuePair*> &inputValue = ns1__initExecution_->inputValue;
+    std::vector<api__StringKeyParameterValuePair*> &inputValue = api__initExecution_->inputValue;
 
-    int * timeout = ns1__initExecution_-> timeout;
-    std::string * executionName = ns1__initExecution_-> executionName;
-    bool * playExecution = ns1__initExecution_-> playExecution;
+    int * timeout = api__initExecution_-> timeout;
+    std::string * executionName = api__initExecution_-> executionName;
+    bool * playExecution = api__initExecution_-> playExecution;
 
     rapidjson::Document document;
     document.SetObject();
@@ -449,15 +532,15 @@ bool Execution::initExecution(
     }
     for(int i=0; i < inputValue.size(); i += 1)
     {
-      ns1__StringKeyParameterValuePair * ns1__StringKeyParameterValuePair = inputValue[i];
+      api__StringKeyParameterValuePair * api__StringKeyParameterValuePair = inputValue[i];
       if(config.VERBOSE)
       {
-	std::cout << ns1__StringKeyParameterValuePair->name << std::endl;
-	std::cout << ns1__StringKeyParameterValuePair->value << std::endl;
-	std::cout << "type:" << ns1__StringKeyParameterValuePair->value->type << std::endl;
+	std::cout << api__StringKeyParameterValuePair->name << std::endl;
+	std::cout << api__StringKeyParameterValuePair->value << std::endl;
+	std::cout << "type:" << api__StringKeyParameterValuePair->value->type << std::endl;
       }
       rapidjson::Value param_key;
-      std::string std_param_name = ns1__StringKeyParameterValuePair->name;
+      std::string std_param_name = api__StringKeyParameterValuePair->name;
       param_key.SetString(std_param_name.c_str(),
 			  std_param_name.length(),
 			  document.GetAllocator()
@@ -466,13 +549,13 @@ bool Execution::initExecution(
 
       /*
        * /// "http://france-life-imaging.fr/api":ParameterTypedValue is a complexType.
-	  class ns1__ParameterTypedValue
+	  class api__ParameterTypedValue
 	  { public:
 	  /// Element type of type "http://france-life-imaging.fr/api":ParameterType.
-	      enum ns1__ParameterType              type                           1;	///< Required element.
+	      enum api__ParameterType              type                           1;	///< Required element.
 	  /// CHOICE OF ELEMENTS <xs:choice>
-	    $int                                  __union_ParameterTypedValue   ;	///< Union _ns1__union_ParameterTypedValue selector: set to SOAP_UNION__ns1__union_ParameterTypedValue_<fieldname>
-	      union _ns1__union_ParameterTypedValue
+	    $int                                  __union_ParameterTypedValue   ;	///< Union _api__union_ParameterTypedValue selector: set to SOAP_UNION__api__union_ParameterTypedValue_<fieldname>
+	      union _api__union_ParameterTypedValue
 	      {
 	  /// Element valueStr of type xs:string.
 	      std::string*                         valueStr                       1;	///< Required element.
@@ -489,31 +572,31 @@ bool Execution::initExecution(
 	  };
        */
       
-      if(ns1__StringKeyParameterValuePair->value->__union_ParameterTypedValue==1)
+      if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==1)
       {
-	std::string std_param_val = *ns1__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueStr;
+	std::string std_param_val = *api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueStr;
 	param_val.SetString(std_param_val.c_str(), std_param_val.length(), document.GetAllocator());
 	if(config.VERBOSE)
 	{
 	  std::cout << param_val.GetString() << std::endl;
 	}
-      }else if(ns1__StringKeyParameterValuePair->value->__union_ParameterTypedValue==2)
+      }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==2)
       {
-	param_val.SetBool(ns1__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueBool);
+	param_val.SetBool(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueBool);
 	if(config.VERBOSE)
 	{
 	  std::cout << param_val.GetBool() << std::endl;
 	}
-      }else if(ns1__StringKeyParameterValuePair->value->__union_ParameterTypedValue==3)
+      }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==3)
       {
-	param_val.SetInt(ns1__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueInt);
+	param_val.SetInt(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueInt);
 	if(config.VERBOSE)
 	{
 	  std::cout << param_val.GetInt() << std::endl;
 	}
-      }else if(ns1__StringKeyParameterValuePair->value->__union_ParameterTypedValue==4)
+      }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==4)
       { // string
-	param_val.SetDouble(ns1__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueDouble);
+	param_val.SetDouble(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueDouble);
 	if(config.VERBOSE)
 	{
 	  std::cout << param_val.GetDouble() << std::endl;
@@ -522,9 +605,9 @@ bool Execution::initExecution(
 	char buf_error_message[1024];
 	snprintf(buf_error_message,
 		 sizeof(buf_error_message),
-		 "parameter %s ns1__StringKeyParameterValuePair->value->__union_ParameterTypedValue==%d is not supported.",
+		 "parameter %s api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==%d is not supported.",
 		 std_param_name.c_str(),
-		 ns1__StringKeyParameterValuePair->value->__union_ParameterTypedValue
+		 api__StringKeyParameterValuePair->value->__union_ParameterTypedValue
 		);
 	m_error_message = buf_error_message;
 	return false;
@@ -572,21 +655,21 @@ bool Execution::initExecution(
       std::cout << "success parse_reponse_by_json" << std::endl;
     }
 
-    if(this->m_ns1__Execution==NULL)
+    if(this->m_api__Execution==NULL)
     {
-      this->m_ns1__Execution = soap_new_ns1__Execution(soap, 1);
+      this->m_api__Execution = soap_new_api__Execution(soap, 1);
     }
     
     char buf_identifier[256];
     snprintf(buf_identifier, sizeof(buf_identifier), "%d", m_document["id"].GetInt());
     
-    this->m_ns1__Execution->identifier = buf_identifier;
-    this->m_ns1__Execution->name = pipelineId;
-    this->m_ns1__Execution->pipelineIdentifier = pipelineId;
+    this->m_api__Execution->identifier = buf_identifier;
+    this->m_api__Execution->name = pipelineId;
+    this->m_api__Execution->pipelineIdentifier = pipelineId;
     
-    //this->m_ns1__Execution->status = soap_new_std__string(soap, 1);
-    //(*this->m_ns1__Execution->status) = ns1__ExecutionStatus__Running;
-    this->m_ns1__Execution->status = ns1__ExecutionStatus__Running;
+    //this->m_api__Execution->status = soap_new_std__string(soap, 1);
+    //(*this->m_api__Execution->status) = api__ExecutionStatus__Running;
+    this->m_api__Execution->status = api__ExecutionStatus__Running;
 
     return true;
 }

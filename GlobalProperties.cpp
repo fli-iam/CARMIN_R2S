@@ -3,20 +3,20 @@
 
 
 GlobalProperties::GlobalProperties(){
-  m_ns1__GlobalProperties = NULL;
+  m_api__GlobalProperties = NULL;
 }
 
 /*
   
 /// "http://france-life-imaging.fr/api":GlobalProperties is a complexType with complexContent extension of "http://france-life-imaging.fr/api":Object.
-class ns1__GlobalProperties : public ns1__Object
+class api__GlobalProperties : public api__Object
 { public:
-/// Vector of ns1__IntKeyStringValuePair* with length 0..unbounded
-    std::vector<ns1__IntKeyStringValuePair*> APIErrorCodesAndMessages       0;
+/// Vector of api__IntKeyStringValuePair* with length 0..unbounded
+    std::vector<api__IntKeyStringValuePair*> APIErrorCodesAndMessages       0;
 /// Vector of std::string with length 1..unbounded
     std::vector<std::string            > supportedTransferProtocol      1;
-/// Vector of enum ns1__Module with length 1..unbounded
-    std::vector<enum ns1__Module       > supportedModule                1;
+/// Vector of enum api__Module with length 1..unbounded
+    std::vector<enum api__Module       > supportedModule                1;
 /// Element email of type xs:string.
     std::string*                         email                          0;	///< Optional element.
 /// Element platformDescription of type xs:string.
@@ -35,12 +35,12 @@ class ns1__GlobalProperties : public ns1__Object
     std::string                          supportedAPIVersion            1;	///< Required element.
 };
 
-enum ns1__Module
+enum api__Module
 {
-	ns1__Module__Processing,	///< xs:string value="Processing"
-	ns1__Module__Data,	///< xs:string value="Data"
-	ns1__Module__Management,	///< xs:string value="Management"
-	ns1__Module__Commercial,	///< xs:string value="Commercial"
+	api__Module__Processing,	///< xs:string value="Processing"
+	api__Module__Data,	///< xs:string value="Data"
+	api__Module__Management,	///< xs:string value="Management"
+	api__Module__Commercial,	///< xs:string value="Commercial"
 };
 
 
@@ -48,9 +48,9 @@ enum ns1__Module
 
 
 bool GlobalProperties::request(struct soap *soap){
-    if(!m_ns1__GlobalProperties)
+    if(!m_api__GlobalProperties)
     {
-      m_ns1__GlobalProperties = soap_new_ns1__GlobalProperties(soap, 1);
+      m_api__GlobalProperties = soap_new_api__GlobalProperties(soap, 1);
     }
 
     Config config = Config();
@@ -83,17 +83,17 @@ bool GlobalProperties::request(struct soap *soap){
     {
       int error_code = val_apiErrorCodesAndMessages[i][0].GetInt();
       std::string error_msg = val_apiErrorCodesAndMessages[i][1].GetString();
-      ns1__IntKeyStringValuePair * ns1__IntKeyStringValuePair_ = soap_new_ns1__IntKeyStringValuePair(soap, 1);
-      ns1__IntKeyStringValuePair_->name = error_code;
-      ns1__IntKeyStringValuePair_->value = error_msg;
-      m_ns1__GlobalProperties->APIErrorCodesAndMessages.push_back(ns1__IntKeyStringValuePair_);
+      api__IntKeyStringValuePair * api__IntKeyStringValuePair_ = soap_new_api__IntKeyStringValuePair(soap, 1);
+      api__IntKeyStringValuePair_->name = error_code;
+      api__IntKeyStringValuePair_->value = error_msg;
+      m_api__GlobalProperties->APIErrorCodesAndMessages.push_back(api__IntKeyStringValuePair_);
     }
 
     rapidjson::Value &val_supportedTransferProtocols = m_document["supportedTransferProtocols"];
     for(int i=0; i< val_supportedTransferProtocols.Size(); i+=1)
     {
       std::string file_protocol = val_supportedTransferProtocols[i].GetString();
-      m_ns1__GlobalProperties->supportedTransferProtocol.push_back(file_protocol);
+      m_api__GlobalProperties->supportedTransferProtocol.push_back(file_protocol);
     }
 
     rapidjson::Value &val_supportedModules = m_document["supportedModules"];
@@ -102,40 +102,40 @@ bool GlobalProperties::request(struct soap *soap){
       std::string supported_modules = val_supportedModules[i].GetString();
       if(supported_modules=="Processing")
       {
-	m_ns1__GlobalProperties->supportedModule.push_back(ns1__Module__Processing);
+	m_api__GlobalProperties->supportedModule.push_back(api__Module__Processing);
       }else if(supported_modules=="Data")
       {
-	m_ns1__GlobalProperties->supportedModule.push_back(ns1__Module__Data);
+	m_api__GlobalProperties->supportedModule.push_back(api__Module__Data);
       }else if(supported_modules=="Management")
       {
-	m_ns1__GlobalProperties->supportedModule.push_back(ns1__Module__Management);
+	m_api__GlobalProperties->supportedModule.push_back(api__Module__Management);
       }else if(supported_modules=="Commercial")
       {
-	m_ns1__GlobalProperties->supportedModule.push_back(ns1__Module__Commercial);
+	m_api__GlobalProperties->supportedModule.push_back(api__Module__Commercial);
       }
     }
 
-    m_ns1__GlobalProperties->email = soap_new_std__string(soap, 1);
-    (*m_ns1__GlobalProperties->email) = m_document["email"].GetString();
+    m_api__GlobalProperties->email = soap_new_std__string(soap, 1);
+    (*m_api__GlobalProperties->email) = m_document["email"].GetString();
 
-    m_ns1__GlobalProperties->platformDescription = soap_new_std__string(soap, 1);
-    (*m_ns1__GlobalProperties->platformDescription) = m_document["description"].GetString();
+    m_api__GlobalProperties->platformDescription = soap_new_std__string(soap, 1);
+    (*m_api__GlobalProperties->platformDescription) = m_document["description"].GetString();
     
-    m_ns1__GlobalProperties->minAuthorizedExecutionTimeout = (int*)soap_malloc(soap, sizeof(int));
-    (*m_ns1__GlobalProperties->minAuthorizedExecutionTimeout) = m_document["minAuthorizedExecutionTimeout"].GetInt();
+    m_api__GlobalProperties->minAuthorizedExecutionTimeout = (int*)soap_malloc(soap, sizeof(int));
+    (*m_api__GlobalProperties->minAuthorizedExecutionTimeout) = m_document["minAuthorizedExecutionTimeout"].GetInt();
     
-    m_ns1__GlobalProperties->maxAuthorizedExecutionTimeout = (int*)soap_malloc(soap, sizeof(int));
-    (*m_ns1__GlobalProperties->maxAuthorizedExecutionTimeout) = m_document["maxAuthorizedExecutionTimeout"].GetInt();
+    m_api__GlobalProperties->maxAuthorizedExecutionTimeout = (int*)soap_malloc(soap, sizeof(int));
+    (*m_api__GlobalProperties->maxAuthorizedExecutionTimeout) = m_document["maxAuthorizedExecutionTimeout"].GetInt();
     
-    m_ns1__GlobalProperties->defaultExecutionTimeout = (int*)soap_malloc(soap, sizeof(int));
-    (*m_ns1__GlobalProperties->defaultExecutionTimeout) = m_document["defaultExecutionTimeout"].GetInt();
+    m_api__GlobalProperties->defaultExecutionTimeout = (int*)soap_malloc(soap, sizeof(int));
+    (*m_api__GlobalProperties->defaultExecutionTimeout) = m_document["defaultExecutionTimeout"].GetInt();
     
-    m_ns1__GlobalProperties->isKillExecutionSupported = m_document["isKillExecutionSupported"].GetBool();
+    m_api__GlobalProperties->isKillExecutionSupported = m_document["isKillExecutionSupported"].GetBool();
     
-    m_ns1__GlobalProperties->defaultStudy = soap_new_std__string(soap, 1);
-    (*m_ns1__GlobalProperties->defaultStudy) = m_document["defaultStudy"].GetString();
+    m_api__GlobalProperties->defaultStudy = soap_new_std__string(soap, 1);
+    (*m_api__GlobalProperties->defaultStudy) = m_document["defaultStudy"].GetString();
 
-    m_ns1__GlobalProperties->supportedAPIVersion = m_document["supportedAPIVersion"].GetString();
+    m_api__GlobalProperties->supportedAPIVersion = m_document["supportedAPIVersion"].GetString();
 
     return true;
 }

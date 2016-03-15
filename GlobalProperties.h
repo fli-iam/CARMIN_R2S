@@ -12,7 +12,7 @@ class GlobalProperties: public CurlProcess
     public:
       GlobalProperties();
       bool request(struct soap *soap);
-      ns1__GlobalProperties * m_ns1__GlobalProperties;
+      api__GlobalProperties * m_api__GlobalProperties;
 };
 
 #endif

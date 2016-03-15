@@ -11,7 +11,7 @@
 #endif
 #include "soapH.h"
 
-SOAP_SOURCE_STAMP("@(#) soapServer.cpp ver 2.7.17 2016-01-13 17:01:41 GMT")
+SOAP_SOURCE_STAMP("@(#) soapServer.cpp ver 2.7.17 2016-03-11 10:04:49 GMT")
 
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve(struct soap *soap)
@@ -78,66 +78,66 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve(struct soap *soap)
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_request(struct soap *soap)
 {
 	soap_peek_element(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:authenticateSession"))
-		return soap_serve___ns1__authenticateSession(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:deleteExecution"))
-		return soap_serve___ns1__deleteExecution(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:getPipeline"))
-		return soap_serve___ns1__getPipeline(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:authenticateHTTP"))
-		return soap_serve___ns1__authenticateHTTP(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:logout"))
-		return soap_serve___ns1__logout(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:updateExecution"))
-		return soap_serve___ns1__updateExecution(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:getGlobalProperties"))
-		return soap_serve___ns1__getGlobalProperties(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:initExecution"))
-		return soap_serve___ns1__initExecution(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:getStdOut"))
-		return soap_serve___ns1__getStdOut(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:getStdErr"))
-		return soap_serve___ns1__getStdErr(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:getExecutionResults"))
-		return soap_serve___ns1__getExecutionResults(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:killExecution"))
-		return soap_serve___ns1__killExecution(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:getExecution"))
-		return soap_serve___ns1__getExecution(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:playExecution"))
-		return soap_serve___ns1__playExecution(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:listPipelines"))
-		return soap_serve___ns1__listPipelines(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:listExecutions"))
-		return soap_serve___ns1__listExecutions(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:authenticateSession"))
+		return soap_serve___api__authenticateSession(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:deleteExecution"))
+		return soap_serve___api__deleteExecution(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:getPipeline"))
+		return soap_serve___api__getPipeline(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:authenticateHTTP"))
+		return soap_serve___api__authenticateHTTP(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:logout"))
+		return soap_serve___api__logout(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:updateExecution"))
+		return soap_serve___api__updateExecution(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:getGlobalProperties"))
+		return soap_serve___api__getGlobalProperties(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:initExecution"))
+		return soap_serve___api__initExecution(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:getStdOut"))
+		return soap_serve___api__getStdOut(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:getStdErr"))
+		return soap_serve___api__getStdErr(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:getExecutionResults"))
+		return soap_serve___api__getExecutionResults(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:killExecution"))
+		return soap_serve___api__killExecution(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:getExecution"))
+		return soap_serve___api__getExecution(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:playExecution"))
+		return soap_serve___api__playExecution(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:listPipelines"))
+		return soap_serve___api__listPipelines(soap);
+	if (!soap_match_tag(soap, soap->tag, "api:listExecutions"))
+		return soap_serve___api__listExecutions(soap);
 	return soap->error = SOAP_NO_METHOD;
 }
 #endif
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__authenticateSession(struct soap *soap)
-{	struct __ns1__authenticateSession soap_tmp___ns1__authenticateSession;
-	ns1__authenticateSessionResponse ns1__authenticateSessionResponse_;
-	ns1__authenticateSessionResponse_.soap_default(soap);
-	soap_default___ns1__authenticateSession(soap, &soap_tmp___ns1__authenticateSession);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__authenticateSession(struct soap *soap)
+{	struct __api__authenticateSession soap_tmp___api__authenticateSession;
+	api__authenticateSessionResponse api__authenticateSessionResponse_;
+	api__authenticateSessionResponse_.soap_default(soap);
+	soap_default___api__authenticateSession(soap, &soap_tmp___api__authenticateSession);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__authenticateSession(soap, &soap_tmp___ns1__authenticateSession, "-ns1:authenticateSession", NULL))
+	if (!soap_get___api__authenticateSession(soap, &soap_tmp___api__authenticateSession, "-api:authenticateSession", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__authenticateSession(soap, soap_tmp___ns1__authenticateSession.ns1__authenticateSession_, &ns1__authenticateSessionResponse_);
+	soap->error = __api__authenticateSession(soap, soap_tmp___api__authenticateSession.api__authenticateSession_, &api__authenticateSessionResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__authenticateSessionResponse_.soap_serialize(soap);
+	api__authenticateSessionResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__authenticateSessionResponse_.soap_put(soap, "ns1:authenticateSessionResponse", "")
+		 || api__authenticateSessionResponse_.soap_put(soap, "api:authenticateSessionResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -147,7 +147,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__authenticateSession(struct soap *soa
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__authenticateSessionResponse_.soap_put(soap, "ns1:authenticateSessionResponse", "")
+	 || api__authenticateSessionResponse_.soap_put(soap, "api:authenticateSessionResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -155,30 +155,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__authenticateSession(struct soap *soa
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__deleteExecution(struct soap *soap)
-{	struct __ns1__deleteExecution soap_tmp___ns1__deleteExecution;
-	ns1__deleteExecutionResponse ns1__deleteExecutionResponse_;
-	ns1__deleteExecutionResponse_.soap_default(soap);
-	soap_default___ns1__deleteExecution(soap, &soap_tmp___ns1__deleteExecution);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__deleteExecution(struct soap *soap)
+{	struct __api__deleteExecution soap_tmp___api__deleteExecution;
+	api__deleteExecutionResponse api__deleteExecutionResponse_;
+	api__deleteExecutionResponse_.soap_default(soap);
+	soap_default___api__deleteExecution(soap, &soap_tmp___api__deleteExecution);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__deleteExecution(soap, &soap_tmp___ns1__deleteExecution, "-ns1:deleteExecution", NULL))
+	if (!soap_get___api__deleteExecution(soap, &soap_tmp___api__deleteExecution, "-api:deleteExecution", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__deleteExecution(soap, soap_tmp___ns1__deleteExecution.ns1__deleteExecution_, &ns1__deleteExecutionResponse_);
+	soap->error = __api__deleteExecution(soap, soap_tmp___api__deleteExecution.api__deleteExecution_, &api__deleteExecutionResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__deleteExecutionResponse_.soap_serialize(soap);
+	api__deleteExecutionResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__deleteExecutionResponse_.soap_put(soap, "ns1:deleteExecutionResponse", "")
+		 || api__deleteExecutionResponse_.soap_put(soap, "api:deleteExecutionResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -188,7 +188,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__deleteExecution(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__deleteExecutionResponse_.soap_put(soap, "ns1:deleteExecutionResponse", "")
+	 || api__deleteExecutionResponse_.soap_put(soap, "api:deleteExecutionResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -196,30 +196,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__deleteExecution(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getPipeline(struct soap *soap)
-{	struct __ns1__getPipeline soap_tmp___ns1__getPipeline;
-	ns1__getPipelineResponse ns1__getPipelineResponse_;
-	ns1__getPipelineResponse_.soap_default(soap);
-	soap_default___ns1__getPipeline(soap, &soap_tmp___ns1__getPipeline);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getPipeline(struct soap *soap)
+{	struct __api__getPipeline soap_tmp___api__getPipeline;
+	api__getPipelineResponse api__getPipelineResponse_;
+	api__getPipelineResponse_.soap_default(soap);
+	soap_default___api__getPipeline(soap, &soap_tmp___api__getPipeline);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__getPipeline(soap, &soap_tmp___ns1__getPipeline, "-ns1:getPipeline", NULL))
+	if (!soap_get___api__getPipeline(soap, &soap_tmp___api__getPipeline, "-api:getPipeline", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__getPipeline(soap, soap_tmp___ns1__getPipeline.ns1__getPipeline_, &ns1__getPipelineResponse_);
+	soap->error = __api__getPipeline(soap, soap_tmp___api__getPipeline.api__getPipeline_, &api__getPipelineResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__getPipelineResponse_.soap_serialize(soap);
+	api__getPipelineResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__getPipelineResponse_.soap_put(soap, "ns1:getPipelineResponse", "")
+		 || api__getPipelineResponse_.soap_put(soap, "api:getPipelineResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -229,7 +229,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getPipeline(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__getPipelineResponse_.soap_put(soap, "ns1:getPipelineResponse", "")
+	 || api__getPipelineResponse_.soap_put(soap, "api:getPipelineResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -237,30 +237,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getPipeline(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__authenticateHTTP(struct soap *soap)
-{	struct __ns1__authenticateHTTP soap_tmp___ns1__authenticateHTTP;
-	ns1__authenticateHTTPResponse ns1__authenticateHTTPResponse_;
-	ns1__authenticateHTTPResponse_.soap_default(soap);
-	soap_default___ns1__authenticateHTTP(soap, &soap_tmp___ns1__authenticateHTTP);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__authenticateHTTP(struct soap *soap)
+{	struct __api__authenticateHTTP soap_tmp___api__authenticateHTTP;
+	api__authenticateHTTPResponse api__authenticateHTTPResponse_;
+	api__authenticateHTTPResponse_.soap_default(soap);
+	soap_default___api__authenticateHTTP(soap, &soap_tmp___api__authenticateHTTP);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__authenticateHTTP(soap, &soap_tmp___ns1__authenticateHTTP, "-ns1:authenticateHTTP", NULL))
+	if (!soap_get___api__authenticateHTTP(soap, &soap_tmp___api__authenticateHTTP, "-api:authenticateHTTP", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__authenticateHTTP(soap, soap_tmp___ns1__authenticateHTTP.ns1__authenticateHTTP_, &ns1__authenticateHTTPResponse_);
+	soap->error = __api__authenticateHTTP(soap, soap_tmp___api__authenticateHTTP.api__authenticateHTTP_, &api__authenticateHTTPResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__authenticateHTTPResponse_.soap_serialize(soap);
+	api__authenticateHTTPResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__authenticateHTTPResponse_.soap_put(soap, "ns1:authenticateHTTPResponse", "")
+		 || api__authenticateHTTPResponse_.soap_put(soap, "api:authenticateHTTPResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -270,7 +270,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__authenticateHTTP(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__authenticateHTTPResponse_.soap_put(soap, "ns1:authenticateHTTPResponse", "")
+	 || api__authenticateHTTPResponse_.soap_put(soap, "api:authenticateHTTPResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -278,30 +278,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__authenticateHTTP(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__logout(struct soap *soap)
-{	struct __ns1__logout soap_tmp___ns1__logout;
-	ns1__logoutResponse ns1__logoutResponse_;
-	ns1__logoutResponse_.soap_default(soap);
-	soap_default___ns1__logout(soap, &soap_tmp___ns1__logout);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__logout(struct soap *soap)
+{	struct __api__logout soap_tmp___api__logout;
+	api__logoutResponse api__logoutResponse_;
+	api__logoutResponse_.soap_default(soap);
+	soap_default___api__logout(soap, &soap_tmp___api__logout);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__logout(soap, &soap_tmp___ns1__logout, "-ns1:logout", NULL))
+	if (!soap_get___api__logout(soap, &soap_tmp___api__logout, "-api:logout", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__logout(soap, soap_tmp___ns1__logout.ns1__logout_, &ns1__logoutResponse_);
+	soap->error = __api__logout(soap, soap_tmp___api__logout.api__logout_, &api__logoutResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__logoutResponse_.soap_serialize(soap);
+	api__logoutResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__logoutResponse_.soap_put(soap, "ns1:logoutResponse", "")
+		 || api__logoutResponse_.soap_put(soap, "api:logoutResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -311,7 +311,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__logout(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__logoutResponse_.soap_put(soap, "ns1:logoutResponse", "")
+	 || api__logoutResponse_.soap_put(soap, "api:logoutResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -319,30 +319,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__logout(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__updateExecution(struct soap *soap)
-{	struct __ns1__updateExecution soap_tmp___ns1__updateExecution;
-	ns1__updateExecutionResponse ns1__updateExecutionResponse_;
-	ns1__updateExecutionResponse_.soap_default(soap);
-	soap_default___ns1__updateExecution(soap, &soap_tmp___ns1__updateExecution);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__updateExecution(struct soap *soap)
+{	struct __api__updateExecution soap_tmp___api__updateExecution;
+	api__updateExecutionResponse api__updateExecutionResponse_;
+	api__updateExecutionResponse_.soap_default(soap);
+	soap_default___api__updateExecution(soap, &soap_tmp___api__updateExecution);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__updateExecution(soap, &soap_tmp___ns1__updateExecution, "-ns1:updateExecution", NULL))
+	if (!soap_get___api__updateExecution(soap, &soap_tmp___api__updateExecution, "-api:updateExecution", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__updateExecution(soap, soap_tmp___ns1__updateExecution.ns1__updateExecution_, &ns1__updateExecutionResponse_);
+	soap->error = __api__updateExecution(soap, soap_tmp___api__updateExecution.api__updateExecution_, &api__updateExecutionResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__updateExecutionResponse_.soap_serialize(soap);
+	api__updateExecutionResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__updateExecutionResponse_.soap_put(soap, "ns1:updateExecutionResponse", "")
+		 || api__updateExecutionResponse_.soap_put(soap, "api:updateExecutionResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -352,7 +352,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__updateExecution(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__updateExecutionResponse_.soap_put(soap, "ns1:updateExecutionResponse", "")
+	 || api__updateExecutionResponse_.soap_put(soap, "api:updateExecutionResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -360,30 +360,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__updateExecution(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getGlobalProperties(struct soap *soap)
-{	struct __ns1__getGlobalProperties soap_tmp___ns1__getGlobalProperties;
-	ns1__getGlobalPropertiesResponse ns1__getGlobalPropertiesResponse_;
-	ns1__getGlobalPropertiesResponse_.soap_default(soap);
-	soap_default___ns1__getGlobalProperties(soap, &soap_tmp___ns1__getGlobalProperties);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getGlobalProperties(struct soap *soap)
+{	struct __api__getGlobalProperties soap_tmp___api__getGlobalProperties;
+	api__getGlobalPropertiesResponse api__getGlobalPropertiesResponse_;
+	api__getGlobalPropertiesResponse_.soap_default(soap);
+	soap_default___api__getGlobalProperties(soap, &soap_tmp___api__getGlobalProperties);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__getGlobalProperties(soap, &soap_tmp___ns1__getGlobalProperties, "-ns1:getGlobalProperties", NULL))
+	if (!soap_get___api__getGlobalProperties(soap, &soap_tmp___api__getGlobalProperties, "-api:getGlobalProperties", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__getGlobalProperties(soap, soap_tmp___ns1__getGlobalProperties.ns1__getGlobalProperties_, &ns1__getGlobalPropertiesResponse_);
+	soap->error = __api__getGlobalProperties(soap, soap_tmp___api__getGlobalProperties.api__getGlobalProperties_, &api__getGlobalPropertiesResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__getGlobalPropertiesResponse_.soap_serialize(soap);
+	api__getGlobalPropertiesResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__getGlobalPropertiesResponse_.soap_put(soap, "ns1:getGlobalPropertiesResponse", "")
+		 || api__getGlobalPropertiesResponse_.soap_put(soap, "api:getGlobalPropertiesResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -393,7 +393,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getGlobalProperties(struct soap *soa
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__getGlobalPropertiesResponse_.soap_put(soap, "ns1:getGlobalPropertiesResponse", "")
+	 || api__getGlobalPropertiesResponse_.soap_put(soap, "api:getGlobalPropertiesResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -401,30 +401,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getGlobalProperties(struct soap *soa
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__initExecution(struct soap *soap)
-{	struct __ns1__initExecution soap_tmp___ns1__initExecution;
-	ns1__initExecutionResponse ns1__initExecutionResponse_;
-	ns1__initExecutionResponse_.soap_default(soap);
-	soap_default___ns1__initExecution(soap, &soap_tmp___ns1__initExecution);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__initExecution(struct soap *soap)
+{	struct __api__initExecution soap_tmp___api__initExecution;
+	api__initExecutionResponse api__initExecutionResponse_;
+	api__initExecutionResponse_.soap_default(soap);
+	soap_default___api__initExecution(soap, &soap_tmp___api__initExecution);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__initExecution(soap, &soap_tmp___ns1__initExecution, "-ns1:initExecution", NULL))
+	if (!soap_get___api__initExecution(soap, &soap_tmp___api__initExecution, "-api:initExecution", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__initExecution(soap, soap_tmp___ns1__initExecution.ns1__initExecution_, &ns1__initExecutionResponse_);
+	soap->error = __api__initExecution(soap, soap_tmp___api__initExecution.api__initExecution_, &api__initExecutionResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__initExecutionResponse_.soap_serialize(soap);
+	api__initExecutionResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__initExecutionResponse_.soap_put(soap, "ns1:initExecutionResponse", "")
+		 || api__initExecutionResponse_.soap_put(soap, "api:initExecutionResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -434,7 +434,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__initExecution(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__initExecutionResponse_.soap_put(soap, "ns1:initExecutionResponse", "")
+	 || api__initExecutionResponse_.soap_put(soap, "api:initExecutionResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -442,30 +442,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__initExecution(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getStdOut(struct soap *soap)
-{	struct __ns1__getStdOut soap_tmp___ns1__getStdOut;
-	ns1__getStdOutResponse ns1__getStdOutResponse_;
-	ns1__getStdOutResponse_.soap_default(soap);
-	soap_default___ns1__getStdOut(soap, &soap_tmp___ns1__getStdOut);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getStdOut(struct soap *soap)
+{	struct __api__getStdOut soap_tmp___api__getStdOut;
+	api__getStdOutResponse api__getStdOutResponse_;
+	api__getStdOutResponse_.soap_default(soap);
+	soap_default___api__getStdOut(soap, &soap_tmp___api__getStdOut);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__getStdOut(soap, &soap_tmp___ns1__getStdOut, "-ns1:getStdOut", NULL))
+	if (!soap_get___api__getStdOut(soap, &soap_tmp___api__getStdOut, "-api:getStdOut", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__getStdOut(soap, soap_tmp___ns1__getStdOut.ns1__getStdOut_, &ns1__getStdOutResponse_);
+	soap->error = __api__getStdOut(soap, soap_tmp___api__getStdOut.api__getStdOut_, &api__getStdOutResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__getStdOutResponse_.soap_serialize(soap);
+	api__getStdOutResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__getStdOutResponse_.soap_put(soap, "ns1:getStdOutResponse", "")
+		 || api__getStdOutResponse_.soap_put(soap, "api:getStdOutResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -475,7 +475,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getStdOut(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__getStdOutResponse_.soap_put(soap, "ns1:getStdOutResponse", "")
+	 || api__getStdOutResponse_.soap_put(soap, "api:getStdOutResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -483,30 +483,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getStdOut(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getStdErr(struct soap *soap)
-{	struct __ns1__getStdErr soap_tmp___ns1__getStdErr;
-	ns1__getStdErrResponse ns1__getStdErrResponse_;
-	ns1__getStdErrResponse_.soap_default(soap);
-	soap_default___ns1__getStdErr(soap, &soap_tmp___ns1__getStdErr);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getStdErr(struct soap *soap)
+{	struct __api__getStdErr soap_tmp___api__getStdErr;
+	api__getStdErrResponse api__getStdErrResponse_;
+	api__getStdErrResponse_.soap_default(soap);
+	soap_default___api__getStdErr(soap, &soap_tmp___api__getStdErr);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__getStdErr(soap, &soap_tmp___ns1__getStdErr, "-ns1:getStdErr", NULL))
+	if (!soap_get___api__getStdErr(soap, &soap_tmp___api__getStdErr, "-api:getStdErr", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__getStdErr(soap, soap_tmp___ns1__getStdErr.ns1__getStdErr_, &ns1__getStdErrResponse_);
+	soap->error = __api__getStdErr(soap, soap_tmp___api__getStdErr.api__getStdErr_, &api__getStdErrResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__getStdErrResponse_.soap_serialize(soap);
+	api__getStdErrResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__getStdErrResponse_.soap_put(soap, "ns1:getStdErrResponse", "")
+		 || api__getStdErrResponse_.soap_put(soap, "api:getStdErrResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -516,7 +516,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getStdErr(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__getStdErrResponse_.soap_put(soap, "ns1:getStdErrResponse", "")
+	 || api__getStdErrResponse_.soap_put(soap, "api:getStdErrResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -524,30 +524,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getStdErr(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getExecutionResults(struct soap *soap)
-{	struct __ns1__getExecutionResults soap_tmp___ns1__getExecutionResults;
-	ns1__getExecutionResultsResponse ns1__getExecutionResultsResponse_;
-	ns1__getExecutionResultsResponse_.soap_default(soap);
-	soap_default___ns1__getExecutionResults(soap, &soap_tmp___ns1__getExecutionResults);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getExecutionResults(struct soap *soap)
+{	struct __api__getExecutionResults soap_tmp___api__getExecutionResults;
+	api__getExecutionResultsResponse api__getExecutionResultsResponse_;
+	api__getExecutionResultsResponse_.soap_default(soap);
+	soap_default___api__getExecutionResults(soap, &soap_tmp___api__getExecutionResults);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__getExecutionResults(soap, &soap_tmp___ns1__getExecutionResults, "-ns1:getExecutionResults", NULL))
+	if (!soap_get___api__getExecutionResults(soap, &soap_tmp___api__getExecutionResults, "-api:getExecutionResults", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__getExecutionResults(soap, soap_tmp___ns1__getExecutionResults.ns1__getExecutionResults_, &ns1__getExecutionResultsResponse_);
+	soap->error = __api__getExecutionResults(soap, soap_tmp___api__getExecutionResults.api__getExecutionResults_, &api__getExecutionResultsResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__getExecutionResultsResponse_.soap_serialize(soap);
+	api__getExecutionResultsResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__getExecutionResultsResponse_.soap_put(soap, "ns1:getExecutionResultsResponse", "")
+		 || api__getExecutionResultsResponse_.soap_put(soap, "api:getExecutionResultsResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -557,7 +557,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getExecutionResults(struct soap *soa
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__getExecutionResultsResponse_.soap_put(soap, "ns1:getExecutionResultsResponse", "")
+	 || api__getExecutionResultsResponse_.soap_put(soap, "api:getExecutionResultsResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -565,30 +565,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getExecutionResults(struct soap *soa
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__killExecution(struct soap *soap)
-{	struct __ns1__killExecution soap_tmp___ns1__killExecution;
-	ns1__killExecutionResponse ns1__killExecutionResponse_;
-	ns1__killExecutionResponse_.soap_default(soap);
-	soap_default___ns1__killExecution(soap, &soap_tmp___ns1__killExecution);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__killExecution(struct soap *soap)
+{	struct __api__killExecution soap_tmp___api__killExecution;
+	api__killExecutionResponse api__killExecutionResponse_;
+	api__killExecutionResponse_.soap_default(soap);
+	soap_default___api__killExecution(soap, &soap_tmp___api__killExecution);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__killExecution(soap, &soap_tmp___ns1__killExecution, "-ns1:killExecution", NULL))
+	if (!soap_get___api__killExecution(soap, &soap_tmp___api__killExecution, "-api:killExecution", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__killExecution(soap, soap_tmp___ns1__killExecution.ns1__killExecution_, &ns1__killExecutionResponse_);
+	soap->error = __api__killExecution(soap, soap_tmp___api__killExecution.api__killExecution_, &api__killExecutionResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__killExecutionResponse_.soap_serialize(soap);
+	api__killExecutionResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__killExecutionResponse_.soap_put(soap, "ns1:killExecutionResponse", "")
+		 || api__killExecutionResponse_.soap_put(soap, "api:killExecutionResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -598,7 +598,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__killExecution(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__killExecutionResponse_.soap_put(soap, "ns1:killExecutionResponse", "")
+	 || api__killExecutionResponse_.soap_put(soap, "api:killExecutionResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -606,30 +606,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__killExecution(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getExecution(struct soap *soap)
-{	struct __ns1__getExecution soap_tmp___ns1__getExecution;
-	ns1__getExecutionResponse ns1__getExecutionResponse_;
-	ns1__getExecutionResponse_.soap_default(soap);
-	soap_default___ns1__getExecution(soap, &soap_tmp___ns1__getExecution);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getExecution(struct soap *soap)
+{	struct __api__getExecution soap_tmp___api__getExecution;
+	api__getExecutionResponse api__getExecutionResponse_;
+	api__getExecutionResponse_.soap_default(soap);
+	soap_default___api__getExecution(soap, &soap_tmp___api__getExecution);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__getExecution(soap, &soap_tmp___ns1__getExecution, "-ns1:getExecution", NULL))
+	if (!soap_get___api__getExecution(soap, &soap_tmp___api__getExecution, "-api:getExecution", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__getExecution(soap, soap_tmp___ns1__getExecution.ns1__getExecution_, &ns1__getExecutionResponse_);
+	soap->error = __api__getExecution(soap, soap_tmp___api__getExecution.api__getExecution_, &api__getExecutionResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__getExecutionResponse_.soap_serialize(soap);
+	api__getExecutionResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__getExecutionResponse_.soap_put(soap, "ns1:getExecutionResponse", "")
+		 || api__getExecutionResponse_.soap_put(soap, "api:getExecutionResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -639,7 +639,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getExecution(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__getExecutionResponse_.soap_put(soap, "ns1:getExecutionResponse", "")
+	 || api__getExecutionResponse_.soap_put(soap, "api:getExecutionResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -647,30 +647,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getExecution(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__playExecution(struct soap *soap)
-{	struct __ns1__playExecution soap_tmp___ns1__playExecution;
-	ns1__playExecutionResponse ns1__playExecutionResponse_;
-	ns1__playExecutionResponse_.soap_default(soap);
-	soap_default___ns1__playExecution(soap, &soap_tmp___ns1__playExecution);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__playExecution(struct soap *soap)
+{	struct __api__playExecution soap_tmp___api__playExecution;
+	api__playExecutionResponse api__playExecutionResponse_;
+	api__playExecutionResponse_.soap_default(soap);
+	soap_default___api__playExecution(soap, &soap_tmp___api__playExecution);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__playExecution(soap, &soap_tmp___ns1__playExecution, "-ns1:playExecution", NULL))
+	if (!soap_get___api__playExecution(soap, &soap_tmp___api__playExecution, "-api:playExecution", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__playExecution(soap, soap_tmp___ns1__playExecution.ns1__playExecution_, &ns1__playExecutionResponse_);
+	soap->error = __api__playExecution(soap, soap_tmp___api__playExecution.api__playExecution_, &api__playExecutionResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__playExecutionResponse_.soap_serialize(soap);
+	api__playExecutionResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__playExecutionResponse_.soap_put(soap, "ns1:playExecutionResponse", "")
+		 || api__playExecutionResponse_.soap_put(soap, "api:playExecutionResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -680,7 +680,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__playExecution(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__playExecutionResponse_.soap_put(soap, "ns1:playExecutionResponse", "")
+	 || api__playExecutionResponse_.soap_put(soap, "api:playExecutionResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -688,30 +688,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__playExecution(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__listPipelines(struct soap *soap)
-{	struct __ns1__listPipelines soap_tmp___ns1__listPipelines;
-	ns1__listPipelinesResponse ns1__listPipelinesResponse_;
-	ns1__listPipelinesResponse_.soap_default(soap);
-	soap_default___ns1__listPipelines(soap, &soap_tmp___ns1__listPipelines);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__listPipelines(struct soap *soap)
+{	struct __api__listPipelines soap_tmp___api__listPipelines;
+	api__listPipelinesResponse api__listPipelinesResponse_;
+	api__listPipelinesResponse_.soap_default(soap);
+	soap_default___api__listPipelines(soap, &soap_tmp___api__listPipelines);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__listPipelines(soap, &soap_tmp___ns1__listPipelines, "-ns1:listPipelines", NULL))
+	if (!soap_get___api__listPipelines(soap, &soap_tmp___api__listPipelines, "-api:listPipelines", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__listPipelines(soap, soap_tmp___ns1__listPipelines.ns1__listPipelines_, &ns1__listPipelinesResponse_);
+	soap->error = __api__listPipelines(soap, soap_tmp___api__listPipelines.api__listPipelines_, &api__listPipelinesResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__listPipelinesResponse_.soap_serialize(soap);
+	api__listPipelinesResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__listPipelinesResponse_.soap_put(soap, "ns1:listPipelinesResponse", "")
+		 || api__listPipelinesResponse_.soap_put(soap, "api:listPipelinesResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -721,7 +721,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__listPipelines(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__listPipelinesResponse_.soap_put(soap, "ns1:listPipelinesResponse", "")
+	 || api__listPipelinesResponse_.soap_put(soap, "api:listPipelinesResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
@@ -729,30 +729,30 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__listPipelines(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__listExecutions(struct soap *soap)
-{	struct __ns1__listExecutions soap_tmp___ns1__listExecutions;
-	ns1__listExecutionsResponse ns1__listExecutionsResponse_;
-	ns1__listExecutionsResponse_.soap_default(soap);
-	soap_default___ns1__listExecutions(soap, &soap_tmp___ns1__listExecutions);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__listExecutions(struct soap *soap)
+{	struct __api__listExecutions soap_tmp___api__listExecutions;
+	api__listExecutionsResponse api__listExecutionsResponse_;
+	api__listExecutionsResponse_.soap_default(soap);
+	soap_default___api__listExecutions(soap, &soap_tmp___api__listExecutions);
 	soap->encodingStyle = NULL;
-	if (!soap_get___ns1__listExecutions(soap, &soap_tmp___ns1__listExecutions, "-ns1:listExecutions", NULL))
+	if (!soap_get___api__listExecutions(soap, &soap_tmp___api__listExecutions, "-api:listExecutions", NULL))
 		return soap->error;
 	if (soap_body_end_in(soap)
 	 || soap_envelope_end_in(soap)
 	 || soap_end_recv(soap))
 		return soap->error;
-	soap->error = __ns1__listExecutions(soap, soap_tmp___ns1__listExecutions.ns1__listExecutions_, &ns1__listExecutionsResponse_);
+	soap->error = __api__listExecutions(soap, soap_tmp___api__listExecutions.api__listExecutions_, &api__listExecutionsResponse_);
 	if (soap->error)
 		return soap->error;
 	soap_serializeheader(soap);
-	ns1__listExecutionsResponse_.soap_serialize(soap);
+	api__listExecutionsResponse_.soap_serialize(soap);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || ns1__listExecutionsResponse_.soap_put(soap, "ns1:listExecutionsResponse", "")
+		 || api__listExecutionsResponse_.soap_put(soap, "api:listExecutionsResponse", "")
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -762,7 +762,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__listExecutions(struct soap *soap)
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || ns1__listExecutionsResponse_.soap_put(soap, "ns1:listExecutionsResponse", "")
+	 || api__listExecutionsResponse_.soap_put(soap, "api:listExecutionsResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))

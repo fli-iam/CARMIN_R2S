@@ -24,7 +24,7 @@ class CarminSoapBindingService : public soap
 	{"SOAP-ENC", "http://schemas.xmlsoap.org/soap/encoding/", "http://www.w3.org/*/soap-encoding", NULL},
 	{"xsi", "http://www.w3.org/2001/XMLSchema-instance", "http://www.w3.org/*/XMLSchema-instance", NULL},
 	{"xsd", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/*/XMLSchema", NULL},
-	{"ns1", "http://france-life-imaging.fr/api", NULL, NULL},
+	{"api", "http://france-life-imaging.fr/api", NULL, NULL},
 	{NULL, NULL, NULL, NULL}
 };
 
@@ -45,36 +45,36 @@ class CarminSoapBindingService : public soap
 \******************************************************************************/
 
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__authenticateSession(struct soap*, ns1__authenticateSession *ns1__authenticateSession_, ns1__authenticateSessionResponse *ns1__authenticateSessionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__authenticateSession(struct soap*, api__authenticateSession *api__authenticateSession_, api__authenticateSessionResponse *api__authenticateSessionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__deleteExecution(struct soap*, ns1__deleteExecution *ns1__deleteExecution_, ns1__deleteExecutionResponse *ns1__deleteExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__deleteExecution(struct soap*, api__deleteExecution *api__deleteExecution_, api__deleteExecutionResponse *api__deleteExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getPipeline(struct soap*, ns1__getPipeline *ns1__getPipeline_, ns1__getPipelineResponse *ns1__getPipelineResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getPipeline(struct soap*, api__getPipeline *api__getPipeline_, api__getPipelineResponse *api__getPipelineResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__authenticateHTTP(struct soap*, ns1__authenticateHTTP *ns1__authenticateHTTP_, ns1__authenticateHTTPResponse *ns1__authenticateHTTPResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__authenticateHTTP(struct soap*, api__authenticateHTTP *api__authenticateHTTP_, api__authenticateHTTPResponse *api__authenticateHTTPResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__logout(struct soap*, ns1__logout *ns1__logout_, ns1__logoutResponse *ns1__logoutResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__logout(struct soap*, api__logout *api__logout_, api__logoutResponse *api__logoutResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__updateExecution(struct soap*, ns1__updateExecution *ns1__updateExecution_, ns1__updateExecutionResponse *ns1__updateExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__updateExecution(struct soap*, api__updateExecution *api__updateExecution_, api__updateExecutionResponse *api__updateExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getGlobalProperties(struct soap*, ns1__getGlobalProperties *ns1__getGlobalProperties_, ns1__getGlobalPropertiesResponse *ns1__getGlobalPropertiesResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getGlobalProperties(struct soap*, api__getGlobalProperties *api__getGlobalProperties_, api__getGlobalPropertiesResponse *api__getGlobalPropertiesResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__initExecution(struct soap*, ns1__initExecution *ns1__initExecution_, ns1__initExecutionResponse *ns1__initExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__initExecution(struct soap*, api__initExecution *api__initExecution_, api__initExecutionResponse *api__initExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getStdOut(struct soap*, ns1__getStdOut *ns1__getStdOut_, ns1__getStdOutResponse *ns1__getStdOutResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getStdOut(struct soap*, api__getStdOut *api__getStdOut_, api__getStdOutResponse *api__getStdOutResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getStdErr(struct soap*, ns1__getStdErr *ns1__getStdErr_, ns1__getStdErrResponse *ns1__getStdErrResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getStdErr(struct soap*, api__getStdErr *api__getStdErr_, api__getStdErrResponse *api__getStdErrResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getExecutionResults(struct soap*, ns1__getExecutionResults *ns1__getExecutionResults_, ns1__getExecutionResultsResponse *ns1__getExecutionResultsResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getExecutionResults(struct soap*, api__getExecutionResults *api__getExecutionResults_, api__getExecutionResultsResponse *api__getExecutionResultsResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__killExecution(struct soap*, ns1__killExecution *ns1__killExecution_, ns1__killExecutionResponse *ns1__killExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__killExecution(struct soap*, api__killExecution *api__killExecution_, api__killExecutionResponse *api__killExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getExecution(struct soap*, ns1__getExecution *ns1__getExecution_, ns1__getExecutionResponse *ns1__getExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getExecution(struct soap*, api__getExecution *api__getExecution_, api__getExecutionResponse *api__getExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__playExecution(struct soap*, ns1__playExecution *ns1__playExecution_, ns1__playExecutionResponse *ns1__playExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__playExecution(struct soap*, api__playExecution *api__playExecution_, api__playExecutionResponse *api__playExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__listPipelines(struct soap*, ns1__listPipelines *ns1__listPipelines_, ns1__listPipelinesResponse *ns1__listPipelinesResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__listPipelines(struct soap*, api__listPipelines *api__listPipelines_, api__listPipelinesResponse *api__listPipelinesResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__listExecutions(struct soap*, ns1__listExecutions *ns1__listExecutions_, ns1__listExecutionsResponse *ns1__listExecutionsResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__listExecutions(struct soap*, api__listExecutions *api__listExecutions_, api__listExecutionsResponse *api__listExecutionsResponse_);
 
 #endif

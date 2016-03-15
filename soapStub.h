@@ -8,7 +8,7 @@
 #ifndef soapStub_H
 #define soapStub_H
 #include <vector>
-#define SOAP_NAMESPACE_OF_ns1	"http://france-life-imaging.fr/api"
+#define SOAP_NAMESPACE_OF_api	"http://france-life-imaging.fr/api"
 #include "stdsoap2.h"
 
 /******************************************************************************\
@@ -18,22 +18,22 @@
 \******************************************************************************/
 
 
-#ifndef SOAP_TYPE_ns1__ParameterType
-#define SOAP_TYPE_ns1__ParameterType (54)
-/* ns1:ParameterType */
-enum ns1__ParameterType {ns1__ParameterType__File = 0, ns1__ParameterType__String = 1, ns1__ParameterType__Boolean = 2, ns1__ParameterType__Int64 = 3, ns1__ParameterType__Double = 4, ns1__ParameterType__List = 5};
+#ifndef SOAP_TYPE_api__ParameterType
+#define SOAP_TYPE_api__ParameterType (54)
+/* api:ParameterType */
+enum api__ParameterType {api__ParameterType__File = 0, api__ParameterType__String = 1, api__ParameterType__Boolean = 2, api__ParameterType__Int64 = 3, api__ParameterType__Double = 4, api__ParameterType__List = 5};
 #endif
 
-#ifndef SOAP_TYPE_ns1__ExecutionStatus
-#define SOAP_TYPE_ns1__ExecutionStatus (55)
-/* ns1:ExecutionStatus */
-enum ns1__ExecutionStatus {ns1__ExecutionStatus__Initializing = 0, ns1__ExecutionStatus__Ready = 1, ns1__ExecutionStatus__Running = 2, ns1__ExecutionStatus__Finished = 3, ns1__ExecutionStatus__InitializationFailed = 4, ns1__ExecutionStatus__ExecutionFailed = 5, ns1__ExecutionStatus__Unknown = 6, ns1__ExecutionStatus__Killed = 7};
+#ifndef SOAP_TYPE_api__ExecutionStatus
+#define SOAP_TYPE_api__ExecutionStatus (55)
+/* api:ExecutionStatus */
+enum api__ExecutionStatus {api__ExecutionStatus__Initializing = 0, api__ExecutionStatus__Ready = 1, api__ExecutionStatus__Running = 2, api__ExecutionStatus__Finished = 3, api__ExecutionStatus__InitializationFailed = 4, api__ExecutionStatus__ExecutionFailed = 5, api__ExecutionStatus__Unknown = 6, api__ExecutionStatus__Killed = 7};
 #endif
 
-#ifndef SOAP_TYPE_ns1__Module
-#define SOAP_TYPE_ns1__Module (56)
-/* ns1:Module */
-enum ns1__Module {ns1__Module__Processing = 0, ns1__Module__Data = 1, ns1__Module__Management = 2, ns1__Module__Commercial = 3};
+#ifndef SOAP_TYPE_api__Module
+#define SOAP_TYPE_api__Module (56)
+/* api:Module */
+enum api__Module {api__Module__Processing = 0, api__Module__Data = 1, api__Module__Management = 2, api__Module__Commercial = 3};
 #endif
 
 /******************************************************************************\
@@ -58,1052 +58,1052 @@ enum ns1__Module {ns1__Module__Processing = 0, ns1__Module__Data = 1, ns1__Modul
 
 #endif
 
-#ifndef SOAP_TYPE_ns1__authenticateSession
-#define SOAP_TYPE_ns1__authenticateSession (8)
-/* ns1:authenticateSession */
-class SOAP_CMAC ns1__authenticateSession
+#ifndef SOAP_TYPE_api__authenticateSession
+#define SOAP_TYPE_api__authenticateSession (8)
+/* api:authenticateSession */
+class SOAP_CMAC api__authenticateSession
 {
 public:
 	std::string userName;	/* required element of type xsd:string */
 	std::string password;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 8; } /* = unique id SOAP_TYPE_ns1__authenticateSession */
+	virtual int soap_type() const { return 8; } /* = unique id SOAP_TYPE_api__authenticateSession */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__authenticateSession(): soap(NULL) { ns1__authenticateSession::soap_default(NULL); }
-	virtual ~ns1__authenticateSession() { }
+	         api__authenticateSession(): soap(NULL) { api__authenticateSession::soap_default(NULL); }
+	virtual ~api__authenticateSession() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__authenticateSessionResponse
-#define SOAP_TYPE_ns1__authenticateSessionResponse (9)
-/* ns1:authenticateSessionResponse */
-class SOAP_CMAC ns1__authenticateSessionResponse
+#ifndef SOAP_TYPE_api__authenticateSessionResponse
+#define SOAP_TYPE_api__authenticateSessionResponse (9)
+/* api:authenticateSessionResponse */
+class SOAP_CMAC api__authenticateSessionResponse
 {
 public:
-	class ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	class api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 9; } /* = unique id SOAP_TYPE_ns1__authenticateSessionResponse */
+	virtual int soap_type() const { return 9; } /* = unique id SOAP_TYPE_api__authenticateSessionResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__authenticateSessionResponse(): return_(NULL), soap(NULL) { ns1__authenticateSessionResponse::soap_default(NULL); }
-	virtual ~ns1__authenticateSessionResponse() { }
+	         api__authenticateSessionResponse(): return_(NULL), soap(NULL) { api__authenticateSessionResponse::soap_default(NULL); }
+	virtual ~api__authenticateSessionResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE__ns1__union_Response
-#define SOAP_TYPE__ns1__union_Response (81)
+#ifndef SOAP_TYPE__api__union_Response
+#define SOAP_TYPE__api__union_Response (81)
 /* xsd:choice */
-union _ns1__union_Response
+union _api__union_Response
 {
-#define SOAP_UNION__ns1__union_Response_returnedValuePipeline	(1)
-	std::vector<class ns1__Pipeline * >*returnedValuePipeline;
-#define SOAP_UNION__ns1__union_Response_returnedValueExecution	(2)
-	class ns1__Execution *returnedValueExecution;
-#define SOAP_UNION__ns1__union_Response_returnedValueGlobalProp	(3)
-	class ns1__GlobalProperties *returnedValueGlobalProp;
-#define SOAP_UNION__ns1__union_Response_returnedValueStr	(4)
+#define SOAP_UNION__api__union_Response_returnedValuePipeline	(1)
+	std::vector<class api__Pipeline * >*returnedValuePipeline;
+#define SOAP_UNION__api__union_Response_returnedValueExecution	(2)
+	class api__Execution *returnedValueExecution;
+#define SOAP_UNION__api__union_Response_returnedValueGlobalProp	(3)
+	class api__GlobalProperties *returnedValueGlobalProp;
+#define SOAP_UNION__api__union_Response_returnedValueStr	(4)
 	std::vector<std::string >*returnedValueStr;
-#define SOAP_UNION__ns1__union_Response_returnedValueListStrings	(5)
-	std::vector<class ns1__ArrayOfStrings * >*returnedValueListStrings;
-#define SOAP_UNION__ns1__union_Response_returnedValueListExecutions	(6)
-	std::vector<class ns1__ArrayOfExecutions * >*returnedValueListExecutions;
-#define SOAP_UNION__ns1__union_Response_returnedValueListPipelines	(7)
-	std::vector<class ns1__ArrayOfPipelines * >*returnedValueListPipelines;
-#define SOAP_UNION__ns1__union_Response_returnedValueStatus	(8)
-	enum ns1__ExecutionStatus *returnedValueStatus;
-#define SOAP_UNION__ns1__union_Response_returnedValuePairKey	(9)
-	std::vector<class ns1__PipelineKeyBooleanValuePair * >*returnedValuePairKey;
+#define SOAP_UNION__api__union_Response_returnedValueListStrings	(5)
+	std::vector<class api__ArrayOfStrings * >*returnedValueListStrings;
+#define SOAP_UNION__api__union_Response_returnedValueListExecutions	(6)
+	std::vector<class api__ArrayOfExecutions * >*returnedValueListExecutions;
+#define SOAP_UNION__api__union_Response_returnedValueListPipelines	(7)
+	std::vector<class api__ArrayOfPipelines * >*returnedValueListPipelines;
+#define SOAP_UNION__api__union_Response_returnedValueStatus	(8)
+	enum api__ExecutionStatus *returnedValueStatus;
+#define SOAP_UNION__api__union_Response_returnedValuePairKey	(9)
+	std::vector<class api__PipelineKeyBooleanValuePair * >*returnedValuePairKey;
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Response
-#define SOAP_TYPE_ns1__Response (10)
-/* ns1:Response */
-class SOAP_CMAC ns1__Response
+#ifndef SOAP_TYPE_api__Response
+#define SOAP_TYPE_api__Response (10)
+/* api:Response */
+class SOAP_CMAC api__Response
 {
 public:
 	int statusCode;	/* required element of type xsd:int */
 	std::string *errorMessage;	/* optional element of type xsd:string */
 	int __union_Response;	/* union discriminant (of union defined below) */
-	union _ns1__union_Response union_Response;	/* required element of type xsd:choice */
+	union _api__union_Response union_Response;	/* required element of type xsd:choice */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 10; } /* = unique id SOAP_TYPE_ns1__Response */
+	virtual int soap_type() const { return 10; } /* = unique id SOAP_TYPE_api__Response */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Response(): errorMessage(NULL), soap(NULL) { ns1__Response::soap_default(NULL); }
-	virtual ~ns1__Response() { }
+	         api__Response(): errorMessage(NULL), soap(NULL) { api__Response::soap_default(NULL); }
+	virtual ~api__Response() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Object
-#define SOAP_TYPE_ns1__Object (12)
-/* ns1:Object */
-class SOAP_CMAC ns1__Object
+#ifndef SOAP_TYPE_api__Object
+#define SOAP_TYPE_api__Object (12)
+/* api:Object */
+class SOAP_CMAC api__Object
 {
 public:
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 12; } /* = unique id SOAP_TYPE_ns1__Object */
+	virtual int soap_type() const { return 12; } /* = unique id SOAP_TYPE_api__Object */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Object(): soap(NULL) { ns1__Object::soap_default(NULL); }
-	virtual ~ns1__Object() { }
+	         api__Object(): soap(NULL) { api__Object::soap_default(NULL); }
+	virtual ~api__Object() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ArrayOfStrings
-#define SOAP_TYPE_ns1__ArrayOfStrings (13)
-/* ns1:ArrayOfStrings */
-class SOAP_CMAC ns1__ArrayOfStrings
+#ifndef SOAP_TYPE_api__ArrayOfStrings
+#define SOAP_TYPE_api__ArrayOfStrings (13)
+/* api:ArrayOfStrings */
+class SOAP_CMAC api__ArrayOfStrings
 {
 public:
 	std::vector<std::string >item;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 13; } /* = unique id SOAP_TYPE_ns1__ArrayOfStrings */
+	virtual int soap_type() const { return 13; } /* = unique id SOAP_TYPE_api__ArrayOfStrings */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ArrayOfStrings(): soap(NULL) { ns1__ArrayOfStrings::soap_default(NULL); }
-	virtual ~ns1__ArrayOfStrings() { }
+	         api__ArrayOfStrings(): soap(NULL) { api__ArrayOfStrings::soap_default(NULL); }
+	virtual ~api__ArrayOfStrings() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ArrayOfPipelines
-#define SOAP_TYPE_ns1__ArrayOfPipelines (14)
-/* ns1:ArrayOfPipelines */
-class SOAP_CMAC ns1__ArrayOfPipelines
+#ifndef SOAP_TYPE_api__ArrayOfPipelines
+#define SOAP_TYPE_api__ArrayOfPipelines (14)
+/* api:ArrayOfPipelines */
+class SOAP_CMAC api__ArrayOfPipelines
 {
 public:
-	std::vector<ns1__Pipeline * >item;	/* optional element of type ns1:Pipeline */
+	std::vector<api__Pipeline * >item;	/* optional element of type api:Pipeline */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 14; } /* = unique id SOAP_TYPE_ns1__ArrayOfPipelines */
+	virtual int soap_type() const { return 14; } /* = unique id SOAP_TYPE_api__ArrayOfPipelines */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ArrayOfPipelines(): soap(NULL) { ns1__ArrayOfPipelines::soap_default(NULL); }
-	virtual ~ns1__ArrayOfPipelines() { }
+	         api__ArrayOfPipelines(): soap(NULL) { api__ArrayOfPipelines::soap_default(NULL); }
+	virtual ~api__ArrayOfPipelines() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ArrayOfExecutions
-#define SOAP_TYPE_ns1__ArrayOfExecutions (15)
-/* ns1:ArrayOfExecutions */
-class SOAP_CMAC ns1__ArrayOfExecutions
+#ifndef SOAP_TYPE_api__ArrayOfExecutions
+#define SOAP_TYPE_api__ArrayOfExecutions (15)
+/* api:ArrayOfExecutions */
+class SOAP_CMAC api__ArrayOfExecutions
 {
 public:
-	std::vector<ns1__Execution * >item;	/* optional element of type ns1:Execution */
+	std::vector<api__Execution * >item;	/* optional element of type api:Execution */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 15; } /* = unique id SOAP_TYPE_ns1__ArrayOfExecutions */
+	virtual int soap_type() const { return 15; } /* = unique id SOAP_TYPE_api__ArrayOfExecutions */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ArrayOfExecutions(): soap(NULL) { ns1__ArrayOfExecutions::soap_default(NULL); }
-	virtual ~ns1__ArrayOfExecutions() { }
+	         api__ArrayOfExecutions(): soap(NULL) { api__ArrayOfExecutions::soap_default(NULL); }
+	virtual ~api__ArrayOfExecutions() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__PipelineParameter
-#define SOAP_TYPE_ns1__PipelineParameter (16)
-/* ns1:PipelineParameter */
-class SOAP_CMAC ns1__PipelineParameter
+#ifndef SOAP_TYPE_api__PipelineParameter
+#define SOAP_TYPE_api__PipelineParameter (16)
+/* api:PipelineParameter */
+class SOAP_CMAC api__PipelineParameter
 {
 public:
 	std::string name;	/* required element of type xsd:string */
-	enum ns1__ParameterType type;	/* required element of type ns1:ParameterType */
+	enum api__ParameterType type;	/* required element of type api:ParameterType */
 	bool isOptional;	/* required element of type xsd:boolean */
 	bool isReturnedValue;	/* required element of type xsd:boolean */
-	class ns1__ParameterTypedValue *defaultValue;	/* optional element of type ns1:ParameterTypedValue */
+	class api__ParameterTypedValue *defaultValue;	/* optional element of type api:ParameterTypedValue */
 	std::string *description;	/* optional element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 16; } /* = unique id SOAP_TYPE_ns1__PipelineParameter */
+	virtual int soap_type() const { return 16; } /* = unique id SOAP_TYPE_api__PipelineParameter */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__PipelineParameter(): defaultValue(NULL), description(NULL), soap(NULL) { ns1__PipelineParameter::soap_default(NULL); }
-	virtual ~ns1__PipelineParameter() { }
+	         api__PipelineParameter(): defaultValue(NULL), description(NULL), soap(NULL) { api__PipelineParameter::soap_default(NULL); }
+	virtual ~api__PipelineParameter() { }
 };
 #endif
 
-#ifndef SOAP_TYPE__ns1__union_ParameterTypedValue
-#define SOAP_TYPE__ns1__union_ParameterTypedValue (86)
+#ifndef SOAP_TYPE__api__union_ParameterTypedValue
+#define SOAP_TYPE__api__union_ParameterTypedValue (86)
 /* xsd:choice */
-union _ns1__union_ParameterTypedValue
+union _api__union_ParameterTypedValue
 {
-#define SOAP_UNION__ns1__union_ParameterTypedValue_valueStr	(1)
+#define SOAP_UNION__api__union_ParameterTypedValue_valueStr	(1)
 	std::string *valueStr;
-#define SOAP_UNION__ns1__union_ParameterTypedValue_valueBool	(2)
+#define SOAP_UNION__api__union_ParameterTypedValue_valueBool	(2)
 	bool valueBool;
-#define SOAP_UNION__ns1__union_ParameterTypedValue_valueInt	(3)
+#define SOAP_UNION__api__union_ParameterTypedValue_valueInt	(3)
 	int valueInt;
-#define SOAP_UNION__ns1__union_ParameterTypedValue_valueDouble	(4)
+#define SOAP_UNION__api__union_ParameterTypedValue_valueDouble	(4)
 	double valueDouble;
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ParameterTypedValue
-#define SOAP_TYPE_ns1__ParameterTypedValue (17)
-/* ns1:ParameterTypedValue */
-class SOAP_CMAC ns1__ParameterTypedValue
+#ifndef SOAP_TYPE_api__ParameterTypedValue
+#define SOAP_TYPE_api__ParameterTypedValue (17)
+/* api:ParameterTypedValue */
+class SOAP_CMAC api__ParameterTypedValue
 {
 public:
-	enum ns1__ParameterType type;	/* required element of type ns1:ParameterType */
+	enum api__ParameterType type;	/* required element of type api:ParameterType */
 	int __union_ParameterTypedValue;	/* union discriminant (of union defined below) */
-	union _ns1__union_ParameterTypedValue union_ParameterTypedValue;	/* required element of type xsd:choice */
+	union _api__union_ParameterTypedValue union_ParameterTypedValue;	/* required element of type xsd:choice */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 17; } /* = unique id SOAP_TYPE_ns1__ParameterTypedValue */
+	virtual int soap_type() const { return 17; } /* = unique id SOAP_TYPE_api__ParameterTypedValue */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ParameterTypedValue(): soap(NULL) { ns1__ParameterTypedValue::soap_default(NULL); }
-	virtual ~ns1__ParameterTypedValue() { }
+	         api__ParameterTypedValue(): soap(NULL) { api__ParameterTypedValue::soap_default(NULL); }
+	virtual ~api__ParameterTypedValue() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__IntKeyStringValuePair
-#define SOAP_TYPE_ns1__IntKeyStringValuePair (18)
-/* ns1:IntKeyStringValuePair */
-class SOAP_CMAC ns1__IntKeyStringValuePair
+#ifndef SOAP_TYPE_api__IntKeyStringValuePair
+#define SOAP_TYPE_api__IntKeyStringValuePair (18)
+/* api:IntKeyStringValuePair */
+class SOAP_CMAC api__IntKeyStringValuePair
 {
 public:
 	int name;	/* required element of type xsd:int */
 	std::string value;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 18; } /* = unique id SOAP_TYPE_ns1__IntKeyStringValuePair */
+	virtual int soap_type() const { return 18; } /* = unique id SOAP_TYPE_api__IntKeyStringValuePair */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__IntKeyStringValuePair(): soap(NULL) { ns1__IntKeyStringValuePair::soap_default(NULL); }
-	virtual ~ns1__IntKeyStringValuePair() { }
+	         api__IntKeyStringValuePair(): soap(NULL) { api__IntKeyStringValuePair::soap_default(NULL); }
+	virtual ~api__IntKeyStringValuePair() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__StringKeyParameterValuePair
-#define SOAP_TYPE_ns1__StringKeyParameterValuePair (20)
-/* ns1:StringKeyParameterValuePair */
-class SOAP_CMAC ns1__StringKeyParameterValuePair
+#ifndef SOAP_TYPE_api__StringKeyParameterValuePair
+#define SOAP_TYPE_api__StringKeyParameterValuePair (20)
+/* api:StringKeyParameterValuePair */
+class SOAP_CMAC api__StringKeyParameterValuePair
 {
 public:
 	std::string name;	/* required element of type xsd:string */
-	ns1__ParameterTypedValue *value;	/* required element of type ns1:ParameterTypedValue */
+	api__ParameterTypedValue *value;	/* required element of type api:ParameterTypedValue */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 20; } /* = unique id SOAP_TYPE_ns1__StringKeyParameterValuePair */
+	virtual int soap_type() const { return 20; } /* = unique id SOAP_TYPE_api__StringKeyParameterValuePair */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__StringKeyParameterValuePair(): value(NULL), soap(NULL) { ns1__StringKeyParameterValuePair::soap_default(NULL); }
-	virtual ~ns1__StringKeyParameterValuePair() { }
+	         api__StringKeyParameterValuePair(): value(NULL), soap(NULL) { api__StringKeyParameterValuePair::soap_default(NULL); }
+	virtual ~api__StringKeyParameterValuePair() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__PipelineKeyBooleanValuePair
-#define SOAP_TYPE_ns1__PipelineKeyBooleanValuePair (22)
-/* ns1:PipelineKeyBooleanValuePair */
-class SOAP_CMAC ns1__PipelineKeyBooleanValuePair
+#ifndef SOAP_TYPE_api__PipelineKeyBooleanValuePair
+#define SOAP_TYPE_api__PipelineKeyBooleanValuePair (22)
+/* api:PipelineKeyBooleanValuePair */
+class SOAP_CMAC api__PipelineKeyBooleanValuePair
 {
 public:
-	ns1__Pipeline *name;	/* required element of type ns1:Pipeline */
+	api__Pipeline *name;	/* required element of type api:Pipeline */
 	bool value;	/* required element of type xsd:boolean */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 22; } /* = unique id SOAP_TYPE_ns1__PipelineKeyBooleanValuePair */
+	virtual int soap_type() const { return 22; } /* = unique id SOAP_TYPE_api__PipelineKeyBooleanValuePair */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__PipelineKeyBooleanValuePair(): name(NULL), soap(NULL) { ns1__PipelineKeyBooleanValuePair::soap_default(NULL); }
-	virtual ~ns1__PipelineKeyBooleanValuePair() { }
+	         api__PipelineKeyBooleanValuePair(): name(NULL), soap(NULL) { api__PipelineKeyBooleanValuePair::soap_default(NULL); }
+	virtual ~api__PipelineKeyBooleanValuePair() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__deleteExecution
-#define SOAP_TYPE_ns1__deleteExecution (23)
-/* ns1:deleteExecution */
-class SOAP_CMAC ns1__deleteExecution
+#ifndef SOAP_TYPE_api__deleteExecution
+#define SOAP_TYPE_api__deleteExecution (23)
+/* api:deleteExecution */
+class SOAP_CMAC api__deleteExecution
 {
 public:
 	std::string executionId;	/* required element of type xsd:string */
 	bool deleteFiles;	/* required element of type xsd:boolean */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 23; } /* = unique id SOAP_TYPE_ns1__deleteExecution */
+	virtual int soap_type() const { return 23; } /* = unique id SOAP_TYPE_api__deleteExecution */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__deleteExecution(): soap(NULL) { ns1__deleteExecution::soap_default(NULL); }
-	virtual ~ns1__deleteExecution() { }
+	         api__deleteExecution(): soap(NULL) { api__deleteExecution::soap_default(NULL); }
+	virtual ~api__deleteExecution() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__deleteExecutionResponse
-#define SOAP_TYPE_ns1__deleteExecutionResponse (24)
-/* ns1:deleteExecutionResponse */
-class SOAP_CMAC ns1__deleteExecutionResponse
+#ifndef SOAP_TYPE_api__deleteExecutionResponse
+#define SOAP_TYPE_api__deleteExecutionResponse (24)
+/* api:deleteExecutionResponse */
+class SOAP_CMAC api__deleteExecutionResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 24; } /* = unique id SOAP_TYPE_ns1__deleteExecutionResponse */
+	virtual int soap_type() const { return 24; } /* = unique id SOAP_TYPE_api__deleteExecutionResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__deleteExecutionResponse(): return_(NULL), soap(NULL) { ns1__deleteExecutionResponse::soap_default(NULL); }
-	virtual ~ns1__deleteExecutionResponse() { }
+	         api__deleteExecutionResponse(): return_(NULL), soap(NULL) { api__deleteExecutionResponse::soap_default(NULL); }
+	virtual ~api__deleteExecutionResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getPipeline
-#define SOAP_TYPE_ns1__getPipeline (25)
-/* ns1:getPipeline */
-class SOAP_CMAC ns1__getPipeline
+#ifndef SOAP_TYPE_api__getPipeline
+#define SOAP_TYPE_api__getPipeline (25)
+/* api:getPipeline */
+class SOAP_CMAC api__getPipeline
 {
 public:
 	std::string pipelineId;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 25; } /* = unique id SOAP_TYPE_ns1__getPipeline */
+	virtual int soap_type() const { return 25; } /* = unique id SOAP_TYPE_api__getPipeline */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getPipeline(): soap(NULL) { ns1__getPipeline::soap_default(NULL); }
-	virtual ~ns1__getPipeline() { }
+	         api__getPipeline(): soap(NULL) { api__getPipeline::soap_default(NULL); }
+	virtual ~api__getPipeline() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getPipelineResponse
-#define SOAP_TYPE_ns1__getPipelineResponse (26)
-/* ns1:getPipelineResponse */
-class SOAP_CMAC ns1__getPipelineResponse
+#ifndef SOAP_TYPE_api__getPipelineResponse
+#define SOAP_TYPE_api__getPipelineResponse (26)
+/* api:getPipelineResponse */
+class SOAP_CMAC api__getPipelineResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 26; } /* = unique id SOAP_TYPE_ns1__getPipelineResponse */
+	virtual int soap_type() const { return 26; } /* = unique id SOAP_TYPE_api__getPipelineResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getPipelineResponse(): return_(NULL), soap(NULL) { ns1__getPipelineResponse::soap_default(NULL); }
-	virtual ~ns1__getPipelineResponse() { }
+	         api__getPipelineResponse(): return_(NULL), soap(NULL) { api__getPipelineResponse::soap_default(NULL); }
+	virtual ~api__getPipelineResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__authenticateHTTP
-#define SOAP_TYPE_ns1__authenticateHTTP (27)
-/* ns1:authenticateHTTP */
-class SOAP_CMAC ns1__authenticateHTTP
+#ifndef SOAP_TYPE_api__authenticateHTTP
+#define SOAP_TYPE_api__authenticateHTTP (27)
+/* api:authenticateHTTP */
+class SOAP_CMAC api__authenticateHTTP
 {
 public:
 	std::string userName;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 27; } /* = unique id SOAP_TYPE_ns1__authenticateHTTP */
+	virtual int soap_type() const { return 27; } /* = unique id SOAP_TYPE_api__authenticateHTTP */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__authenticateHTTP(): soap(NULL) { ns1__authenticateHTTP::soap_default(NULL); }
-	virtual ~ns1__authenticateHTTP() { }
+	         api__authenticateHTTP(): soap(NULL) { api__authenticateHTTP::soap_default(NULL); }
+	virtual ~api__authenticateHTTP() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__authenticateHTTPResponse
-#define SOAP_TYPE_ns1__authenticateHTTPResponse (28)
-/* ns1:authenticateHTTPResponse */
-class SOAP_CMAC ns1__authenticateHTTPResponse
+#ifndef SOAP_TYPE_api__authenticateHTTPResponse
+#define SOAP_TYPE_api__authenticateHTTPResponse (28)
+/* api:authenticateHTTPResponse */
+class SOAP_CMAC api__authenticateHTTPResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 28; } /* = unique id SOAP_TYPE_ns1__authenticateHTTPResponse */
+	virtual int soap_type() const { return 28; } /* = unique id SOAP_TYPE_api__authenticateHTTPResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__authenticateHTTPResponse(): return_(NULL), soap(NULL) { ns1__authenticateHTTPResponse::soap_default(NULL); }
-	virtual ~ns1__authenticateHTTPResponse() { }
+	         api__authenticateHTTPResponse(): return_(NULL), soap(NULL) { api__authenticateHTTPResponse::soap_default(NULL); }
+	virtual ~api__authenticateHTTPResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__logout
-#define SOAP_TYPE_ns1__logout (29)
-/* ns1:logout */
-class SOAP_CMAC ns1__logout
+#ifndef SOAP_TYPE_api__logout
+#define SOAP_TYPE_api__logout (29)
+/* api:logout */
+class SOAP_CMAC api__logout
 {
 public:
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 29; } /* = unique id SOAP_TYPE_ns1__logout */
+	virtual int soap_type() const { return 29; } /* = unique id SOAP_TYPE_api__logout */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__logout(): soap(NULL) { ns1__logout::soap_default(NULL); }
-	virtual ~ns1__logout() { }
+	         api__logout(): soap(NULL) { api__logout::soap_default(NULL); }
+	virtual ~api__logout() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__logoutResponse
-#define SOAP_TYPE_ns1__logoutResponse (30)
-/* ns1:logoutResponse */
-class SOAP_CMAC ns1__logoutResponse
+#ifndef SOAP_TYPE_api__logoutResponse
+#define SOAP_TYPE_api__logoutResponse (30)
+/* api:logoutResponse */
+class SOAP_CMAC api__logoutResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 30; } /* = unique id SOAP_TYPE_ns1__logoutResponse */
+	virtual int soap_type() const { return 30; } /* = unique id SOAP_TYPE_api__logoutResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__logoutResponse(): return_(NULL), soap(NULL) { ns1__logoutResponse::soap_default(NULL); }
-	virtual ~ns1__logoutResponse() { }
+	         api__logoutResponse(): return_(NULL), soap(NULL) { api__logoutResponse::soap_default(NULL); }
+	virtual ~api__logoutResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__updateExecution
-#define SOAP_TYPE_ns1__updateExecution (31)
-/* ns1:updateExecution */
-class SOAP_CMAC ns1__updateExecution
+#ifndef SOAP_TYPE_api__updateExecution
+#define SOAP_TYPE_api__updateExecution (31)
+/* api:updateExecution */
+class SOAP_CMAC api__updateExecution
 {
 public:
 	std::string executionId;	/* required element of type xsd:string */
-	std::vector<class ns1__StringKeyValuePair * >keyValuePair;	/* required element of type ns1:StringKeyValuePair */
+	std::vector<class api__StringKeyValuePair * >keyValuePair;	/* required element of type api:StringKeyValuePair */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 31; } /* = unique id SOAP_TYPE_ns1__updateExecution */
+	virtual int soap_type() const { return 31; } /* = unique id SOAP_TYPE_api__updateExecution */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__updateExecution(): soap(NULL) { ns1__updateExecution::soap_default(NULL); }
-	virtual ~ns1__updateExecution() { }
+	         api__updateExecution(): soap(NULL) { api__updateExecution::soap_default(NULL); }
+	virtual ~api__updateExecution() { }
 };
 #endif
 
-#ifndef SOAP_TYPE__ns1__union_StringKeyValuePair
-#define SOAP_TYPE__ns1__union_StringKeyValuePair (89)
+#ifndef SOAP_TYPE__api__union_StringKeyValuePair
+#define SOAP_TYPE__api__union_StringKeyValuePair (89)
 /* xsd:choice */
-union _ns1__union_StringKeyValuePair
+union _api__union_StringKeyValuePair
 {
-#define SOAP_UNION__ns1__union_StringKeyValuePair_valueStr	(1)
+#define SOAP_UNION__api__union_StringKeyValuePair_valueStr	(1)
 	std::string *valueStr;
-#define SOAP_UNION__ns1__union_StringKeyValuePair_valueInt	(2)
+#define SOAP_UNION__api__union_StringKeyValuePair_valueInt	(2)
 	int valueInt;
-#define SOAP_UNION__ns1__union_StringKeyValuePair_valueStatus	(3)
-	enum ns1__ExecutionStatus valueStatus;
-#define SOAP_UNION__ns1__union_StringKeyValuePair_valueParamType	(4)
-	ns1__ParameterTypedValue *valueParamType;
+#define SOAP_UNION__api__union_StringKeyValuePair_valueStatus	(3)
+	enum api__ExecutionStatus valueStatus;
+#define SOAP_UNION__api__union_StringKeyValuePair_valueParamType	(4)
+	api__ParameterTypedValue *valueParamType;
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__StringKeyValuePair
-#define SOAP_TYPE_ns1__StringKeyValuePair (32)
-/* ns1:StringKeyValuePair */
-class SOAP_CMAC ns1__StringKeyValuePair
+#ifndef SOAP_TYPE_api__StringKeyValuePair
+#define SOAP_TYPE_api__StringKeyValuePair (32)
+/* api:StringKeyValuePair */
+class SOAP_CMAC api__StringKeyValuePair
 {
 public:
 	std::string name;	/* required element of type xsd:string */
 	int __union_StringKeyValuePair;	/* union discriminant (of union defined below) */
-	union _ns1__union_StringKeyValuePair union_StringKeyValuePair;	/* required element of type xsd:choice */
+	union _api__union_StringKeyValuePair union_StringKeyValuePair;	/* required element of type xsd:choice */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 32; } /* = unique id SOAP_TYPE_ns1__StringKeyValuePair */
+	virtual int soap_type() const { return 32; } /* = unique id SOAP_TYPE_api__StringKeyValuePair */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__StringKeyValuePair(): soap(NULL) { ns1__StringKeyValuePair::soap_default(NULL); }
-	virtual ~ns1__StringKeyValuePair() { }
+	         api__StringKeyValuePair(): soap(NULL) { api__StringKeyValuePair::soap_default(NULL); }
+	virtual ~api__StringKeyValuePair() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__updateExecutionResponse
-#define SOAP_TYPE_ns1__updateExecutionResponse (33)
-/* ns1:updateExecutionResponse */
-class SOAP_CMAC ns1__updateExecutionResponse
+#ifndef SOAP_TYPE_api__updateExecutionResponse
+#define SOAP_TYPE_api__updateExecutionResponse (33)
+/* api:updateExecutionResponse */
+class SOAP_CMAC api__updateExecutionResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 33; } /* = unique id SOAP_TYPE_ns1__updateExecutionResponse */
+	virtual int soap_type() const { return 33; } /* = unique id SOAP_TYPE_api__updateExecutionResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__updateExecutionResponse(): return_(NULL), soap(NULL) { ns1__updateExecutionResponse::soap_default(NULL); }
-	virtual ~ns1__updateExecutionResponse() { }
+	         api__updateExecutionResponse(): return_(NULL), soap(NULL) { api__updateExecutionResponse::soap_default(NULL); }
+	virtual ~api__updateExecutionResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getGlobalProperties
-#define SOAP_TYPE_ns1__getGlobalProperties (34)
-/* ns1:getGlobalProperties */
-class SOAP_CMAC ns1__getGlobalProperties
+#ifndef SOAP_TYPE_api__getGlobalProperties
+#define SOAP_TYPE_api__getGlobalProperties (34)
+/* api:getGlobalProperties */
+class SOAP_CMAC api__getGlobalProperties
 {
 public:
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 34; } /* = unique id SOAP_TYPE_ns1__getGlobalProperties */
+	virtual int soap_type() const { return 34; } /* = unique id SOAP_TYPE_api__getGlobalProperties */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getGlobalProperties(): soap(NULL) { ns1__getGlobalProperties::soap_default(NULL); }
-	virtual ~ns1__getGlobalProperties() { }
+	         api__getGlobalProperties(): soap(NULL) { api__getGlobalProperties::soap_default(NULL); }
+	virtual ~api__getGlobalProperties() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getGlobalPropertiesResponse
-#define SOAP_TYPE_ns1__getGlobalPropertiesResponse (35)
-/* ns1:getGlobalPropertiesResponse */
-class SOAP_CMAC ns1__getGlobalPropertiesResponse
+#ifndef SOAP_TYPE_api__getGlobalPropertiesResponse
+#define SOAP_TYPE_api__getGlobalPropertiesResponse (35)
+/* api:getGlobalPropertiesResponse */
+class SOAP_CMAC api__getGlobalPropertiesResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 35; } /* = unique id SOAP_TYPE_ns1__getGlobalPropertiesResponse */
+	virtual int soap_type() const { return 35; } /* = unique id SOAP_TYPE_api__getGlobalPropertiesResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getGlobalPropertiesResponse(): return_(NULL), soap(NULL) { ns1__getGlobalPropertiesResponse::soap_default(NULL); }
-	virtual ~ns1__getGlobalPropertiesResponse() { }
+	         api__getGlobalPropertiesResponse(): return_(NULL), soap(NULL) { api__getGlobalPropertiesResponse::soap_default(NULL); }
+	virtual ~api__getGlobalPropertiesResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__initExecution
-#define SOAP_TYPE_ns1__initExecution (36)
-/* ns1:initExecution */
-class SOAP_CMAC ns1__initExecution
+#ifndef SOAP_TYPE_api__initExecution
+#define SOAP_TYPE_api__initExecution (36)
+/* api:initExecution */
+class SOAP_CMAC api__initExecution
 {
 public:
 	std::string pipelineId;	/* required element of type xsd:string */
-	std::vector<ns1__StringKeyParameterValuePair * >inputValue;	/* required element of type ns1:StringKeyParameterValuePair */
+	std::vector<api__StringKeyParameterValuePair * >inputValue;	/* required element of type api:StringKeyParameterValuePair */
 	int *timeout;	/* optional element of type xsd:int */
 	std::string *executionName;	/* optional element of type xsd:string */
 	std::string *studyId;	/* optional element of type xsd:string */
 	bool *playExecution;	/* optional element of type xsd:boolean */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 36; } /* = unique id SOAP_TYPE_ns1__initExecution */
+	virtual int soap_type() const { return 36; } /* = unique id SOAP_TYPE_api__initExecution */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__initExecution(): timeout(NULL), executionName(NULL), studyId(NULL), playExecution(NULL), soap(NULL) { ns1__initExecution::soap_default(NULL); }
-	virtual ~ns1__initExecution() { }
+	         api__initExecution(): timeout(NULL), executionName(NULL), studyId(NULL), playExecution(NULL), soap(NULL) { api__initExecution::soap_default(NULL); }
+	virtual ~api__initExecution() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__initExecutionResponse
-#define SOAP_TYPE_ns1__initExecutionResponse (37)
-/* ns1:initExecutionResponse */
-class SOAP_CMAC ns1__initExecutionResponse
+#ifndef SOAP_TYPE_api__initExecutionResponse
+#define SOAP_TYPE_api__initExecutionResponse (37)
+/* api:initExecutionResponse */
+class SOAP_CMAC api__initExecutionResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 37; } /* = unique id SOAP_TYPE_ns1__initExecutionResponse */
+	virtual int soap_type() const { return 37; } /* = unique id SOAP_TYPE_api__initExecutionResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__initExecutionResponse(): return_(NULL), soap(NULL) { ns1__initExecutionResponse::soap_default(NULL); }
-	virtual ~ns1__initExecutionResponse() { }
+	         api__initExecutionResponse(): return_(NULL), soap(NULL) { api__initExecutionResponse::soap_default(NULL); }
+	virtual ~api__initExecutionResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getExecutionResults
-#define SOAP_TYPE_ns1__getExecutionResults (38)
-/* ns1:getExecutionResults */
-class SOAP_CMAC ns1__getExecutionResults
-{
-public:
-	std::string executionId;	/* required element of type xsd:string */
-	struct soap *soap;	/* transient */
-public:
-	virtual int soap_type() const { return 38; } /* = unique id SOAP_TYPE_ns1__getExecutionResults */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getExecutionResults(): soap(NULL) { ns1__getExecutionResults::soap_default(NULL); }
-	virtual ~ns1__getExecutionResults() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__getExecutionResultsResponse
-#define SOAP_TYPE_ns1__getExecutionResultsResponse (39)
-/* ns1:getExecutionResultsResponse */
-class SOAP_CMAC ns1__getExecutionResultsResponse
-{
-public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
-	struct soap *soap;	/* transient */
-public:
-	virtual int soap_type() const { return 39; } /* = unique id SOAP_TYPE_ns1__getExecutionResultsResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getExecutionResultsResponse(): return_(NULL), soap(NULL) { ns1__getExecutionResultsResponse::soap_default(NULL); }
-	virtual ~ns1__getExecutionResultsResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__killExecution
-#define SOAP_TYPE_ns1__killExecution (40)
-/* ns1:killExecution */
-class SOAP_CMAC ns1__killExecution
+#ifndef SOAP_TYPE_api__getExecutionResults
+#define SOAP_TYPE_api__getExecutionResults (38)
+/* api:getExecutionResults */
+class SOAP_CMAC api__getExecutionResults
 {
 public:
 	std::string executionId;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 40; } /* = unique id SOAP_TYPE_ns1__killExecution */
+	virtual int soap_type() const { return 38; } /* = unique id SOAP_TYPE_api__getExecutionResults */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__killExecution(): soap(NULL) { ns1__killExecution::soap_default(NULL); }
-	virtual ~ns1__killExecution() { }
+	         api__getExecutionResults(): soap(NULL) { api__getExecutionResults::soap_default(NULL); }
+	virtual ~api__getExecutionResults() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getStdOut
-#define SOAP_TYPE_ns1__getStdOut (41)
-/* ns1:getStdOut */
-class SOAP_CMAC ns1__getStdOut
+#ifndef SOAP_TYPE_api__getExecutionResultsResponse
+#define SOAP_TYPE_api__getExecutionResultsResponse (39)
+/* api:getExecutionResultsResponse */
+class SOAP_CMAC api__getExecutionResultsResponse
+{
+public:
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
+	struct soap *soap;	/* transient */
+public:
+	virtual int soap_type() const { return 39; } /* = unique id SOAP_TYPE_api__getExecutionResultsResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         api__getExecutionResultsResponse(): return_(NULL), soap(NULL) { api__getExecutionResultsResponse::soap_default(NULL); }
+	virtual ~api__getExecutionResultsResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_api__killExecution
+#define SOAP_TYPE_api__killExecution (40)
+/* api:killExecution */
+class SOAP_CMAC api__killExecution
 {
 public:
 	std::string executionId;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 41; } /* = unique id SOAP_TYPE_ns1__getStdOut */
+	virtual int soap_type() const { return 40; } /* = unique id SOAP_TYPE_api__killExecution */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getStdOut(): soap(NULL) { ns1__getStdOut::soap_default(NULL); }
-	virtual ~ns1__getStdOut() { }
+	         api__killExecution(): soap(NULL) { api__killExecution::soap_default(NULL); }
+	virtual ~api__killExecution() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getStdOutResponse
-#define SOAP_TYPE_ns1__getStdOutResponse (42)
-/* ns1:getStdOutResponse */
-class SOAP_CMAC ns1__getStdOutResponse
-{
-public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
-	struct soap *soap;	/* transient */
-public:
-	virtual int soap_type() const { return 42; } /* = unique id SOAP_TYPE_ns1__getStdOutResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getStdOutResponse(): return_(NULL), soap(NULL) { ns1__getStdOutResponse::soap_default(NULL); }
-	virtual ~ns1__getStdOutResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__getStdErr
-#define SOAP_TYPE_ns1__getStdErr (43)
-/* ns1:getStdErr */
-class SOAP_CMAC ns1__getStdErr
+#ifndef SOAP_TYPE_api__getStdOut
+#define SOAP_TYPE_api__getStdOut (41)
+/* api:getStdOut */
+class SOAP_CMAC api__getStdOut
 {
 public:
 	std::string executionId;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 43; } /* = unique id SOAP_TYPE_ns1__getStdErr */
+	virtual int soap_type() const { return 41; } /* = unique id SOAP_TYPE_api__getStdOut */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getStdErr(): soap(NULL) { ns1__getStdErr::soap_default(NULL); }
-	virtual ~ns1__getStdErr() { }
+	         api__getStdOut(): soap(NULL) { api__getStdOut::soap_default(NULL); }
+	virtual ~api__getStdOut() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getStdErrResponse
-#define SOAP_TYPE_ns1__getStdErrResponse (44)
-/* ns1:getStdErrResponse */
-class SOAP_CMAC ns1__getStdErrResponse
+#ifndef SOAP_TYPE_api__getStdOutResponse
+#define SOAP_TYPE_api__getStdOutResponse (42)
+/* api:getStdOutResponse */
+class SOAP_CMAC api__getStdOutResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 44; } /* = unique id SOAP_TYPE_ns1__getStdErrResponse */
+	virtual int soap_type() const { return 42; } /* = unique id SOAP_TYPE_api__getStdOutResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getStdErrResponse(): return_(NULL), soap(NULL) { ns1__getStdErrResponse::soap_default(NULL); }
-	virtual ~ns1__getStdErrResponse() { }
+	         api__getStdOutResponse(): return_(NULL), soap(NULL) { api__getStdOutResponse::soap_default(NULL); }
+	virtual ~api__getStdOutResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__killExecutionResponse
-#define SOAP_TYPE_ns1__killExecutionResponse (45)
-/* ns1:killExecutionResponse */
-class SOAP_CMAC ns1__killExecutionResponse
-{
-public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
-	struct soap *soap;	/* transient */
-public:
-	virtual int soap_type() const { return 45; } /* = unique id SOAP_TYPE_ns1__killExecutionResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__killExecutionResponse(): return_(NULL), soap(NULL) { ns1__killExecutionResponse::soap_default(NULL); }
-	virtual ~ns1__killExecutionResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__getExecution
-#define SOAP_TYPE_ns1__getExecution (46)
-/* ns1:getExecution */
-class SOAP_CMAC ns1__getExecution
+#ifndef SOAP_TYPE_api__getStdErr
+#define SOAP_TYPE_api__getStdErr (43)
+/* api:getStdErr */
+class SOAP_CMAC api__getStdErr
 {
 public:
 	std::string executionId;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 46; } /* = unique id SOAP_TYPE_ns1__getExecution */
+	virtual int soap_type() const { return 43; } /* = unique id SOAP_TYPE_api__getStdErr */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getExecution(): soap(NULL) { ns1__getExecution::soap_default(NULL); }
-	virtual ~ns1__getExecution() { }
+	         api__getStdErr(): soap(NULL) { api__getStdErr::soap_default(NULL); }
+	virtual ~api__getStdErr() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__getExecutionResponse
-#define SOAP_TYPE_ns1__getExecutionResponse (47)
-/* ns1:getExecutionResponse */
-class SOAP_CMAC ns1__getExecutionResponse
+#ifndef SOAP_TYPE_api__getStdErrResponse
+#define SOAP_TYPE_api__getStdErrResponse (44)
+/* api:getStdErrResponse */
+class SOAP_CMAC api__getStdErrResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 47; } /* = unique id SOAP_TYPE_ns1__getExecutionResponse */
+	virtual int soap_type() const { return 44; } /* = unique id SOAP_TYPE_api__getStdErrResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__getExecutionResponse(): return_(NULL), soap(NULL) { ns1__getExecutionResponse::soap_default(NULL); }
-	virtual ~ns1__getExecutionResponse() { }
+	         api__getStdErrResponse(): return_(NULL), soap(NULL) { api__getStdErrResponse::soap_default(NULL); }
+	virtual ~api__getStdErrResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__playExecution
-#define SOAP_TYPE_ns1__playExecution (48)
-/* ns1:playExecution */
-class SOAP_CMAC ns1__playExecution
+#ifndef SOAP_TYPE_api__killExecutionResponse
+#define SOAP_TYPE_api__killExecutionResponse (45)
+/* api:killExecutionResponse */
+class SOAP_CMAC api__killExecutionResponse
+{
+public:
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
+	struct soap *soap;	/* transient */
+public:
+	virtual int soap_type() const { return 45; } /* = unique id SOAP_TYPE_api__killExecutionResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         api__killExecutionResponse(): return_(NULL), soap(NULL) { api__killExecutionResponse::soap_default(NULL); }
+	virtual ~api__killExecutionResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_api__getExecution
+#define SOAP_TYPE_api__getExecution (46)
+/* api:getExecution */
+class SOAP_CMAC api__getExecution
 {
 public:
 	std::string executionId;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 48; } /* = unique id SOAP_TYPE_ns1__playExecution */
+	virtual int soap_type() const { return 46; } /* = unique id SOAP_TYPE_api__getExecution */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__playExecution(): soap(NULL) { ns1__playExecution::soap_default(NULL); }
-	virtual ~ns1__playExecution() { }
+	         api__getExecution(): soap(NULL) { api__getExecution::soap_default(NULL); }
+	virtual ~api__getExecution() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__playExecutionResponse
-#define SOAP_TYPE_ns1__playExecutionResponse (49)
-/* ns1:playExecutionResponse */
-class SOAP_CMAC ns1__playExecutionResponse
+#ifndef SOAP_TYPE_api__getExecutionResponse
+#define SOAP_TYPE_api__getExecutionResponse (47)
+/* api:getExecutionResponse */
+class SOAP_CMAC api__getExecutionResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 49; } /* = unique id SOAP_TYPE_ns1__playExecutionResponse */
+	virtual int soap_type() const { return 47; } /* = unique id SOAP_TYPE_api__getExecutionResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__playExecutionResponse(): return_(NULL), soap(NULL) { ns1__playExecutionResponse::soap_default(NULL); }
-	virtual ~ns1__playExecutionResponse() { }
+	         api__getExecutionResponse(): return_(NULL), soap(NULL) { api__getExecutionResponse::soap_default(NULL); }
+	virtual ~api__getExecutionResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__listPipelines
-#define SOAP_TYPE_ns1__listPipelines (50)
-/* ns1:listPipelines */
-class SOAP_CMAC ns1__listPipelines
+#ifndef SOAP_TYPE_api__playExecution
+#define SOAP_TYPE_api__playExecution (48)
+/* api:playExecution */
+class SOAP_CMAC api__playExecution
+{
+public:
+	std::string executionId;	/* required element of type xsd:string */
+	struct soap *soap;	/* transient */
+public:
+	virtual int soap_type() const { return 48; } /* = unique id SOAP_TYPE_api__playExecution */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         api__playExecution(): soap(NULL) { api__playExecution::soap_default(NULL); }
+	virtual ~api__playExecution() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_api__playExecutionResponse
+#define SOAP_TYPE_api__playExecutionResponse (49)
+/* api:playExecutionResponse */
+class SOAP_CMAC api__playExecutionResponse
+{
+public:
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
+	struct soap *soap;	/* transient */
+public:
+	virtual int soap_type() const { return 49; } /* = unique id SOAP_TYPE_api__playExecutionResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         api__playExecutionResponse(): return_(NULL), soap(NULL) { api__playExecutionResponse::soap_default(NULL); }
+	virtual ~api__playExecutionResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_api__listPipelines
+#define SOAP_TYPE_api__listPipelines (50)
+/* api:listPipelines */
+class SOAP_CMAC api__listPipelines
 {
 public:
 	std::string studyIdentifier;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 50; } /* = unique id SOAP_TYPE_ns1__listPipelines */
+	virtual int soap_type() const { return 50; } /* = unique id SOAP_TYPE_api__listPipelines */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__listPipelines(): soap(NULL) { ns1__listPipelines::soap_default(NULL); }
-	virtual ~ns1__listPipelines() { }
+	         api__listPipelines(): soap(NULL) { api__listPipelines::soap_default(NULL); }
+	virtual ~api__listPipelines() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__listPipelinesResponse
-#define SOAP_TYPE_ns1__listPipelinesResponse (51)
-/* ns1:listPipelinesResponse */
-class SOAP_CMAC ns1__listPipelinesResponse
+#ifndef SOAP_TYPE_api__listPipelinesResponse
+#define SOAP_TYPE_api__listPipelinesResponse (51)
+/* api:listPipelinesResponse */
+class SOAP_CMAC api__listPipelinesResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 51; } /* = unique id SOAP_TYPE_ns1__listPipelinesResponse */
+	virtual int soap_type() const { return 51; } /* = unique id SOAP_TYPE_api__listPipelinesResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__listPipelinesResponse(): return_(NULL), soap(NULL) { ns1__listPipelinesResponse::soap_default(NULL); }
-	virtual ~ns1__listPipelinesResponse() { }
+	         api__listPipelinesResponse(): return_(NULL), soap(NULL) { api__listPipelinesResponse::soap_default(NULL); }
+	virtual ~api__listPipelinesResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__listExecutions
-#define SOAP_TYPE_ns1__listExecutions (52)
-/* ns1:listExecutions */
-class SOAP_CMAC ns1__listExecutions
+#ifndef SOAP_TYPE_api__listExecutions
+#define SOAP_TYPE_api__listExecutions (52)
+/* api:listExecutions */
+class SOAP_CMAC api__listExecutions
 {
 public:
 	std::string studyIdentifier;	/* required element of type xsd:string */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 52; } /* = unique id SOAP_TYPE_ns1__listExecutions */
+	virtual int soap_type() const { return 52; } /* = unique id SOAP_TYPE_api__listExecutions */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__listExecutions(): soap(NULL) { ns1__listExecutions::soap_default(NULL); }
-	virtual ~ns1__listExecutions() { }
+	         api__listExecutions(): soap(NULL) { api__listExecutions::soap_default(NULL); }
+	virtual ~api__listExecutions() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__listExecutionsResponse
-#define SOAP_TYPE_ns1__listExecutionsResponse (53)
-/* ns1:listExecutionsResponse */
-class SOAP_CMAC ns1__listExecutionsResponse
+#ifndef SOAP_TYPE_api__listExecutionsResponse
+#define SOAP_TYPE_api__listExecutionsResponse (53)
+/* api:listExecutionsResponse */
+class SOAP_CMAC api__listExecutionsResponse
 {
 public:
-	ns1__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type ns1:Response */
+	api__Response *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* required element of type api:Response */
 	struct soap *soap;	/* transient */
 public:
-	virtual int soap_type() const { return 53; } /* = unique id SOAP_TYPE_ns1__listExecutionsResponse */
+	virtual int soap_type() const { return 53; } /* = unique id SOAP_TYPE_api__listExecutionsResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__listExecutionsResponse(): return_(NULL), soap(NULL) { ns1__listExecutionsResponse::soap_default(NULL); }
-	virtual ~ns1__listExecutionsResponse() { }
+	         api__listExecutionsResponse(): return_(NULL), soap(NULL) { api__listExecutionsResponse::soap_default(NULL); }
+	virtual ~api__listExecutionsResponse() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Pipeline
-#define SOAP_TYPE_ns1__Pipeline (11)
-/* ns1:Pipeline */
-class SOAP_CMAC ns1__Pipeline : public ns1__Object
+#ifndef SOAP_TYPE_api__Pipeline
+#define SOAP_TYPE_api__Pipeline (11)
+/* api:Pipeline */
+class SOAP_CMAC api__Pipeline : public api__Object
 {
 public:
 	std::string identifier;	/* required element of type xsd:string */
 	std::string name;	/* required element of type xsd:string */
 	std::string *description;	/* optional element of type xsd:string */
 	std::string version;	/* required element of type xsd:string */
-	std::vector<ns1__PipelineParameter * >parameters;	/* optional element of type ns1:PipelineParameter */
-	std::vector<ns1__IntKeyStringValuePair * >errorCodesAndMessages;	/* optional element of type ns1:IntKeyStringValuePair */
+	std::vector<api__PipelineParameter * >parameters;	/* optional element of type api:PipelineParameter */
+	std::vector<api__IntKeyStringValuePair * >errorCodesAndMessages;	/* optional element of type api:IntKeyStringValuePair */
 	bool *canExecute;	/* optional element of type xsd:boolean */
 public:
-	virtual int soap_type() const { return 11; } /* = unique id SOAP_TYPE_ns1__Pipeline */
+	virtual int soap_type() const { return 11; } /* = unique id SOAP_TYPE_api__Pipeline */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Pipeline(): description(NULL), canExecute(NULL) { ns1__Pipeline::soap_default(NULL); }
-	virtual ~ns1__Pipeline() { }
+	         api__Pipeline(): description(NULL), canExecute(NULL) { api__Pipeline::soap_default(NULL); }
+	virtual ~api__Pipeline() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Execution
-#define SOAP_TYPE_ns1__Execution (19)
-/* ns1:Execution */
-class SOAP_CMAC ns1__Execution : public ns1__Object
+#ifndef SOAP_TYPE_api__Execution
+#define SOAP_TYPE_api__Execution (19)
+/* api:Execution */
+class SOAP_CMAC api__Execution : public api__Object
 {
 public:
 	std::string identifier;	/* required element of type xsd:string */
 	std::string name;	/* required element of type xsd:string */
 	std::string pipelineIdentifier;	/* required element of type xsd:string */
 	int *timeout;	/* optional element of type xsd:int */
-	enum ns1__ExecutionStatus status;	/* required element of type ns1:ExecutionStatus */
-	std::vector<ns1__StringKeyParameterValuePair * >inputValue;	/* optional element of type ns1:StringKeyParameterValuePair */
-	std::vector<ns1__StringKeyParameterValuePair * >returnedFile;	/* optional element of type ns1:StringKeyParameterValuePair */
+	enum api__ExecutionStatus status;	/* required element of type api:ExecutionStatus */
+	std::vector<api__StringKeyParameterValuePair * >inputValue;	/* optional element of type api:StringKeyParameterValuePair */
+	std::vector<api__StringKeyParameterValuePair * >returnedFile;	/* optional element of type api:StringKeyParameterValuePair */
 	std::string *studyIdentifier;	/* optional element of type xsd:string */
 	int *errorCode;	/* optional element of type xsd:int */
 	LONG64 *startDate;	/* optional element of type xsd:long */
 	LONG64 *endDate;	/* optional element of type xsd:long */
 public:
-	virtual int soap_type() const { return 19; } /* = unique id SOAP_TYPE_ns1__Execution */
+	virtual int soap_type() const { return 19; } /* = unique id SOAP_TYPE_api__Execution */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Execution(): timeout(NULL), studyIdentifier(NULL), errorCode(NULL), startDate(NULL), endDate(NULL) { ns1__Execution::soap_default(NULL); }
-	virtual ~ns1__Execution() { }
+	         api__Execution(): timeout(NULL), studyIdentifier(NULL), errorCode(NULL), startDate(NULL), endDate(NULL) { api__Execution::soap_default(NULL); }
+	virtual ~api__Execution() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GlobalProperties
-#define SOAP_TYPE_ns1__GlobalProperties (21)
-/* ns1:GlobalProperties */
-class SOAP_CMAC ns1__GlobalProperties : public ns1__Object
+#ifndef SOAP_TYPE_api__GlobalProperties
+#define SOAP_TYPE_api__GlobalProperties (21)
+/* api:GlobalProperties */
+class SOAP_CMAC api__GlobalProperties : public api__Object
 {
 public:
-	std::vector<ns1__IntKeyStringValuePair * >APIErrorCodesAndMessages;	/* optional element of type ns1:IntKeyStringValuePair */
+	std::vector<api__IntKeyStringValuePair * >APIErrorCodesAndMessages;	/* optional element of type api:IntKeyStringValuePair */
 	std::vector<std::string >supportedTransferProtocol;	/* required element of type xsd:string */
-	std::vector<enum ns1__Module >supportedModule;	/* required element of type ns1:Module */
+	std::vector<enum api__Module >supportedModule;	/* required element of type api:Module */
 	std::string *email;	/* optional element of type xsd:string */
 	std::string *platformDescription;	/* optional element of type xsd:string */
 	int *minAuthorizedExecutionTimeout;	/* optional element of type xsd:int */
@@ -1113,175 +1113,175 @@ public:
 	std::string *defaultStudy;	/* optional element of type xsd:string */
 	std::string supportedAPIVersion;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 21; } /* = unique id SOAP_TYPE_ns1__GlobalProperties */
+	virtual int soap_type() const { return 21; } /* = unique id SOAP_TYPE_api__GlobalProperties */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GlobalProperties(): email(NULL), platformDescription(NULL), minAuthorizedExecutionTimeout(NULL), maxAuthorizedExecutionTimeout(NULL), defaultExecutionTimeout(NULL), defaultStudy(NULL) { ns1__GlobalProperties::soap_default(NULL); }
-	virtual ~ns1__GlobalProperties() { }
+	         api__GlobalProperties(): email(NULL), platformDescription(NULL), minAuthorizedExecutionTimeout(NULL), maxAuthorizedExecutionTimeout(NULL), defaultExecutionTimeout(NULL), defaultStudy(NULL) { api__GlobalProperties::soap_default(NULL); }
+	virtual ~api__GlobalProperties() { }
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__authenticateSession
-#define SOAP_TYPE___ns1__authenticateSession (104)
+#ifndef SOAP_TYPE___api__authenticateSession
+#define SOAP_TYPE___api__authenticateSession (104)
 /* Operation wrapper: */
-struct __ns1__authenticateSession
+struct __api__authenticateSession
 {
 public:
-	ns1__authenticateSession *ns1__authenticateSession_;	/* optional element of type ns1:authenticateSession */
+	api__authenticateSession *api__authenticateSession_;	/* optional element of type api:authenticateSession */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__deleteExecution
-#define SOAP_TYPE___ns1__deleteExecution (108)
+#ifndef SOAP_TYPE___api__deleteExecution
+#define SOAP_TYPE___api__deleteExecution (108)
 /* Operation wrapper: */
-struct __ns1__deleteExecution
+struct __api__deleteExecution
 {
 public:
-	ns1__deleteExecution *ns1__deleteExecution_;	/* optional element of type ns1:deleteExecution */
+	api__deleteExecution *api__deleteExecution_;	/* optional element of type api:deleteExecution */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__getPipeline
-#define SOAP_TYPE___ns1__getPipeline (112)
+#ifndef SOAP_TYPE___api__getPipeline
+#define SOAP_TYPE___api__getPipeline (112)
 /* Operation wrapper: */
-struct __ns1__getPipeline
+struct __api__getPipeline
 {
 public:
-	ns1__getPipeline *ns1__getPipeline_;	/* optional element of type ns1:getPipeline */
+	api__getPipeline *api__getPipeline_;	/* optional element of type api:getPipeline */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__authenticateHTTP
-#define SOAP_TYPE___ns1__authenticateHTTP (116)
+#ifndef SOAP_TYPE___api__authenticateHTTP
+#define SOAP_TYPE___api__authenticateHTTP (116)
 /* Operation wrapper: */
-struct __ns1__authenticateHTTP
+struct __api__authenticateHTTP
 {
 public:
-	ns1__authenticateHTTP *ns1__authenticateHTTP_;	/* optional element of type ns1:authenticateHTTP */
+	api__authenticateHTTP *api__authenticateHTTP_;	/* optional element of type api:authenticateHTTP */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__logout
-#define SOAP_TYPE___ns1__logout (120)
+#ifndef SOAP_TYPE___api__logout
+#define SOAP_TYPE___api__logout (120)
 /* Operation wrapper: */
-struct __ns1__logout
+struct __api__logout
 {
 public:
-	ns1__logout *ns1__logout_;	/* optional element of type ns1:logout */
+	api__logout *api__logout_;	/* optional element of type api:logout */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__updateExecution
-#define SOAP_TYPE___ns1__updateExecution (124)
+#ifndef SOAP_TYPE___api__updateExecution
+#define SOAP_TYPE___api__updateExecution (124)
 /* Operation wrapper: */
-struct __ns1__updateExecution
+struct __api__updateExecution
 {
 public:
-	ns1__updateExecution *ns1__updateExecution_;	/* optional element of type ns1:updateExecution */
+	api__updateExecution *api__updateExecution_;	/* optional element of type api:updateExecution */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__getGlobalProperties
-#define SOAP_TYPE___ns1__getGlobalProperties (128)
+#ifndef SOAP_TYPE___api__getGlobalProperties
+#define SOAP_TYPE___api__getGlobalProperties (128)
 /* Operation wrapper: */
-struct __ns1__getGlobalProperties
+struct __api__getGlobalProperties
 {
 public:
-	ns1__getGlobalProperties *ns1__getGlobalProperties_;	/* optional element of type ns1:getGlobalProperties */
+	api__getGlobalProperties *api__getGlobalProperties_;	/* optional element of type api:getGlobalProperties */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__initExecution
-#define SOAP_TYPE___ns1__initExecution (132)
+#ifndef SOAP_TYPE___api__initExecution
+#define SOAP_TYPE___api__initExecution (132)
 /* Operation wrapper: */
-struct __ns1__initExecution
+struct __api__initExecution
 {
 public:
-	ns1__initExecution *ns1__initExecution_;	/* optional element of type ns1:initExecution */
+	api__initExecution *api__initExecution_;	/* optional element of type api:initExecution */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__getStdOut
-#define SOAP_TYPE___ns1__getStdOut (136)
+#ifndef SOAP_TYPE___api__getStdOut
+#define SOAP_TYPE___api__getStdOut (136)
 /* Operation wrapper: */
-struct __ns1__getStdOut
+struct __api__getStdOut
 {
 public:
-	ns1__getStdOut *ns1__getStdOut_;	/* optional element of type ns1:getStdOut */
+	api__getStdOut *api__getStdOut_;	/* optional element of type api:getStdOut */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__getStdErr
-#define SOAP_TYPE___ns1__getStdErr (140)
+#ifndef SOAP_TYPE___api__getStdErr
+#define SOAP_TYPE___api__getStdErr (140)
 /* Operation wrapper: */
-struct __ns1__getStdErr
+struct __api__getStdErr
 {
 public:
-	ns1__getStdErr *ns1__getStdErr_;	/* optional element of type ns1:getStdErr */
+	api__getStdErr *api__getStdErr_;	/* optional element of type api:getStdErr */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__getExecutionResults
-#define SOAP_TYPE___ns1__getExecutionResults (144)
+#ifndef SOAP_TYPE___api__getExecutionResults
+#define SOAP_TYPE___api__getExecutionResults (144)
 /* Operation wrapper: */
-struct __ns1__getExecutionResults
+struct __api__getExecutionResults
 {
 public:
-	ns1__getExecutionResults *ns1__getExecutionResults_;	/* optional element of type ns1:getExecutionResults */
+	api__getExecutionResults *api__getExecutionResults_;	/* optional element of type api:getExecutionResults */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__killExecution
-#define SOAP_TYPE___ns1__killExecution (148)
+#ifndef SOAP_TYPE___api__killExecution
+#define SOAP_TYPE___api__killExecution (148)
 /* Operation wrapper: */
-struct __ns1__killExecution
+struct __api__killExecution
 {
 public:
-	ns1__killExecution *ns1__killExecution_;	/* optional element of type ns1:killExecution */
+	api__killExecution *api__killExecution_;	/* optional element of type api:killExecution */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__getExecution
-#define SOAP_TYPE___ns1__getExecution (152)
+#ifndef SOAP_TYPE___api__getExecution
+#define SOAP_TYPE___api__getExecution (152)
 /* Operation wrapper: */
-struct __ns1__getExecution
+struct __api__getExecution
 {
 public:
-	ns1__getExecution *ns1__getExecution_;	/* optional element of type ns1:getExecution */
+	api__getExecution *api__getExecution_;	/* optional element of type api:getExecution */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__playExecution
-#define SOAP_TYPE___ns1__playExecution (156)
+#ifndef SOAP_TYPE___api__playExecution
+#define SOAP_TYPE___api__playExecution (156)
 /* Operation wrapper: */
-struct __ns1__playExecution
+struct __api__playExecution
 {
 public:
-	ns1__playExecution *ns1__playExecution_;	/* optional element of type ns1:playExecution */
+	api__playExecution *api__playExecution_;	/* optional element of type api:playExecution */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__listPipelines
-#define SOAP_TYPE___ns1__listPipelines (160)
+#ifndef SOAP_TYPE___api__listPipelines
+#define SOAP_TYPE___api__listPipelines (160)
 /* Operation wrapper: */
-struct __ns1__listPipelines
+struct __api__listPipelines
 {
 public:
-	ns1__listPipelines *ns1__listPipelines_;	/* optional element of type ns1:listPipelines */
+	api__listPipelines *api__listPipelines_;	/* optional element of type api:listPipelines */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__listExecutions
-#define SOAP_TYPE___ns1__listExecutions (164)
+#ifndef SOAP_TYPE___api__listExecutions
+#define SOAP_TYPE___api__listExecutions (164)
 /* Operation wrapper: */
-struct __ns1__listExecutions
+struct __api__listExecutions
 {
 public:
-	ns1__listExecutions *ns1__listExecutions_;	/* optional element of type ns1:listExecutions */
+	api__listExecutions *api__listExecutions_;	/* optional element of type api:listExecutions */
 };
 #endif
 
@@ -1379,37 +1379,37 @@ typedef char *_XML;
 \******************************************************************************/
 
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__authenticateSession(struct soap*, ns1__authenticateSession *ns1__authenticateSession_, ns1__authenticateSessionResponse *ns1__authenticateSessionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__authenticateSession(struct soap*, api__authenticateSession *api__authenticateSession_, api__authenticateSessionResponse *api__authenticateSessionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__deleteExecution(struct soap*, ns1__deleteExecution *ns1__deleteExecution_, ns1__deleteExecutionResponse *ns1__deleteExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__deleteExecution(struct soap*, api__deleteExecution *api__deleteExecution_, api__deleteExecutionResponse *api__deleteExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getPipeline(struct soap*, ns1__getPipeline *ns1__getPipeline_, ns1__getPipelineResponse *ns1__getPipelineResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getPipeline(struct soap*, api__getPipeline *api__getPipeline_, api__getPipelineResponse *api__getPipelineResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__authenticateHTTP(struct soap*, ns1__authenticateHTTP *ns1__authenticateHTTP_, ns1__authenticateHTTPResponse *ns1__authenticateHTTPResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__authenticateHTTP(struct soap*, api__authenticateHTTP *api__authenticateHTTP_, api__authenticateHTTPResponse *api__authenticateHTTPResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__logout(struct soap*, ns1__logout *ns1__logout_, ns1__logoutResponse *ns1__logoutResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__logout(struct soap*, api__logout *api__logout_, api__logoutResponse *api__logoutResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__updateExecution(struct soap*, ns1__updateExecution *ns1__updateExecution_, ns1__updateExecutionResponse *ns1__updateExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__updateExecution(struct soap*, api__updateExecution *api__updateExecution_, api__updateExecutionResponse *api__updateExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getGlobalProperties(struct soap*, ns1__getGlobalProperties *ns1__getGlobalProperties_, ns1__getGlobalPropertiesResponse *ns1__getGlobalPropertiesResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getGlobalProperties(struct soap*, api__getGlobalProperties *api__getGlobalProperties_, api__getGlobalPropertiesResponse *api__getGlobalPropertiesResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__initExecution(struct soap*, ns1__initExecution *ns1__initExecution_, ns1__initExecutionResponse *ns1__initExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__initExecution(struct soap*, api__initExecution *api__initExecution_, api__initExecutionResponse *api__initExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getStdOut(struct soap*, ns1__getStdOut *ns1__getStdOut_, ns1__getStdOutResponse *ns1__getStdOutResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getStdOut(struct soap*, api__getStdOut *api__getStdOut_, api__getStdOutResponse *api__getStdOutResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getStdErr(struct soap*, ns1__getStdErr *ns1__getStdErr_, ns1__getStdErrResponse *ns1__getStdErrResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getStdErr(struct soap*, api__getStdErr *api__getStdErr_, api__getStdErrResponse *api__getStdErrResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getExecutionResults(struct soap*, ns1__getExecutionResults *ns1__getExecutionResults_, ns1__getExecutionResultsResponse *ns1__getExecutionResultsResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getExecutionResults(struct soap*, api__getExecutionResults *api__getExecutionResults_, api__getExecutionResultsResponse *api__getExecutionResultsResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__killExecution(struct soap*, ns1__killExecution *ns1__killExecution_, ns1__killExecutionResponse *ns1__killExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__killExecution(struct soap*, api__killExecution *api__killExecution_, api__killExecutionResponse *api__killExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__getExecution(struct soap*, ns1__getExecution *ns1__getExecution_, ns1__getExecutionResponse *ns1__getExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__getExecution(struct soap*, api__getExecution *api__getExecution_, api__getExecutionResponse *api__getExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__playExecution(struct soap*, ns1__playExecution *ns1__playExecution_, ns1__playExecutionResponse *ns1__playExecutionResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__playExecution(struct soap*, api__playExecution *api__playExecution_, api__playExecutionResponse *api__playExecutionResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__listPipelines(struct soap*, ns1__listPipelines *ns1__listPipelines_, ns1__listPipelinesResponse *ns1__listPipelinesResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__listPipelines(struct soap*, api__listPipelines *api__listPipelines_, api__listPipelinesResponse *api__listPipelinesResponse_);
 
-SOAP_FMAC5 int SOAP_FMAC6 __ns1__listExecutions(struct soap*, ns1__listExecutions *ns1__listExecutions_, ns1__listExecutionsResponse *ns1__listExecutionsResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 __api__listExecutions(struct soap*, api__listExecutions *api__listExecutions_, api__listExecutionsResponse *api__listExecutionsResponse_);
 
 /******************************************************************************\
  *                                                                            *
@@ -1421,76 +1421,37 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve(struct soap*);
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_request(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__authenticateSession(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__authenticateSession(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__deleteExecution(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__deleteExecution(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getPipeline(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getPipeline(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__authenticateHTTP(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__authenticateHTTP(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__logout(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__logout(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__updateExecution(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__updateExecution(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getGlobalProperties(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getGlobalProperties(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__initExecution(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__initExecution(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getStdOut(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getStdOut(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getStdErr(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getStdErr(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getExecutionResults(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getExecutionResults(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__killExecution(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__killExecution(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__getExecution(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__getExecution(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__playExecution(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__playExecution(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__listPipelines(struct soap*);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__listPipelines(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve___ns1__listExecutions(struct soap*);
-
-/******************************************************************************\
- *                                                                            *
- * Client-Side Call Stubs                                                     *
- *                                                                            *
-\******************************************************************************/
-
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__authenticateSession(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__authenticateSession *ns1__authenticateSession_, ns1__authenticateSessionResponse *ns1__authenticateSessionResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__deleteExecution(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__deleteExecution *ns1__deleteExecution_, ns1__deleteExecutionResponse *ns1__deleteExecutionResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__getPipeline(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__getPipeline *ns1__getPipeline_, ns1__getPipelineResponse *ns1__getPipelineResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__authenticateHTTP(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__authenticateHTTP *ns1__authenticateHTTP_, ns1__authenticateHTTPResponse *ns1__authenticateHTTPResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__logout(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__logout *ns1__logout_, ns1__logoutResponse *ns1__logoutResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__updateExecution(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__updateExecution *ns1__updateExecution_, ns1__updateExecutionResponse *ns1__updateExecutionResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__getGlobalProperties(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__getGlobalProperties *ns1__getGlobalProperties_, ns1__getGlobalPropertiesResponse *ns1__getGlobalPropertiesResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__initExecution(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__initExecution *ns1__initExecution_, ns1__initExecutionResponse *ns1__initExecutionResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__getStdOut(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__getStdOut *ns1__getStdOut_, ns1__getStdOutResponse *ns1__getStdOutResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__getStdErr(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__getStdErr *ns1__getStdErr_, ns1__getStdErrResponse *ns1__getStdErrResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__getExecutionResults(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__getExecutionResults *ns1__getExecutionResults_, ns1__getExecutionResultsResponse *ns1__getExecutionResultsResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__killExecution(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__killExecution *ns1__killExecution_, ns1__killExecutionResponse *ns1__killExecutionResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__getExecution(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__getExecution *ns1__getExecution_, ns1__getExecutionResponse *ns1__getExecutionResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__playExecution(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__playExecution *ns1__playExecution_, ns1__playExecutionResponse *ns1__playExecutionResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__listPipelines(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__listPipelines *ns1__listPipelines_, ns1__listPipelinesResponse *ns1__listPipelinesResponse_);
-
-SOAP_FMAC5 int SOAP_FMAC6 soap_call___ns1__listExecutions(struct soap *soap, const char *soap_endpoint, const char *soap_action, ns1__listExecutions *ns1__listExecutions_, ns1__listExecutionsResponse *ns1__listExecutionsResponse_);
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve___api__listExecutions(struct soap*);
 
 #endif
 

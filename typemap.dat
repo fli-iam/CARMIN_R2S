@@ -225,4 +225,6 @@ wsrp	= <http://schemas.xmlsoap.org/rp/>
 
 # xsd__base64Binary = class xsd__base64Binary { unsigned char *__ptr; int __size; }; | xsd__base64Binary | xsd__base64Binary
 
-calc = "urn:calc"
+
+api = "http://france-life-imaging.fr/api"
+

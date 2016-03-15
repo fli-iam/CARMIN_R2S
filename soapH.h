@@ -117,65 +117,65 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_put_bool(struct soap*, const bool *, const char*,
 
 SOAP_FMAC3 bool * SOAP_FMAC4 soap_get_bool(struct soap*, bool *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__Module
-#define SOAP_TYPE_ns1__Module (56)
+#ifndef SOAP_TYPE_api__Module
+#define SOAP_TYPE_api__Module (56)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__Module(struct soap*, enum ns1__Module *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__Module(struct soap*, const char*, int, const enum ns1__Module *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_api__Module(struct soap*, enum api__Module *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__Module(struct soap*, const char*, int, const enum api__Module *, const char*);
 
-SOAP_FMAC3S const char* SOAP_FMAC4S soap_ns1__Module2s(struct soap*, enum ns1__Module);
-SOAP_FMAC3 enum ns1__Module * SOAP_FMAC4 soap_in_ns1__Module(struct soap*, const char*, enum ns1__Module *, const char*);
+SOAP_FMAC3S const char* SOAP_FMAC4S soap_api__Module2s(struct soap*, enum api__Module);
+SOAP_FMAC3 enum api__Module * SOAP_FMAC4 soap_in_api__Module(struct soap*, const char*, enum api__Module *, const char*);
 
-SOAP_FMAC3S int SOAP_FMAC4S soap_s2ns1__Module(struct soap*, const char*, enum ns1__Module *);
+SOAP_FMAC3S int SOAP_FMAC4S soap_s2api__Module(struct soap*, const char*, enum api__Module *);
 
-#define soap_write_ns1__Module(soap, data) ( soap_begin_send(soap) || soap_put_ns1__Module(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_api__Module(soap, data) ( soap_begin_send(soap) || soap_put_api__Module(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns1__Module(struct soap*, const enum ns1__Module *, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_api__Module(struct soap*, const enum api__Module *, const char*, const char*);
 
-#define soap_read_ns1__Module(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__Module(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_api__Module(soap, data) ( soap_begin_recv(soap) || !soap_get_api__Module(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 enum ns1__Module * SOAP_FMAC4 soap_get_ns1__Module(struct soap*, enum ns1__Module *, const char*, const char*);
+SOAP_FMAC3 enum api__Module * SOAP_FMAC4 soap_get_api__Module(struct soap*, enum api__Module *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__ExecutionStatus
-#define SOAP_TYPE_ns1__ExecutionStatus (55)
+#ifndef SOAP_TYPE_api__ExecutionStatus
+#define SOAP_TYPE_api__ExecutionStatus (55)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__ExecutionStatus(struct soap*, enum ns1__ExecutionStatus *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__ExecutionStatus(struct soap*, const char*, int, const enum ns1__ExecutionStatus *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_api__ExecutionStatus(struct soap*, enum api__ExecutionStatus *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__ExecutionStatus(struct soap*, const char*, int, const enum api__ExecutionStatus *, const char*);
 
-SOAP_FMAC3S const char* SOAP_FMAC4S soap_ns1__ExecutionStatus2s(struct soap*, enum ns1__ExecutionStatus);
-SOAP_FMAC3 enum ns1__ExecutionStatus * SOAP_FMAC4 soap_in_ns1__ExecutionStatus(struct soap*, const char*, enum ns1__ExecutionStatus *, const char*);
+SOAP_FMAC3S const char* SOAP_FMAC4S soap_api__ExecutionStatus2s(struct soap*, enum api__ExecutionStatus);
+SOAP_FMAC3 enum api__ExecutionStatus * SOAP_FMAC4 soap_in_api__ExecutionStatus(struct soap*, const char*, enum api__ExecutionStatus *, const char*);
 
-SOAP_FMAC3S int SOAP_FMAC4S soap_s2ns1__ExecutionStatus(struct soap*, const char*, enum ns1__ExecutionStatus *);
+SOAP_FMAC3S int SOAP_FMAC4S soap_s2api__ExecutionStatus(struct soap*, const char*, enum api__ExecutionStatus *);
 
-#define soap_write_ns1__ExecutionStatus(soap, data) ( soap_begin_send(soap) || soap_put_ns1__ExecutionStatus(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_api__ExecutionStatus(soap, data) ( soap_begin_send(soap) || soap_put_api__ExecutionStatus(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns1__ExecutionStatus(struct soap*, const enum ns1__ExecutionStatus *, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_api__ExecutionStatus(struct soap*, const enum api__ExecutionStatus *, const char*, const char*);
 
-#define soap_read_ns1__ExecutionStatus(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__ExecutionStatus(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_api__ExecutionStatus(soap, data) ( soap_begin_recv(soap) || !soap_get_api__ExecutionStatus(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 enum ns1__ExecutionStatus * SOAP_FMAC4 soap_get_ns1__ExecutionStatus(struct soap*, enum ns1__ExecutionStatus *, const char*, const char*);
+SOAP_FMAC3 enum api__ExecutionStatus * SOAP_FMAC4 soap_get_api__ExecutionStatus(struct soap*, enum api__ExecutionStatus *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__ParameterType
-#define SOAP_TYPE_ns1__ParameterType (54)
+#ifndef SOAP_TYPE_api__ParameterType
+#define SOAP_TYPE_api__ParameterType (54)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__ParameterType(struct soap*, enum ns1__ParameterType *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__ParameterType(struct soap*, const char*, int, const enum ns1__ParameterType *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_api__ParameterType(struct soap*, enum api__ParameterType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__ParameterType(struct soap*, const char*, int, const enum api__ParameterType *, const char*);
 
-SOAP_FMAC3S const char* SOAP_FMAC4S soap_ns1__ParameterType2s(struct soap*, enum ns1__ParameterType);
-SOAP_FMAC3 enum ns1__ParameterType * SOAP_FMAC4 soap_in_ns1__ParameterType(struct soap*, const char*, enum ns1__ParameterType *, const char*);
+SOAP_FMAC3S const char* SOAP_FMAC4S soap_api__ParameterType2s(struct soap*, enum api__ParameterType);
+SOAP_FMAC3 enum api__ParameterType * SOAP_FMAC4 soap_in_api__ParameterType(struct soap*, const char*, enum api__ParameterType *, const char*);
 
-SOAP_FMAC3S int SOAP_FMAC4S soap_s2ns1__ParameterType(struct soap*, const char*, enum ns1__ParameterType *);
+SOAP_FMAC3S int SOAP_FMAC4S soap_s2api__ParameterType(struct soap*, const char*, enum api__ParameterType *);
 
-#define soap_write_ns1__ParameterType(soap, data) ( soap_begin_send(soap) || soap_put_ns1__ParameterType(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_api__ParameterType(soap, data) ( soap_begin_send(soap) || soap_put_api__ParameterType(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns1__ParameterType(struct soap*, const enum ns1__ParameterType *, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_api__ParameterType(struct soap*, const enum api__ParameterType *, const char*, const char*);
 
-#define soap_read_ns1__ParameterType(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__ParameterType(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_api__ParameterType(soap, data) ( soap_begin_recv(soap) || !soap_get_api__ParameterType(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 enum ns1__ParameterType * SOAP_FMAC4 soap_get_ns1__ParameterType(struct soap*, enum ns1__ParameterType *, const char*, const char*);
+SOAP_FMAC3 enum api__ParameterType * SOAP_FMAC4 soap_get_api__ParameterType(struct soap*, enum api__ParameterType *, const char*, const char*);
 
 #ifndef SOAP_TYPE_std__string
 #define SOAP_TYPE_std__string (57)
@@ -202,1017 +202,1017 @@ SOAP_FMAC3 std::string * SOAP_FMAC4 soap_get_std__string(struct soap*, std::stri
 SOAP_FMAC1 std::string * SOAP_FMAC2 soap_instantiate_std__string(struct soap*, int, const char*, const char*, size_t*);
 SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__string(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_ns1__listExecutionsResponse
-#define SOAP_TYPE_ns1__listExecutionsResponse (53)
+#ifndef SOAP_TYPE_api__listExecutionsResponse
+#define SOAP_TYPE_api__listExecutionsResponse (53)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__listExecutionsResponse(struct soap*, const char*, int, const ns1__listExecutionsResponse *, const char*);
-SOAP_FMAC3 ns1__listExecutionsResponse * SOAP_FMAC4 soap_in_ns1__listExecutionsResponse(struct soap*, const char*, ns1__listExecutionsResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__listExecutionsResponse(struct soap*, const char*, int, const api__listExecutionsResponse *, const char*);
+SOAP_FMAC3 api__listExecutionsResponse * SOAP_FMAC4 soap_in_api__listExecutionsResponse(struct soap*, const char*, api__listExecutionsResponse *, const char*);
 
-#define soap_write_ns1__listExecutionsResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__listExecutionsResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__listExecutionsResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__listExecutionsResponse * SOAP_FMAC4 soap_get_ns1__listExecutionsResponse(struct soap*, ns1__listExecutionsResponse *, const char*, const char*);
-
-#define soap_new_ns1__listExecutionsResponse(soap, n) soap_instantiate_ns1__listExecutionsResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__listExecutionsResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__listExecutionsResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__listExecutionsResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__listExecutionsResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__listExecutionsResponse * SOAP_FMAC2 soap_instantiate_ns1__listExecutionsResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__listExecutionsResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__listExecutionsResponse * SOAP_FMAC4 soap_get_api__listExecutionsResponse(struct soap*, api__listExecutionsResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__listExecutions
-#define SOAP_TYPE_ns1__listExecutions (52)
+#define soap_new_api__listExecutionsResponse(soap, n) soap_instantiate_api__listExecutionsResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__listExecutionsResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__listExecutionsResponse * SOAP_FMAC2 soap_instantiate_api__listExecutionsResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__listExecutionsResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__listExecutions
+#define SOAP_TYPE_api__listExecutions (52)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__listExecutions(struct soap*, const char*, int, const ns1__listExecutions *, const char*);
-SOAP_FMAC3 ns1__listExecutions * SOAP_FMAC4 soap_in_ns1__listExecutions(struct soap*, const char*, ns1__listExecutions *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__listExecutions(struct soap*, const char*, int, const api__listExecutions *, const char*);
+SOAP_FMAC3 api__listExecutions * SOAP_FMAC4 soap_in_api__listExecutions(struct soap*, const char*, api__listExecutions *, const char*);
 
-#define soap_write_ns1__listExecutions(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__listExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__listExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__listExecutions * SOAP_FMAC4 soap_get_ns1__listExecutions(struct soap*, ns1__listExecutions *, const char*, const char*);
-
-#define soap_new_ns1__listExecutions(soap, n) soap_instantiate_ns1__listExecutions(soap, n, NULL, NULL, NULL)
+#define soap_write_api__listExecutions(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__listExecutions(soap, p) soap_delete(soap, p)
+#define soap_read_api__listExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_api__listExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__listExecutions * SOAP_FMAC2 soap_instantiate_ns1__listExecutions(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__listExecutions(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__listExecutions * SOAP_FMAC4 soap_get_api__listExecutions(struct soap*, api__listExecutions *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__listPipelinesResponse
-#define SOAP_TYPE_ns1__listPipelinesResponse (51)
+#define soap_new_api__listExecutions(soap, n) soap_instantiate_api__listExecutions(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__listExecutions(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__listExecutions * SOAP_FMAC2 soap_instantiate_api__listExecutions(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__listExecutions(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__listPipelinesResponse
+#define SOAP_TYPE_api__listPipelinesResponse (51)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__listPipelinesResponse(struct soap*, const char*, int, const ns1__listPipelinesResponse *, const char*);
-SOAP_FMAC3 ns1__listPipelinesResponse * SOAP_FMAC4 soap_in_ns1__listPipelinesResponse(struct soap*, const char*, ns1__listPipelinesResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__listPipelinesResponse(struct soap*, const char*, int, const api__listPipelinesResponse *, const char*);
+SOAP_FMAC3 api__listPipelinesResponse * SOAP_FMAC4 soap_in_api__listPipelinesResponse(struct soap*, const char*, api__listPipelinesResponse *, const char*);
 
-#define soap_write_ns1__listPipelinesResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__listPipelinesResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__listPipelinesResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__listPipelinesResponse * SOAP_FMAC4 soap_get_ns1__listPipelinesResponse(struct soap*, ns1__listPipelinesResponse *, const char*, const char*);
-
-#define soap_new_ns1__listPipelinesResponse(soap, n) soap_instantiate_ns1__listPipelinesResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__listPipelinesResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__listPipelinesResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__listPipelinesResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__listPipelinesResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__listPipelinesResponse * SOAP_FMAC2 soap_instantiate_ns1__listPipelinesResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__listPipelinesResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__listPipelinesResponse * SOAP_FMAC4 soap_get_api__listPipelinesResponse(struct soap*, api__listPipelinesResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__listPipelines
-#define SOAP_TYPE_ns1__listPipelines (50)
+#define soap_new_api__listPipelinesResponse(soap, n) soap_instantiate_api__listPipelinesResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__listPipelinesResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__listPipelinesResponse * SOAP_FMAC2 soap_instantiate_api__listPipelinesResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__listPipelinesResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__listPipelines
+#define SOAP_TYPE_api__listPipelines (50)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__listPipelines(struct soap*, const char*, int, const ns1__listPipelines *, const char*);
-SOAP_FMAC3 ns1__listPipelines * SOAP_FMAC4 soap_in_ns1__listPipelines(struct soap*, const char*, ns1__listPipelines *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__listPipelines(struct soap*, const char*, int, const api__listPipelines *, const char*);
+SOAP_FMAC3 api__listPipelines * SOAP_FMAC4 soap_in_api__listPipelines(struct soap*, const char*, api__listPipelines *, const char*);
 
-#define soap_write_ns1__listPipelines(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__listPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__listPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__listPipelines * SOAP_FMAC4 soap_get_ns1__listPipelines(struct soap*, ns1__listPipelines *, const char*, const char*);
-
-#define soap_new_ns1__listPipelines(soap, n) soap_instantiate_ns1__listPipelines(soap, n, NULL, NULL, NULL)
+#define soap_write_api__listPipelines(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__listPipelines(soap, p) soap_delete(soap, p)
+#define soap_read_api__listPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_api__listPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__listPipelines * SOAP_FMAC2 soap_instantiate_ns1__listPipelines(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__listPipelines(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__listPipelines * SOAP_FMAC4 soap_get_api__listPipelines(struct soap*, api__listPipelines *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__playExecutionResponse
-#define SOAP_TYPE_ns1__playExecutionResponse (49)
+#define soap_new_api__listPipelines(soap, n) soap_instantiate_api__listPipelines(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__listPipelines(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__listPipelines * SOAP_FMAC2 soap_instantiate_api__listPipelines(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__listPipelines(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__playExecutionResponse
+#define SOAP_TYPE_api__playExecutionResponse (49)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__playExecutionResponse(struct soap*, const char*, int, const ns1__playExecutionResponse *, const char*);
-SOAP_FMAC3 ns1__playExecutionResponse * SOAP_FMAC4 soap_in_ns1__playExecutionResponse(struct soap*, const char*, ns1__playExecutionResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__playExecutionResponse(struct soap*, const char*, int, const api__playExecutionResponse *, const char*);
+SOAP_FMAC3 api__playExecutionResponse * SOAP_FMAC4 soap_in_api__playExecutionResponse(struct soap*, const char*, api__playExecutionResponse *, const char*);
 
-#define soap_write_ns1__playExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__playExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__playExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__playExecutionResponse * SOAP_FMAC4 soap_get_ns1__playExecutionResponse(struct soap*, ns1__playExecutionResponse *, const char*, const char*);
-
-#define soap_new_ns1__playExecutionResponse(soap, n) soap_instantiate_ns1__playExecutionResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__playExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__playExecutionResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__playExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__playExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__playExecutionResponse * SOAP_FMAC2 soap_instantiate_ns1__playExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__playExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__playExecutionResponse * SOAP_FMAC4 soap_get_api__playExecutionResponse(struct soap*, api__playExecutionResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__playExecution
-#define SOAP_TYPE_ns1__playExecution (48)
+#define soap_new_api__playExecutionResponse(soap, n) soap_instantiate_api__playExecutionResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__playExecutionResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__playExecutionResponse * SOAP_FMAC2 soap_instantiate_api__playExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__playExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__playExecution
+#define SOAP_TYPE_api__playExecution (48)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__playExecution(struct soap*, const char*, int, const ns1__playExecution *, const char*);
-SOAP_FMAC3 ns1__playExecution * SOAP_FMAC4 soap_in_ns1__playExecution(struct soap*, const char*, ns1__playExecution *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__playExecution(struct soap*, const char*, int, const api__playExecution *, const char*);
+SOAP_FMAC3 api__playExecution * SOAP_FMAC4 soap_in_api__playExecution(struct soap*, const char*, api__playExecution *, const char*);
 
-#define soap_write_ns1__playExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__playExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__playExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__playExecution * SOAP_FMAC4 soap_get_ns1__playExecution(struct soap*, ns1__playExecution *, const char*, const char*);
-
-#define soap_new_ns1__playExecution(soap, n) soap_instantiate_ns1__playExecution(soap, n, NULL, NULL, NULL)
+#define soap_write_api__playExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__playExecution(soap, p) soap_delete(soap, p)
+#define soap_read_api__playExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_api__playExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__playExecution * SOAP_FMAC2 soap_instantiate_ns1__playExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__playExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__playExecution * SOAP_FMAC4 soap_get_api__playExecution(struct soap*, api__playExecution *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getExecutionResponse
-#define SOAP_TYPE_ns1__getExecutionResponse (47)
+#define soap_new_api__playExecution(soap, n) soap_instantiate_api__playExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__playExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__playExecution * SOAP_FMAC2 soap_instantiate_api__playExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__playExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getExecutionResponse
+#define SOAP_TYPE_api__getExecutionResponse (47)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getExecutionResponse(struct soap*, const char*, int, const ns1__getExecutionResponse *, const char*);
-SOAP_FMAC3 ns1__getExecutionResponse * SOAP_FMAC4 soap_in_ns1__getExecutionResponse(struct soap*, const char*, ns1__getExecutionResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getExecutionResponse(struct soap*, const char*, int, const api__getExecutionResponse *, const char*);
+SOAP_FMAC3 api__getExecutionResponse * SOAP_FMAC4 soap_in_api__getExecutionResponse(struct soap*, const char*, api__getExecutionResponse *, const char*);
 
-#define soap_write_ns1__getExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getExecutionResponse * SOAP_FMAC4 soap_get_ns1__getExecutionResponse(struct soap*, ns1__getExecutionResponse *, const char*, const char*);
-
-#define soap_new_ns1__getExecutionResponse(soap, n) soap_instantiate_ns1__getExecutionResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getExecutionResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__getExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getExecutionResponse * SOAP_FMAC2 soap_instantiate_ns1__getExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getExecutionResponse * SOAP_FMAC4 soap_get_api__getExecutionResponse(struct soap*, api__getExecutionResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getExecution
-#define SOAP_TYPE_ns1__getExecution (46)
+#define soap_new_api__getExecutionResponse(soap, n) soap_instantiate_api__getExecutionResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getExecutionResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getExecutionResponse * SOAP_FMAC2 soap_instantiate_api__getExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getExecution
+#define SOAP_TYPE_api__getExecution (46)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getExecution(struct soap*, const char*, int, const ns1__getExecution *, const char*);
-SOAP_FMAC3 ns1__getExecution * SOAP_FMAC4 soap_in_ns1__getExecution(struct soap*, const char*, ns1__getExecution *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getExecution(struct soap*, const char*, int, const api__getExecution *, const char*);
+SOAP_FMAC3 api__getExecution * SOAP_FMAC4 soap_in_api__getExecution(struct soap*, const char*, api__getExecution *, const char*);
 
-#define soap_write_ns1__getExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getExecution * SOAP_FMAC4 soap_get_ns1__getExecution(struct soap*, ns1__getExecution *, const char*, const char*);
-
-#define soap_new_ns1__getExecution(soap, n) soap_instantiate_ns1__getExecution(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getExecution(soap, p) soap_delete(soap, p)
+#define soap_read_api__getExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getExecution * SOAP_FMAC2 soap_instantiate_ns1__getExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getExecution * SOAP_FMAC4 soap_get_api__getExecution(struct soap*, api__getExecution *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__killExecutionResponse
-#define SOAP_TYPE_ns1__killExecutionResponse (45)
+#define soap_new_api__getExecution(soap, n) soap_instantiate_api__getExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getExecution * SOAP_FMAC2 soap_instantiate_api__getExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__killExecutionResponse
+#define SOAP_TYPE_api__killExecutionResponse (45)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__killExecutionResponse(struct soap*, const char*, int, const ns1__killExecutionResponse *, const char*);
-SOAP_FMAC3 ns1__killExecutionResponse * SOAP_FMAC4 soap_in_ns1__killExecutionResponse(struct soap*, const char*, ns1__killExecutionResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__killExecutionResponse(struct soap*, const char*, int, const api__killExecutionResponse *, const char*);
+SOAP_FMAC3 api__killExecutionResponse * SOAP_FMAC4 soap_in_api__killExecutionResponse(struct soap*, const char*, api__killExecutionResponse *, const char*);
 
-#define soap_write_ns1__killExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__killExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__killExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__killExecutionResponse * SOAP_FMAC4 soap_get_ns1__killExecutionResponse(struct soap*, ns1__killExecutionResponse *, const char*, const char*);
-
-#define soap_new_ns1__killExecutionResponse(soap, n) soap_instantiate_ns1__killExecutionResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__killExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__killExecutionResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__killExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__killExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__killExecutionResponse * SOAP_FMAC2 soap_instantiate_ns1__killExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__killExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__killExecutionResponse * SOAP_FMAC4 soap_get_api__killExecutionResponse(struct soap*, api__killExecutionResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getStdErrResponse
-#define SOAP_TYPE_ns1__getStdErrResponse (44)
+#define soap_new_api__killExecutionResponse(soap, n) soap_instantiate_api__killExecutionResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__killExecutionResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__killExecutionResponse * SOAP_FMAC2 soap_instantiate_api__killExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__killExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getStdErrResponse
+#define SOAP_TYPE_api__getStdErrResponse (44)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getStdErrResponse(struct soap*, const char*, int, const ns1__getStdErrResponse *, const char*);
-SOAP_FMAC3 ns1__getStdErrResponse * SOAP_FMAC4 soap_in_ns1__getStdErrResponse(struct soap*, const char*, ns1__getStdErrResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getStdErrResponse(struct soap*, const char*, int, const api__getStdErrResponse *, const char*);
+SOAP_FMAC3 api__getStdErrResponse * SOAP_FMAC4 soap_in_api__getStdErrResponse(struct soap*, const char*, api__getStdErrResponse *, const char*);
 
-#define soap_write_ns1__getStdErrResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getStdErrResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getStdErrResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getStdErrResponse * SOAP_FMAC4 soap_get_ns1__getStdErrResponse(struct soap*, ns1__getStdErrResponse *, const char*, const char*);
-
-#define soap_new_ns1__getStdErrResponse(soap, n) soap_instantiate_ns1__getStdErrResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getStdErrResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getStdErrResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__getStdErrResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getStdErrResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getStdErrResponse * SOAP_FMAC2 soap_instantiate_ns1__getStdErrResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getStdErrResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getStdErrResponse * SOAP_FMAC4 soap_get_api__getStdErrResponse(struct soap*, api__getStdErrResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getStdErr
-#define SOAP_TYPE_ns1__getStdErr (43)
+#define soap_new_api__getStdErrResponse(soap, n) soap_instantiate_api__getStdErrResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getStdErrResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getStdErrResponse * SOAP_FMAC2 soap_instantiate_api__getStdErrResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getStdErrResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getStdErr
+#define SOAP_TYPE_api__getStdErr (43)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getStdErr(struct soap*, const char*, int, const ns1__getStdErr *, const char*);
-SOAP_FMAC3 ns1__getStdErr * SOAP_FMAC4 soap_in_ns1__getStdErr(struct soap*, const char*, ns1__getStdErr *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getStdErr(struct soap*, const char*, int, const api__getStdErr *, const char*);
+SOAP_FMAC3 api__getStdErr * SOAP_FMAC4 soap_in_api__getStdErr(struct soap*, const char*, api__getStdErr *, const char*);
 
-#define soap_write_ns1__getStdErr(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getStdErr(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getStdErr(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getStdErr * SOAP_FMAC4 soap_get_ns1__getStdErr(struct soap*, ns1__getStdErr *, const char*, const char*);
-
-#define soap_new_ns1__getStdErr(soap, n) soap_instantiate_ns1__getStdErr(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getStdErr(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getStdErr(soap, p) soap_delete(soap, p)
+#define soap_read_api__getStdErr(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getStdErr(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getStdErr * SOAP_FMAC2 soap_instantiate_ns1__getStdErr(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getStdErr(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getStdErr * SOAP_FMAC4 soap_get_api__getStdErr(struct soap*, api__getStdErr *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getStdOutResponse
-#define SOAP_TYPE_ns1__getStdOutResponse (42)
+#define soap_new_api__getStdErr(soap, n) soap_instantiate_api__getStdErr(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getStdErr(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getStdErr * SOAP_FMAC2 soap_instantiate_api__getStdErr(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getStdErr(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getStdOutResponse
+#define SOAP_TYPE_api__getStdOutResponse (42)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getStdOutResponse(struct soap*, const char*, int, const ns1__getStdOutResponse *, const char*);
-SOAP_FMAC3 ns1__getStdOutResponse * SOAP_FMAC4 soap_in_ns1__getStdOutResponse(struct soap*, const char*, ns1__getStdOutResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getStdOutResponse(struct soap*, const char*, int, const api__getStdOutResponse *, const char*);
+SOAP_FMAC3 api__getStdOutResponse * SOAP_FMAC4 soap_in_api__getStdOutResponse(struct soap*, const char*, api__getStdOutResponse *, const char*);
 
-#define soap_write_ns1__getStdOutResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getStdOutResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getStdOutResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getStdOutResponse * SOAP_FMAC4 soap_get_ns1__getStdOutResponse(struct soap*, ns1__getStdOutResponse *, const char*, const char*);
-
-#define soap_new_ns1__getStdOutResponse(soap, n) soap_instantiate_ns1__getStdOutResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getStdOutResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getStdOutResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__getStdOutResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getStdOutResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getStdOutResponse * SOAP_FMAC2 soap_instantiate_ns1__getStdOutResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getStdOutResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getStdOutResponse * SOAP_FMAC4 soap_get_api__getStdOutResponse(struct soap*, api__getStdOutResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getStdOut
-#define SOAP_TYPE_ns1__getStdOut (41)
+#define soap_new_api__getStdOutResponse(soap, n) soap_instantiate_api__getStdOutResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getStdOutResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getStdOutResponse * SOAP_FMAC2 soap_instantiate_api__getStdOutResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getStdOutResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getStdOut
+#define SOAP_TYPE_api__getStdOut (41)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getStdOut(struct soap*, const char*, int, const ns1__getStdOut *, const char*);
-SOAP_FMAC3 ns1__getStdOut * SOAP_FMAC4 soap_in_ns1__getStdOut(struct soap*, const char*, ns1__getStdOut *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getStdOut(struct soap*, const char*, int, const api__getStdOut *, const char*);
+SOAP_FMAC3 api__getStdOut * SOAP_FMAC4 soap_in_api__getStdOut(struct soap*, const char*, api__getStdOut *, const char*);
 
-#define soap_write_ns1__getStdOut(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getStdOut(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getStdOut(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getStdOut * SOAP_FMAC4 soap_get_ns1__getStdOut(struct soap*, ns1__getStdOut *, const char*, const char*);
-
-#define soap_new_ns1__getStdOut(soap, n) soap_instantiate_ns1__getStdOut(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getStdOut(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getStdOut(soap, p) soap_delete(soap, p)
+#define soap_read_api__getStdOut(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getStdOut(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getStdOut * SOAP_FMAC2 soap_instantiate_ns1__getStdOut(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getStdOut(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getStdOut * SOAP_FMAC4 soap_get_api__getStdOut(struct soap*, api__getStdOut *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__killExecution
-#define SOAP_TYPE_ns1__killExecution (40)
+#define soap_new_api__getStdOut(soap, n) soap_instantiate_api__getStdOut(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getStdOut(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getStdOut * SOAP_FMAC2 soap_instantiate_api__getStdOut(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getStdOut(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__killExecution
+#define SOAP_TYPE_api__killExecution (40)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__killExecution(struct soap*, const char*, int, const ns1__killExecution *, const char*);
-SOAP_FMAC3 ns1__killExecution * SOAP_FMAC4 soap_in_ns1__killExecution(struct soap*, const char*, ns1__killExecution *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__killExecution(struct soap*, const char*, int, const api__killExecution *, const char*);
+SOAP_FMAC3 api__killExecution * SOAP_FMAC4 soap_in_api__killExecution(struct soap*, const char*, api__killExecution *, const char*);
 
-#define soap_write_ns1__killExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__killExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__killExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__killExecution * SOAP_FMAC4 soap_get_ns1__killExecution(struct soap*, ns1__killExecution *, const char*, const char*);
-
-#define soap_new_ns1__killExecution(soap, n) soap_instantiate_ns1__killExecution(soap, n, NULL, NULL, NULL)
+#define soap_write_api__killExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__killExecution(soap, p) soap_delete(soap, p)
+#define soap_read_api__killExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_api__killExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__killExecution * SOAP_FMAC2 soap_instantiate_ns1__killExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__killExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__killExecution * SOAP_FMAC4 soap_get_api__killExecution(struct soap*, api__killExecution *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getExecutionResultsResponse
-#define SOAP_TYPE_ns1__getExecutionResultsResponse (39)
+#define soap_new_api__killExecution(soap, n) soap_instantiate_api__killExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__killExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__killExecution * SOAP_FMAC2 soap_instantiate_api__killExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__killExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getExecutionResultsResponse
+#define SOAP_TYPE_api__getExecutionResultsResponse (39)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getExecutionResultsResponse(struct soap*, const char*, int, const ns1__getExecutionResultsResponse *, const char*);
-SOAP_FMAC3 ns1__getExecutionResultsResponse * SOAP_FMAC4 soap_in_ns1__getExecutionResultsResponse(struct soap*, const char*, ns1__getExecutionResultsResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getExecutionResultsResponse(struct soap*, const char*, int, const api__getExecutionResultsResponse *, const char*);
+SOAP_FMAC3 api__getExecutionResultsResponse * SOAP_FMAC4 soap_in_api__getExecutionResultsResponse(struct soap*, const char*, api__getExecutionResultsResponse *, const char*);
 
-#define soap_write_ns1__getExecutionResultsResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getExecutionResultsResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getExecutionResultsResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getExecutionResultsResponse * SOAP_FMAC4 soap_get_ns1__getExecutionResultsResponse(struct soap*, ns1__getExecutionResultsResponse *, const char*, const char*);
-
-#define soap_new_ns1__getExecutionResultsResponse(soap, n) soap_instantiate_ns1__getExecutionResultsResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getExecutionResultsResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getExecutionResultsResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__getExecutionResultsResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getExecutionResultsResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getExecutionResultsResponse * SOAP_FMAC2 soap_instantiate_ns1__getExecutionResultsResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getExecutionResultsResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getExecutionResultsResponse * SOAP_FMAC4 soap_get_api__getExecutionResultsResponse(struct soap*, api__getExecutionResultsResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getExecutionResults
-#define SOAP_TYPE_ns1__getExecutionResults (38)
+#define soap_new_api__getExecutionResultsResponse(soap, n) soap_instantiate_api__getExecutionResultsResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getExecutionResultsResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getExecutionResultsResponse * SOAP_FMAC2 soap_instantiate_api__getExecutionResultsResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getExecutionResultsResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getExecutionResults
+#define SOAP_TYPE_api__getExecutionResults (38)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getExecutionResults(struct soap*, const char*, int, const ns1__getExecutionResults *, const char*);
-SOAP_FMAC3 ns1__getExecutionResults * SOAP_FMAC4 soap_in_ns1__getExecutionResults(struct soap*, const char*, ns1__getExecutionResults *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getExecutionResults(struct soap*, const char*, int, const api__getExecutionResults *, const char*);
+SOAP_FMAC3 api__getExecutionResults * SOAP_FMAC4 soap_in_api__getExecutionResults(struct soap*, const char*, api__getExecutionResults *, const char*);
 
-#define soap_write_ns1__getExecutionResults(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getExecutionResults(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getExecutionResults(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getExecutionResults * SOAP_FMAC4 soap_get_ns1__getExecutionResults(struct soap*, ns1__getExecutionResults *, const char*, const char*);
-
-#define soap_new_ns1__getExecutionResults(soap, n) soap_instantiate_ns1__getExecutionResults(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getExecutionResults(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getExecutionResults(soap, p) soap_delete(soap, p)
+#define soap_read_api__getExecutionResults(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getExecutionResults(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getExecutionResults * SOAP_FMAC2 soap_instantiate_ns1__getExecutionResults(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getExecutionResults(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getExecutionResults * SOAP_FMAC4 soap_get_api__getExecutionResults(struct soap*, api__getExecutionResults *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__initExecutionResponse
-#define SOAP_TYPE_ns1__initExecutionResponse (37)
+#define soap_new_api__getExecutionResults(soap, n) soap_instantiate_api__getExecutionResults(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getExecutionResults(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getExecutionResults * SOAP_FMAC2 soap_instantiate_api__getExecutionResults(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getExecutionResults(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__initExecutionResponse
+#define SOAP_TYPE_api__initExecutionResponse (37)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__initExecutionResponse(struct soap*, const char*, int, const ns1__initExecutionResponse *, const char*);
-SOAP_FMAC3 ns1__initExecutionResponse * SOAP_FMAC4 soap_in_ns1__initExecutionResponse(struct soap*, const char*, ns1__initExecutionResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__initExecutionResponse(struct soap*, const char*, int, const api__initExecutionResponse *, const char*);
+SOAP_FMAC3 api__initExecutionResponse * SOAP_FMAC4 soap_in_api__initExecutionResponse(struct soap*, const char*, api__initExecutionResponse *, const char*);
 
-#define soap_write_ns1__initExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__initExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__initExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__initExecutionResponse * SOAP_FMAC4 soap_get_ns1__initExecutionResponse(struct soap*, ns1__initExecutionResponse *, const char*, const char*);
-
-#define soap_new_ns1__initExecutionResponse(soap, n) soap_instantiate_ns1__initExecutionResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__initExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__initExecutionResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__initExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__initExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__initExecutionResponse * SOAP_FMAC2 soap_instantiate_ns1__initExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__initExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__initExecutionResponse * SOAP_FMAC4 soap_get_api__initExecutionResponse(struct soap*, api__initExecutionResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__initExecution
-#define SOAP_TYPE_ns1__initExecution (36)
+#define soap_new_api__initExecutionResponse(soap, n) soap_instantiate_api__initExecutionResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__initExecutionResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__initExecutionResponse * SOAP_FMAC2 soap_instantiate_api__initExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__initExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__initExecution
+#define SOAP_TYPE_api__initExecution (36)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__initExecution(struct soap*, const char*, int, const ns1__initExecution *, const char*);
-SOAP_FMAC3 ns1__initExecution * SOAP_FMAC4 soap_in_ns1__initExecution(struct soap*, const char*, ns1__initExecution *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__initExecution(struct soap*, const char*, int, const api__initExecution *, const char*);
+SOAP_FMAC3 api__initExecution * SOAP_FMAC4 soap_in_api__initExecution(struct soap*, const char*, api__initExecution *, const char*);
 
-#define soap_write_ns1__initExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__initExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__initExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__initExecution * SOAP_FMAC4 soap_get_ns1__initExecution(struct soap*, ns1__initExecution *, const char*, const char*);
-
-#define soap_new_ns1__initExecution(soap, n) soap_instantiate_ns1__initExecution(soap, n, NULL, NULL, NULL)
+#define soap_write_api__initExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__initExecution(soap, p) soap_delete(soap, p)
+#define soap_read_api__initExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_api__initExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__initExecution * SOAP_FMAC2 soap_instantiate_ns1__initExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__initExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__initExecution * SOAP_FMAC4 soap_get_api__initExecution(struct soap*, api__initExecution *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getGlobalPropertiesResponse
-#define SOAP_TYPE_ns1__getGlobalPropertiesResponse (35)
+#define soap_new_api__initExecution(soap, n) soap_instantiate_api__initExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__initExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__initExecution * SOAP_FMAC2 soap_instantiate_api__initExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__initExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getGlobalPropertiesResponse
+#define SOAP_TYPE_api__getGlobalPropertiesResponse (35)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getGlobalPropertiesResponse(struct soap*, const char*, int, const ns1__getGlobalPropertiesResponse *, const char*);
-SOAP_FMAC3 ns1__getGlobalPropertiesResponse * SOAP_FMAC4 soap_in_ns1__getGlobalPropertiesResponse(struct soap*, const char*, ns1__getGlobalPropertiesResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getGlobalPropertiesResponse(struct soap*, const char*, int, const api__getGlobalPropertiesResponse *, const char*);
+SOAP_FMAC3 api__getGlobalPropertiesResponse * SOAP_FMAC4 soap_in_api__getGlobalPropertiesResponse(struct soap*, const char*, api__getGlobalPropertiesResponse *, const char*);
 
-#define soap_write_ns1__getGlobalPropertiesResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getGlobalPropertiesResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getGlobalPropertiesResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getGlobalPropertiesResponse * SOAP_FMAC4 soap_get_ns1__getGlobalPropertiesResponse(struct soap*, ns1__getGlobalPropertiesResponse *, const char*, const char*);
-
-#define soap_new_ns1__getGlobalPropertiesResponse(soap, n) soap_instantiate_ns1__getGlobalPropertiesResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getGlobalPropertiesResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getGlobalPropertiesResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__getGlobalPropertiesResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getGlobalPropertiesResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getGlobalPropertiesResponse * SOAP_FMAC2 soap_instantiate_ns1__getGlobalPropertiesResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getGlobalPropertiesResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getGlobalPropertiesResponse * SOAP_FMAC4 soap_get_api__getGlobalPropertiesResponse(struct soap*, api__getGlobalPropertiesResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getGlobalProperties
-#define SOAP_TYPE_ns1__getGlobalProperties (34)
+#define soap_new_api__getGlobalPropertiesResponse(soap, n) soap_instantiate_api__getGlobalPropertiesResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getGlobalPropertiesResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getGlobalPropertiesResponse * SOAP_FMAC2 soap_instantiate_api__getGlobalPropertiesResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getGlobalPropertiesResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getGlobalProperties
+#define SOAP_TYPE_api__getGlobalProperties (34)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getGlobalProperties(struct soap*, const char*, int, const ns1__getGlobalProperties *, const char*);
-SOAP_FMAC3 ns1__getGlobalProperties * SOAP_FMAC4 soap_in_ns1__getGlobalProperties(struct soap*, const char*, ns1__getGlobalProperties *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getGlobalProperties(struct soap*, const char*, int, const api__getGlobalProperties *, const char*);
+SOAP_FMAC3 api__getGlobalProperties * SOAP_FMAC4 soap_in_api__getGlobalProperties(struct soap*, const char*, api__getGlobalProperties *, const char*);
 
-#define soap_write_ns1__getGlobalProperties(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getGlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getGlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getGlobalProperties * SOAP_FMAC4 soap_get_ns1__getGlobalProperties(struct soap*, ns1__getGlobalProperties *, const char*, const char*);
-
-#define soap_new_ns1__getGlobalProperties(soap, n) soap_instantiate_ns1__getGlobalProperties(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getGlobalProperties(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getGlobalProperties(soap, p) soap_delete(soap, p)
+#define soap_read_api__getGlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getGlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getGlobalProperties * SOAP_FMAC2 soap_instantiate_ns1__getGlobalProperties(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getGlobalProperties(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getGlobalProperties * SOAP_FMAC4 soap_get_api__getGlobalProperties(struct soap*, api__getGlobalProperties *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__updateExecutionResponse
-#define SOAP_TYPE_ns1__updateExecutionResponse (33)
+#define soap_new_api__getGlobalProperties(soap, n) soap_instantiate_api__getGlobalProperties(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getGlobalProperties(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getGlobalProperties * SOAP_FMAC2 soap_instantiate_api__getGlobalProperties(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getGlobalProperties(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__updateExecutionResponse
+#define SOAP_TYPE_api__updateExecutionResponse (33)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__updateExecutionResponse(struct soap*, const char*, int, const ns1__updateExecutionResponse *, const char*);
-SOAP_FMAC3 ns1__updateExecutionResponse * SOAP_FMAC4 soap_in_ns1__updateExecutionResponse(struct soap*, const char*, ns1__updateExecutionResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__updateExecutionResponse(struct soap*, const char*, int, const api__updateExecutionResponse *, const char*);
+SOAP_FMAC3 api__updateExecutionResponse * SOAP_FMAC4 soap_in_api__updateExecutionResponse(struct soap*, const char*, api__updateExecutionResponse *, const char*);
 
-#define soap_write_ns1__updateExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__updateExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__updateExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__updateExecutionResponse * SOAP_FMAC4 soap_get_ns1__updateExecutionResponse(struct soap*, ns1__updateExecutionResponse *, const char*, const char*);
-
-#define soap_new_ns1__updateExecutionResponse(soap, n) soap_instantiate_ns1__updateExecutionResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__updateExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__updateExecutionResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__updateExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__updateExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__updateExecutionResponse * SOAP_FMAC2 soap_instantiate_ns1__updateExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__updateExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__updateExecutionResponse * SOAP_FMAC4 soap_get_api__updateExecutionResponse(struct soap*, api__updateExecutionResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__StringKeyValuePair
-#define SOAP_TYPE_ns1__StringKeyValuePair (32)
+#define soap_new_api__updateExecutionResponse(soap, n) soap_instantiate_api__updateExecutionResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__updateExecutionResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__updateExecutionResponse * SOAP_FMAC2 soap_instantiate_api__updateExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__updateExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__StringKeyValuePair
+#define SOAP_TYPE_api__StringKeyValuePair (32)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__StringKeyValuePair(struct soap*, const char*, int, const ns1__StringKeyValuePair *, const char*);
-SOAP_FMAC3 ns1__StringKeyValuePair * SOAP_FMAC4 soap_in_ns1__StringKeyValuePair(struct soap*, const char*, ns1__StringKeyValuePair *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__StringKeyValuePair(struct soap*, const char*, int, const api__StringKeyValuePair *, const char*);
+SOAP_FMAC3 api__StringKeyValuePair * SOAP_FMAC4 soap_in_api__StringKeyValuePair(struct soap*, const char*, api__StringKeyValuePair *, const char*);
 
-#define soap_write_ns1__StringKeyValuePair(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__StringKeyValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__StringKeyValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__StringKeyValuePair * SOAP_FMAC4 soap_get_ns1__StringKeyValuePair(struct soap*, ns1__StringKeyValuePair *, const char*, const char*);
-
-#define soap_new_ns1__StringKeyValuePair(soap, n) soap_instantiate_ns1__StringKeyValuePair(soap, n, NULL, NULL, NULL)
+#define soap_write_api__StringKeyValuePair(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__StringKeyValuePair(soap, p) soap_delete(soap, p)
+#define soap_read_api__StringKeyValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_api__StringKeyValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__StringKeyValuePair * SOAP_FMAC2 soap_instantiate_ns1__StringKeyValuePair(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__StringKeyValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__StringKeyValuePair * SOAP_FMAC4 soap_get_api__StringKeyValuePair(struct soap*, api__StringKeyValuePair *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__updateExecution
-#define SOAP_TYPE_ns1__updateExecution (31)
+#define soap_new_api__StringKeyValuePair(soap, n) soap_instantiate_api__StringKeyValuePair(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__StringKeyValuePair(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__StringKeyValuePair * SOAP_FMAC2 soap_instantiate_api__StringKeyValuePair(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__StringKeyValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__updateExecution
+#define SOAP_TYPE_api__updateExecution (31)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__updateExecution(struct soap*, const char*, int, const ns1__updateExecution *, const char*);
-SOAP_FMAC3 ns1__updateExecution * SOAP_FMAC4 soap_in_ns1__updateExecution(struct soap*, const char*, ns1__updateExecution *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__updateExecution(struct soap*, const char*, int, const api__updateExecution *, const char*);
+SOAP_FMAC3 api__updateExecution * SOAP_FMAC4 soap_in_api__updateExecution(struct soap*, const char*, api__updateExecution *, const char*);
 
-#define soap_write_ns1__updateExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__updateExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__updateExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__updateExecution * SOAP_FMAC4 soap_get_ns1__updateExecution(struct soap*, ns1__updateExecution *, const char*, const char*);
-
-#define soap_new_ns1__updateExecution(soap, n) soap_instantiate_ns1__updateExecution(soap, n, NULL, NULL, NULL)
+#define soap_write_api__updateExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__updateExecution(soap, p) soap_delete(soap, p)
+#define soap_read_api__updateExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_api__updateExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__updateExecution * SOAP_FMAC2 soap_instantiate_ns1__updateExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__updateExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__updateExecution * SOAP_FMAC4 soap_get_api__updateExecution(struct soap*, api__updateExecution *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__logoutResponse
-#define SOAP_TYPE_ns1__logoutResponse (30)
+#define soap_new_api__updateExecution(soap, n) soap_instantiate_api__updateExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__updateExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__updateExecution * SOAP_FMAC2 soap_instantiate_api__updateExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__updateExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__logoutResponse
+#define SOAP_TYPE_api__logoutResponse (30)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__logoutResponse(struct soap*, const char*, int, const ns1__logoutResponse *, const char*);
-SOAP_FMAC3 ns1__logoutResponse * SOAP_FMAC4 soap_in_ns1__logoutResponse(struct soap*, const char*, ns1__logoutResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__logoutResponse(struct soap*, const char*, int, const api__logoutResponse *, const char*);
+SOAP_FMAC3 api__logoutResponse * SOAP_FMAC4 soap_in_api__logoutResponse(struct soap*, const char*, api__logoutResponse *, const char*);
 
-#define soap_write_ns1__logoutResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__logoutResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__logoutResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__logoutResponse * SOAP_FMAC4 soap_get_ns1__logoutResponse(struct soap*, ns1__logoutResponse *, const char*, const char*);
-
-#define soap_new_ns1__logoutResponse(soap, n) soap_instantiate_ns1__logoutResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__logoutResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__logoutResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__logoutResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__logoutResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__logoutResponse * SOAP_FMAC2 soap_instantiate_ns1__logoutResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__logoutResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__logoutResponse * SOAP_FMAC4 soap_get_api__logoutResponse(struct soap*, api__logoutResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__logout
-#define SOAP_TYPE_ns1__logout (29)
+#define soap_new_api__logoutResponse(soap, n) soap_instantiate_api__logoutResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__logoutResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__logoutResponse * SOAP_FMAC2 soap_instantiate_api__logoutResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__logoutResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__logout
+#define SOAP_TYPE_api__logout (29)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__logout(struct soap*, const char*, int, const ns1__logout *, const char*);
-SOAP_FMAC3 ns1__logout * SOAP_FMAC4 soap_in_ns1__logout(struct soap*, const char*, ns1__logout *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__logout(struct soap*, const char*, int, const api__logout *, const char*);
+SOAP_FMAC3 api__logout * SOAP_FMAC4 soap_in_api__logout(struct soap*, const char*, api__logout *, const char*);
 
-#define soap_write_ns1__logout(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__logout(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__logout(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__logout * SOAP_FMAC4 soap_get_ns1__logout(struct soap*, ns1__logout *, const char*, const char*);
-
-#define soap_new_ns1__logout(soap, n) soap_instantiate_ns1__logout(soap, n, NULL, NULL, NULL)
+#define soap_write_api__logout(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__logout(soap, p) soap_delete(soap, p)
+#define soap_read_api__logout(soap, data) ( soap_begin_recv(soap) || !soap_get_api__logout(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__logout * SOAP_FMAC2 soap_instantiate_ns1__logout(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__logout(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__logout * SOAP_FMAC4 soap_get_api__logout(struct soap*, api__logout *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__authenticateHTTPResponse
-#define SOAP_TYPE_ns1__authenticateHTTPResponse (28)
+#define soap_new_api__logout(soap, n) soap_instantiate_api__logout(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__logout(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__logout * SOAP_FMAC2 soap_instantiate_api__logout(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__logout(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__authenticateHTTPResponse
+#define SOAP_TYPE_api__authenticateHTTPResponse (28)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__authenticateHTTPResponse(struct soap*, const char*, int, const ns1__authenticateHTTPResponse *, const char*);
-SOAP_FMAC3 ns1__authenticateHTTPResponse * SOAP_FMAC4 soap_in_ns1__authenticateHTTPResponse(struct soap*, const char*, ns1__authenticateHTTPResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__authenticateHTTPResponse(struct soap*, const char*, int, const api__authenticateHTTPResponse *, const char*);
+SOAP_FMAC3 api__authenticateHTTPResponse * SOAP_FMAC4 soap_in_api__authenticateHTTPResponse(struct soap*, const char*, api__authenticateHTTPResponse *, const char*);
 
-#define soap_write_ns1__authenticateHTTPResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__authenticateHTTPResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__authenticateHTTPResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__authenticateHTTPResponse * SOAP_FMAC4 soap_get_ns1__authenticateHTTPResponse(struct soap*, ns1__authenticateHTTPResponse *, const char*, const char*);
-
-#define soap_new_ns1__authenticateHTTPResponse(soap, n) soap_instantiate_ns1__authenticateHTTPResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__authenticateHTTPResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__authenticateHTTPResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__authenticateHTTPResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__authenticateHTTPResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__authenticateHTTPResponse * SOAP_FMAC2 soap_instantiate_ns1__authenticateHTTPResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__authenticateHTTPResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__authenticateHTTPResponse * SOAP_FMAC4 soap_get_api__authenticateHTTPResponse(struct soap*, api__authenticateHTTPResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__authenticateHTTP
-#define SOAP_TYPE_ns1__authenticateHTTP (27)
+#define soap_new_api__authenticateHTTPResponse(soap, n) soap_instantiate_api__authenticateHTTPResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__authenticateHTTPResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__authenticateHTTPResponse * SOAP_FMAC2 soap_instantiate_api__authenticateHTTPResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__authenticateHTTPResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__authenticateHTTP
+#define SOAP_TYPE_api__authenticateHTTP (27)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__authenticateHTTP(struct soap*, const char*, int, const ns1__authenticateHTTP *, const char*);
-SOAP_FMAC3 ns1__authenticateHTTP * SOAP_FMAC4 soap_in_ns1__authenticateHTTP(struct soap*, const char*, ns1__authenticateHTTP *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__authenticateHTTP(struct soap*, const char*, int, const api__authenticateHTTP *, const char*);
+SOAP_FMAC3 api__authenticateHTTP * SOAP_FMAC4 soap_in_api__authenticateHTTP(struct soap*, const char*, api__authenticateHTTP *, const char*);
 
-#define soap_write_ns1__authenticateHTTP(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__authenticateHTTP(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__authenticateHTTP(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__authenticateHTTP * SOAP_FMAC4 soap_get_ns1__authenticateHTTP(struct soap*, ns1__authenticateHTTP *, const char*, const char*);
-
-#define soap_new_ns1__authenticateHTTP(soap, n) soap_instantiate_ns1__authenticateHTTP(soap, n, NULL, NULL, NULL)
+#define soap_write_api__authenticateHTTP(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__authenticateHTTP(soap, p) soap_delete(soap, p)
+#define soap_read_api__authenticateHTTP(soap, data) ( soap_begin_recv(soap) || !soap_get_api__authenticateHTTP(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__authenticateHTTP * SOAP_FMAC2 soap_instantiate_ns1__authenticateHTTP(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__authenticateHTTP(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__authenticateHTTP * SOAP_FMAC4 soap_get_api__authenticateHTTP(struct soap*, api__authenticateHTTP *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getPipelineResponse
-#define SOAP_TYPE_ns1__getPipelineResponse (26)
+#define soap_new_api__authenticateHTTP(soap, n) soap_instantiate_api__authenticateHTTP(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__authenticateHTTP(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__authenticateHTTP * SOAP_FMAC2 soap_instantiate_api__authenticateHTTP(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__authenticateHTTP(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getPipelineResponse
+#define SOAP_TYPE_api__getPipelineResponse (26)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getPipelineResponse(struct soap*, const char*, int, const ns1__getPipelineResponse *, const char*);
-SOAP_FMAC3 ns1__getPipelineResponse * SOAP_FMAC4 soap_in_ns1__getPipelineResponse(struct soap*, const char*, ns1__getPipelineResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getPipelineResponse(struct soap*, const char*, int, const api__getPipelineResponse *, const char*);
+SOAP_FMAC3 api__getPipelineResponse * SOAP_FMAC4 soap_in_api__getPipelineResponse(struct soap*, const char*, api__getPipelineResponse *, const char*);
 
-#define soap_write_ns1__getPipelineResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getPipelineResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getPipelineResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getPipelineResponse * SOAP_FMAC4 soap_get_ns1__getPipelineResponse(struct soap*, ns1__getPipelineResponse *, const char*, const char*);
-
-#define soap_new_ns1__getPipelineResponse(soap, n) soap_instantiate_ns1__getPipelineResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getPipelineResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getPipelineResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__getPipelineResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getPipelineResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getPipelineResponse * SOAP_FMAC2 soap_instantiate_ns1__getPipelineResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getPipelineResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getPipelineResponse * SOAP_FMAC4 soap_get_api__getPipelineResponse(struct soap*, api__getPipelineResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__getPipeline
-#define SOAP_TYPE_ns1__getPipeline (25)
+#define soap_new_api__getPipelineResponse(soap, n) soap_instantiate_api__getPipelineResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getPipelineResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getPipelineResponse * SOAP_FMAC2 soap_instantiate_api__getPipelineResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getPipelineResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__getPipeline
+#define SOAP_TYPE_api__getPipeline (25)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__getPipeline(struct soap*, const char*, int, const ns1__getPipeline *, const char*);
-SOAP_FMAC3 ns1__getPipeline * SOAP_FMAC4 soap_in_ns1__getPipeline(struct soap*, const char*, ns1__getPipeline *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__getPipeline(struct soap*, const char*, int, const api__getPipeline *, const char*);
+SOAP_FMAC3 api__getPipeline * SOAP_FMAC4 soap_in_api__getPipeline(struct soap*, const char*, api__getPipeline *, const char*);
 
-#define soap_write_ns1__getPipeline(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__getPipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__getPipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__getPipeline * SOAP_FMAC4 soap_get_ns1__getPipeline(struct soap*, ns1__getPipeline *, const char*, const char*);
-
-#define soap_new_ns1__getPipeline(soap, n) soap_instantiate_ns1__getPipeline(soap, n, NULL, NULL, NULL)
+#define soap_write_api__getPipeline(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__getPipeline(soap, p) soap_delete(soap, p)
+#define soap_read_api__getPipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_api__getPipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__getPipeline * SOAP_FMAC2 soap_instantiate_ns1__getPipeline(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__getPipeline(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__getPipeline * SOAP_FMAC4 soap_get_api__getPipeline(struct soap*, api__getPipeline *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__deleteExecutionResponse
-#define SOAP_TYPE_ns1__deleteExecutionResponse (24)
+#define soap_new_api__getPipeline(soap, n) soap_instantiate_api__getPipeline(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__getPipeline(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__getPipeline * SOAP_FMAC2 soap_instantiate_api__getPipeline(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__getPipeline(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__deleteExecutionResponse
+#define SOAP_TYPE_api__deleteExecutionResponse (24)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__deleteExecutionResponse(struct soap*, const char*, int, const ns1__deleteExecutionResponse *, const char*);
-SOAP_FMAC3 ns1__deleteExecutionResponse * SOAP_FMAC4 soap_in_ns1__deleteExecutionResponse(struct soap*, const char*, ns1__deleteExecutionResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__deleteExecutionResponse(struct soap*, const char*, int, const api__deleteExecutionResponse *, const char*);
+SOAP_FMAC3 api__deleteExecutionResponse * SOAP_FMAC4 soap_in_api__deleteExecutionResponse(struct soap*, const char*, api__deleteExecutionResponse *, const char*);
 
-#define soap_write_ns1__deleteExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__deleteExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__deleteExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__deleteExecutionResponse * SOAP_FMAC4 soap_get_ns1__deleteExecutionResponse(struct soap*, ns1__deleteExecutionResponse *, const char*, const char*);
-
-#define soap_new_ns1__deleteExecutionResponse(soap, n) soap_instantiate_ns1__deleteExecutionResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__deleteExecutionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__deleteExecutionResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__deleteExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__deleteExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__deleteExecutionResponse * SOAP_FMAC2 soap_instantiate_ns1__deleteExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__deleteExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__deleteExecutionResponse * SOAP_FMAC4 soap_get_api__deleteExecutionResponse(struct soap*, api__deleteExecutionResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__deleteExecution
-#define SOAP_TYPE_ns1__deleteExecution (23)
+#define soap_new_api__deleteExecutionResponse(soap, n) soap_instantiate_api__deleteExecutionResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__deleteExecutionResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__deleteExecutionResponse * SOAP_FMAC2 soap_instantiate_api__deleteExecutionResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__deleteExecutionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__deleteExecution
+#define SOAP_TYPE_api__deleteExecution (23)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__deleteExecution(struct soap*, const char*, int, const ns1__deleteExecution *, const char*);
-SOAP_FMAC3 ns1__deleteExecution * SOAP_FMAC4 soap_in_ns1__deleteExecution(struct soap*, const char*, ns1__deleteExecution *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__deleteExecution(struct soap*, const char*, int, const api__deleteExecution *, const char*);
+SOAP_FMAC3 api__deleteExecution * SOAP_FMAC4 soap_in_api__deleteExecution(struct soap*, const char*, api__deleteExecution *, const char*);
 
-#define soap_write_ns1__deleteExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__deleteExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__deleteExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__deleteExecution * SOAP_FMAC4 soap_get_ns1__deleteExecution(struct soap*, ns1__deleteExecution *, const char*, const char*);
-
-#define soap_new_ns1__deleteExecution(soap, n) soap_instantiate_ns1__deleteExecution(soap, n, NULL, NULL, NULL)
+#define soap_write_api__deleteExecution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__deleteExecution(soap, p) soap_delete(soap, p)
+#define soap_read_api__deleteExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_api__deleteExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__deleteExecution * SOAP_FMAC2 soap_instantiate_ns1__deleteExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__deleteExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__deleteExecution * SOAP_FMAC4 soap_get_api__deleteExecution(struct soap*, api__deleteExecution *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__PipelineKeyBooleanValuePair
-#define SOAP_TYPE_ns1__PipelineKeyBooleanValuePair (22)
+#define soap_new_api__deleteExecution(soap, n) soap_instantiate_api__deleteExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__deleteExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__deleteExecution * SOAP_FMAC2 soap_instantiate_api__deleteExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__deleteExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__PipelineKeyBooleanValuePair
+#define SOAP_TYPE_api__PipelineKeyBooleanValuePair (22)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__PipelineKeyBooleanValuePair(struct soap*, const char*, int, const ns1__PipelineKeyBooleanValuePair *, const char*);
-SOAP_FMAC3 ns1__PipelineKeyBooleanValuePair * SOAP_FMAC4 soap_in_ns1__PipelineKeyBooleanValuePair(struct soap*, const char*, ns1__PipelineKeyBooleanValuePair *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__PipelineKeyBooleanValuePair(struct soap*, const char*, int, const api__PipelineKeyBooleanValuePair *, const char*);
+SOAP_FMAC3 api__PipelineKeyBooleanValuePair * SOAP_FMAC4 soap_in_api__PipelineKeyBooleanValuePair(struct soap*, const char*, api__PipelineKeyBooleanValuePair *, const char*);
 
-#define soap_write_ns1__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__PipelineKeyBooleanValuePair * SOAP_FMAC4 soap_get_ns1__PipelineKeyBooleanValuePair(struct soap*, ns1__PipelineKeyBooleanValuePair *, const char*, const char*);
-
-#define soap_new_ns1__PipelineKeyBooleanValuePair(soap, n) soap_instantiate_ns1__PipelineKeyBooleanValuePair(soap, n, NULL, NULL, NULL)
+#define soap_write_api__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__PipelineKeyBooleanValuePair(soap, p) soap_delete(soap, p)
+#define soap_read_api__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_api__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__PipelineKeyBooleanValuePair * SOAP_FMAC2 soap_instantiate_ns1__PipelineKeyBooleanValuePair(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__PipelineKeyBooleanValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__PipelineKeyBooleanValuePair * SOAP_FMAC4 soap_get_api__PipelineKeyBooleanValuePair(struct soap*, api__PipelineKeyBooleanValuePair *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__GlobalProperties
-#define SOAP_TYPE_ns1__GlobalProperties (21)
+#define soap_new_api__PipelineKeyBooleanValuePair(soap, n) soap_instantiate_api__PipelineKeyBooleanValuePair(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__PipelineKeyBooleanValuePair(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__PipelineKeyBooleanValuePair * SOAP_FMAC2 soap_instantiate_api__PipelineKeyBooleanValuePair(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__PipelineKeyBooleanValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__GlobalProperties
+#define SOAP_TYPE_api__GlobalProperties (21)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__GlobalProperties(struct soap*, const char*, int, const ns1__GlobalProperties *, const char*);
-SOAP_FMAC3 ns1__GlobalProperties * SOAP_FMAC4 soap_in_ns1__GlobalProperties(struct soap*, const char*, ns1__GlobalProperties *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__GlobalProperties(struct soap*, const char*, int, const api__GlobalProperties *, const char*);
+SOAP_FMAC3 api__GlobalProperties * SOAP_FMAC4 soap_in_api__GlobalProperties(struct soap*, const char*, api__GlobalProperties *, const char*);
 
-#define soap_write_ns1__GlobalProperties(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__GlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__GlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__GlobalProperties * SOAP_FMAC4 soap_get_ns1__GlobalProperties(struct soap*, ns1__GlobalProperties *, const char*, const char*);
-
-#define soap_new_ns1__GlobalProperties(soap, n) soap_instantiate_ns1__GlobalProperties(soap, n, NULL, NULL, NULL)
+#define soap_write_api__GlobalProperties(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__GlobalProperties(soap, p) soap_delete(soap, p)
+#define soap_read_api__GlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get_api__GlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__GlobalProperties * SOAP_FMAC2 soap_instantiate_ns1__GlobalProperties(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__GlobalProperties(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__GlobalProperties * SOAP_FMAC4 soap_get_api__GlobalProperties(struct soap*, api__GlobalProperties *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__StringKeyParameterValuePair
-#define SOAP_TYPE_ns1__StringKeyParameterValuePair (20)
+#define soap_new_api__GlobalProperties(soap, n) soap_instantiate_api__GlobalProperties(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__GlobalProperties(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__GlobalProperties * SOAP_FMAC2 soap_instantiate_api__GlobalProperties(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__GlobalProperties(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__StringKeyParameterValuePair
+#define SOAP_TYPE_api__StringKeyParameterValuePair (20)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__StringKeyParameterValuePair(struct soap*, const char*, int, const ns1__StringKeyParameterValuePair *, const char*);
-SOAP_FMAC3 ns1__StringKeyParameterValuePair * SOAP_FMAC4 soap_in_ns1__StringKeyParameterValuePair(struct soap*, const char*, ns1__StringKeyParameterValuePair *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__StringKeyParameterValuePair(struct soap*, const char*, int, const api__StringKeyParameterValuePair *, const char*);
+SOAP_FMAC3 api__StringKeyParameterValuePair * SOAP_FMAC4 soap_in_api__StringKeyParameterValuePair(struct soap*, const char*, api__StringKeyParameterValuePair *, const char*);
 
-#define soap_write_ns1__StringKeyParameterValuePair(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__StringKeyParameterValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__StringKeyParameterValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__StringKeyParameterValuePair * SOAP_FMAC4 soap_get_ns1__StringKeyParameterValuePair(struct soap*, ns1__StringKeyParameterValuePair *, const char*, const char*);
-
-#define soap_new_ns1__StringKeyParameterValuePair(soap, n) soap_instantiate_ns1__StringKeyParameterValuePair(soap, n, NULL, NULL, NULL)
+#define soap_write_api__StringKeyParameterValuePair(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__StringKeyParameterValuePair(soap, p) soap_delete(soap, p)
+#define soap_read_api__StringKeyParameterValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_api__StringKeyParameterValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__StringKeyParameterValuePair * SOAP_FMAC2 soap_instantiate_ns1__StringKeyParameterValuePair(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__StringKeyParameterValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__StringKeyParameterValuePair * SOAP_FMAC4 soap_get_api__StringKeyParameterValuePair(struct soap*, api__StringKeyParameterValuePair *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__Execution
-#define SOAP_TYPE_ns1__Execution (19)
+#define soap_new_api__StringKeyParameterValuePair(soap, n) soap_instantiate_api__StringKeyParameterValuePair(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__StringKeyParameterValuePair(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__StringKeyParameterValuePair * SOAP_FMAC2 soap_instantiate_api__StringKeyParameterValuePair(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__StringKeyParameterValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__Execution
+#define SOAP_TYPE_api__Execution (19)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__Execution(struct soap*, const char*, int, const ns1__Execution *, const char*);
-SOAP_FMAC3 ns1__Execution * SOAP_FMAC4 soap_in_ns1__Execution(struct soap*, const char*, ns1__Execution *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__Execution(struct soap*, const char*, int, const api__Execution *, const char*);
+SOAP_FMAC3 api__Execution * SOAP_FMAC4 soap_in_api__Execution(struct soap*, const char*, api__Execution *, const char*);
 
-#define soap_write_ns1__Execution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__Execution(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__Execution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__Execution * SOAP_FMAC4 soap_get_ns1__Execution(struct soap*, ns1__Execution *, const char*, const char*);
-
-#define soap_new_ns1__Execution(soap, n) soap_instantiate_ns1__Execution(soap, n, NULL, NULL, NULL)
+#define soap_write_api__Execution(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__Execution(soap, p) soap_delete(soap, p)
+#define soap_read_api__Execution(soap, data) ( soap_begin_recv(soap) || !soap_get_api__Execution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__Execution * SOAP_FMAC2 soap_instantiate_ns1__Execution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__Execution(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__Execution * SOAP_FMAC4 soap_get_api__Execution(struct soap*, api__Execution *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__IntKeyStringValuePair
-#define SOAP_TYPE_ns1__IntKeyStringValuePair (18)
+#define soap_new_api__Execution(soap, n) soap_instantiate_api__Execution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__Execution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__Execution * SOAP_FMAC2 soap_instantiate_api__Execution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__Execution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__IntKeyStringValuePair
+#define SOAP_TYPE_api__IntKeyStringValuePair (18)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__IntKeyStringValuePair(struct soap*, const char*, int, const ns1__IntKeyStringValuePair *, const char*);
-SOAP_FMAC3 ns1__IntKeyStringValuePair * SOAP_FMAC4 soap_in_ns1__IntKeyStringValuePair(struct soap*, const char*, ns1__IntKeyStringValuePair *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__IntKeyStringValuePair(struct soap*, const char*, int, const api__IntKeyStringValuePair *, const char*);
+SOAP_FMAC3 api__IntKeyStringValuePair * SOAP_FMAC4 soap_in_api__IntKeyStringValuePair(struct soap*, const char*, api__IntKeyStringValuePair *, const char*);
 
-#define soap_write_ns1__IntKeyStringValuePair(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__IntKeyStringValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__IntKeyStringValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__IntKeyStringValuePair * SOAP_FMAC4 soap_get_ns1__IntKeyStringValuePair(struct soap*, ns1__IntKeyStringValuePair *, const char*, const char*);
-
-#define soap_new_ns1__IntKeyStringValuePair(soap, n) soap_instantiate_ns1__IntKeyStringValuePair(soap, n, NULL, NULL, NULL)
+#define soap_write_api__IntKeyStringValuePair(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__IntKeyStringValuePair(soap, p) soap_delete(soap, p)
+#define soap_read_api__IntKeyStringValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_api__IntKeyStringValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__IntKeyStringValuePair * SOAP_FMAC2 soap_instantiate_ns1__IntKeyStringValuePair(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__IntKeyStringValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__IntKeyStringValuePair * SOAP_FMAC4 soap_get_api__IntKeyStringValuePair(struct soap*, api__IntKeyStringValuePair *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__ParameterTypedValue
-#define SOAP_TYPE_ns1__ParameterTypedValue (17)
+#define soap_new_api__IntKeyStringValuePair(soap, n) soap_instantiate_api__IntKeyStringValuePair(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__IntKeyStringValuePair(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__IntKeyStringValuePair * SOAP_FMAC2 soap_instantiate_api__IntKeyStringValuePair(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__IntKeyStringValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__ParameterTypedValue
+#define SOAP_TYPE_api__ParameterTypedValue (17)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__ParameterTypedValue(struct soap*, const char*, int, const ns1__ParameterTypedValue *, const char*);
-SOAP_FMAC3 ns1__ParameterTypedValue * SOAP_FMAC4 soap_in_ns1__ParameterTypedValue(struct soap*, const char*, ns1__ParameterTypedValue *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__ParameterTypedValue(struct soap*, const char*, int, const api__ParameterTypedValue *, const char*);
+SOAP_FMAC3 api__ParameterTypedValue * SOAP_FMAC4 soap_in_api__ParameterTypedValue(struct soap*, const char*, api__ParameterTypedValue *, const char*);
 
-#define soap_write_ns1__ParameterTypedValue(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__ParameterTypedValue(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__ParameterTypedValue(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__ParameterTypedValue * SOAP_FMAC4 soap_get_ns1__ParameterTypedValue(struct soap*, ns1__ParameterTypedValue *, const char*, const char*);
-
-#define soap_new_ns1__ParameterTypedValue(soap, n) soap_instantiate_ns1__ParameterTypedValue(soap, n, NULL, NULL, NULL)
+#define soap_write_api__ParameterTypedValue(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__ParameterTypedValue(soap, p) soap_delete(soap, p)
+#define soap_read_api__ParameterTypedValue(soap, data) ( soap_begin_recv(soap) || !soap_get_api__ParameterTypedValue(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__ParameterTypedValue * SOAP_FMAC2 soap_instantiate_ns1__ParameterTypedValue(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__ParameterTypedValue(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__ParameterTypedValue * SOAP_FMAC4 soap_get_api__ParameterTypedValue(struct soap*, api__ParameterTypedValue *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__PipelineParameter
-#define SOAP_TYPE_ns1__PipelineParameter (16)
+#define soap_new_api__ParameterTypedValue(soap, n) soap_instantiate_api__ParameterTypedValue(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__ParameterTypedValue(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__ParameterTypedValue * SOAP_FMAC2 soap_instantiate_api__ParameterTypedValue(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__ParameterTypedValue(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__PipelineParameter
+#define SOAP_TYPE_api__PipelineParameter (16)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__PipelineParameter(struct soap*, const char*, int, const ns1__PipelineParameter *, const char*);
-SOAP_FMAC3 ns1__PipelineParameter * SOAP_FMAC4 soap_in_ns1__PipelineParameter(struct soap*, const char*, ns1__PipelineParameter *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__PipelineParameter(struct soap*, const char*, int, const api__PipelineParameter *, const char*);
+SOAP_FMAC3 api__PipelineParameter * SOAP_FMAC4 soap_in_api__PipelineParameter(struct soap*, const char*, api__PipelineParameter *, const char*);
 
-#define soap_write_ns1__PipelineParameter(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__PipelineParameter(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__PipelineParameter(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__PipelineParameter * SOAP_FMAC4 soap_get_ns1__PipelineParameter(struct soap*, ns1__PipelineParameter *, const char*, const char*);
-
-#define soap_new_ns1__PipelineParameter(soap, n) soap_instantiate_ns1__PipelineParameter(soap, n, NULL, NULL, NULL)
+#define soap_write_api__PipelineParameter(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__PipelineParameter(soap, p) soap_delete(soap, p)
+#define soap_read_api__PipelineParameter(soap, data) ( soap_begin_recv(soap) || !soap_get_api__PipelineParameter(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__PipelineParameter * SOAP_FMAC2 soap_instantiate_ns1__PipelineParameter(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__PipelineParameter(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__PipelineParameter * SOAP_FMAC4 soap_get_api__PipelineParameter(struct soap*, api__PipelineParameter *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__ArrayOfExecutions
-#define SOAP_TYPE_ns1__ArrayOfExecutions (15)
+#define soap_new_api__PipelineParameter(soap, n) soap_instantiate_api__PipelineParameter(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__PipelineParameter(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__PipelineParameter * SOAP_FMAC2 soap_instantiate_api__PipelineParameter(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__PipelineParameter(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__ArrayOfExecutions
+#define SOAP_TYPE_api__ArrayOfExecutions (15)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__ArrayOfExecutions(struct soap*, const char*, int, const ns1__ArrayOfExecutions *, const char*);
-SOAP_FMAC3 ns1__ArrayOfExecutions * SOAP_FMAC4 soap_in_ns1__ArrayOfExecutions(struct soap*, const char*, ns1__ArrayOfExecutions *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__ArrayOfExecutions(struct soap*, const char*, int, const api__ArrayOfExecutions *, const char*);
+SOAP_FMAC3 api__ArrayOfExecutions * SOAP_FMAC4 soap_in_api__ArrayOfExecutions(struct soap*, const char*, api__ArrayOfExecutions *, const char*);
 
-#define soap_write_ns1__ArrayOfExecutions(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__ArrayOfExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__ArrayOfExecutions * SOAP_FMAC4 soap_get_ns1__ArrayOfExecutions(struct soap*, ns1__ArrayOfExecutions *, const char*, const char*);
-
-#define soap_new_ns1__ArrayOfExecutions(soap, n) soap_instantiate_ns1__ArrayOfExecutions(soap, n, NULL, NULL, NULL)
+#define soap_write_api__ArrayOfExecutions(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__ArrayOfExecutions(soap, p) soap_delete(soap, p)
+#define soap_read_api__ArrayOfExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_api__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__ArrayOfExecutions * SOAP_FMAC2 soap_instantiate_ns1__ArrayOfExecutions(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__ArrayOfExecutions(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__ArrayOfExecutions * SOAP_FMAC4 soap_get_api__ArrayOfExecutions(struct soap*, api__ArrayOfExecutions *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__ArrayOfPipelines
-#define SOAP_TYPE_ns1__ArrayOfPipelines (14)
+#define soap_new_api__ArrayOfExecutions(soap, n) soap_instantiate_api__ArrayOfExecutions(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__ArrayOfExecutions(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__ArrayOfExecutions * SOAP_FMAC2 soap_instantiate_api__ArrayOfExecutions(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__ArrayOfExecutions(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__ArrayOfPipelines
+#define SOAP_TYPE_api__ArrayOfPipelines (14)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__ArrayOfPipelines(struct soap*, const char*, int, const ns1__ArrayOfPipelines *, const char*);
-SOAP_FMAC3 ns1__ArrayOfPipelines * SOAP_FMAC4 soap_in_ns1__ArrayOfPipelines(struct soap*, const char*, ns1__ArrayOfPipelines *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__ArrayOfPipelines(struct soap*, const char*, int, const api__ArrayOfPipelines *, const char*);
+SOAP_FMAC3 api__ArrayOfPipelines * SOAP_FMAC4 soap_in_api__ArrayOfPipelines(struct soap*, const char*, api__ArrayOfPipelines *, const char*);
 
-#define soap_write_ns1__ArrayOfPipelines(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__ArrayOfPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__ArrayOfPipelines * SOAP_FMAC4 soap_get_ns1__ArrayOfPipelines(struct soap*, ns1__ArrayOfPipelines *, const char*, const char*);
-
-#define soap_new_ns1__ArrayOfPipelines(soap, n) soap_instantiate_ns1__ArrayOfPipelines(soap, n, NULL, NULL, NULL)
+#define soap_write_api__ArrayOfPipelines(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__ArrayOfPipelines(soap, p) soap_delete(soap, p)
+#define soap_read_api__ArrayOfPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_api__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__ArrayOfPipelines * SOAP_FMAC2 soap_instantiate_ns1__ArrayOfPipelines(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__ArrayOfPipelines(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__ArrayOfPipelines * SOAP_FMAC4 soap_get_api__ArrayOfPipelines(struct soap*, api__ArrayOfPipelines *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__ArrayOfStrings
-#define SOAP_TYPE_ns1__ArrayOfStrings (13)
+#define soap_new_api__ArrayOfPipelines(soap, n) soap_instantiate_api__ArrayOfPipelines(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__ArrayOfPipelines(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__ArrayOfPipelines * SOAP_FMAC2 soap_instantiate_api__ArrayOfPipelines(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__ArrayOfPipelines(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__ArrayOfStrings
+#define SOAP_TYPE_api__ArrayOfStrings (13)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__ArrayOfStrings(struct soap*, const char*, int, const ns1__ArrayOfStrings *, const char*);
-SOAP_FMAC3 ns1__ArrayOfStrings * SOAP_FMAC4 soap_in_ns1__ArrayOfStrings(struct soap*, const char*, ns1__ArrayOfStrings *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__ArrayOfStrings(struct soap*, const char*, int, const api__ArrayOfStrings *, const char*);
+SOAP_FMAC3 api__ArrayOfStrings * SOAP_FMAC4 soap_in_api__ArrayOfStrings(struct soap*, const char*, api__ArrayOfStrings *, const char*);
 
-#define soap_write_ns1__ArrayOfStrings(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__ArrayOfStrings(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__ArrayOfStrings * SOAP_FMAC4 soap_get_ns1__ArrayOfStrings(struct soap*, ns1__ArrayOfStrings *, const char*, const char*);
-
-#define soap_new_ns1__ArrayOfStrings(soap, n) soap_instantiate_ns1__ArrayOfStrings(soap, n, NULL, NULL, NULL)
+#define soap_write_api__ArrayOfStrings(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__ArrayOfStrings(soap, p) soap_delete(soap, p)
+#define soap_read_api__ArrayOfStrings(soap, data) ( soap_begin_recv(soap) || !soap_get_api__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__ArrayOfStrings * SOAP_FMAC2 soap_instantiate_ns1__ArrayOfStrings(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__ArrayOfStrings(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__ArrayOfStrings * SOAP_FMAC4 soap_get_api__ArrayOfStrings(struct soap*, api__ArrayOfStrings *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__Object
-#define SOAP_TYPE_ns1__Object (12)
+#define soap_new_api__ArrayOfStrings(soap, n) soap_instantiate_api__ArrayOfStrings(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__ArrayOfStrings(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__ArrayOfStrings * SOAP_FMAC2 soap_instantiate_api__ArrayOfStrings(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__ArrayOfStrings(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__Object
+#define SOAP_TYPE_api__Object (12)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__Object(struct soap*, const char*, int, const ns1__Object *, const char*);
-SOAP_FMAC3 ns1__Object * SOAP_FMAC4 soap_in_ns1__Object(struct soap*, const char*, ns1__Object *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__Object(struct soap*, const char*, int, const api__Object *, const char*);
+SOAP_FMAC3 api__Object * SOAP_FMAC4 soap_in_api__Object(struct soap*, const char*, api__Object *, const char*);
 
-#define soap_write_ns1__Object(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__Object(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__Object(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__Object * SOAP_FMAC4 soap_get_ns1__Object(struct soap*, ns1__Object *, const char*, const char*);
-
-#define soap_new_ns1__Object(soap, n) soap_instantiate_ns1__Object(soap, n, NULL, NULL, NULL)
+#define soap_write_api__Object(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__Object(soap, p) soap_delete(soap, p)
+#define soap_read_api__Object(soap, data) ( soap_begin_recv(soap) || !soap_get_api__Object(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__Object * SOAP_FMAC2 soap_instantiate_ns1__Object(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__Object(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__Object * SOAP_FMAC4 soap_get_api__Object(struct soap*, api__Object *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__Pipeline
-#define SOAP_TYPE_ns1__Pipeline (11)
+#define soap_new_api__Object(soap, n) soap_instantiate_api__Object(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__Object(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__Object * SOAP_FMAC2 soap_instantiate_api__Object(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__Object(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__Pipeline
+#define SOAP_TYPE_api__Pipeline (11)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__Pipeline(struct soap*, const char*, int, const ns1__Pipeline *, const char*);
-SOAP_FMAC3 ns1__Pipeline * SOAP_FMAC4 soap_in_ns1__Pipeline(struct soap*, const char*, ns1__Pipeline *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__Pipeline(struct soap*, const char*, int, const api__Pipeline *, const char*);
+SOAP_FMAC3 api__Pipeline * SOAP_FMAC4 soap_in_api__Pipeline(struct soap*, const char*, api__Pipeline *, const char*);
 
-#define soap_write_ns1__Pipeline(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__Pipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__Pipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__Pipeline * SOAP_FMAC4 soap_get_ns1__Pipeline(struct soap*, ns1__Pipeline *, const char*, const char*);
-
-#define soap_new_ns1__Pipeline(soap, n) soap_instantiate_ns1__Pipeline(soap, n, NULL, NULL, NULL)
+#define soap_write_api__Pipeline(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__Pipeline(soap, p) soap_delete(soap, p)
+#define soap_read_api__Pipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_api__Pipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__Pipeline * SOAP_FMAC2 soap_instantiate_ns1__Pipeline(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__Pipeline(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__Pipeline * SOAP_FMAC4 soap_get_api__Pipeline(struct soap*, api__Pipeline *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__Response
-#define SOAP_TYPE_ns1__Response (10)
+#define soap_new_api__Pipeline(soap, n) soap_instantiate_api__Pipeline(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__Pipeline(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__Pipeline * SOAP_FMAC2 soap_instantiate_api__Pipeline(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__Pipeline(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__Response
+#define SOAP_TYPE_api__Response (10)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__Response(struct soap*, const char*, int, const ns1__Response *, const char*);
-SOAP_FMAC3 ns1__Response * SOAP_FMAC4 soap_in_ns1__Response(struct soap*, const char*, ns1__Response *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__Response(struct soap*, const char*, int, const api__Response *, const char*);
+SOAP_FMAC3 api__Response * SOAP_FMAC4 soap_in_api__Response(struct soap*, const char*, api__Response *, const char*);
 
-#define soap_write_ns1__Response(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__Response(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__Response(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__Response * SOAP_FMAC4 soap_get_ns1__Response(struct soap*, ns1__Response *, const char*, const char*);
-
-#define soap_new_ns1__Response(soap, n) soap_instantiate_ns1__Response(soap, n, NULL, NULL, NULL)
+#define soap_write_api__Response(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__Response(soap, p) soap_delete(soap, p)
+#define soap_read_api__Response(soap, data) ( soap_begin_recv(soap) || !soap_get_api__Response(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__Response * SOAP_FMAC2 soap_instantiate_ns1__Response(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__Response(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__Response * SOAP_FMAC4 soap_get_api__Response(struct soap*, api__Response *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__authenticateSessionResponse
-#define SOAP_TYPE_ns1__authenticateSessionResponse (9)
+#define soap_new_api__Response(soap, n) soap_instantiate_api__Response(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__Response(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__Response * SOAP_FMAC2 soap_instantiate_api__Response(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__Response(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__authenticateSessionResponse
+#define SOAP_TYPE_api__authenticateSessionResponse (9)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__authenticateSessionResponse(struct soap*, const char*, int, const ns1__authenticateSessionResponse *, const char*);
-SOAP_FMAC3 ns1__authenticateSessionResponse * SOAP_FMAC4 soap_in_ns1__authenticateSessionResponse(struct soap*, const char*, ns1__authenticateSessionResponse *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__authenticateSessionResponse(struct soap*, const char*, int, const api__authenticateSessionResponse *, const char*);
+SOAP_FMAC3 api__authenticateSessionResponse * SOAP_FMAC4 soap_in_api__authenticateSessionResponse(struct soap*, const char*, api__authenticateSessionResponse *, const char*);
 
-#define soap_write_ns1__authenticateSessionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__authenticateSessionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__authenticateSessionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__authenticateSessionResponse * SOAP_FMAC4 soap_get_ns1__authenticateSessionResponse(struct soap*, ns1__authenticateSessionResponse *, const char*, const char*);
-
-#define soap_new_ns1__authenticateSessionResponse(soap, n) soap_instantiate_ns1__authenticateSessionResponse(soap, n, NULL, NULL, NULL)
+#define soap_write_api__authenticateSessionResponse(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__authenticateSessionResponse(soap, p) soap_delete(soap, p)
+#define soap_read_api__authenticateSessionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_api__authenticateSessionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__authenticateSessionResponse * SOAP_FMAC2 soap_instantiate_ns1__authenticateSessionResponse(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__authenticateSessionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__authenticateSessionResponse * SOAP_FMAC4 soap_get_api__authenticateSessionResponse(struct soap*, api__authenticateSessionResponse *, const char*, const char*);
 
-#ifndef SOAP_TYPE_ns1__authenticateSession
-#define SOAP_TYPE_ns1__authenticateSession (8)
+#define soap_new_api__authenticateSessionResponse(soap, n) soap_instantiate_api__authenticateSessionResponse(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__authenticateSessionResponse(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__authenticateSessionResponse * SOAP_FMAC2 soap_instantiate_api__authenticateSessionResponse(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__authenticateSessionResponse(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE_api__authenticateSession
+#define SOAP_TYPE_api__authenticateSession (8)
 #endif
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__authenticateSession(struct soap*, const char*, int, const ns1__authenticateSession *, const char*);
-SOAP_FMAC3 ns1__authenticateSession * SOAP_FMAC4 soap_in_ns1__authenticateSession(struct soap*, const char*, ns1__authenticateSession *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_api__authenticateSession(struct soap*, const char*, int, const api__authenticateSession *, const char*);
+SOAP_FMAC3 api__authenticateSession * SOAP_FMAC4 soap_in_api__authenticateSession(struct soap*, const char*, api__authenticateSession *, const char*);
 
-#define soap_write_ns1__authenticateSession(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
-
-
-#define soap_read_ns1__authenticateSession(soap, data) ( soap_begin_recv(soap) || !soap_get_ns1__authenticateSession(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 ns1__authenticateSession * SOAP_FMAC4 soap_get_ns1__authenticateSession(struct soap*, ns1__authenticateSession *, const char*, const char*);
-
-#define soap_new_ns1__authenticateSession(soap, n) soap_instantiate_ns1__authenticateSession(soap, n, NULL, NULL, NULL)
+#define soap_write_api__authenticateSession(soap, data) ( soap_begin_send(soap) || ((data)->soap_serialize(soap), 0) || (data)->soap_put(soap, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete_ns1__authenticateSession(soap, p) soap_delete(soap, p)
+#define soap_read_api__authenticateSession(soap, data) ( soap_begin_recv(soap) || !soap_get_api__authenticateSession(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC1 ns1__authenticateSession * SOAP_FMAC2 soap_instantiate_ns1__authenticateSession(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_ns1__authenticateSession(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC3 api__authenticateSession * SOAP_FMAC4 soap_get_api__authenticateSession(struct soap*, api__authenticateSession *, const char*, const char*);
+
+#define soap_new_api__authenticateSession(soap, n) soap_instantiate_api__authenticateSession(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete_api__authenticateSession(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 api__authenticateSession * SOAP_FMAC2 soap_instantiate_api__authenticateSession(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_api__authenticateSession(struct soap*, int, int, void*, size_t, const void*, size_t);
 
 #ifndef WITH_NOGLOBAL
 
@@ -1359,426 +1359,426 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_copy_SOAP_ENV__Header(struct soap*, int, int, vo
 
 #endif
 
-#ifndef SOAP_TYPE___ns1__listExecutions
-#define SOAP_TYPE___ns1__listExecutions (164)
+#ifndef SOAP_TYPE___api__listExecutions
+#define SOAP_TYPE___api__listExecutions (164)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__listExecutions(struct soap*, struct __ns1__listExecutions *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__listExecutions(struct soap*, const struct __ns1__listExecutions *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__listExecutions(struct soap*, const char*, int, const struct __ns1__listExecutions *, const char*);
-SOAP_FMAC3 struct __ns1__listExecutions * SOAP_FMAC4 soap_in___ns1__listExecutions(struct soap*, const char*, struct __ns1__listExecutions *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__listExecutions(struct soap*, struct __api__listExecutions *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__listExecutions(struct soap*, const struct __api__listExecutions *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__listExecutions(struct soap*, const char*, int, const struct __api__listExecutions *, const char*);
+SOAP_FMAC3 struct __api__listExecutions * SOAP_FMAC4 soap_in___api__listExecutions(struct soap*, const char*, struct __api__listExecutions *, const char*);
 
-#define soap_write___ns1__listExecutions(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__listExecutions(soap, data), 0) || soap_put___ns1__listExecutions(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__listExecutions(struct soap*, const struct __ns1__listExecutions *, const char*, const char*);
-
-#define soap_read___ns1__listExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__listExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__listExecutions * SOAP_FMAC4 soap_get___ns1__listExecutions(struct soap*, struct __ns1__listExecutions *, const char*, const char*);
-
-#define soap_new___ns1__listExecutions(soap, n) soap_instantiate___ns1__listExecutions(soap, n, NULL, NULL, NULL)
+#define soap_write___api__listExecutions(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__listExecutions(soap, data), 0) || soap_put___api__listExecutions(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__listExecutions(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__listExecutions(struct soap*, const struct __api__listExecutions *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__listExecutions * SOAP_FMAC2 soap_instantiate___ns1__listExecutions(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__listExecutions(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__listExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get___api__listExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__listPipelines
-#define SOAP_TYPE___ns1__listPipelines (160)
+SOAP_FMAC3 struct __api__listExecutions * SOAP_FMAC4 soap_get___api__listExecutions(struct soap*, struct __api__listExecutions *, const char*, const char*);
+
+#define soap_new___api__listExecutions(soap, n) soap_instantiate___api__listExecutions(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__listExecutions(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__listExecutions * SOAP_FMAC2 soap_instantiate___api__listExecutions(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__listExecutions(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__listPipelines
+#define SOAP_TYPE___api__listPipelines (160)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__listPipelines(struct soap*, struct __ns1__listPipelines *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__listPipelines(struct soap*, const struct __ns1__listPipelines *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__listPipelines(struct soap*, const char*, int, const struct __ns1__listPipelines *, const char*);
-SOAP_FMAC3 struct __ns1__listPipelines * SOAP_FMAC4 soap_in___ns1__listPipelines(struct soap*, const char*, struct __ns1__listPipelines *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__listPipelines(struct soap*, struct __api__listPipelines *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__listPipelines(struct soap*, const struct __api__listPipelines *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__listPipelines(struct soap*, const char*, int, const struct __api__listPipelines *, const char*);
+SOAP_FMAC3 struct __api__listPipelines * SOAP_FMAC4 soap_in___api__listPipelines(struct soap*, const char*, struct __api__listPipelines *, const char*);
 
-#define soap_write___ns1__listPipelines(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__listPipelines(soap, data), 0) || soap_put___ns1__listPipelines(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__listPipelines(struct soap*, const struct __ns1__listPipelines *, const char*, const char*);
-
-#define soap_read___ns1__listPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__listPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__listPipelines * SOAP_FMAC4 soap_get___ns1__listPipelines(struct soap*, struct __ns1__listPipelines *, const char*, const char*);
-
-#define soap_new___ns1__listPipelines(soap, n) soap_instantiate___ns1__listPipelines(soap, n, NULL, NULL, NULL)
+#define soap_write___api__listPipelines(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__listPipelines(soap, data), 0) || soap_put___api__listPipelines(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__listPipelines(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__listPipelines(struct soap*, const struct __api__listPipelines *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__listPipelines * SOAP_FMAC2 soap_instantiate___ns1__listPipelines(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__listPipelines(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__listPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get___api__listPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__playExecution
-#define SOAP_TYPE___ns1__playExecution (156)
+SOAP_FMAC3 struct __api__listPipelines * SOAP_FMAC4 soap_get___api__listPipelines(struct soap*, struct __api__listPipelines *, const char*, const char*);
+
+#define soap_new___api__listPipelines(soap, n) soap_instantiate___api__listPipelines(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__listPipelines(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__listPipelines * SOAP_FMAC2 soap_instantiate___api__listPipelines(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__listPipelines(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__playExecution
+#define SOAP_TYPE___api__playExecution (156)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__playExecution(struct soap*, struct __ns1__playExecution *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__playExecution(struct soap*, const struct __ns1__playExecution *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__playExecution(struct soap*, const char*, int, const struct __ns1__playExecution *, const char*);
-SOAP_FMAC3 struct __ns1__playExecution * SOAP_FMAC4 soap_in___ns1__playExecution(struct soap*, const char*, struct __ns1__playExecution *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__playExecution(struct soap*, struct __api__playExecution *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__playExecution(struct soap*, const struct __api__playExecution *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__playExecution(struct soap*, const char*, int, const struct __api__playExecution *, const char*);
+SOAP_FMAC3 struct __api__playExecution * SOAP_FMAC4 soap_in___api__playExecution(struct soap*, const char*, struct __api__playExecution *, const char*);
 
-#define soap_write___ns1__playExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__playExecution(soap, data), 0) || soap_put___ns1__playExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__playExecution(struct soap*, const struct __ns1__playExecution *, const char*, const char*);
-
-#define soap_read___ns1__playExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__playExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__playExecution * SOAP_FMAC4 soap_get___ns1__playExecution(struct soap*, struct __ns1__playExecution *, const char*, const char*);
-
-#define soap_new___ns1__playExecution(soap, n) soap_instantiate___ns1__playExecution(soap, n, NULL, NULL, NULL)
+#define soap_write___api__playExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__playExecution(soap, data), 0) || soap_put___api__playExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__playExecution(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__playExecution(struct soap*, const struct __api__playExecution *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__playExecution * SOAP_FMAC2 soap_instantiate___ns1__playExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__playExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__playExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___api__playExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__getExecution
-#define SOAP_TYPE___ns1__getExecution (152)
+SOAP_FMAC3 struct __api__playExecution * SOAP_FMAC4 soap_get___api__playExecution(struct soap*, struct __api__playExecution *, const char*, const char*);
+
+#define soap_new___api__playExecution(soap, n) soap_instantiate___api__playExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__playExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__playExecution * SOAP_FMAC2 soap_instantiate___api__playExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__playExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__getExecution
+#define SOAP_TYPE___api__getExecution (152)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__getExecution(struct soap*, struct __ns1__getExecution *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__getExecution(struct soap*, const struct __ns1__getExecution *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__getExecution(struct soap*, const char*, int, const struct __ns1__getExecution *, const char*);
-SOAP_FMAC3 struct __ns1__getExecution * SOAP_FMAC4 soap_in___ns1__getExecution(struct soap*, const char*, struct __ns1__getExecution *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__getExecution(struct soap*, struct __api__getExecution *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__getExecution(struct soap*, const struct __api__getExecution *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__getExecution(struct soap*, const char*, int, const struct __api__getExecution *, const char*);
+SOAP_FMAC3 struct __api__getExecution * SOAP_FMAC4 soap_in___api__getExecution(struct soap*, const char*, struct __api__getExecution *, const char*);
 
-#define soap_write___ns1__getExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__getExecution(soap, data), 0) || soap_put___ns1__getExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__getExecution(struct soap*, const struct __ns1__getExecution *, const char*, const char*);
-
-#define soap_read___ns1__getExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__getExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__getExecution * SOAP_FMAC4 soap_get___ns1__getExecution(struct soap*, struct __ns1__getExecution *, const char*, const char*);
-
-#define soap_new___ns1__getExecution(soap, n) soap_instantiate___ns1__getExecution(soap, n, NULL, NULL, NULL)
+#define soap_write___api__getExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__getExecution(soap, data), 0) || soap_put___api__getExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__getExecution(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__getExecution(struct soap*, const struct __api__getExecution *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__getExecution * SOAP_FMAC2 soap_instantiate___ns1__getExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__getExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__getExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___api__getExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__killExecution
-#define SOAP_TYPE___ns1__killExecution (148)
+SOAP_FMAC3 struct __api__getExecution * SOAP_FMAC4 soap_get___api__getExecution(struct soap*, struct __api__getExecution *, const char*, const char*);
+
+#define soap_new___api__getExecution(soap, n) soap_instantiate___api__getExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__getExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__getExecution * SOAP_FMAC2 soap_instantiate___api__getExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__getExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__killExecution
+#define SOAP_TYPE___api__killExecution (148)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__killExecution(struct soap*, struct __ns1__killExecution *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__killExecution(struct soap*, const struct __ns1__killExecution *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__killExecution(struct soap*, const char*, int, const struct __ns1__killExecution *, const char*);
-SOAP_FMAC3 struct __ns1__killExecution * SOAP_FMAC4 soap_in___ns1__killExecution(struct soap*, const char*, struct __ns1__killExecution *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__killExecution(struct soap*, struct __api__killExecution *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__killExecution(struct soap*, const struct __api__killExecution *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__killExecution(struct soap*, const char*, int, const struct __api__killExecution *, const char*);
+SOAP_FMAC3 struct __api__killExecution * SOAP_FMAC4 soap_in___api__killExecution(struct soap*, const char*, struct __api__killExecution *, const char*);
 
-#define soap_write___ns1__killExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__killExecution(soap, data), 0) || soap_put___ns1__killExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__killExecution(struct soap*, const struct __ns1__killExecution *, const char*, const char*);
-
-#define soap_read___ns1__killExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__killExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__killExecution * SOAP_FMAC4 soap_get___ns1__killExecution(struct soap*, struct __ns1__killExecution *, const char*, const char*);
-
-#define soap_new___ns1__killExecution(soap, n) soap_instantiate___ns1__killExecution(soap, n, NULL, NULL, NULL)
+#define soap_write___api__killExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__killExecution(soap, data), 0) || soap_put___api__killExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__killExecution(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__killExecution(struct soap*, const struct __api__killExecution *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__killExecution * SOAP_FMAC2 soap_instantiate___ns1__killExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__killExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__killExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___api__killExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__getExecutionResults
-#define SOAP_TYPE___ns1__getExecutionResults (144)
+SOAP_FMAC3 struct __api__killExecution * SOAP_FMAC4 soap_get___api__killExecution(struct soap*, struct __api__killExecution *, const char*, const char*);
+
+#define soap_new___api__killExecution(soap, n) soap_instantiate___api__killExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__killExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__killExecution * SOAP_FMAC2 soap_instantiate___api__killExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__killExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__getExecutionResults
+#define SOAP_TYPE___api__getExecutionResults (144)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__getExecutionResults(struct soap*, struct __ns1__getExecutionResults *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__getExecutionResults(struct soap*, const struct __ns1__getExecutionResults *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__getExecutionResults(struct soap*, const char*, int, const struct __ns1__getExecutionResults *, const char*);
-SOAP_FMAC3 struct __ns1__getExecutionResults * SOAP_FMAC4 soap_in___ns1__getExecutionResults(struct soap*, const char*, struct __ns1__getExecutionResults *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__getExecutionResults(struct soap*, struct __api__getExecutionResults *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__getExecutionResults(struct soap*, const struct __api__getExecutionResults *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__getExecutionResults(struct soap*, const char*, int, const struct __api__getExecutionResults *, const char*);
+SOAP_FMAC3 struct __api__getExecutionResults * SOAP_FMAC4 soap_in___api__getExecutionResults(struct soap*, const char*, struct __api__getExecutionResults *, const char*);
 
-#define soap_write___ns1__getExecutionResults(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__getExecutionResults(soap, data), 0) || soap_put___ns1__getExecutionResults(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__getExecutionResults(struct soap*, const struct __ns1__getExecutionResults *, const char*, const char*);
-
-#define soap_read___ns1__getExecutionResults(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__getExecutionResults(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__getExecutionResults * SOAP_FMAC4 soap_get___ns1__getExecutionResults(struct soap*, struct __ns1__getExecutionResults *, const char*, const char*);
-
-#define soap_new___ns1__getExecutionResults(soap, n) soap_instantiate___ns1__getExecutionResults(soap, n, NULL, NULL, NULL)
+#define soap_write___api__getExecutionResults(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__getExecutionResults(soap, data), 0) || soap_put___api__getExecutionResults(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__getExecutionResults(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__getExecutionResults(struct soap*, const struct __api__getExecutionResults *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__getExecutionResults * SOAP_FMAC2 soap_instantiate___ns1__getExecutionResults(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__getExecutionResults(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__getExecutionResults(soap, data) ( soap_begin_recv(soap) || !soap_get___api__getExecutionResults(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__getStdErr
-#define SOAP_TYPE___ns1__getStdErr (140)
+SOAP_FMAC3 struct __api__getExecutionResults * SOAP_FMAC4 soap_get___api__getExecutionResults(struct soap*, struct __api__getExecutionResults *, const char*, const char*);
+
+#define soap_new___api__getExecutionResults(soap, n) soap_instantiate___api__getExecutionResults(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__getExecutionResults(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__getExecutionResults * SOAP_FMAC2 soap_instantiate___api__getExecutionResults(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__getExecutionResults(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__getStdErr
+#define SOAP_TYPE___api__getStdErr (140)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__getStdErr(struct soap*, struct __ns1__getStdErr *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__getStdErr(struct soap*, const struct __ns1__getStdErr *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__getStdErr(struct soap*, const char*, int, const struct __ns1__getStdErr *, const char*);
-SOAP_FMAC3 struct __ns1__getStdErr * SOAP_FMAC4 soap_in___ns1__getStdErr(struct soap*, const char*, struct __ns1__getStdErr *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__getStdErr(struct soap*, struct __api__getStdErr *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__getStdErr(struct soap*, const struct __api__getStdErr *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__getStdErr(struct soap*, const char*, int, const struct __api__getStdErr *, const char*);
+SOAP_FMAC3 struct __api__getStdErr * SOAP_FMAC4 soap_in___api__getStdErr(struct soap*, const char*, struct __api__getStdErr *, const char*);
 
-#define soap_write___ns1__getStdErr(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__getStdErr(soap, data), 0) || soap_put___ns1__getStdErr(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__getStdErr(struct soap*, const struct __ns1__getStdErr *, const char*, const char*);
-
-#define soap_read___ns1__getStdErr(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__getStdErr(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__getStdErr * SOAP_FMAC4 soap_get___ns1__getStdErr(struct soap*, struct __ns1__getStdErr *, const char*, const char*);
-
-#define soap_new___ns1__getStdErr(soap, n) soap_instantiate___ns1__getStdErr(soap, n, NULL, NULL, NULL)
+#define soap_write___api__getStdErr(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__getStdErr(soap, data), 0) || soap_put___api__getStdErr(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__getStdErr(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__getStdErr(struct soap*, const struct __api__getStdErr *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__getStdErr * SOAP_FMAC2 soap_instantiate___ns1__getStdErr(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__getStdErr(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__getStdErr(soap, data) ( soap_begin_recv(soap) || !soap_get___api__getStdErr(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__getStdOut
-#define SOAP_TYPE___ns1__getStdOut (136)
+SOAP_FMAC3 struct __api__getStdErr * SOAP_FMAC4 soap_get___api__getStdErr(struct soap*, struct __api__getStdErr *, const char*, const char*);
+
+#define soap_new___api__getStdErr(soap, n) soap_instantiate___api__getStdErr(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__getStdErr(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__getStdErr * SOAP_FMAC2 soap_instantiate___api__getStdErr(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__getStdErr(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__getStdOut
+#define SOAP_TYPE___api__getStdOut (136)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__getStdOut(struct soap*, struct __ns1__getStdOut *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__getStdOut(struct soap*, const struct __ns1__getStdOut *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__getStdOut(struct soap*, const char*, int, const struct __ns1__getStdOut *, const char*);
-SOAP_FMAC3 struct __ns1__getStdOut * SOAP_FMAC4 soap_in___ns1__getStdOut(struct soap*, const char*, struct __ns1__getStdOut *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__getStdOut(struct soap*, struct __api__getStdOut *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__getStdOut(struct soap*, const struct __api__getStdOut *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__getStdOut(struct soap*, const char*, int, const struct __api__getStdOut *, const char*);
+SOAP_FMAC3 struct __api__getStdOut * SOAP_FMAC4 soap_in___api__getStdOut(struct soap*, const char*, struct __api__getStdOut *, const char*);
 
-#define soap_write___ns1__getStdOut(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__getStdOut(soap, data), 0) || soap_put___ns1__getStdOut(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__getStdOut(struct soap*, const struct __ns1__getStdOut *, const char*, const char*);
-
-#define soap_read___ns1__getStdOut(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__getStdOut(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__getStdOut * SOAP_FMAC4 soap_get___ns1__getStdOut(struct soap*, struct __ns1__getStdOut *, const char*, const char*);
-
-#define soap_new___ns1__getStdOut(soap, n) soap_instantiate___ns1__getStdOut(soap, n, NULL, NULL, NULL)
+#define soap_write___api__getStdOut(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__getStdOut(soap, data), 0) || soap_put___api__getStdOut(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__getStdOut(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__getStdOut(struct soap*, const struct __api__getStdOut *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__getStdOut * SOAP_FMAC2 soap_instantiate___ns1__getStdOut(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__getStdOut(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__getStdOut(soap, data) ( soap_begin_recv(soap) || !soap_get___api__getStdOut(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__initExecution
-#define SOAP_TYPE___ns1__initExecution (132)
+SOAP_FMAC3 struct __api__getStdOut * SOAP_FMAC4 soap_get___api__getStdOut(struct soap*, struct __api__getStdOut *, const char*, const char*);
+
+#define soap_new___api__getStdOut(soap, n) soap_instantiate___api__getStdOut(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__getStdOut(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__getStdOut * SOAP_FMAC2 soap_instantiate___api__getStdOut(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__getStdOut(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__initExecution
+#define SOAP_TYPE___api__initExecution (132)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__initExecution(struct soap*, struct __ns1__initExecution *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__initExecution(struct soap*, const struct __ns1__initExecution *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__initExecution(struct soap*, const char*, int, const struct __ns1__initExecution *, const char*);
-SOAP_FMAC3 struct __ns1__initExecution * SOAP_FMAC4 soap_in___ns1__initExecution(struct soap*, const char*, struct __ns1__initExecution *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__initExecution(struct soap*, struct __api__initExecution *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__initExecution(struct soap*, const struct __api__initExecution *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__initExecution(struct soap*, const char*, int, const struct __api__initExecution *, const char*);
+SOAP_FMAC3 struct __api__initExecution * SOAP_FMAC4 soap_in___api__initExecution(struct soap*, const char*, struct __api__initExecution *, const char*);
 
-#define soap_write___ns1__initExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__initExecution(soap, data), 0) || soap_put___ns1__initExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__initExecution(struct soap*, const struct __ns1__initExecution *, const char*, const char*);
-
-#define soap_read___ns1__initExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__initExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__initExecution * SOAP_FMAC4 soap_get___ns1__initExecution(struct soap*, struct __ns1__initExecution *, const char*, const char*);
-
-#define soap_new___ns1__initExecution(soap, n) soap_instantiate___ns1__initExecution(soap, n, NULL, NULL, NULL)
+#define soap_write___api__initExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__initExecution(soap, data), 0) || soap_put___api__initExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__initExecution(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__initExecution(struct soap*, const struct __api__initExecution *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__initExecution * SOAP_FMAC2 soap_instantiate___ns1__initExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__initExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__initExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___api__initExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__getGlobalProperties
-#define SOAP_TYPE___ns1__getGlobalProperties (128)
+SOAP_FMAC3 struct __api__initExecution * SOAP_FMAC4 soap_get___api__initExecution(struct soap*, struct __api__initExecution *, const char*, const char*);
+
+#define soap_new___api__initExecution(soap, n) soap_instantiate___api__initExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__initExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__initExecution * SOAP_FMAC2 soap_instantiate___api__initExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__initExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__getGlobalProperties
+#define SOAP_TYPE___api__getGlobalProperties (128)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__getGlobalProperties(struct soap*, struct __ns1__getGlobalProperties *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__getGlobalProperties(struct soap*, const struct __ns1__getGlobalProperties *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__getGlobalProperties(struct soap*, const char*, int, const struct __ns1__getGlobalProperties *, const char*);
-SOAP_FMAC3 struct __ns1__getGlobalProperties * SOAP_FMAC4 soap_in___ns1__getGlobalProperties(struct soap*, const char*, struct __ns1__getGlobalProperties *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__getGlobalProperties(struct soap*, struct __api__getGlobalProperties *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__getGlobalProperties(struct soap*, const struct __api__getGlobalProperties *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__getGlobalProperties(struct soap*, const char*, int, const struct __api__getGlobalProperties *, const char*);
+SOAP_FMAC3 struct __api__getGlobalProperties * SOAP_FMAC4 soap_in___api__getGlobalProperties(struct soap*, const char*, struct __api__getGlobalProperties *, const char*);
 
-#define soap_write___ns1__getGlobalProperties(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__getGlobalProperties(soap, data), 0) || soap_put___ns1__getGlobalProperties(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__getGlobalProperties(struct soap*, const struct __ns1__getGlobalProperties *, const char*, const char*);
-
-#define soap_read___ns1__getGlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__getGlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__getGlobalProperties * SOAP_FMAC4 soap_get___ns1__getGlobalProperties(struct soap*, struct __ns1__getGlobalProperties *, const char*, const char*);
-
-#define soap_new___ns1__getGlobalProperties(soap, n) soap_instantiate___ns1__getGlobalProperties(soap, n, NULL, NULL, NULL)
+#define soap_write___api__getGlobalProperties(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__getGlobalProperties(soap, data), 0) || soap_put___api__getGlobalProperties(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__getGlobalProperties(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__getGlobalProperties(struct soap*, const struct __api__getGlobalProperties *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__getGlobalProperties * SOAP_FMAC2 soap_instantiate___ns1__getGlobalProperties(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__getGlobalProperties(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__getGlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get___api__getGlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__updateExecution
-#define SOAP_TYPE___ns1__updateExecution (124)
+SOAP_FMAC3 struct __api__getGlobalProperties * SOAP_FMAC4 soap_get___api__getGlobalProperties(struct soap*, struct __api__getGlobalProperties *, const char*, const char*);
+
+#define soap_new___api__getGlobalProperties(soap, n) soap_instantiate___api__getGlobalProperties(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__getGlobalProperties(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__getGlobalProperties * SOAP_FMAC2 soap_instantiate___api__getGlobalProperties(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__getGlobalProperties(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__updateExecution
+#define SOAP_TYPE___api__updateExecution (124)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__updateExecution(struct soap*, struct __ns1__updateExecution *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__updateExecution(struct soap*, const struct __ns1__updateExecution *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__updateExecution(struct soap*, const char*, int, const struct __ns1__updateExecution *, const char*);
-SOAP_FMAC3 struct __ns1__updateExecution * SOAP_FMAC4 soap_in___ns1__updateExecution(struct soap*, const char*, struct __ns1__updateExecution *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__updateExecution(struct soap*, struct __api__updateExecution *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__updateExecution(struct soap*, const struct __api__updateExecution *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__updateExecution(struct soap*, const char*, int, const struct __api__updateExecution *, const char*);
+SOAP_FMAC3 struct __api__updateExecution * SOAP_FMAC4 soap_in___api__updateExecution(struct soap*, const char*, struct __api__updateExecution *, const char*);
 
-#define soap_write___ns1__updateExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__updateExecution(soap, data), 0) || soap_put___ns1__updateExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__updateExecution(struct soap*, const struct __ns1__updateExecution *, const char*, const char*);
-
-#define soap_read___ns1__updateExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__updateExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__updateExecution * SOAP_FMAC4 soap_get___ns1__updateExecution(struct soap*, struct __ns1__updateExecution *, const char*, const char*);
-
-#define soap_new___ns1__updateExecution(soap, n) soap_instantiate___ns1__updateExecution(soap, n, NULL, NULL, NULL)
+#define soap_write___api__updateExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__updateExecution(soap, data), 0) || soap_put___api__updateExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__updateExecution(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__updateExecution(struct soap*, const struct __api__updateExecution *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__updateExecution * SOAP_FMAC2 soap_instantiate___ns1__updateExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__updateExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__updateExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___api__updateExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__logout
-#define SOAP_TYPE___ns1__logout (120)
+SOAP_FMAC3 struct __api__updateExecution * SOAP_FMAC4 soap_get___api__updateExecution(struct soap*, struct __api__updateExecution *, const char*, const char*);
+
+#define soap_new___api__updateExecution(soap, n) soap_instantiate___api__updateExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__updateExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__updateExecution * SOAP_FMAC2 soap_instantiate___api__updateExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__updateExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__logout
+#define SOAP_TYPE___api__logout (120)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__logout(struct soap*, struct __ns1__logout *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__logout(struct soap*, const struct __ns1__logout *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__logout(struct soap*, const char*, int, const struct __ns1__logout *, const char*);
-SOAP_FMAC3 struct __ns1__logout * SOAP_FMAC4 soap_in___ns1__logout(struct soap*, const char*, struct __ns1__logout *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__logout(struct soap*, struct __api__logout *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__logout(struct soap*, const struct __api__logout *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__logout(struct soap*, const char*, int, const struct __api__logout *, const char*);
+SOAP_FMAC3 struct __api__logout * SOAP_FMAC4 soap_in___api__logout(struct soap*, const char*, struct __api__logout *, const char*);
 
-#define soap_write___ns1__logout(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__logout(soap, data), 0) || soap_put___ns1__logout(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__logout(struct soap*, const struct __ns1__logout *, const char*, const char*);
-
-#define soap_read___ns1__logout(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__logout(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__logout * SOAP_FMAC4 soap_get___ns1__logout(struct soap*, struct __ns1__logout *, const char*, const char*);
-
-#define soap_new___ns1__logout(soap, n) soap_instantiate___ns1__logout(soap, n, NULL, NULL, NULL)
+#define soap_write___api__logout(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__logout(soap, data), 0) || soap_put___api__logout(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__logout(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__logout(struct soap*, const struct __api__logout *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__logout * SOAP_FMAC2 soap_instantiate___ns1__logout(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__logout(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__logout(soap, data) ( soap_begin_recv(soap) || !soap_get___api__logout(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__authenticateHTTP
-#define SOAP_TYPE___ns1__authenticateHTTP (116)
+SOAP_FMAC3 struct __api__logout * SOAP_FMAC4 soap_get___api__logout(struct soap*, struct __api__logout *, const char*, const char*);
+
+#define soap_new___api__logout(soap, n) soap_instantiate___api__logout(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__logout(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__logout * SOAP_FMAC2 soap_instantiate___api__logout(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__logout(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__authenticateHTTP
+#define SOAP_TYPE___api__authenticateHTTP (116)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__authenticateHTTP(struct soap*, struct __ns1__authenticateHTTP *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__authenticateHTTP(struct soap*, const struct __ns1__authenticateHTTP *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__authenticateHTTP(struct soap*, const char*, int, const struct __ns1__authenticateHTTP *, const char*);
-SOAP_FMAC3 struct __ns1__authenticateHTTP * SOAP_FMAC4 soap_in___ns1__authenticateHTTP(struct soap*, const char*, struct __ns1__authenticateHTTP *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__authenticateHTTP(struct soap*, struct __api__authenticateHTTP *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__authenticateHTTP(struct soap*, const struct __api__authenticateHTTP *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__authenticateHTTP(struct soap*, const char*, int, const struct __api__authenticateHTTP *, const char*);
+SOAP_FMAC3 struct __api__authenticateHTTP * SOAP_FMAC4 soap_in___api__authenticateHTTP(struct soap*, const char*, struct __api__authenticateHTTP *, const char*);
 
-#define soap_write___ns1__authenticateHTTP(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__authenticateHTTP(soap, data), 0) || soap_put___ns1__authenticateHTTP(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__authenticateHTTP(struct soap*, const struct __ns1__authenticateHTTP *, const char*, const char*);
-
-#define soap_read___ns1__authenticateHTTP(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__authenticateHTTP(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__authenticateHTTP * SOAP_FMAC4 soap_get___ns1__authenticateHTTP(struct soap*, struct __ns1__authenticateHTTP *, const char*, const char*);
-
-#define soap_new___ns1__authenticateHTTP(soap, n) soap_instantiate___ns1__authenticateHTTP(soap, n, NULL, NULL, NULL)
+#define soap_write___api__authenticateHTTP(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__authenticateHTTP(soap, data), 0) || soap_put___api__authenticateHTTP(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__authenticateHTTP(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__authenticateHTTP(struct soap*, const struct __api__authenticateHTTP *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__authenticateHTTP * SOAP_FMAC2 soap_instantiate___ns1__authenticateHTTP(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__authenticateHTTP(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__authenticateHTTP(soap, data) ( soap_begin_recv(soap) || !soap_get___api__authenticateHTTP(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__getPipeline
-#define SOAP_TYPE___ns1__getPipeline (112)
+SOAP_FMAC3 struct __api__authenticateHTTP * SOAP_FMAC4 soap_get___api__authenticateHTTP(struct soap*, struct __api__authenticateHTTP *, const char*, const char*);
+
+#define soap_new___api__authenticateHTTP(soap, n) soap_instantiate___api__authenticateHTTP(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__authenticateHTTP(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__authenticateHTTP * SOAP_FMAC2 soap_instantiate___api__authenticateHTTP(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__authenticateHTTP(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__getPipeline
+#define SOAP_TYPE___api__getPipeline (112)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__getPipeline(struct soap*, struct __ns1__getPipeline *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__getPipeline(struct soap*, const struct __ns1__getPipeline *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__getPipeline(struct soap*, const char*, int, const struct __ns1__getPipeline *, const char*);
-SOAP_FMAC3 struct __ns1__getPipeline * SOAP_FMAC4 soap_in___ns1__getPipeline(struct soap*, const char*, struct __ns1__getPipeline *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__getPipeline(struct soap*, struct __api__getPipeline *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__getPipeline(struct soap*, const struct __api__getPipeline *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__getPipeline(struct soap*, const char*, int, const struct __api__getPipeline *, const char*);
+SOAP_FMAC3 struct __api__getPipeline * SOAP_FMAC4 soap_in___api__getPipeline(struct soap*, const char*, struct __api__getPipeline *, const char*);
 
-#define soap_write___ns1__getPipeline(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__getPipeline(soap, data), 0) || soap_put___ns1__getPipeline(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__getPipeline(struct soap*, const struct __ns1__getPipeline *, const char*, const char*);
-
-#define soap_read___ns1__getPipeline(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__getPipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__getPipeline * SOAP_FMAC4 soap_get___ns1__getPipeline(struct soap*, struct __ns1__getPipeline *, const char*, const char*);
-
-#define soap_new___ns1__getPipeline(soap, n) soap_instantiate___ns1__getPipeline(soap, n, NULL, NULL, NULL)
+#define soap_write___api__getPipeline(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__getPipeline(soap, data), 0) || soap_put___api__getPipeline(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__getPipeline(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__getPipeline(struct soap*, const struct __api__getPipeline *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__getPipeline * SOAP_FMAC2 soap_instantiate___ns1__getPipeline(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__getPipeline(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__getPipeline(soap, data) ( soap_begin_recv(soap) || !soap_get___api__getPipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__deleteExecution
-#define SOAP_TYPE___ns1__deleteExecution (108)
+SOAP_FMAC3 struct __api__getPipeline * SOAP_FMAC4 soap_get___api__getPipeline(struct soap*, struct __api__getPipeline *, const char*, const char*);
+
+#define soap_new___api__getPipeline(soap, n) soap_instantiate___api__getPipeline(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__getPipeline(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__getPipeline * SOAP_FMAC2 soap_instantiate___api__getPipeline(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__getPipeline(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__deleteExecution
+#define SOAP_TYPE___api__deleteExecution (108)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__deleteExecution(struct soap*, struct __ns1__deleteExecution *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__deleteExecution(struct soap*, const struct __ns1__deleteExecution *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__deleteExecution(struct soap*, const char*, int, const struct __ns1__deleteExecution *, const char*);
-SOAP_FMAC3 struct __ns1__deleteExecution * SOAP_FMAC4 soap_in___ns1__deleteExecution(struct soap*, const char*, struct __ns1__deleteExecution *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__deleteExecution(struct soap*, struct __api__deleteExecution *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__deleteExecution(struct soap*, const struct __api__deleteExecution *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__deleteExecution(struct soap*, const char*, int, const struct __api__deleteExecution *, const char*);
+SOAP_FMAC3 struct __api__deleteExecution * SOAP_FMAC4 soap_in___api__deleteExecution(struct soap*, const char*, struct __api__deleteExecution *, const char*);
 
-#define soap_write___ns1__deleteExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__deleteExecution(soap, data), 0) || soap_put___ns1__deleteExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__deleteExecution(struct soap*, const struct __ns1__deleteExecution *, const char*, const char*);
-
-#define soap_read___ns1__deleteExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__deleteExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__deleteExecution * SOAP_FMAC4 soap_get___ns1__deleteExecution(struct soap*, struct __ns1__deleteExecution *, const char*, const char*);
-
-#define soap_new___ns1__deleteExecution(soap, n) soap_instantiate___ns1__deleteExecution(soap, n, NULL, NULL, NULL)
+#define soap_write___api__deleteExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__deleteExecution(soap, data), 0) || soap_put___api__deleteExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__deleteExecution(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__deleteExecution(struct soap*, const struct __api__deleteExecution *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__deleteExecution * SOAP_FMAC2 soap_instantiate___ns1__deleteExecution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__deleteExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__deleteExecution(soap, data) ( soap_begin_recv(soap) || !soap_get___api__deleteExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE___ns1__authenticateSession
-#define SOAP_TYPE___ns1__authenticateSession (104)
+SOAP_FMAC3 struct __api__deleteExecution * SOAP_FMAC4 soap_get___api__deleteExecution(struct soap*, struct __api__deleteExecution *, const char*, const char*);
+
+#define soap_new___api__deleteExecution(soap, n) soap_instantiate___api__deleteExecution(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__deleteExecution(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__deleteExecution * SOAP_FMAC2 soap_instantiate___api__deleteExecution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__deleteExecution(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE___api__authenticateSession
+#define SOAP_TYPE___api__authenticateSession (104)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__authenticateSession(struct soap*, struct __ns1__authenticateSession *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__authenticateSession(struct soap*, const struct __ns1__authenticateSession *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__authenticateSession(struct soap*, const char*, int, const struct __ns1__authenticateSession *, const char*);
-SOAP_FMAC3 struct __ns1__authenticateSession * SOAP_FMAC4 soap_in___ns1__authenticateSession(struct soap*, const char*, struct __ns1__authenticateSession *, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___api__authenticateSession(struct soap*, struct __api__authenticateSession *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___api__authenticateSession(struct soap*, const struct __api__authenticateSession *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___api__authenticateSession(struct soap*, const char*, int, const struct __api__authenticateSession *, const char*);
+SOAP_FMAC3 struct __api__authenticateSession * SOAP_FMAC4 soap_in___api__authenticateSession(struct soap*, const char*, struct __api__authenticateSession *, const char*);
 
-#define soap_write___ns1__authenticateSession(soap, data) ( soap_begin_send(soap) || (soap_serialize___ns1__authenticateSession(soap, data), 0) || soap_put___ns1__authenticateSession(soap, data, NULL, NULL) || soap_end_send(soap) )
-
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__authenticateSession(struct soap*, const struct __ns1__authenticateSession *, const char*, const char*);
-
-#define soap_read___ns1__authenticateSession(soap, data) ( soap_begin_recv(soap) || !soap_get___ns1__authenticateSession(soap, data, NULL, NULL) || soap_end_recv(soap) )
-
-SOAP_FMAC3 struct __ns1__authenticateSession * SOAP_FMAC4 soap_get___ns1__authenticateSession(struct soap*, struct __ns1__authenticateSession *, const char*, const char*);
-
-#define soap_new___ns1__authenticateSession(soap, n) soap_instantiate___ns1__authenticateSession(soap, n, NULL, NULL, NULL)
+#define soap_write___api__authenticateSession(soap, data) ( soap_begin_send(soap) || (soap_serialize___api__authenticateSession(soap, data), 0) || soap_put___api__authenticateSession(soap, data, NULL, NULL) || soap_end_send(soap) )
 
 
-#define soap_delete___ns1__authenticateSession(soap, p) soap_delete(soap, p)
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___api__authenticateSession(struct soap*, const struct __api__authenticateSession *, const char*, const char*);
 
-SOAP_FMAC1 struct __ns1__authenticateSession * SOAP_FMAC2 soap_instantiate___ns1__authenticateSession(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy___ns1__authenticateSession(struct soap*, int, int, void*, size_t, const void*, size_t);
+#define soap_read___api__authenticateSession(soap, data) ( soap_begin_recv(soap) || !soap_get___api__authenticateSession(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-#ifndef SOAP_TYPE__ns1__union_StringKeyValuePair
-#define SOAP_TYPE__ns1__union_StringKeyValuePair (89)
+SOAP_FMAC3 struct __api__authenticateSession * SOAP_FMAC4 soap_get___api__authenticateSession(struct soap*, struct __api__authenticateSession *, const char*, const char*);
+
+#define soap_new___api__authenticateSession(soap, n) soap_instantiate___api__authenticateSession(soap, n, NULL, NULL, NULL)
+
+
+#define soap_delete___api__authenticateSession(soap, p) soap_delete(soap, p)
+
+SOAP_FMAC1 struct __api__authenticateSession * SOAP_FMAC2 soap_instantiate___api__authenticateSession(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy___api__authenticateSession(struct soap*, int, int, void*, size_t, const void*, size_t);
+
+#ifndef SOAP_TYPE__api__union_StringKeyValuePair
+#define SOAP_TYPE__api__union_StringKeyValuePair (89)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__ns1__union_StringKeyValuePair(struct soap*, int, const union _ns1__union_StringKeyValuePair *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out__ns1__union_StringKeyValuePair(struct soap*, int, const union _ns1__union_StringKeyValuePair *);
-SOAP_FMAC3 union _ns1__union_StringKeyValuePair * SOAP_FMAC4 soap_in__ns1__union_StringKeyValuePair(struct soap*, int*, union _ns1__union_StringKeyValuePair *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__api__union_StringKeyValuePair(struct soap*, int, const union _api__union_StringKeyValuePair *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__api__union_StringKeyValuePair(struct soap*, int, const union _api__union_StringKeyValuePair *);
+SOAP_FMAC3 union _api__union_StringKeyValuePair * SOAP_FMAC4 soap_in__api__union_StringKeyValuePair(struct soap*, int*, union _api__union_StringKeyValuePair *);
 
-#ifndef SOAP_TYPE__ns1__union_ParameterTypedValue
-#define SOAP_TYPE__ns1__union_ParameterTypedValue (86)
+#ifndef SOAP_TYPE__api__union_ParameterTypedValue
+#define SOAP_TYPE__api__union_ParameterTypedValue (86)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__ns1__union_ParameterTypedValue(struct soap*, int, const union _ns1__union_ParameterTypedValue *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out__ns1__union_ParameterTypedValue(struct soap*, int, const union _ns1__union_ParameterTypedValue *);
-SOAP_FMAC3 union _ns1__union_ParameterTypedValue * SOAP_FMAC4 soap_in__ns1__union_ParameterTypedValue(struct soap*, int*, union _ns1__union_ParameterTypedValue *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__api__union_ParameterTypedValue(struct soap*, int, const union _api__union_ParameterTypedValue *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__api__union_ParameterTypedValue(struct soap*, int, const union _api__union_ParameterTypedValue *);
+SOAP_FMAC3 union _api__union_ParameterTypedValue * SOAP_FMAC4 soap_in__api__union_ParameterTypedValue(struct soap*, int*, union _api__union_ParameterTypedValue *);
 
-#ifndef SOAP_TYPE__ns1__union_Response
-#define SOAP_TYPE__ns1__union_Response (81)
+#ifndef SOAP_TYPE__api__union_Response
+#define SOAP_TYPE__api__union_Response (81)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__ns1__union_Response(struct soap*, int, const union _ns1__union_Response *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out__ns1__union_Response(struct soap*, int, const union _ns1__union_Response *);
-SOAP_FMAC3 union _ns1__union_Response * SOAP_FMAC4 soap_in__ns1__union_Response(struct soap*, int*, union _ns1__union_Response *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__api__union_Response(struct soap*, int, const union _api__union_Response *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__api__union_Response(struct soap*, int, const union _api__union_Response *);
+SOAP_FMAC3 union _api__union_Response * SOAP_FMAC4 soap_in__api__union_Response(struct soap*, int*, union _api__union_Response *);
 
 #ifndef WITH_NOGLOBAL
 
@@ -1837,485 +1837,485 @@ SOAP_FMAC3 struct SOAP_ENV__Code ** SOAP_FMAC4 soap_get_PointerToSOAP_ENV__Code(
 
 #endif
 
-#ifndef SOAP_TYPE_PointerTons1__listExecutionsResponse
-#define SOAP_TYPE_PointerTons1__listExecutionsResponse (162)
+#ifndef SOAP_TYPE_PointerToapi__listExecutionsResponse
+#define SOAP_TYPE_PointerToapi__listExecutionsResponse (162)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__listExecutionsResponse(struct soap*, ns1__listExecutionsResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__listExecutionsResponse(struct soap*, const char *, int, ns1__listExecutionsResponse *const*, const char *);
-SOAP_FMAC3 ns1__listExecutionsResponse ** SOAP_FMAC4 soap_in_PointerTons1__listExecutionsResponse(struct soap*, const char*, ns1__listExecutionsResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__listExecutionsResponse(struct soap*, api__listExecutionsResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__listExecutionsResponse(struct soap*, const char *, int, api__listExecutionsResponse *const*, const char *);
+SOAP_FMAC3 api__listExecutionsResponse ** SOAP_FMAC4 soap_in_PointerToapi__listExecutionsResponse(struct soap*, const char*, api__listExecutionsResponse **, const char*);
 
-#define soap_write_PointerTons1__listExecutionsResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__listExecutionsResponse(soap, data), 0) || soap_put_PointerTons1__listExecutionsResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__listExecutionsResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__listExecutionsResponse(soap, data), 0) || soap_put_PointerToapi__listExecutionsResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__listExecutionsResponse(struct soap*, ns1__listExecutionsResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__listExecutionsResponse(struct soap*, api__listExecutionsResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__listExecutionsResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__listExecutionsResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__listExecutionsResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__listExecutionsResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__listExecutionsResponse ** SOAP_FMAC4 soap_get_PointerTons1__listExecutionsResponse(struct soap*, ns1__listExecutionsResponse **, const char*, const char*);
+SOAP_FMAC3 api__listExecutionsResponse ** SOAP_FMAC4 soap_get_PointerToapi__listExecutionsResponse(struct soap*, api__listExecutionsResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__listExecutions
-#define SOAP_TYPE_PointerTons1__listExecutions (161)
+#ifndef SOAP_TYPE_PointerToapi__listExecutions
+#define SOAP_TYPE_PointerToapi__listExecutions (161)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__listExecutions(struct soap*, ns1__listExecutions *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__listExecutions(struct soap*, const char *, int, ns1__listExecutions *const*, const char *);
-SOAP_FMAC3 ns1__listExecutions ** SOAP_FMAC4 soap_in_PointerTons1__listExecutions(struct soap*, const char*, ns1__listExecutions **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__listExecutions(struct soap*, api__listExecutions *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__listExecutions(struct soap*, const char *, int, api__listExecutions *const*, const char *);
+SOAP_FMAC3 api__listExecutions ** SOAP_FMAC4 soap_in_PointerToapi__listExecutions(struct soap*, const char*, api__listExecutions **, const char*);
 
-#define soap_write_PointerTons1__listExecutions(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__listExecutions(soap, data), 0) || soap_put_PointerTons1__listExecutions(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__listExecutions(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__listExecutions(soap, data), 0) || soap_put_PointerToapi__listExecutions(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__listExecutions(struct soap*, ns1__listExecutions *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__listExecutions(struct soap*, api__listExecutions *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__listExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__listExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__listExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__listExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__listExecutions ** SOAP_FMAC4 soap_get_PointerTons1__listExecutions(struct soap*, ns1__listExecutions **, const char*, const char*);
+SOAP_FMAC3 api__listExecutions ** SOAP_FMAC4 soap_get_PointerToapi__listExecutions(struct soap*, api__listExecutions **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__listPipelinesResponse
-#define SOAP_TYPE_PointerTons1__listPipelinesResponse (158)
+#ifndef SOAP_TYPE_PointerToapi__listPipelinesResponse
+#define SOAP_TYPE_PointerToapi__listPipelinesResponse (158)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__listPipelinesResponse(struct soap*, ns1__listPipelinesResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__listPipelinesResponse(struct soap*, const char *, int, ns1__listPipelinesResponse *const*, const char *);
-SOAP_FMAC3 ns1__listPipelinesResponse ** SOAP_FMAC4 soap_in_PointerTons1__listPipelinesResponse(struct soap*, const char*, ns1__listPipelinesResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__listPipelinesResponse(struct soap*, api__listPipelinesResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__listPipelinesResponse(struct soap*, const char *, int, api__listPipelinesResponse *const*, const char *);
+SOAP_FMAC3 api__listPipelinesResponse ** SOAP_FMAC4 soap_in_PointerToapi__listPipelinesResponse(struct soap*, const char*, api__listPipelinesResponse **, const char*);
 
-#define soap_write_PointerTons1__listPipelinesResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__listPipelinesResponse(soap, data), 0) || soap_put_PointerTons1__listPipelinesResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__listPipelinesResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__listPipelinesResponse(soap, data), 0) || soap_put_PointerToapi__listPipelinesResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__listPipelinesResponse(struct soap*, ns1__listPipelinesResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__listPipelinesResponse(struct soap*, api__listPipelinesResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__listPipelinesResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__listPipelinesResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__listPipelinesResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__listPipelinesResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__listPipelinesResponse ** SOAP_FMAC4 soap_get_PointerTons1__listPipelinesResponse(struct soap*, ns1__listPipelinesResponse **, const char*, const char*);
+SOAP_FMAC3 api__listPipelinesResponse ** SOAP_FMAC4 soap_get_PointerToapi__listPipelinesResponse(struct soap*, api__listPipelinesResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__listPipelines
-#define SOAP_TYPE_PointerTons1__listPipelines (157)
+#ifndef SOAP_TYPE_PointerToapi__listPipelines
+#define SOAP_TYPE_PointerToapi__listPipelines (157)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__listPipelines(struct soap*, ns1__listPipelines *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__listPipelines(struct soap*, const char *, int, ns1__listPipelines *const*, const char *);
-SOAP_FMAC3 ns1__listPipelines ** SOAP_FMAC4 soap_in_PointerTons1__listPipelines(struct soap*, const char*, ns1__listPipelines **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__listPipelines(struct soap*, api__listPipelines *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__listPipelines(struct soap*, const char *, int, api__listPipelines *const*, const char *);
+SOAP_FMAC3 api__listPipelines ** SOAP_FMAC4 soap_in_PointerToapi__listPipelines(struct soap*, const char*, api__listPipelines **, const char*);
 
-#define soap_write_PointerTons1__listPipelines(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__listPipelines(soap, data), 0) || soap_put_PointerTons1__listPipelines(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__listPipelines(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__listPipelines(soap, data), 0) || soap_put_PointerToapi__listPipelines(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__listPipelines(struct soap*, ns1__listPipelines *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__listPipelines(struct soap*, api__listPipelines *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__listPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__listPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__listPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__listPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__listPipelines ** SOAP_FMAC4 soap_get_PointerTons1__listPipelines(struct soap*, ns1__listPipelines **, const char*, const char*);
+SOAP_FMAC3 api__listPipelines ** SOAP_FMAC4 soap_get_PointerToapi__listPipelines(struct soap*, api__listPipelines **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__playExecutionResponse
-#define SOAP_TYPE_PointerTons1__playExecutionResponse (154)
+#ifndef SOAP_TYPE_PointerToapi__playExecutionResponse
+#define SOAP_TYPE_PointerToapi__playExecutionResponse (154)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__playExecutionResponse(struct soap*, ns1__playExecutionResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__playExecutionResponse(struct soap*, const char *, int, ns1__playExecutionResponse *const*, const char *);
-SOAP_FMAC3 ns1__playExecutionResponse ** SOAP_FMAC4 soap_in_PointerTons1__playExecutionResponse(struct soap*, const char*, ns1__playExecutionResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__playExecutionResponse(struct soap*, api__playExecutionResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__playExecutionResponse(struct soap*, const char *, int, api__playExecutionResponse *const*, const char *);
+SOAP_FMAC3 api__playExecutionResponse ** SOAP_FMAC4 soap_in_PointerToapi__playExecutionResponse(struct soap*, const char*, api__playExecutionResponse **, const char*);
 
-#define soap_write_PointerTons1__playExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__playExecutionResponse(soap, data), 0) || soap_put_PointerTons1__playExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__playExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__playExecutionResponse(soap, data), 0) || soap_put_PointerToapi__playExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__playExecutionResponse(struct soap*, ns1__playExecutionResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__playExecutionResponse(struct soap*, api__playExecutionResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__playExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__playExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__playExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__playExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__playExecutionResponse ** SOAP_FMAC4 soap_get_PointerTons1__playExecutionResponse(struct soap*, ns1__playExecutionResponse **, const char*, const char*);
+SOAP_FMAC3 api__playExecutionResponse ** SOAP_FMAC4 soap_get_PointerToapi__playExecutionResponse(struct soap*, api__playExecutionResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__playExecution
-#define SOAP_TYPE_PointerTons1__playExecution (153)
+#ifndef SOAP_TYPE_PointerToapi__playExecution
+#define SOAP_TYPE_PointerToapi__playExecution (153)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__playExecution(struct soap*, ns1__playExecution *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__playExecution(struct soap*, const char *, int, ns1__playExecution *const*, const char *);
-SOAP_FMAC3 ns1__playExecution ** SOAP_FMAC4 soap_in_PointerTons1__playExecution(struct soap*, const char*, ns1__playExecution **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__playExecution(struct soap*, api__playExecution *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__playExecution(struct soap*, const char *, int, api__playExecution *const*, const char *);
+SOAP_FMAC3 api__playExecution ** SOAP_FMAC4 soap_in_PointerToapi__playExecution(struct soap*, const char*, api__playExecution **, const char*);
 
-#define soap_write_PointerTons1__playExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__playExecution(soap, data), 0) || soap_put_PointerTons1__playExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__playExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__playExecution(soap, data), 0) || soap_put_PointerToapi__playExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__playExecution(struct soap*, ns1__playExecution *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__playExecution(struct soap*, api__playExecution *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__playExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__playExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__playExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__playExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__playExecution ** SOAP_FMAC4 soap_get_PointerTons1__playExecution(struct soap*, ns1__playExecution **, const char*, const char*);
+SOAP_FMAC3 api__playExecution ** SOAP_FMAC4 soap_get_PointerToapi__playExecution(struct soap*, api__playExecution **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getExecutionResponse
-#define SOAP_TYPE_PointerTons1__getExecutionResponse (150)
+#ifndef SOAP_TYPE_PointerToapi__getExecutionResponse
+#define SOAP_TYPE_PointerToapi__getExecutionResponse (150)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getExecutionResponse(struct soap*, ns1__getExecutionResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getExecutionResponse(struct soap*, const char *, int, ns1__getExecutionResponse *const*, const char *);
-SOAP_FMAC3 ns1__getExecutionResponse ** SOAP_FMAC4 soap_in_PointerTons1__getExecutionResponse(struct soap*, const char*, ns1__getExecutionResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getExecutionResponse(struct soap*, api__getExecutionResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getExecutionResponse(struct soap*, const char *, int, api__getExecutionResponse *const*, const char *);
+SOAP_FMAC3 api__getExecutionResponse ** SOAP_FMAC4 soap_in_PointerToapi__getExecutionResponse(struct soap*, const char*, api__getExecutionResponse **, const char*);
 
-#define soap_write_PointerTons1__getExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getExecutionResponse(soap, data), 0) || soap_put_PointerTons1__getExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getExecutionResponse(soap, data), 0) || soap_put_PointerToapi__getExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getExecutionResponse(struct soap*, ns1__getExecutionResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getExecutionResponse(struct soap*, api__getExecutionResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getExecutionResponse ** SOAP_FMAC4 soap_get_PointerTons1__getExecutionResponse(struct soap*, ns1__getExecutionResponse **, const char*, const char*);
+SOAP_FMAC3 api__getExecutionResponse ** SOAP_FMAC4 soap_get_PointerToapi__getExecutionResponse(struct soap*, api__getExecutionResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getExecution
-#define SOAP_TYPE_PointerTons1__getExecution (149)
+#ifndef SOAP_TYPE_PointerToapi__getExecution
+#define SOAP_TYPE_PointerToapi__getExecution (149)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getExecution(struct soap*, ns1__getExecution *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getExecution(struct soap*, const char *, int, ns1__getExecution *const*, const char *);
-SOAP_FMAC3 ns1__getExecution ** SOAP_FMAC4 soap_in_PointerTons1__getExecution(struct soap*, const char*, ns1__getExecution **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getExecution(struct soap*, api__getExecution *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getExecution(struct soap*, const char *, int, api__getExecution *const*, const char *);
+SOAP_FMAC3 api__getExecution ** SOAP_FMAC4 soap_in_PointerToapi__getExecution(struct soap*, const char*, api__getExecution **, const char*);
 
-#define soap_write_PointerTons1__getExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getExecution(soap, data), 0) || soap_put_PointerTons1__getExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getExecution(soap, data), 0) || soap_put_PointerToapi__getExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getExecution(struct soap*, ns1__getExecution *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getExecution(struct soap*, api__getExecution *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getExecution ** SOAP_FMAC4 soap_get_PointerTons1__getExecution(struct soap*, ns1__getExecution **, const char*, const char*);
+SOAP_FMAC3 api__getExecution ** SOAP_FMAC4 soap_get_PointerToapi__getExecution(struct soap*, api__getExecution **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__killExecutionResponse
-#define SOAP_TYPE_PointerTons1__killExecutionResponse (146)
+#ifndef SOAP_TYPE_PointerToapi__killExecutionResponse
+#define SOAP_TYPE_PointerToapi__killExecutionResponse (146)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__killExecutionResponse(struct soap*, ns1__killExecutionResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__killExecutionResponse(struct soap*, const char *, int, ns1__killExecutionResponse *const*, const char *);
-SOAP_FMAC3 ns1__killExecutionResponse ** SOAP_FMAC4 soap_in_PointerTons1__killExecutionResponse(struct soap*, const char*, ns1__killExecutionResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__killExecutionResponse(struct soap*, api__killExecutionResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__killExecutionResponse(struct soap*, const char *, int, api__killExecutionResponse *const*, const char *);
+SOAP_FMAC3 api__killExecutionResponse ** SOAP_FMAC4 soap_in_PointerToapi__killExecutionResponse(struct soap*, const char*, api__killExecutionResponse **, const char*);
 
-#define soap_write_PointerTons1__killExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__killExecutionResponse(soap, data), 0) || soap_put_PointerTons1__killExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__killExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__killExecutionResponse(soap, data), 0) || soap_put_PointerToapi__killExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__killExecutionResponse(struct soap*, ns1__killExecutionResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__killExecutionResponse(struct soap*, api__killExecutionResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__killExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__killExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__killExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__killExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__killExecutionResponse ** SOAP_FMAC4 soap_get_PointerTons1__killExecutionResponse(struct soap*, ns1__killExecutionResponse **, const char*, const char*);
+SOAP_FMAC3 api__killExecutionResponse ** SOAP_FMAC4 soap_get_PointerToapi__killExecutionResponse(struct soap*, api__killExecutionResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__killExecution
-#define SOAP_TYPE_PointerTons1__killExecution (145)
+#ifndef SOAP_TYPE_PointerToapi__killExecution
+#define SOAP_TYPE_PointerToapi__killExecution (145)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__killExecution(struct soap*, ns1__killExecution *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__killExecution(struct soap*, const char *, int, ns1__killExecution *const*, const char *);
-SOAP_FMAC3 ns1__killExecution ** SOAP_FMAC4 soap_in_PointerTons1__killExecution(struct soap*, const char*, ns1__killExecution **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__killExecution(struct soap*, api__killExecution *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__killExecution(struct soap*, const char *, int, api__killExecution *const*, const char *);
+SOAP_FMAC3 api__killExecution ** SOAP_FMAC4 soap_in_PointerToapi__killExecution(struct soap*, const char*, api__killExecution **, const char*);
 
-#define soap_write_PointerTons1__killExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__killExecution(soap, data), 0) || soap_put_PointerTons1__killExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__killExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__killExecution(soap, data), 0) || soap_put_PointerToapi__killExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__killExecution(struct soap*, ns1__killExecution *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__killExecution(struct soap*, api__killExecution *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__killExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__killExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__killExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__killExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__killExecution ** SOAP_FMAC4 soap_get_PointerTons1__killExecution(struct soap*, ns1__killExecution **, const char*, const char*);
+SOAP_FMAC3 api__killExecution ** SOAP_FMAC4 soap_get_PointerToapi__killExecution(struct soap*, api__killExecution **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getExecutionResultsResponse
-#define SOAP_TYPE_PointerTons1__getExecutionResultsResponse (142)
+#ifndef SOAP_TYPE_PointerToapi__getExecutionResultsResponse
+#define SOAP_TYPE_PointerToapi__getExecutionResultsResponse (142)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getExecutionResultsResponse(struct soap*, ns1__getExecutionResultsResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getExecutionResultsResponse(struct soap*, const char *, int, ns1__getExecutionResultsResponse *const*, const char *);
-SOAP_FMAC3 ns1__getExecutionResultsResponse ** SOAP_FMAC4 soap_in_PointerTons1__getExecutionResultsResponse(struct soap*, const char*, ns1__getExecutionResultsResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getExecutionResultsResponse(struct soap*, api__getExecutionResultsResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getExecutionResultsResponse(struct soap*, const char *, int, api__getExecutionResultsResponse *const*, const char *);
+SOAP_FMAC3 api__getExecutionResultsResponse ** SOAP_FMAC4 soap_in_PointerToapi__getExecutionResultsResponse(struct soap*, const char*, api__getExecutionResultsResponse **, const char*);
 
-#define soap_write_PointerTons1__getExecutionResultsResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getExecutionResultsResponse(soap, data), 0) || soap_put_PointerTons1__getExecutionResultsResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getExecutionResultsResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getExecutionResultsResponse(soap, data), 0) || soap_put_PointerToapi__getExecutionResultsResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getExecutionResultsResponse(struct soap*, ns1__getExecutionResultsResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getExecutionResultsResponse(struct soap*, api__getExecutionResultsResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getExecutionResultsResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getExecutionResultsResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getExecutionResultsResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getExecutionResultsResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getExecutionResultsResponse ** SOAP_FMAC4 soap_get_PointerTons1__getExecutionResultsResponse(struct soap*, ns1__getExecutionResultsResponse **, const char*, const char*);
+SOAP_FMAC3 api__getExecutionResultsResponse ** SOAP_FMAC4 soap_get_PointerToapi__getExecutionResultsResponse(struct soap*, api__getExecutionResultsResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getExecutionResults
-#define SOAP_TYPE_PointerTons1__getExecutionResults (141)
+#ifndef SOAP_TYPE_PointerToapi__getExecutionResults
+#define SOAP_TYPE_PointerToapi__getExecutionResults (141)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getExecutionResults(struct soap*, ns1__getExecutionResults *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getExecutionResults(struct soap*, const char *, int, ns1__getExecutionResults *const*, const char *);
-SOAP_FMAC3 ns1__getExecutionResults ** SOAP_FMAC4 soap_in_PointerTons1__getExecutionResults(struct soap*, const char*, ns1__getExecutionResults **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getExecutionResults(struct soap*, api__getExecutionResults *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getExecutionResults(struct soap*, const char *, int, api__getExecutionResults *const*, const char *);
+SOAP_FMAC3 api__getExecutionResults ** SOAP_FMAC4 soap_in_PointerToapi__getExecutionResults(struct soap*, const char*, api__getExecutionResults **, const char*);
 
-#define soap_write_PointerTons1__getExecutionResults(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getExecutionResults(soap, data), 0) || soap_put_PointerTons1__getExecutionResults(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getExecutionResults(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getExecutionResults(soap, data), 0) || soap_put_PointerToapi__getExecutionResults(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getExecutionResults(struct soap*, ns1__getExecutionResults *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getExecutionResults(struct soap*, api__getExecutionResults *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getExecutionResults(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getExecutionResults(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getExecutionResults(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getExecutionResults(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getExecutionResults ** SOAP_FMAC4 soap_get_PointerTons1__getExecutionResults(struct soap*, ns1__getExecutionResults **, const char*, const char*);
+SOAP_FMAC3 api__getExecutionResults ** SOAP_FMAC4 soap_get_PointerToapi__getExecutionResults(struct soap*, api__getExecutionResults **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getStdErrResponse
-#define SOAP_TYPE_PointerTons1__getStdErrResponse (138)
+#ifndef SOAP_TYPE_PointerToapi__getStdErrResponse
+#define SOAP_TYPE_PointerToapi__getStdErrResponse (138)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getStdErrResponse(struct soap*, ns1__getStdErrResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getStdErrResponse(struct soap*, const char *, int, ns1__getStdErrResponse *const*, const char *);
-SOAP_FMAC3 ns1__getStdErrResponse ** SOAP_FMAC4 soap_in_PointerTons1__getStdErrResponse(struct soap*, const char*, ns1__getStdErrResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getStdErrResponse(struct soap*, api__getStdErrResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getStdErrResponse(struct soap*, const char *, int, api__getStdErrResponse *const*, const char *);
+SOAP_FMAC3 api__getStdErrResponse ** SOAP_FMAC4 soap_in_PointerToapi__getStdErrResponse(struct soap*, const char*, api__getStdErrResponse **, const char*);
 
-#define soap_write_PointerTons1__getStdErrResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getStdErrResponse(soap, data), 0) || soap_put_PointerTons1__getStdErrResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getStdErrResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getStdErrResponse(soap, data), 0) || soap_put_PointerToapi__getStdErrResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getStdErrResponse(struct soap*, ns1__getStdErrResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getStdErrResponse(struct soap*, api__getStdErrResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getStdErrResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getStdErrResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getStdErrResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getStdErrResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getStdErrResponse ** SOAP_FMAC4 soap_get_PointerTons1__getStdErrResponse(struct soap*, ns1__getStdErrResponse **, const char*, const char*);
+SOAP_FMAC3 api__getStdErrResponse ** SOAP_FMAC4 soap_get_PointerToapi__getStdErrResponse(struct soap*, api__getStdErrResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getStdErr
-#define SOAP_TYPE_PointerTons1__getStdErr (137)
+#ifndef SOAP_TYPE_PointerToapi__getStdErr
+#define SOAP_TYPE_PointerToapi__getStdErr (137)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getStdErr(struct soap*, ns1__getStdErr *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getStdErr(struct soap*, const char *, int, ns1__getStdErr *const*, const char *);
-SOAP_FMAC3 ns1__getStdErr ** SOAP_FMAC4 soap_in_PointerTons1__getStdErr(struct soap*, const char*, ns1__getStdErr **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getStdErr(struct soap*, api__getStdErr *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getStdErr(struct soap*, const char *, int, api__getStdErr *const*, const char *);
+SOAP_FMAC3 api__getStdErr ** SOAP_FMAC4 soap_in_PointerToapi__getStdErr(struct soap*, const char*, api__getStdErr **, const char*);
 
-#define soap_write_PointerTons1__getStdErr(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getStdErr(soap, data), 0) || soap_put_PointerTons1__getStdErr(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getStdErr(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getStdErr(soap, data), 0) || soap_put_PointerToapi__getStdErr(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getStdErr(struct soap*, ns1__getStdErr *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getStdErr(struct soap*, api__getStdErr *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getStdErr(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getStdErr(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getStdErr(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getStdErr(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getStdErr ** SOAP_FMAC4 soap_get_PointerTons1__getStdErr(struct soap*, ns1__getStdErr **, const char*, const char*);
+SOAP_FMAC3 api__getStdErr ** SOAP_FMAC4 soap_get_PointerToapi__getStdErr(struct soap*, api__getStdErr **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getStdOutResponse
-#define SOAP_TYPE_PointerTons1__getStdOutResponse (134)
+#ifndef SOAP_TYPE_PointerToapi__getStdOutResponse
+#define SOAP_TYPE_PointerToapi__getStdOutResponse (134)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getStdOutResponse(struct soap*, ns1__getStdOutResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getStdOutResponse(struct soap*, const char *, int, ns1__getStdOutResponse *const*, const char *);
-SOAP_FMAC3 ns1__getStdOutResponse ** SOAP_FMAC4 soap_in_PointerTons1__getStdOutResponse(struct soap*, const char*, ns1__getStdOutResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getStdOutResponse(struct soap*, api__getStdOutResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getStdOutResponse(struct soap*, const char *, int, api__getStdOutResponse *const*, const char *);
+SOAP_FMAC3 api__getStdOutResponse ** SOAP_FMAC4 soap_in_PointerToapi__getStdOutResponse(struct soap*, const char*, api__getStdOutResponse **, const char*);
 
-#define soap_write_PointerTons1__getStdOutResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getStdOutResponse(soap, data), 0) || soap_put_PointerTons1__getStdOutResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getStdOutResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getStdOutResponse(soap, data), 0) || soap_put_PointerToapi__getStdOutResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getStdOutResponse(struct soap*, ns1__getStdOutResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getStdOutResponse(struct soap*, api__getStdOutResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getStdOutResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getStdOutResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getStdOutResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getStdOutResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getStdOutResponse ** SOAP_FMAC4 soap_get_PointerTons1__getStdOutResponse(struct soap*, ns1__getStdOutResponse **, const char*, const char*);
+SOAP_FMAC3 api__getStdOutResponse ** SOAP_FMAC4 soap_get_PointerToapi__getStdOutResponse(struct soap*, api__getStdOutResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getStdOut
-#define SOAP_TYPE_PointerTons1__getStdOut (133)
+#ifndef SOAP_TYPE_PointerToapi__getStdOut
+#define SOAP_TYPE_PointerToapi__getStdOut (133)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getStdOut(struct soap*, ns1__getStdOut *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getStdOut(struct soap*, const char *, int, ns1__getStdOut *const*, const char *);
-SOAP_FMAC3 ns1__getStdOut ** SOAP_FMAC4 soap_in_PointerTons1__getStdOut(struct soap*, const char*, ns1__getStdOut **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getStdOut(struct soap*, api__getStdOut *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getStdOut(struct soap*, const char *, int, api__getStdOut *const*, const char *);
+SOAP_FMAC3 api__getStdOut ** SOAP_FMAC4 soap_in_PointerToapi__getStdOut(struct soap*, const char*, api__getStdOut **, const char*);
 
-#define soap_write_PointerTons1__getStdOut(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getStdOut(soap, data), 0) || soap_put_PointerTons1__getStdOut(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getStdOut(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getStdOut(soap, data), 0) || soap_put_PointerToapi__getStdOut(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getStdOut(struct soap*, ns1__getStdOut *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getStdOut(struct soap*, api__getStdOut *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getStdOut(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getStdOut(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getStdOut(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getStdOut(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getStdOut ** SOAP_FMAC4 soap_get_PointerTons1__getStdOut(struct soap*, ns1__getStdOut **, const char*, const char*);
+SOAP_FMAC3 api__getStdOut ** SOAP_FMAC4 soap_get_PointerToapi__getStdOut(struct soap*, api__getStdOut **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__initExecutionResponse
-#define SOAP_TYPE_PointerTons1__initExecutionResponse (130)
+#ifndef SOAP_TYPE_PointerToapi__initExecutionResponse
+#define SOAP_TYPE_PointerToapi__initExecutionResponse (130)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__initExecutionResponse(struct soap*, ns1__initExecutionResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__initExecutionResponse(struct soap*, const char *, int, ns1__initExecutionResponse *const*, const char *);
-SOAP_FMAC3 ns1__initExecutionResponse ** SOAP_FMAC4 soap_in_PointerTons1__initExecutionResponse(struct soap*, const char*, ns1__initExecutionResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__initExecutionResponse(struct soap*, api__initExecutionResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__initExecutionResponse(struct soap*, const char *, int, api__initExecutionResponse *const*, const char *);
+SOAP_FMAC3 api__initExecutionResponse ** SOAP_FMAC4 soap_in_PointerToapi__initExecutionResponse(struct soap*, const char*, api__initExecutionResponse **, const char*);
 
-#define soap_write_PointerTons1__initExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__initExecutionResponse(soap, data), 0) || soap_put_PointerTons1__initExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__initExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__initExecutionResponse(soap, data), 0) || soap_put_PointerToapi__initExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__initExecutionResponse(struct soap*, ns1__initExecutionResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__initExecutionResponse(struct soap*, api__initExecutionResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__initExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__initExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__initExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__initExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__initExecutionResponse ** SOAP_FMAC4 soap_get_PointerTons1__initExecutionResponse(struct soap*, ns1__initExecutionResponse **, const char*, const char*);
+SOAP_FMAC3 api__initExecutionResponse ** SOAP_FMAC4 soap_get_PointerToapi__initExecutionResponse(struct soap*, api__initExecutionResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__initExecution
-#define SOAP_TYPE_PointerTons1__initExecution (129)
+#ifndef SOAP_TYPE_PointerToapi__initExecution
+#define SOAP_TYPE_PointerToapi__initExecution (129)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__initExecution(struct soap*, ns1__initExecution *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__initExecution(struct soap*, const char *, int, ns1__initExecution *const*, const char *);
-SOAP_FMAC3 ns1__initExecution ** SOAP_FMAC4 soap_in_PointerTons1__initExecution(struct soap*, const char*, ns1__initExecution **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__initExecution(struct soap*, api__initExecution *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__initExecution(struct soap*, const char *, int, api__initExecution *const*, const char *);
+SOAP_FMAC3 api__initExecution ** SOAP_FMAC4 soap_in_PointerToapi__initExecution(struct soap*, const char*, api__initExecution **, const char*);
 
-#define soap_write_PointerTons1__initExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__initExecution(soap, data), 0) || soap_put_PointerTons1__initExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__initExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__initExecution(soap, data), 0) || soap_put_PointerToapi__initExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__initExecution(struct soap*, ns1__initExecution *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__initExecution(struct soap*, api__initExecution *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__initExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__initExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__initExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__initExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__initExecution ** SOAP_FMAC4 soap_get_PointerTons1__initExecution(struct soap*, ns1__initExecution **, const char*, const char*);
+SOAP_FMAC3 api__initExecution ** SOAP_FMAC4 soap_get_PointerToapi__initExecution(struct soap*, api__initExecution **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getGlobalPropertiesResponse
-#define SOAP_TYPE_PointerTons1__getGlobalPropertiesResponse (126)
+#ifndef SOAP_TYPE_PointerToapi__getGlobalPropertiesResponse
+#define SOAP_TYPE_PointerToapi__getGlobalPropertiesResponse (126)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getGlobalPropertiesResponse(struct soap*, ns1__getGlobalPropertiesResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getGlobalPropertiesResponse(struct soap*, const char *, int, ns1__getGlobalPropertiesResponse *const*, const char *);
-SOAP_FMAC3 ns1__getGlobalPropertiesResponse ** SOAP_FMAC4 soap_in_PointerTons1__getGlobalPropertiesResponse(struct soap*, const char*, ns1__getGlobalPropertiesResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getGlobalPropertiesResponse(struct soap*, api__getGlobalPropertiesResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getGlobalPropertiesResponse(struct soap*, const char *, int, api__getGlobalPropertiesResponse *const*, const char *);
+SOAP_FMAC3 api__getGlobalPropertiesResponse ** SOAP_FMAC4 soap_in_PointerToapi__getGlobalPropertiesResponse(struct soap*, const char*, api__getGlobalPropertiesResponse **, const char*);
 
-#define soap_write_PointerTons1__getGlobalPropertiesResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getGlobalPropertiesResponse(soap, data), 0) || soap_put_PointerTons1__getGlobalPropertiesResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getGlobalPropertiesResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getGlobalPropertiesResponse(soap, data), 0) || soap_put_PointerToapi__getGlobalPropertiesResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getGlobalPropertiesResponse(struct soap*, ns1__getGlobalPropertiesResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getGlobalPropertiesResponse(struct soap*, api__getGlobalPropertiesResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getGlobalPropertiesResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getGlobalPropertiesResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getGlobalPropertiesResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getGlobalPropertiesResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getGlobalPropertiesResponse ** SOAP_FMAC4 soap_get_PointerTons1__getGlobalPropertiesResponse(struct soap*, ns1__getGlobalPropertiesResponse **, const char*, const char*);
+SOAP_FMAC3 api__getGlobalPropertiesResponse ** SOAP_FMAC4 soap_get_PointerToapi__getGlobalPropertiesResponse(struct soap*, api__getGlobalPropertiesResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getGlobalProperties
-#define SOAP_TYPE_PointerTons1__getGlobalProperties (125)
+#ifndef SOAP_TYPE_PointerToapi__getGlobalProperties
+#define SOAP_TYPE_PointerToapi__getGlobalProperties (125)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getGlobalProperties(struct soap*, ns1__getGlobalProperties *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getGlobalProperties(struct soap*, const char *, int, ns1__getGlobalProperties *const*, const char *);
-SOAP_FMAC3 ns1__getGlobalProperties ** SOAP_FMAC4 soap_in_PointerTons1__getGlobalProperties(struct soap*, const char*, ns1__getGlobalProperties **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getGlobalProperties(struct soap*, api__getGlobalProperties *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getGlobalProperties(struct soap*, const char *, int, api__getGlobalProperties *const*, const char *);
+SOAP_FMAC3 api__getGlobalProperties ** SOAP_FMAC4 soap_in_PointerToapi__getGlobalProperties(struct soap*, const char*, api__getGlobalProperties **, const char*);
 
-#define soap_write_PointerTons1__getGlobalProperties(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getGlobalProperties(soap, data), 0) || soap_put_PointerTons1__getGlobalProperties(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getGlobalProperties(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getGlobalProperties(soap, data), 0) || soap_put_PointerToapi__getGlobalProperties(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getGlobalProperties(struct soap*, ns1__getGlobalProperties *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getGlobalProperties(struct soap*, api__getGlobalProperties *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getGlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getGlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getGlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getGlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getGlobalProperties ** SOAP_FMAC4 soap_get_PointerTons1__getGlobalProperties(struct soap*, ns1__getGlobalProperties **, const char*, const char*);
+SOAP_FMAC3 api__getGlobalProperties ** SOAP_FMAC4 soap_get_PointerToapi__getGlobalProperties(struct soap*, api__getGlobalProperties **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__updateExecutionResponse
-#define SOAP_TYPE_PointerTons1__updateExecutionResponse (122)
+#ifndef SOAP_TYPE_PointerToapi__updateExecutionResponse
+#define SOAP_TYPE_PointerToapi__updateExecutionResponse (122)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__updateExecutionResponse(struct soap*, ns1__updateExecutionResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__updateExecutionResponse(struct soap*, const char *, int, ns1__updateExecutionResponse *const*, const char *);
-SOAP_FMAC3 ns1__updateExecutionResponse ** SOAP_FMAC4 soap_in_PointerTons1__updateExecutionResponse(struct soap*, const char*, ns1__updateExecutionResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__updateExecutionResponse(struct soap*, api__updateExecutionResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__updateExecutionResponse(struct soap*, const char *, int, api__updateExecutionResponse *const*, const char *);
+SOAP_FMAC3 api__updateExecutionResponse ** SOAP_FMAC4 soap_in_PointerToapi__updateExecutionResponse(struct soap*, const char*, api__updateExecutionResponse **, const char*);
 
-#define soap_write_PointerTons1__updateExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__updateExecutionResponse(soap, data), 0) || soap_put_PointerTons1__updateExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__updateExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__updateExecutionResponse(soap, data), 0) || soap_put_PointerToapi__updateExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__updateExecutionResponse(struct soap*, ns1__updateExecutionResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__updateExecutionResponse(struct soap*, api__updateExecutionResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__updateExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__updateExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__updateExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__updateExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__updateExecutionResponse ** SOAP_FMAC4 soap_get_PointerTons1__updateExecutionResponse(struct soap*, ns1__updateExecutionResponse **, const char*, const char*);
+SOAP_FMAC3 api__updateExecutionResponse ** SOAP_FMAC4 soap_get_PointerToapi__updateExecutionResponse(struct soap*, api__updateExecutionResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__updateExecution
-#define SOAP_TYPE_PointerTons1__updateExecution (121)
+#ifndef SOAP_TYPE_PointerToapi__updateExecution
+#define SOAP_TYPE_PointerToapi__updateExecution (121)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__updateExecution(struct soap*, ns1__updateExecution *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__updateExecution(struct soap*, const char *, int, ns1__updateExecution *const*, const char *);
-SOAP_FMAC3 ns1__updateExecution ** SOAP_FMAC4 soap_in_PointerTons1__updateExecution(struct soap*, const char*, ns1__updateExecution **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__updateExecution(struct soap*, api__updateExecution *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__updateExecution(struct soap*, const char *, int, api__updateExecution *const*, const char *);
+SOAP_FMAC3 api__updateExecution ** SOAP_FMAC4 soap_in_PointerToapi__updateExecution(struct soap*, const char*, api__updateExecution **, const char*);
 
-#define soap_write_PointerTons1__updateExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__updateExecution(soap, data), 0) || soap_put_PointerTons1__updateExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__updateExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__updateExecution(soap, data), 0) || soap_put_PointerToapi__updateExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__updateExecution(struct soap*, ns1__updateExecution *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__updateExecution(struct soap*, api__updateExecution *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__updateExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__updateExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__updateExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__updateExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__updateExecution ** SOAP_FMAC4 soap_get_PointerTons1__updateExecution(struct soap*, ns1__updateExecution **, const char*, const char*);
+SOAP_FMAC3 api__updateExecution ** SOAP_FMAC4 soap_get_PointerToapi__updateExecution(struct soap*, api__updateExecution **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__logoutResponse
-#define SOAP_TYPE_PointerTons1__logoutResponse (118)
+#ifndef SOAP_TYPE_PointerToapi__logoutResponse
+#define SOAP_TYPE_PointerToapi__logoutResponse (118)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__logoutResponse(struct soap*, ns1__logoutResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__logoutResponse(struct soap*, const char *, int, ns1__logoutResponse *const*, const char *);
-SOAP_FMAC3 ns1__logoutResponse ** SOAP_FMAC4 soap_in_PointerTons1__logoutResponse(struct soap*, const char*, ns1__logoutResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__logoutResponse(struct soap*, api__logoutResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__logoutResponse(struct soap*, const char *, int, api__logoutResponse *const*, const char *);
+SOAP_FMAC3 api__logoutResponse ** SOAP_FMAC4 soap_in_PointerToapi__logoutResponse(struct soap*, const char*, api__logoutResponse **, const char*);
 
-#define soap_write_PointerTons1__logoutResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__logoutResponse(soap, data), 0) || soap_put_PointerTons1__logoutResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__logoutResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__logoutResponse(soap, data), 0) || soap_put_PointerToapi__logoutResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__logoutResponse(struct soap*, ns1__logoutResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__logoutResponse(struct soap*, api__logoutResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__logoutResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__logoutResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__logoutResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__logoutResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__logoutResponse ** SOAP_FMAC4 soap_get_PointerTons1__logoutResponse(struct soap*, ns1__logoutResponse **, const char*, const char*);
+SOAP_FMAC3 api__logoutResponse ** SOAP_FMAC4 soap_get_PointerToapi__logoutResponse(struct soap*, api__logoutResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__logout
-#define SOAP_TYPE_PointerTons1__logout (117)
+#ifndef SOAP_TYPE_PointerToapi__logout
+#define SOAP_TYPE_PointerToapi__logout (117)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__logout(struct soap*, ns1__logout *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__logout(struct soap*, const char *, int, ns1__logout *const*, const char *);
-SOAP_FMAC3 ns1__logout ** SOAP_FMAC4 soap_in_PointerTons1__logout(struct soap*, const char*, ns1__logout **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__logout(struct soap*, api__logout *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__logout(struct soap*, const char *, int, api__logout *const*, const char *);
+SOAP_FMAC3 api__logout ** SOAP_FMAC4 soap_in_PointerToapi__logout(struct soap*, const char*, api__logout **, const char*);
 
-#define soap_write_PointerTons1__logout(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__logout(soap, data), 0) || soap_put_PointerTons1__logout(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__logout(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__logout(soap, data), 0) || soap_put_PointerToapi__logout(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__logout(struct soap*, ns1__logout *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__logout(struct soap*, api__logout *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__logout(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__logout(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__logout(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__logout(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__logout ** SOAP_FMAC4 soap_get_PointerTons1__logout(struct soap*, ns1__logout **, const char*, const char*);
+SOAP_FMAC3 api__logout ** SOAP_FMAC4 soap_get_PointerToapi__logout(struct soap*, api__logout **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__authenticateHTTPResponse
-#define SOAP_TYPE_PointerTons1__authenticateHTTPResponse (114)
+#ifndef SOAP_TYPE_PointerToapi__authenticateHTTPResponse
+#define SOAP_TYPE_PointerToapi__authenticateHTTPResponse (114)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__authenticateHTTPResponse(struct soap*, ns1__authenticateHTTPResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__authenticateHTTPResponse(struct soap*, const char *, int, ns1__authenticateHTTPResponse *const*, const char *);
-SOAP_FMAC3 ns1__authenticateHTTPResponse ** SOAP_FMAC4 soap_in_PointerTons1__authenticateHTTPResponse(struct soap*, const char*, ns1__authenticateHTTPResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__authenticateHTTPResponse(struct soap*, api__authenticateHTTPResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__authenticateHTTPResponse(struct soap*, const char *, int, api__authenticateHTTPResponse *const*, const char *);
+SOAP_FMAC3 api__authenticateHTTPResponse ** SOAP_FMAC4 soap_in_PointerToapi__authenticateHTTPResponse(struct soap*, const char*, api__authenticateHTTPResponse **, const char*);
 
-#define soap_write_PointerTons1__authenticateHTTPResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__authenticateHTTPResponse(soap, data), 0) || soap_put_PointerTons1__authenticateHTTPResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__authenticateHTTPResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__authenticateHTTPResponse(soap, data), 0) || soap_put_PointerToapi__authenticateHTTPResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__authenticateHTTPResponse(struct soap*, ns1__authenticateHTTPResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__authenticateHTTPResponse(struct soap*, api__authenticateHTTPResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__authenticateHTTPResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__authenticateHTTPResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__authenticateHTTPResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__authenticateHTTPResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__authenticateHTTPResponse ** SOAP_FMAC4 soap_get_PointerTons1__authenticateHTTPResponse(struct soap*, ns1__authenticateHTTPResponse **, const char*, const char*);
+SOAP_FMAC3 api__authenticateHTTPResponse ** SOAP_FMAC4 soap_get_PointerToapi__authenticateHTTPResponse(struct soap*, api__authenticateHTTPResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__authenticateHTTP
-#define SOAP_TYPE_PointerTons1__authenticateHTTP (113)
+#ifndef SOAP_TYPE_PointerToapi__authenticateHTTP
+#define SOAP_TYPE_PointerToapi__authenticateHTTP (113)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__authenticateHTTP(struct soap*, ns1__authenticateHTTP *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__authenticateHTTP(struct soap*, const char *, int, ns1__authenticateHTTP *const*, const char *);
-SOAP_FMAC3 ns1__authenticateHTTP ** SOAP_FMAC4 soap_in_PointerTons1__authenticateHTTP(struct soap*, const char*, ns1__authenticateHTTP **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__authenticateHTTP(struct soap*, api__authenticateHTTP *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__authenticateHTTP(struct soap*, const char *, int, api__authenticateHTTP *const*, const char *);
+SOAP_FMAC3 api__authenticateHTTP ** SOAP_FMAC4 soap_in_PointerToapi__authenticateHTTP(struct soap*, const char*, api__authenticateHTTP **, const char*);
 
-#define soap_write_PointerTons1__authenticateHTTP(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__authenticateHTTP(soap, data), 0) || soap_put_PointerTons1__authenticateHTTP(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__authenticateHTTP(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__authenticateHTTP(soap, data), 0) || soap_put_PointerToapi__authenticateHTTP(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__authenticateHTTP(struct soap*, ns1__authenticateHTTP *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__authenticateHTTP(struct soap*, api__authenticateHTTP *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__authenticateHTTP(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__authenticateHTTP(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__authenticateHTTP(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__authenticateHTTP(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__authenticateHTTP ** SOAP_FMAC4 soap_get_PointerTons1__authenticateHTTP(struct soap*, ns1__authenticateHTTP **, const char*, const char*);
+SOAP_FMAC3 api__authenticateHTTP ** SOAP_FMAC4 soap_get_PointerToapi__authenticateHTTP(struct soap*, api__authenticateHTTP **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getPipelineResponse
-#define SOAP_TYPE_PointerTons1__getPipelineResponse (110)
+#ifndef SOAP_TYPE_PointerToapi__getPipelineResponse
+#define SOAP_TYPE_PointerToapi__getPipelineResponse (110)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getPipelineResponse(struct soap*, ns1__getPipelineResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getPipelineResponse(struct soap*, const char *, int, ns1__getPipelineResponse *const*, const char *);
-SOAP_FMAC3 ns1__getPipelineResponse ** SOAP_FMAC4 soap_in_PointerTons1__getPipelineResponse(struct soap*, const char*, ns1__getPipelineResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getPipelineResponse(struct soap*, api__getPipelineResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getPipelineResponse(struct soap*, const char *, int, api__getPipelineResponse *const*, const char *);
+SOAP_FMAC3 api__getPipelineResponse ** SOAP_FMAC4 soap_in_PointerToapi__getPipelineResponse(struct soap*, const char*, api__getPipelineResponse **, const char*);
 
-#define soap_write_PointerTons1__getPipelineResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getPipelineResponse(soap, data), 0) || soap_put_PointerTons1__getPipelineResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getPipelineResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getPipelineResponse(soap, data), 0) || soap_put_PointerToapi__getPipelineResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getPipelineResponse(struct soap*, ns1__getPipelineResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getPipelineResponse(struct soap*, api__getPipelineResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getPipelineResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getPipelineResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getPipelineResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getPipelineResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getPipelineResponse ** SOAP_FMAC4 soap_get_PointerTons1__getPipelineResponse(struct soap*, ns1__getPipelineResponse **, const char*, const char*);
+SOAP_FMAC3 api__getPipelineResponse ** SOAP_FMAC4 soap_get_PointerToapi__getPipelineResponse(struct soap*, api__getPipelineResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__getPipeline
-#define SOAP_TYPE_PointerTons1__getPipeline (109)
+#ifndef SOAP_TYPE_PointerToapi__getPipeline
+#define SOAP_TYPE_PointerToapi__getPipeline (109)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__getPipeline(struct soap*, ns1__getPipeline *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__getPipeline(struct soap*, const char *, int, ns1__getPipeline *const*, const char *);
-SOAP_FMAC3 ns1__getPipeline ** SOAP_FMAC4 soap_in_PointerTons1__getPipeline(struct soap*, const char*, ns1__getPipeline **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__getPipeline(struct soap*, api__getPipeline *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__getPipeline(struct soap*, const char *, int, api__getPipeline *const*, const char *);
+SOAP_FMAC3 api__getPipeline ** SOAP_FMAC4 soap_in_PointerToapi__getPipeline(struct soap*, const char*, api__getPipeline **, const char*);
 
-#define soap_write_PointerTons1__getPipeline(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__getPipeline(soap, data), 0) || soap_put_PointerTons1__getPipeline(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__getPipeline(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__getPipeline(soap, data), 0) || soap_put_PointerToapi__getPipeline(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__getPipeline(struct soap*, ns1__getPipeline *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__getPipeline(struct soap*, api__getPipeline *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__getPipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__getPipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__getPipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__getPipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__getPipeline ** SOAP_FMAC4 soap_get_PointerTons1__getPipeline(struct soap*, ns1__getPipeline **, const char*, const char*);
+SOAP_FMAC3 api__getPipeline ** SOAP_FMAC4 soap_get_PointerToapi__getPipeline(struct soap*, api__getPipeline **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__deleteExecutionResponse
-#define SOAP_TYPE_PointerTons1__deleteExecutionResponse (106)
+#ifndef SOAP_TYPE_PointerToapi__deleteExecutionResponse
+#define SOAP_TYPE_PointerToapi__deleteExecutionResponse (106)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__deleteExecutionResponse(struct soap*, ns1__deleteExecutionResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__deleteExecutionResponse(struct soap*, const char *, int, ns1__deleteExecutionResponse *const*, const char *);
-SOAP_FMAC3 ns1__deleteExecutionResponse ** SOAP_FMAC4 soap_in_PointerTons1__deleteExecutionResponse(struct soap*, const char*, ns1__deleteExecutionResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__deleteExecutionResponse(struct soap*, api__deleteExecutionResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__deleteExecutionResponse(struct soap*, const char *, int, api__deleteExecutionResponse *const*, const char *);
+SOAP_FMAC3 api__deleteExecutionResponse ** SOAP_FMAC4 soap_in_PointerToapi__deleteExecutionResponse(struct soap*, const char*, api__deleteExecutionResponse **, const char*);
 
-#define soap_write_PointerTons1__deleteExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__deleteExecutionResponse(soap, data), 0) || soap_put_PointerTons1__deleteExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__deleteExecutionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__deleteExecutionResponse(soap, data), 0) || soap_put_PointerToapi__deleteExecutionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__deleteExecutionResponse(struct soap*, ns1__deleteExecutionResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__deleteExecutionResponse(struct soap*, api__deleteExecutionResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__deleteExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__deleteExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__deleteExecutionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__deleteExecutionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__deleteExecutionResponse ** SOAP_FMAC4 soap_get_PointerTons1__deleteExecutionResponse(struct soap*, ns1__deleteExecutionResponse **, const char*, const char*);
+SOAP_FMAC3 api__deleteExecutionResponse ** SOAP_FMAC4 soap_get_PointerToapi__deleteExecutionResponse(struct soap*, api__deleteExecutionResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__deleteExecution
-#define SOAP_TYPE_PointerTons1__deleteExecution (105)
+#ifndef SOAP_TYPE_PointerToapi__deleteExecution
+#define SOAP_TYPE_PointerToapi__deleteExecution (105)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__deleteExecution(struct soap*, ns1__deleteExecution *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__deleteExecution(struct soap*, const char *, int, ns1__deleteExecution *const*, const char *);
-SOAP_FMAC3 ns1__deleteExecution ** SOAP_FMAC4 soap_in_PointerTons1__deleteExecution(struct soap*, const char*, ns1__deleteExecution **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__deleteExecution(struct soap*, api__deleteExecution *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__deleteExecution(struct soap*, const char *, int, api__deleteExecution *const*, const char *);
+SOAP_FMAC3 api__deleteExecution ** SOAP_FMAC4 soap_in_PointerToapi__deleteExecution(struct soap*, const char*, api__deleteExecution **, const char*);
 
-#define soap_write_PointerTons1__deleteExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__deleteExecution(soap, data), 0) || soap_put_PointerTons1__deleteExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__deleteExecution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__deleteExecution(soap, data), 0) || soap_put_PointerToapi__deleteExecution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__deleteExecution(struct soap*, ns1__deleteExecution *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__deleteExecution(struct soap*, api__deleteExecution *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__deleteExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__deleteExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__deleteExecution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__deleteExecution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__deleteExecution ** SOAP_FMAC4 soap_get_PointerTons1__deleteExecution(struct soap*, ns1__deleteExecution **, const char*, const char*);
+SOAP_FMAC3 api__deleteExecution ** SOAP_FMAC4 soap_get_PointerToapi__deleteExecution(struct soap*, api__deleteExecution **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__authenticateSessionResponse
-#define SOAP_TYPE_PointerTons1__authenticateSessionResponse (102)
+#ifndef SOAP_TYPE_PointerToapi__authenticateSessionResponse
+#define SOAP_TYPE_PointerToapi__authenticateSessionResponse (102)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__authenticateSessionResponse(struct soap*, ns1__authenticateSessionResponse *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__authenticateSessionResponse(struct soap*, const char *, int, ns1__authenticateSessionResponse *const*, const char *);
-SOAP_FMAC3 ns1__authenticateSessionResponse ** SOAP_FMAC4 soap_in_PointerTons1__authenticateSessionResponse(struct soap*, const char*, ns1__authenticateSessionResponse **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__authenticateSessionResponse(struct soap*, api__authenticateSessionResponse *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__authenticateSessionResponse(struct soap*, const char *, int, api__authenticateSessionResponse *const*, const char *);
+SOAP_FMAC3 api__authenticateSessionResponse ** SOAP_FMAC4 soap_in_PointerToapi__authenticateSessionResponse(struct soap*, const char*, api__authenticateSessionResponse **, const char*);
 
-#define soap_write_PointerTons1__authenticateSessionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__authenticateSessionResponse(soap, data), 0) || soap_put_PointerTons1__authenticateSessionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__authenticateSessionResponse(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__authenticateSessionResponse(soap, data), 0) || soap_put_PointerToapi__authenticateSessionResponse(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__authenticateSessionResponse(struct soap*, ns1__authenticateSessionResponse *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__authenticateSessionResponse(struct soap*, api__authenticateSessionResponse *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__authenticateSessionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__authenticateSessionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__authenticateSessionResponse(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__authenticateSessionResponse(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__authenticateSessionResponse ** SOAP_FMAC4 soap_get_PointerTons1__authenticateSessionResponse(struct soap*, ns1__authenticateSessionResponse **, const char*, const char*);
+SOAP_FMAC3 api__authenticateSessionResponse ** SOAP_FMAC4 soap_get_PointerToapi__authenticateSessionResponse(struct soap*, api__authenticateSessionResponse **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__authenticateSession
-#define SOAP_TYPE_PointerTons1__authenticateSession (101)
+#ifndef SOAP_TYPE_PointerToapi__authenticateSession
+#define SOAP_TYPE_PointerToapi__authenticateSession (101)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__authenticateSession(struct soap*, ns1__authenticateSession *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__authenticateSession(struct soap*, const char *, int, ns1__authenticateSession *const*, const char *);
-SOAP_FMAC3 ns1__authenticateSession ** SOAP_FMAC4 soap_in_PointerTons1__authenticateSession(struct soap*, const char*, ns1__authenticateSession **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__authenticateSession(struct soap*, api__authenticateSession *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__authenticateSession(struct soap*, const char *, int, api__authenticateSession *const*, const char *);
+SOAP_FMAC3 api__authenticateSession ** SOAP_FMAC4 soap_in_PointerToapi__authenticateSession(struct soap*, const char*, api__authenticateSession **, const char*);
 
-#define soap_write_PointerTons1__authenticateSession(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__authenticateSession(soap, data), 0) || soap_put_PointerTons1__authenticateSession(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__authenticateSession(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__authenticateSession(soap, data), 0) || soap_put_PointerToapi__authenticateSession(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__authenticateSession(struct soap*, ns1__authenticateSession *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__authenticateSession(struct soap*, api__authenticateSession *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__authenticateSession(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__authenticateSession(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__authenticateSession(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__authenticateSession(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__authenticateSession ** SOAP_FMAC4 soap_get_PointerTons1__authenticateSession(struct soap*, ns1__authenticateSession **, const char*, const char*);
+SOAP_FMAC3 api__authenticateSession ** SOAP_FMAC4 soap_get_PointerToapi__authenticateSession(struct soap*, api__authenticateSession **, const char*, const char*);
 
 #ifndef SOAP_TYPE_PointerToLONG64
 #define SOAP_TYPE_PointerToLONG64 (99)
@@ -2332,35 +2332,35 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToLONG64(struct soap*, LONG64 *const*,
 
 SOAP_FMAC3 LONG64 ** SOAP_FMAC4 soap_get_PointerToLONG64(struct soap*, LONG64 **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__IntKeyStringValuePair
-#define SOAP_TYPE_PointerTons1__IntKeyStringValuePair (96)
+#ifndef SOAP_TYPE_PointerToapi__IntKeyStringValuePair
+#define SOAP_TYPE_PointerToapi__IntKeyStringValuePair (96)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__IntKeyStringValuePair(struct soap*, ns1__IntKeyStringValuePair *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__IntKeyStringValuePair(struct soap*, const char *, int, ns1__IntKeyStringValuePair *const*, const char *);
-SOAP_FMAC3 ns1__IntKeyStringValuePair ** SOAP_FMAC4 soap_in_PointerTons1__IntKeyStringValuePair(struct soap*, const char*, ns1__IntKeyStringValuePair **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__IntKeyStringValuePair(struct soap*, api__IntKeyStringValuePair *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__IntKeyStringValuePair(struct soap*, const char *, int, api__IntKeyStringValuePair *const*, const char *);
+SOAP_FMAC3 api__IntKeyStringValuePair ** SOAP_FMAC4 soap_in_PointerToapi__IntKeyStringValuePair(struct soap*, const char*, api__IntKeyStringValuePair **, const char*);
 
-#define soap_write_PointerTons1__IntKeyStringValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__IntKeyStringValuePair(soap, data), 0) || soap_put_PointerTons1__IntKeyStringValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__IntKeyStringValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__IntKeyStringValuePair(soap, data), 0) || soap_put_PointerToapi__IntKeyStringValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__IntKeyStringValuePair(struct soap*, ns1__IntKeyStringValuePair *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__IntKeyStringValuePair(struct soap*, api__IntKeyStringValuePair *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__IntKeyStringValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__IntKeyStringValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__IntKeyStringValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__IntKeyStringValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__IntKeyStringValuePair ** SOAP_FMAC4 soap_get_PointerTons1__IntKeyStringValuePair(struct soap*, ns1__IntKeyStringValuePair **, const char*, const char*);
+SOAP_FMAC3 api__IntKeyStringValuePair ** SOAP_FMAC4 soap_get_PointerToapi__IntKeyStringValuePair(struct soap*, api__IntKeyStringValuePair **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__PipelineParameter
-#define SOAP_TYPE_PointerTons1__PipelineParameter (94)
+#ifndef SOAP_TYPE_PointerToapi__PipelineParameter
+#define SOAP_TYPE_PointerToapi__PipelineParameter (94)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__PipelineParameter(struct soap*, ns1__PipelineParameter *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__PipelineParameter(struct soap*, const char *, int, ns1__PipelineParameter *const*, const char *);
-SOAP_FMAC3 ns1__PipelineParameter ** SOAP_FMAC4 soap_in_PointerTons1__PipelineParameter(struct soap*, const char*, ns1__PipelineParameter **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__PipelineParameter(struct soap*, api__PipelineParameter *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__PipelineParameter(struct soap*, const char *, int, api__PipelineParameter *const*, const char *);
+SOAP_FMAC3 api__PipelineParameter ** SOAP_FMAC4 soap_in_PointerToapi__PipelineParameter(struct soap*, const char*, api__PipelineParameter **, const char*);
 
-#define soap_write_PointerTons1__PipelineParameter(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__PipelineParameter(soap, data), 0) || soap_put_PointerTons1__PipelineParameter(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__PipelineParameter(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__PipelineParameter(soap, data), 0) || soap_put_PointerToapi__PipelineParameter(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__PipelineParameter(struct soap*, ns1__PipelineParameter *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__PipelineParameter(struct soap*, api__PipelineParameter *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__PipelineParameter(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__PipelineParameter(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__PipelineParameter(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__PipelineParameter(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__PipelineParameter ** SOAP_FMAC4 soap_get_PointerTons1__PipelineParameter(struct soap*, ns1__PipelineParameter **, const char*, const char*);
+SOAP_FMAC3 api__PipelineParameter ** SOAP_FMAC4 soap_get_PointerToapi__PipelineParameter(struct soap*, api__PipelineParameter **, const char*, const char*);
 
 #ifndef SOAP_TYPE_PointerTobool
 #define SOAP_TYPE_PointerTobool (93)
@@ -2392,185 +2392,185 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToint(struct soap*, int *const*, const
 
 SOAP_FMAC3 int ** SOAP_FMAC4 soap_get_PointerToint(struct soap*, int **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__StringKeyParameterValuePair
-#define SOAP_TYPE_PointerTons1__StringKeyParameterValuePair (90)
+#ifndef SOAP_TYPE_PointerToapi__StringKeyParameterValuePair
+#define SOAP_TYPE_PointerToapi__StringKeyParameterValuePair (90)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__StringKeyParameterValuePair(struct soap*, ns1__StringKeyParameterValuePair *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__StringKeyParameterValuePair(struct soap*, const char *, int, ns1__StringKeyParameterValuePair *const*, const char *);
-SOAP_FMAC3 ns1__StringKeyParameterValuePair ** SOAP_FMAC4 soap_in_PointerTons1__StringKeyParameterValuePair(struct soap*, const char*, ns1__StringKeyParameterValuePair **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__StringKeyParameterValuePair(struct soap*, api__StringKeyParameterValuePair *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__StringKeyParameterValuePair(struct soap*, const char *, int, api__StringKeyParameterValuePair *const*, const char *);
+SOAP_FMAC3 api__StringKeyParameterValuePair ** SOAP_FMAC4 soap_in_PointerToapi__StringKeyParameterValuePair(struct soap*, const char*, api__StringKeyParameterValuePair **, const char*);
 
-#define soap_write_PointerTons1__StringKeyParameterValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__StringKeyParameterValuePair(soap, data), 0) || soap_put_PointerTons1__StringKeyParameterValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__StringKeyParameterValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__StringKeyParameterValuePair(soap, data), 0) || soap_put_PointerToapi__StringKeyParameterValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__StringKeyParameterValuePair(struct soap*, ns1__StringKeyParameterValuePair *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__StringKeyParameterValuePair(struct soap*, api__StringKeyParameterValuePair *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__StringKeyParameterValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__StringKeyParameterValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__StringKeyParameterValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__StringKeyParameterValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__StringKeyParameterValuePair ** SOAP_FMAC4 soap_get_PointerTons1__StringKeyParameterValuePair(struct soap*, ns1__StringKeyParameterValuePair **, const char*, const char*);
+SOAP_FMAC3 api__StringKeyParameterValuePair ** SOAP_FMAC4 soap_get_PointerToapi__StringKeyParameterValuePair(struct soap*, api__StringKeyParameterValuePair **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__StringKeyValuePair
-#define SOAP_TYPE_PointerTons1__StringKeyValuePair (87)
+#ifndef SOAP_TYPE_PointerToapi__StringKeyValuePair
+#define SOAP_TYPE_PointerToapi__StringKeyValuePair (87)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__StringKeyValuePair(struct soap*, ns1__StringKeyValuePair *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__StringKeyValuePair(struct soap*, const char *, int, ns1__StringKeyValuePair *const*, const char *);
-SOAP_FMAC3 ns1__StringKeyValuePair ** SOAP_FMAC4 soap_in_PointerTons1__StringKeyValuePair(struct soap*, const char*, ns1__StringKeyValuePair **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__StringKeyValuePair(struct soap*, api__StringKeyValuePair *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__StringKeyValuePair(struct soap*, const char *, int, api__StringKeyValuePair *const*, const char *);
+SOAP_FMAC3 api__StringKeyValuePair ** SOAP_FMAC4 soap_in_PointerToapi__StringKeyValuePair(struct soap*, const char*, api__StringKeyValuePair **, const char*);
 
-#define soap_write_PointerTons1__StringKeyValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__StringKeyValuePair(soap, data), 0) || soap_put_PointerTons1__StringKeyValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__StringKeyValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__StringKeyValuePair(soap, data), 0) || soap_put_PointerToapi__StringKeyValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__StringKeyValuePair(struct soap*, ns1__StringKeyValuePair *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__StringKeyValuePair(struct soap*, api__StringKeyValuePair *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__StringKeyValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__StringKeyValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__StringKeyValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__StringKeyValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__StringKeyValuePair ** SOAP_FMAC4 soap_get_PointerTons1__StringKeyValuePair(struct soap*, ns1__StringKeyValuePair **, const char*, const char*);
+SOAP_FMAC3 api__StringKeyValuePair ** SOAP_FMAC4 soap_get_PointerToapi__StringKeyValuePair(struct soap*, api__StringKeyValuePair **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__ParameterTypedValue
-#define SOAP_TYPE_PointerTons1__ParameterTypedValue (84)
+#ifndef SOAP_TYPE_PointerToapi__ParameterTypedValue
+#define SOAP_TYPE_PointerToapi__ParameterTypedValue (84)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__ParameterTypedValue(struct soap*, ns1__ParameterTypedValue *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__ParameterTypedValue(struct soap*, const char *, int, ns1__ParameterTypedValue *const*, const char *);
-SOAP_FMAC3 ns1__ParameterTypedValue ** SOAP_FMAC4 soap_in_PointerTons1__ParameterTypedValue(struct soap*, const char*, ns1__ParameterTypedValue **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__ParameterTypedValue(struct soap*, api__ParameterTypedValue *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__ParameterTypedValue(struct soap*, const char *, int, api__ParameterTypedValue *const*, const char *);
+SOAP_FMAC3 api__ParameterTypedValue ** SOAP_FMAC4 soap_in_PointerToapi__ParameterTypedValue(struct soap*, const char*, api__ParameterTypedValue **, const char*);
 
-#define soap_write_PointerTons1__ParameterTypedValue(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__ParameterTypedValue(soap, data), 0) || soap_put_PointerTons1__ParameterTypedValue(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__ParameterTypedValue(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__ParameterTypedValue(soap, data), 0) || soap_put_PointerToapi__ParameterTypedValue(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__ParameterTypedValue(struct soap*, ns1__ParameterTypedValue *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__ParameterTypedValue(struct soap*, api__ParameterTypedValue *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__ParameterTypedValue(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__ParameterTypedValue(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__ParameterTypedValue(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__ParameterTypedValue(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__ParameterTypedValue ** SOAP_FMAC4 soap_get_PointerTons1__ParameterTypedValue(struct soap*, ns1__ParameterTypedValue **, const char*, const char*);
+SOAP_FMAC3 api__ParameterTypedValue ** SOAP_FMAC4 soap_get_PointerToapi__ParameterTypedValue(struct soap*, api__ParameterTypedValue **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair
-#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair (80)
+#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair
+#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair (80)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, std::vector<ns1__PipelineKeyBooleanValuePair * >*const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, const char *, int, std::vector<ns1__PipelineKeyBooleanValuePair * >*const*, const char *);
-SOAP_FMAC3 std::vector<ns1__PipelineKeyBooleanValuePair * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, const char*, std::vector<ns1__PipelineKeyBooleanValuePair * >**, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, std::vector<api__PipelineKeyBooleanValuePair * >*const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, const char *, int, std::vector<api__PipelineKeyBooleanValuePair * >*const*, const char *);
+SOAP_FMAC3 std::vector<api__PipelineKeyBooleanValuePair * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, const char*, std::vector<api__PipelineKeyBooleanValuePair * >**, const char*);
 
-#define soap_write_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, std::vector<ns1__PipelineKeyBooleanValuePair * >*const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, std::vector<api__PipelineKeyBooleanValuePair * >*const*, const char*, const char*);
 
-#define soap_read_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 std::vector<ns1__PipelineKeyBooleanValuePair * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, std::vector<ns1__PipelineKeyBooleanValuePair * >**, const char*, const char*);
+SOAP_FMAC3 std::vector<api__PipelineKeyBooleanValuePair * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, std::vector<api__PipelineKeyBooleanValuePair * >**, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__PipelineKeyBooleanValuePair
-#define SOAP_TYPE_PointerTons1__PipelineKeyBooleanValuePair (78)
+#ifndef SOAP_TYPE_PointerToapi__PipelineKeyBooleanValuePair
+#define SOAP_TYPE_PointerToapi__PipelineKeyBooleanValuePair (78)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__PipelineKeyBooleanValuePair(struct soap*, ns1__PipelineKeyBooleanValuePair *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__PipelineKeyBooleanValuePair(struct soap*, const char *, int, ns1__PipelineKeyBooleanValuePair *const*, const char *);
-SOAP_FMAC3 ns1__PipelineKeyBooleanValuePair ** SOAP_FMAC4 soap_in_PointerTons1__PipelineKeyBooleanValuePair(struct soap*, const char*, ns1__PipelineKeyBooleanValuePair **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__PipelineKeyBooleanValuePair(struct soap*, api__PipelineKeyBooleanValuePair *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__PipelineKeyBooleanValuePair(struct soap*, const char *, int, api__PipelineKeyBooleanValuePair *const*, const char *);
+SOAP_FMAC3 api__PipelineKeyBooleanValuePair ** SOAP_FMAC4 soap_in_PointerToapi__PipelineKeyBooleanValuePair(struct soap*, const char*, api__PipelineKeyBooleanValuePair **, const char*);
 
-#define soap_write_PointerTons1__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__PipelineKeyBooleanValuePair(soap, data), 0) || soap_put_PointerTons1__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__PipelineKeyBooleanValuePair(soap, data), 0) || soap_put_PointerToapi__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__PipelineKeyBooleanValuePair(struct soap*, ns1__PipelineKeyBooleanValuePair *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__PipelineKeyBooleanValuePair(struct soap*, api__PipelineKeyBooleanValuePair *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__PipelineKeyBooleanValuePair(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__PipelineKeyBooleanValuePair(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__PipelineKeyBooleanValuePair ** SOAP_FMAC4 soap_get_PointerTons1__PipelineKeyBooleanValuePair(struct soap*, ns1__PipelineKeyBooleanValuePair **, const char*, const char*);
+SOAP_FMAC3 api__PipelineKeyBooleanValuePair ** SOAP_FMAC4 soap_get_PointerToapi__PipelineKeyBooleanValuePair(struct soap*, api__PipelineKeyBooleanValuePair **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__ExecutionStatus
-#define SOAP_TYPE_PointerTons1__ExecutionStatus (77)
+#ifndef SOAP_TYPE_PointerToapi__ExecutionStatus
+#define SOAP_TYPE_PointerToapi__ExecutionStatus (77)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__ExecutionStatus(struct soap*, enum ns1__ExecutionStatus *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__ExecutionStatus(struct soap*, const char *, int, enum ns1__ExecutionStatus *const*, const char *);
-SOAP_FMAC3 enum ns1__ExecutionStatus ** SOAP_FMAC4 soap_in_PointerTons1__ExecutionStatus(struct soap*, const char*, enum ns1__ExecutionStatus **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__ExecutionStatus(struct soap*, enum api__ExecutionStatus *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__ExecutionStatus(struct soap*, const char *, int, enum api__ExecutionStatus *const*, const char *);
+SOAP_FMAC3 enum api__ExecutionStatus ** SOAP_FMAC4 soap_in_PointerToapi__ExecutionStatus(struct soap*, const char*, enum api__ExecutionStatus **, const char*);
 
-#define soap_write_PointerTons1__ExecutionStatus(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__ExecutionStatus(soap, data), 0) || soap_put_PointerTons1__ExecutionStatus(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__ExecutionStatus(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__ExecutionStatus(soap, data), 0) || soap_put_PointerToapi__ExecutionStatus(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__ExecutionStatus(struct soap*, enum ns1__ExecutionStatus *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__ExecutionStatus(struct soap*, enum api__ExecutionStatus *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__ExecutionStatus(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__ExecutionStatus(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__ExecutionStatus(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__ExecutionStatus(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 enum ns1__ExecutionStatus ** SOAP_FMAC4 soap_get_PointerTons1__ExecutionStatus(struct soap*, enum ns1__ExecutionStatus **, const char*, const char*);
+SOAP_FMAC3 enum api__ExecutionStatus ** SOAP_FMAC4 soap_get_PointerToapi__ExecutionStatus(struct soap*, enum api__ExecutionStatus **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines
-#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines (76)
+#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines
+#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines (76)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, std::vector<ns1__ArrayOfPipelines * >*const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, const char *, int, std::vector<ns1__ArrayOfPipelines * >*const*, const char *);
-SOAP_FMAC3 std::vector<ns1__ArrayOfPipelines * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, const char*, std::vector<ns1__ArrayOfPipelines * >**, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, std::vector<api__ArrayOfPipelines * >*const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, const char *, int, std::vector<api__ArrayOfPipelines * >*const*, const char *);
+SOAP_FMAC3 std::vector<api__ArrayOfPipelines * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, const char*, std::vector<api__ArrayOfPipelines * >**, const char*);
 
-#define soap_write_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, std::vector<ns1__ArrayOfPipelines * >*const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, std::vector<api__ArrayOfPipelines * >*const*, const char*, const char*);
 
-#define soap_read_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 std::vector<ns1__ArrayOfPipelines * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, std::vector<ns1__ArrayOfPipelines * >**, const char*, const char*);
+SOAP_FMAC3 std::vector<api__ArrayOfPipelines * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, std::vector<api__ArrayOfPipelines * >**, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__ArrayOfPipelines
-#define SOAP_TYPE_PointerTons1__ArrayOfPipelines (74)
+#ifndef SOAP_TYPE_PointerToapi__ArrayOfPipelines
+#define SOAP_TYPE_PointerToapi__ArrayOfPipelines (74)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__ArrayOfPipelines(struct soap*, ns1__ArrayOfPipelines *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__ArrayOfPipelines(struct soap*, const char *, int, ns1__ArrayOfPipelines *const*, const char *);
-SOAP_FMAC3 ns1__ArrayOfPipelines ** SOAP_FMAC4 soap_in_PointerTons1__ArrayOfPipelines(struct soap*, const char*, ns1__ArrayOfPipelines **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__ArrayOfPipelines(struct soap*, api__ArrayOfPipelines *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__ArrayOfPipelines(struct soap*, const char *, int, api__ArrayOfPipelines *const*, const char *);
+SOAP_FMAC3 api__ArrayOfPipelines ** SOAP_FMAC4 soap_in_PointerToapi__ArrayOfPipelines(struct soap*, const char*, api__ArrayOfPipelines **, const char*);
 
-#define soap_write_PointerTons1__ArrayOfPipelines(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__ArrayOfPipelines(soap, data), 0) || soap_put_PointerTons1__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__ArrayOfPipelines(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__ArrayOfPipelines(soap, data), 0) || soap_put_PointerToapi__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__ArrayOfPipelines(struct soap*, ns1__ArrayOfPipelines *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__ArrayOfPipelines(struct soap*, api__ArrayOfPipelines *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__ArrayOfPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__ArrayOfPipelines(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__ArrayOfPipelines(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__ArrayOfPipelines ** SOAP_FMAC4 soap_get_PointerTons1__ArrayOfPipelines(struct soap*, ns1__ArrayOfPipelines **, const char*, const char*);
+SOAP_FMAC3 api__ArrayOfPipelines ** SOAP_FMAC4 soap_get_PointerToapi__ArrayOfPipelines(struct soap*, api__ArrayOfPipelines **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions
-#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions (73)
+#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions
+#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions (73)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, std::vector<ns1__ArrayOfExecutions * >*const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, const char *, int, std::vector<ns1__ArrayOfExecutions * >*const*, const char *);
-SOAP_FMAC3 std::vector<ns1__ArrayOfExecutions * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, const char*, std::vector<ns1__ArrayOfExecutions * >**, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, std::vector<api__ArrayOfExecutions * >*const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, const char *, int, std::vector<api__ArrayOfExecutions * >*const*, const char *);
+SOAP_FMAC3 std::vector<api__ArrayOfExecutions * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, const char*, std::vector<api__ArrayOfExecutions * >**, const char*);
 
-#define soap_write_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, std::vector<ns1__ArrayOfExecutions * >*const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, std::vector<api__ArrayOfExecutions * >*const*, const char*, const char*);
 
-#define soap_read_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 std::vector<ns1__ArrayOfExecutions * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, std::vector<ns1__ArrayOfExecutions * >**, const char*, const char*);
+SOAP_FMAC3 std::vector<api__ArrayOfExecutions * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, std::vector<api__ArrayOfExecutions * >**, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__ArrayOfExecutions
-#define SOAP_TYPE_PointerTons1__ArrayOfExecutions (71)
+#ifndef SOAP_TYPE_PointerToapi__ArrayOfExecutions
+#define SOAP_TYPE_PointerToapi__ArrayOfExecutions (71)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__ArrayOfExecutions(struct soap*, ns1__ArrayOfExecutions *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__ArrayOfExecutions(struct soap*, const char *, int, ns1__ArrayOfExecutions *const*, const char *);
-SOAP_FMAC3 ns1__ArrayOfExecutions ** SOAP_FMAC4 soap_in_PointerTons1__ArrayOfExecutions(struct soap*, const char*, ns1__ArrayOfExecutions **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__ArrayOfExecutions(struct soap*, api__ArrayOfExecutions *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__ArrayOfExecutions(struct soap*, const char *, int, api__ArrayOfExecutions *const*, const char *);
+SOAP_FMAC3 api__ArrayOfExecutions ** SOAP_FMAC4 soap_in_PointerToapi__ArrayOfExecutions(struct soap*, const char*, api__ArrayOfExecutions **, const char*);
 
-#define soap_write_PointerTons1__ArrayOfExecutions(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__ArrayOfExecutions(soap, data), 0) || soap_put_PointerTons1__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__ArrayOfExecutions(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__ArrayOfExecutions(soap, data), 0) || soap_put_PointerToapi__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__ArrayOfExecutions(struct soap*, ns1__ArrayOfExecutions *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__ArrayOfExecutions(struct soap*, api__ArrayOfExecutions *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__ArrayOfExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__ArrayOfExecutions(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__ArrayOfExecutions(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__ArrayOfExecutions ** SOAP_FMAC4 soap_get_PointerTons1__ArrayOfExecutions(struct soap*, ns1__ArrayOfExecutions **, const char*, const char*);
+SOAP_FMAC3 api__ArrayOfExecutions ** SOAP_FMAC4 soap_get_PointerToapi__ArrayOfExecutions(struct soap*, api__ArrayOfExecutions **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings
-#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings (70)
+#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings
+#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings (70)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, std::vector<ns1__ArrayOfStrings * >*const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, const char *, int, std::vector<ns1__ArrayOfStrings * >*const*, const char *);
-SOAP_FMAC3 std::vector<ns1__ArrayOfStrings * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, const char*, std::vector<ns1__ArrayOfStrings * >**, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, std::vector<api__ArrayOfStrings * >*const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, const char *, int, std::vector<api__ArrayOfStrings * >*const*, const char *);
+SOAP_FMAC3 std::vector<api__ArrayOfStrings * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, const char*, std::vector<api__ArrayOfStrings * >**, const char*);
 
-#define soap_write_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, std::vector<ns1__ArrayOfStrings * >*const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, std::vector<api__ArrayOfStrings * >*const*, const char*, const char*);
 
-#define soap_read_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 std::vector<ns1__ArrayOfStrings * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, std::vector<ns1__ArrayOfStrings * >**, const char*, const char*);
+SOAP_FMAC3 std::vector<api__ArrayOfStrings * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, std::vector<api__ArrayOfStrings * >**, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__ArrayOfStrings
-#define SOAP_TYPE_PointerTons1__ArrayOfStrings (68)
+#ifndef SOAP_TYPE_PointerToapi__ArrayOfStrings
+#define SOAP_TYPE_PointerToapi__ArrayOfStrings (68)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__ArrayOfStrings(struct soap*, ns1__ArrayOfStrings *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__ArrayOfStrings(struct soap*, const char *, int, ns1__ArrayOfStrings *const*, const char *);
-SOAP_FMAC3 ns1__ArrayOfStrings ** SOAP_FMAC4 soap_in_PointerTons1__ArrayOfStrings(struct soap*, const char*, ns1__ArrayOfStrings **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__ArrayOfStrings(struct soap*, api__ArrayOfStrings *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__ArrayOfStrings(struct soap*, const char *, int, api__ArrayOfStrings *const*, const char *);
+SOAP_FMAC3 api__ArrayOfStrings ** SOAP_FMAC4 soap_in_PointerToapi__ArrayOfStrings(struct soap*, const char*, api__ArrayOfStrings **, const char*);
 
-#define soap_write_PointerTons1__ArrayOfStrings(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__ArrayOfStrings(soap, data), 0) || soap_put_PointerTons1__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__ArrayOfStrings(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__ArrayOfStrings(soap, data), 0) || soap_put_PointerToapi__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__ArrayOfStrings(struct soap*, ns1__ArrayOfStrings *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__ArrayOfStrings(struct soap*, api__ArrayOfStrings *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__ArrayOfStrings(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__ArrayOfStrings(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__ArrayOfStrings(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__ArrayOfStrings ** SOAP_FMAC4 soap_get_PointerTons1__ArrayOfStrings(struct soap*, ns1__ArrayOfStrings **, const char*, const char*);
+SOAP_FMAC3 api__ArrayOfStrings ** SOAP_FMAC4 soap_get_PointerToapi__ArrayOfStrings(struct soap*, api__ArrayOfStrings **, const char*, const char*);
 
 #ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfstd__string
 #define SOAP_TYPE_PointerTostd__vectorTemplateOfstd__string (67)
@@ -2587,65 +2587,65 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfstd__string(str
 
 SOAP_FMAC3 std::vector<std::string >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfstd__string(struct soap*, std::vector<std::string >**, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__GlobalProperties
-#define SOAP_TYPE_PointerTons1__GlobalProperties (65)
+#ifndef SOAP_TYPE_PointerToapi__GlobalProperties
+#define SOAP_TYPE_PointerToapi__GlobalProperties (65)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__GlobalProperties(struct soap*, ns1__GlobalProperties *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__GlobalProperties(struct soap*, const char *, int, ns1__GlobalProperties *const*, const char *);
-SOAP_FMAC3 ns1__GlobalProperties ** SOAP_FMAC4 soap_in_PointerTons1__GlobalProperties(struct soap*, const char*, ns1__GlobalProperties **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__GlobalProperties(struct soap*, api__GlobalProperties *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__GlobalProperties(struct soap*, const char *, int, api__GlobalProperties *const*, const char *);
+SOAP_FMAC3 api__GlobalProperties ** SOAP_FMAC4 soap_in_PointerToapi__GlobalProperties(struct soap*, const char*, api__GlobalProperties **, const char*);
 
-#define soap_write_PointerTons1__GlobalProperties(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__GlobalProperties(soap, data), 0) || soap_put_PointerTons1__GlobalProperties(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__GlobalProperties(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__GlobalProperties(soap, data), 0) || soap_put_PointerToapi__GlobalProperties(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__GlobalProperties(struct soap*, ns1__GlobalProperties *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__GlobalProperties(struct soap*, api__GlobalProperties *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__GlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__GlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__GlobalProperties(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__GlobalProperties(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__GlobalProperties ** SOAP_FMAC4 soap_get_PointerTons1__GlobalProperties(struct soap*, ns1__GlobalProperties **, const char*, const char*);
+SOAP_FMAC3 api__GlobalProperties ** SOAP_FMAC4 soap_get_PointerToapi__GlobalProperties(struct soap*, api__GlobalProperties **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__Execution
-#define SOAP_TYPE_PointerTons1__Execution (64)
+#ifndef SOAP_TYPE_PointerToapi__Execution
+#define SOAP_TYPE_PointerToapi__Execution (64)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__Execution(struct soap*, ns1__Execution *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__Execution(struct soap*, const char *, int, ns1__Execution *const*, const char *);
-SOAP_FMAC3 ns1__Execution ** SOAP_FMAC4 soap_in_PointerTons1__Execution(struct soap*, const char*, ns1__Execution **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__Execution(struct soap*, api__Execution *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__Execution(struct soap*, const char *, int, api__Execution *const*, const char *);
+SOAP_FMAC3 api__Execution ** SOAP_FMAC4 soap_in_PointerToapi__Execution(struct soap*, const char*, api__Execution **, const char*);
 
-#define soap_write_PointerTons1__Execution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__Execution(soap, data), 0) || soap_put_PointerTons1__Execution(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__Execution(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__Execution(soap, data), 0) || soap_put_PointerToapi__Execution(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__Execution(struct soap*, ns1__Execution *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__Execution(struct soap*, api__Execution *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__Execution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__Execution(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__Execution(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__Execution(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__Execution ** SOAP_FMAC4 soap_get_PointerTons1__Execution(struct soap*, ns1__Execution **, const char*, const char*);
+SOAP_FMAC3 api__Execution ** SOAP_FMAC4 soap_get_PointerToapi__Execution(struct soap*, api__Execution **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__Pipeline
-#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerTons1__Pipeline (63)
+#ifndef SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__Pipeline
+#define SOAP_TYPE_PointerTostd__vectorTemplateOfPointerToapi__Pipeline (63)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(struct soap*, std::vector<ns1__Pipeline * >*const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(struct soap*, const char *, int, std::vector<ns1__Pipeline * >*const*, const char *);
-SOAP_FMAC3 std::vector<ns1__Pipeline * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(struct soap*, const char*, std::vector<ns1__Pipeline * >**, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(struct soap*, std::vector<api__Pipeline * >*const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(struct soap*, const char *, int, std::vector<api__Pipeline * >*const*, const char *);
+SOAP_FMAC3 std::vector<api__Pipeline * >** SOAP_FMAC4 soap_in_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(struct soap*, const char*, std::vector<api__Pipeline * >**, const char*);
 
-#define soap_write_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(soap, data), 0) || soap_put_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(struct soap*, std::vector<ns1__Pipeline * >*const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(struct soap*, std::vector<api__Pipeline * >*const*, const char*, const char*);
 
-#define soap_read_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 std::vector<ns1__Pipeline * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerTons1__Pipeline(struct soap*, std::vector<ns1__Pipeline * >**, const char*, const char*);
+SOAP_FMAC3 std::vector<api__Pipeline * >** SOAP_FMAC4 soap_get_PointerTostd__vectorTemplateOfPointerToapi__Pipeline(struct soap*, std::vector<api__Pipeline * >**, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__Pipeline
-#define SOAP_TYPE_PointerTons1__Pipeline (61)
+#ifndef SOAP_TYPE_PointerToapi__Pipeline
+#define SOAP_TYPE_PointerToapi__Pipeline (61)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__Pipeline(struct soap*, ns1__Pipeline *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__Pipeline(struct soap*, const char *, int, ns1__Pipeline *const*, const char *);
-SOAP_FMAC3 ns1__Pipeline ** SOAP_FMAC4 soap_in_PointerTons1__Pipeline(struct soap*, const char*, ns1__Pipeline **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__Pipeline(struct soap*, api__Pipeline *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__Pipeline(struct soap*, const char *, int, api__Pipeline *const*, const char *);
+SOAP_FMAC3 api__Pipeline ** SOAP_FMAC4 soap_in_PointerToapi__Pipeline(struct soap*, const char*, api__Pipeline **, const char*);
 
-#define soap_write_PointerTons1__Pipeline(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__Pipeline(soap, data), 0) || soap_put_PointerTons1__Pipeline(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__Pipeline(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__Pipeline(soap, data), 0) || soap_put_PointerToapi__Pipeline(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__Pipeline(struct soap*, ns1__Pipeline *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__Pipeline(struct soap*, api__Pipeline *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__Pipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__Pipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__Pipeline(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__Pipeline(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__Pipeline ** SOAP_FMAC4 soap_get_PointerTons1__Pipeline(struct soap*, ns1__Pipeline **, const char*, const char*);
+SOAP_FMAC3 api__Pipeline ** SOAP_FMAC4 soap_get_PointerToapi__Pipeline(struct soap*, api__Pipeline **, const char*, const char*);
 
 #ifndef SOAP_TYPE_PointerTostd__string
 #define SOAP_TYPE_PointerTostd__string (60)
@@ -2662,20 +2662,20 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__string(struct soap*, std::strin
 
 SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_get_PointerTostd__string(struct soap*, std::string **, const char*, const char*);
 
-#ifndef SOAP_TYPE_PointerTons1__Response
-#define SOAP_TYPE_PointerTons1__Response (59)
+#ifndef SOAP_TYPE_PointerToapi__Response
+#define SOAP_TYPE_PointerToapi__Response (59)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons1__Response(struct soap*, ns1__Response *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons1__Response(struct soap*, const char *, int, ns1__Response *const*, const char *);
-SOAP_FMAC3 ns1__Response ** SOAP_FMAC4 soap_in_PointerTons1__Response(struct soap*, const char*, ns1__Response **, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToapi__Response(struct soap*, api__Response *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToapi__Response(struct soap*, const char *, int, api__Response *const*, const char *);
+SOAP_FMAC3 api__Response ** SOAP_FMAC4 soap_in_PointerToapi__Response(struct soap*, const char*, api__Response **, const char*);
 
-#define soap_write_PointerTons1__Response(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerTons1__Response(soap, data), 0) || soap_put_PointerTons1__Response(soap, data, NULL, NULL) || soap_end_send(soap) )
+#define soap_write_PointerToapi__Response(soap, data) ( soap_begin_send(soap) || (soap_serialize_PointerToapi__Response(soap, data), 0) || soap_put_PointerToapi__Response(soap, data, NULL, NULL) || soap_end_send(soap) )
 
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons1__Response(struct soap*, ns1__Response *const*, const char*, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToapi__Response(struct soap*, api__Response *const*, const char*, const char*);
 
-#define soap_read_PointerTons1__Response(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerTons1__Response(soap, data, NULL, NULL) || soap_end_recv(soap) )
+#define soap_read_PointerToapi__Response(soap, data) ( soap_begin_recv(soap) || !soap_get_PointerToapi__Response(soap, data, NULL, NULL) || soap_end_recv(soap) )
 
-SOAP_FMAC3 ns1__Response ** SOAP_FMAC4 soap_get_PointerTons1__Response(struct soap*, ns1__Response **, const char*, const char*);
+SOAP_FMAC3 api__Response ** SOAP_FMAC4 soap_get_PointerToapi__Response(struct soap*, api__Response **, const char*, const char*);
 
 #ifndef SOAP_TYPE__QName
 #define SOAP_TYPE__QName (5)
@@ -2713,165 +2713,165 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_put_string(struct soap*, char *const*, const char
 
 SOAP_FMAC3 char ** SOAP_FMAC4 soap_get_string(struct soap*, char **, const char*, const char*);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfns1__Module
-#define SOAP_TYPE_std__vectorTemplateOfns1__Module (100)
+#ifndef SOAP_TYPE_std__vectorTemplateOfapi__Module
+#define SOAP_TYPE_std__vectorTemplateOfapi__Module (100)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfns1__Module(struct soap*, std::vector<enum ns1__Module >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfns1__Module(struct soap*, const std::vector<enum ns1__Module >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfns1__Module(struct soap*, const char*, int, const std::vector<enum ns1__Module >*, const char*);
-SOAP_FMAC3 std::vector<enum ns1__Module >* SOAP_FMAC4 soap_in_std__vectorTemplateOfns1__Module(struct soap*, const char*, std::vector<enum ns1__Module >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfapi__Module(struct soap*, std::vector<enum api__Module >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfapi__Module(struct soap*, const std::vector<enum api__Module >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfapi__Module(struct soap*, const char*, int, const std::vector<enum api__Module >*, const char*);
+SOAP_FMAC3 std::vector<enum api__Module >* SOAP_FMAC4 soap_in_std__vectorTemplateOfapi__Module(struct soap*, const char*, std::vector<enum api__Module >*, const char*);
 
-#define soap_new_std__vectorTemplateOfns1__Module(soap, n) soap_instantiate_std__vectorTemplateOfns1__Module(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfapi__Module(soap, n) soap_instantiate_std__vectorTemplateOfapi__Module(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfns1__Module(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfapi__Module(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<enum ns1__Module > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfns1__Module(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfns1__Module(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<enum api__Module > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfapi__Module(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfapi__Module(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair (97)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair (97)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(struct soap*, std::vector<ns1__IntKeyStringValuePair * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(struct soap*, const std::vector<ns1__IntKeyStringValuePair * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(struct soap*, const char*, int, const std::vector<ns1__IntKeyStringValuePair * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__IntKeyStringValuePair * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(struct soap*, const char*, std::vector<ns1__IntKeyStringValuePair * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(struct soap*, std::vector<api__IntKeyStringValuePair * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(struct soap*, const std::vector<api__IntKeyStringValuePair * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(struct soap*, const char*, int, const std::vector<api__IntKeyStringValuePair * >*, const char*);
+SOAP_FMAC3 std::vector<api__IntKeyStringValuePair * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(struct soap*, const char*, std::vector<api__IntKeyStringValuePair * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__IntKeyStringValuePair * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__IntKeyStringValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__IntKeyStringValuePair * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__IntKeyStringValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__PipelineParameter
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__PipelineParameter (95)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__PipelineParameter
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__PipelineParameter (95)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__PipelineParameter(struct soap*, std::vector<ns1__PipelineParameter * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__PipelineParameter(struct soap*, const std::vector<ns1__PipelineParameter * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__PipelineParameter(struct soap*, const char*, int, const std::vector<ns1__PipelineParameter * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__PipelineParameter * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__PipelineParameter(struct soap*, const char*, std::vector<ns1__PipelineParameter * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__PipelineParameter(struct soap*, std::vector<api__PipelineParameter * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__PipelineParameter(struct soap*, const std::vector<api__PipelineParameter * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__PipelineParameter(struct soap*, const char*, int, const std::vector<api__PipelineParameter * >*, const char*);
+SOAP_FMAC3 std::vector<api__PipelineParameter * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__PipelineParameter(struct soap*, const char*, std::vector<api__PipelineParameter * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__PipelineParameter(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__PipelineParameter(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__PipelineParameter(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__PipelineParameter(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__PipelineParameter(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__PipelineParameter(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__PipelineParameter * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__PipelineParameter(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__PipelineParameter(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__PipelineParameter * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__PipelineParameter(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__PipelineParameter(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair (91)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair (91)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(struct soap*, std::vector<ns1__StringKeyParameterValuePair * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(struct soap*, const std::vector<ns1__StringKeyParameterValuePair * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(struct soap*, const char*, int, const std::vector<ns1__StringKeyParameterValuePair * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__StringKeyParameterValuePair * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(struct soap*, const char*, std::vector<ns1__StringKeyParameterValuePair * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(struct soap*, std::vector<api__StringKeyParameterValuePair * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(struct soap*, const std::vector<api__StringKeyParameterValuePair * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(struct soap*, const char*, int, const std::vector<api__StringKeyParameterValuePair * >*, const char*);
+SOAP_FMAC3 std::vector<api__StringKeyParameterValuePair * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(struct soap*, const char*, std::vector<api__StringKeyParameterValuePair * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__StringKeyParameterValuePair * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__StringKeyParameterValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__StringKeyParameterValuePair * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__StringKeyParameterValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__StringKeyValuePair
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__StringKeyValuePair (88)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__StringKeyValuePair
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__StringKeyValuePair (88)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__StringKeyValuePair(struct soap*, std::vector<ns1__StringKeyValuePair * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__StringKeyValuePair(struct soap*, const std::vector<ns1__StringKeyValuePair * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__StringKeyValuePair(struct soap*, const char*, int, const std::vector<ns1__StringKeyValuePair * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__StringKeyValuePair * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__StringKeyValuePair(struct soap*, const char*, std::vector<ns1__StringKeyValuePair * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__StringKeyValuePair(struct soap*, std::vector<api__StringKeyValuePair * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__StringKeyValuePair(struct soap*, const std::vector<api__StringKeyValuePair * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__StringKeyValuePair(struct soap*, const char*, int, const std::vector<api__StringKeyValuePair * >*, const char*);
+SOAP_FMAC3 std::vector<api__StringKeyValuePair * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__StringKeyValuePair(struct soap*, const char*, std::vector<api__StringKeyValuePair * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__StringKeyValuePair(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__StringKeyValuePair(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__StringKeyValuePair(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__StringKeyValuePair(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__StringKeyValuePair(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__StringKeyValuePair(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__StringKeyValuePair * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__StringKeyValuePair(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__StringKeyValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__StringKeyValuePair * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__StringKeyValuePair(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__StringKeyValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__Execution
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__Execution (82)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__Execution
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__Execution (82)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__Execution(struct soap*, std::vector<ns1__Execution * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__Execution(struct soap*, const std::vector<ns1__Execution * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__Execution(struct soap*, const char*, int, const std::vector<ns1__Execution * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__Execution * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__Execution(struct soap*, const char*, std::vector<ns1__Execution * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__Execution(struct soap*, std::vector<api__Execution * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__Execution(struct soap*, const std::vector<api__Execution * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__Execution(struct soap*, const char*, int, const std::vector<api__Execution * >*, const char*);
+SOAP_FMAC3 std::vector<api__Execution * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__Execution(struct soap*, const char*, std::vector<api__Execution * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__Execution(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__Execution(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__Execution(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__Execution(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__Execution(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__Execution(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__Execution * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__Execution(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__Execution(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__Execution * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__Execution(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__Execution(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair (79)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair (79)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, std::vector<ns1__PipelineKeyBooleanValuePair * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, const std::vector<ns1__PipelineKeyBooleanValuePair * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, const char*, int, const std::vector<ns1__PipelineKeyBooleanValuePair * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__PipelineKeyBooleanValuePair * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, const char*, std::vector<ns1__PipelineKeyBooleanValuePair * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, std::vector<api__PipelineKeyBooleanValuePair * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, const std::vector<api__PipelineKeyBooleanValuePair * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, const char*, int, const std::vector<api__PipelineKeyBooleanValuePair * >*, const char*);
+SOAP_FMAC3 std::vector<api__PipelineKeyBooleanValuePair * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, const char*, std::vector<api__PipelineKeyBooleanValuePair * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__PipelineKeyBooleanValuePair * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__PipelineKeyBooleanValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__PipelineKeyBooleanValuePair * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__PipelineKeyBooleanValuePair(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__ArrayOfPipelines
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__ArrayOfPipelines (75)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__ArrayOfPipelines
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__ArrayOfPipelines (75)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, std::vector<ns1__ArrayOfPipelines * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, const std::vector<ns1__ArrayOfPipelines * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, const char*, int, const std::vector<ns1__ArrayOfPipelines * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__ArrayOfPipelines * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, const char*, std::vector<ns1__ArrayOfPipelines * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, std::vector<api__ArrayOfPipelines * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, const std::vector<api__ArrayOfPipelines * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, const char*, int, const std::vector<api__ArrayOfPipelines * >*, const char*);
+SOAP_FMAC3 std::vector<api__ArrayOfPipelines * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, const char*, std::vector<api__ArrayOfPipelines * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__ArrayOfPipelines * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__ArrayOfPipelines * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__ArrayOfExecutions
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__ArrayOfExecutions (72)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__ArrayOfExecutions
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__ArrayOfExecutions (72)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, std::vector<ns1__ArrayOfExecutions * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, const std::vector<ns1__ArrayOfExecutions * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, const char*, int, const std::vector<ns1__ArrayOfExecutions * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__ArrayOfExecutions * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, const char*, std::vector<ns1__ArrayOfExecutions * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, std::vector<api__ArrayOfExecutions * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, const std::vector<api__ArrayOfExecutions * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, const char*, int, const std::vector<api__ArrayOfExecutions * >*, const char*);
+SOAP_FMAC3 std::vector<api__ArrayOfExecutions * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, const char*, std::vector<api__ArrayOfExecutions * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__ArrayOfExecutions * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__ArrayOfExecutions(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__ArrayOfExecutions * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__ArrayOfExecutions(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__ArrayOfStrings
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__ArrayOfStrings (69)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__ArrayOfStrings
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__ArrayOfStrings (69)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, std::vector<ns1__ArrayOfStrings * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, const std::vector<ns1__ArrayOfStrings * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, const char*, int, const std::vector<ns1__ArrayOfStrings * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__ArrayOfStrings * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, const char*, std::vector<ns1__ArrayOfStrings * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, std::vector<api__ArrayOfStrings * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, const std::vector<api__ArrayOfStrings * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, const char*, int, const std::vector<api__ArrayOfStrings * >*, const char*);
+SOAP_FMAC3 std::vector<api__ArrayOfStrings * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, const char*, std::vector<api__ArrayOfStrings * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__ArrayOfStrings(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__ArrayOfStrings(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__ArrayOfStrings(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__ArrayOfStrings(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__ArrayOfStrings(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__ArrayOfStrings(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__ArrayOfStrings * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__ArrayOfStrings(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__ArrayOfStrings * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__ArrayOfStrings(struct soap*, int, int, void*, size_t, const void*, size_t);
 
 #ifndef SOAP_TYPE_std__vectorTemplateOfstd__string
 #define SOAP_TYPE_std__vectorTemplateOfstd__string (66)
@@ -2889,21 +2889,21 @@ SOAP_FMAC3 std::vector<std::string >* SOAP_FMAC4 soap_in_std__vectorTemplateOfst
 SOAP_FMAC1 std::vector<std::string > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfstd__string(struct soap*, int, const char*, const char*, size_t*);
 SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfstd__string(struct soap*, int, int, void*, size_t, const void*, size_t);
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons1__Pipeline
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons1__Pipeline (62)
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerToapi__Pipeline
+#define SOAP_TYPE_std__vectorTemplateOfPointerToapi__Pipeline (62)
 #endif
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTons1__Pipeline(struct soap*, std::vector<ns1__Pipeline * >*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTons1__Pipeline(struct soap*, const std::vector<ns1__Pipeline * >*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTons1__Pipeline(struct soap*, const char*, int, const std::vector<ns1__Pipeline * >*, const char*);
-SOAP_FMAC3 std::vector<ns1__Pipeline * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTons1__Pipeline(struct soap*, const char*, std::vector<ns1__Pipeline * >*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerToapi__Pipeline(struct soap*, std::vector<api__Pipeline * >*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerToapi__Pipeline(struct soap*, const std::vector<api__Pipeline * >*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerToapi__Pipeline(struct soap*, const char*, int, const std::vector<api__Pipeline * >*, const char*);
+SOAP_FMAC3 std::vector<api__Pipeline * >* SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerToapi__Pipeline(struct soap*, const char*, std::vector<api__Pipeline * >*, const char*);
 
-#define soap_new_std__vectorTemplateOfPointerTons1__Pipeline(soap, n) soap_instantiate_std__vectorTemplateOfPointerTons1__Pipeline(soap, n, NULL, NULL, NULL)
+#define soap_new_std__vectorTemplateOfPointerToapi__Pipeline(soap, n) soap_instantiate_std__vectorTemplateOfPointerToapi__Pipeline(soap, n, NULL, NULL, NULL)
 
 
-#define soap_delete_std__vectorTemplateOfPointerTons1__Pipeline(soap, p) soap_delete(soap, p)
+#define soap_delete_std__vectorTemplateOfPointerToapi__Pipeline(soap, p) soap_delete(soap, p)
 
-SOAP_FMAC1 std::vector<ns1__Pipeline * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTons1__Pipeline(struct soap*, int, const char*, const char*, size_t*);
-SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerTons1__Pipeline(struct soap*, int, int, void*, size_t, const void*, size_t);
+SOAP_FMAC1 std::vector<api__Pipeline * > * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerToapi__Pipeline(struct soap*, int, const char*, const char*, size_t*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_copy_std__vectorTemplateOfPointerToapi__Pipeline(struct soap*, int, int, void*, size_t, const void*, size_t);
 
 #endif
 

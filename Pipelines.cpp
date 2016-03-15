@@ -39,21 +39,21 @@ bool Pipelines::request(struct soap *soap, const char * study_name){
 
   if (this->m_pPipelines==NULL)
   {
-    this->m_pPipelines = soap_new_std__vectorTemplateOfPointerTons1__ArrayOfPipelines(soap, 1);
+    this->m_pPipelines = soap_new_std__vectorTemplateOfPointerToapi__ArrayOfPipelines(soap, 1);
   }else{
     this->m_pPipelines->clear();
   }
 
-  ns1__ArrayOfPipelines* ns1__ArrayOfPipelines_ = soap_new_ns1__ArrayOfPipelines(soap, 1);
-  this->m_pPipelines->push_back(ns1__ArrayOfPipelines_);
+  api__ArrayOfPipelines* api__ArrayOfPipelines_ = soap_new_api__ArrayOfPipelines(soap, 1);
+  this->m_pPipelines->push_back(api__ArrayOfPipelines_);
 
   for(rapidjson::SizeType i = 0; i < m_document.Size(); i++)
   {
-    ns1__Pipeline * ns1__Pipeline_ = soap_new_ns1__Pipeline(soap, 1);
+    api__Pipeline * api__Pipeline_ = soap_new_api__Pipeline(soap, 1);
     const rapidjson::Value & pipeline_value = m_document[i];
-    ns1__Pipeline_->identifier = pipeline_value["identifier"].GetString();
-    ns1__Pipeline_->name = pipeline_value["name"].GetString();
-    (*this->m_pPipelines)[0]->item.push_back(ns1__Pipeline_);
+    api__Pipeline_->identifier = pipeline_value["identifier"].GetString();
+    api__Pipeline_->name = pipeline_value["name"].GetString();
+    (*this->m_pPipelines)[0]->item.push_back(api__Pipeline_);
   }  
 
   return true;
