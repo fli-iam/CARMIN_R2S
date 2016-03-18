@@ -17,6 +17,13 @@
 #include "rapidjson/writer.h"
 
 
+/**********************************************************
+ * Global variables
+ * ************************************************************/
+
+
+Config config = Config();
+
 
 int main(int argc, char **argv) 
 { 
@@ -34,22 +41,33 @@ int main(int argc, char **argv)
    std::cout << buffer.GetString() << std::endl;
    std::cout << buffer.GetSize() << std::endl;
    */
-   
+
    struct soap soap; 
    int m, s; 
    soap_init(&soap); 
    soap.cookie_domain = ".."; 
    soap.cookie_path = "/"; // the path which is used to filter/set cookies with this destination 
+   
    if (argc < 2)
    { 
+
+      std::cout << "It should contain config file. Please checkout the config examples in config_template" << std::endl;
+      exit(1);
+
       soap_getenv_cookies(&soap); // CGI app: grab cookies from 'HTTP_COOKIE' env var 
-      soap_serve(&soap); 
+      soap_serve(&soap);
+
    }
    else
-   { 
-      m = soap_bind(&soap, NULL, atoi(argv[1]), 100); 
-      if (m < 0) 
-         exit(1); 
+   {  
+      std::string path_config = argv[1];
+      if(!config.LoadFromFile(path_config))
+      {
+	exit(1);
+      }
+      m = soap_bind(&soap, NULL, config.GSOAP_SERVER_PORT, 100); 
+      if (m < 0)
+         exit(1);
       for (int i = 1; ; i++) 
       {
          s = soap_accept(&soap); 
@@ -137,7 +155,7 @@ int __api__authenticateSession(
   //std::cout << "password:" << api__authenticateSession_->password << std::endl;
   
   PCURL_SLIST cookies_data_list = NULL;
-  CatiwebAuth catiwebAuth = CatiwebAuth();
+  CatiwebAuth catiwebAuth = CatiwebAuth(&config);
 
   bool is_success = catiwebAuth.Login(
       api__authenticateSession_->userName.c_str(),
@@ -148,7 +166,7 @@ int __api__authenticateSession(
   api__authenticateSessionResponse_->return_ = soap_new_api__Response(soap, 1);
 
   if (is_success){
-    CookieData cookieData = CookieData();
+    CookieData cookieData = CookieData(&config);
     // convert cookies_data_list to gsoap
     cookieData.set_curl_cookie_to_gsoap_cookie(soap, cookies_data_list);
     curl_slist_free_all(cookies_data_list);
@@ -178,7 +196,7 @@ int __api__listPipelines(
 ){
   api__listPipelinesResponse_->return_ = soap_new_api__Response(soap, 1);
 
-  Pipelines pipelines = Pipelines();
+  Pipelines pipelines = Pipelines(&config);
   if(pipelines.request(soap, api__listPipelines_->studyIdentifier.c_str()))
   {
     api__listPipelinesResponse_->return_->statusCode = 0;
@@ -204,7 +222,7 @@ int __api__getPipeline(
   api__getPipelineResponse_->return_ = soap_new_api__Response(soap, 1);
   
   std::string pipelineId = api__getPipeline_->pipelineId;
-  Pipeline pipeline = Pipeline();
+  Pipeline pipeline = Pipeline(&config);
   bool is_success = pipeline.request(soap, pipelineId.c_str());
   
   if(is_success)
@@ -230,7 +248,7 @@ int __api__initExecution(
 ){
   api__initExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
   
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   bool is_success = execution.initExecution(soap, api__initExecution_);
 
   if(is_success)
@@ -258,7 +276,7 @@ int __api__deleteExecution(
 {
   api__deleteExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
 
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   bool is_success = execution.deleteExecution(soap, api__deleteExecution_);
 
   if(is_success)
@@ -285,7 +303,7 @@ int __api__listExecutions(
 ){
   api__listExecutionsResponse_->return_ = soap_new_api__Response(soap, 1);
  
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   bool is_success = execution.listExecutions(soap, api__listExecutions_);
 
   if(is_success)
@@ -312,7 +330,7 @@ int __api__getExecution(
 ){
   api__getExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
  
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   bool is_success = execution.getExecution(soap, api__getExecution_->executionId);
 
   if(is_success)
@@ -339,7 +357,7 @@ int __api__getGlobalProperties(
 ){
   api__getGlobalPropertiesResponse_->return_ = soap_new_api__Response(soap, 1);
  
-  GlobalProperties globalProperties = GlobalProperties();
+  GlobalProperties globalProperties = GlobalProperties(&config);
   bool is_success = globalProperties.request(soap);
 
   if(is_success)
@@ -366,7 +384,7 @@ int __api__killExecution(
 ){
   api__killExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
  
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   bool is_success = execution.killExecution(soap, api__killExecution_->executionId);
 
   if(is_success)
@@ -380,7 +398,6 @@ int __api__killExecution(
     api__killExecutionResponse_->return_->errorMessage = (soap_new_std__string(soap, 1));
     (*api__killExecutionResponse_->return_->errorMessage) = execution.m_error_message;
   }
-
   return SOAP_OK;
 }
 
@@ -393,7 +410,7 @@ int __api__playExecution(
   api__playExecutionResponse*         api__playExecutionResponse_
 ){
   api__playExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   bool is_success = execution.playExecution(soap, api__playExecution_->executionId);
 
   if(is_success)
@@ -421,7 +438,7 @@ int __api__getStdOut(
 ){
   api__getStdOutResponse_->return_ = soap_new_api__Response(soap, 1);
  
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   bool is_success = execution.getStdOutErr(soap, api__getStdOut_->executionId);
 
   if(is_success)
@@ -448,7 +465,7 @@ int __api__getStdErr(
 ){
   api__getStdErrResponse_->return_ = soap_new_api__Response(soap, 1);
  
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   bool is_success = execution.getStdOutErr(soap, api__getStdErr_->executionId);
 
   if(is_success)
@@ -465,9 +482,6 @@ int __api__getStdErr(
 
   return SOAP_OK;
 }
-
-
-
 
 
 /* not supported web service.........
@@ -547,7 +561,7 @@ int __api__updateExecution(
 ){
   api__updateExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
  
-  Execution execution = Execution();
+  Execution execution = Execution(&config);
   
   bool is_success = false;
   

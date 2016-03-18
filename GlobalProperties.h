@@ -10,9 +10,10 @@
 class GlobalProperties: public CurlProcess
 {
     public:
-      GlobalProperties();
+      GlobalProperties(Config *pconfig);
       bool request(struct soap *soap);
       api__GlobalProperties * m_api__GlobalProperties;
+      Config *m_pconfig;
 };
 
 #endif

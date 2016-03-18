@@ -9,16 +9,21 @@
 #include "rapidjson/stringbuffer.h"
 
 
-Pipelines::Pipelines(){
+Pipelines::Pipelines(Config *pconfig):CurlProcess(pconfig){
   this->m_pPipelines = NULL;
+  m_pconfig = pconfig;
+}
+
+Pipelines::Pipelines(Pipelines& pipelines, Config *pconfig):CurlProcess(pconfig){
+  this->m_pPipelines = NULL;
+  m_pconfig = pconfig;
 }
 
 bool Pipelines::request(struct soap *soap, const char * study_name){
 
-  Config config = Config();
-  char routeBuf[config.URL_MAX_LEN];
+  char routeBuf[m_pconfig->URL_MAX_LEN];
   snprintf(routeBuf, sizeof(routeBuf), "%s/%s/pipelines",
-	   config.CATIWEB_WEBSERVICE_API, study_name);
+	   m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), study_name);
 
   std::cout << "pipelie route:" << routeBuf << std::endl;
 
@@ -27,7 +32,7 @@ bool Pipelines::request(struct soap *soap, const char * study_name){
     return false;
   }
 
-  if (config.VERBOSE == 1L)
+  if (m_pconfig->VERBOSE == 1L)
   {
     std::cout << this->m_resBuf << std::endl;
   }

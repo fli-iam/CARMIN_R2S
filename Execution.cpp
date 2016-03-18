@@ -6,13 +6,15 @@
 #include "rapidjson/stringbuffer.h"
 
 
-Execution::Execution()
+Execution::Execution(Config *pconfig):CurlProcess(pconfig)
 {
   this->m_api__Execution = NULL;
   this->m_returnedValueListExecutions = NULL;
   
   this->m_std_out = NULL;
   this->m_std_err = NULL;
+  
+  m_pconfig = pconfig;
 }
 
 bool Execution::deleteExecution(
@@ -36,9 +38,9 @@ bool Execution::deleteExecution(
   bool deleteFiles = api__deleteExecution_->deleteFiles;
   
   Config config = Config();
-  char routeBuf[config.URL_MAX_LEN];
+  char routeBuf[m_pconfig->URL_MAX_LEN];
   snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
-	    config.CATIWEB_WEBSERVICE_API, executionId.c_str());
+	    m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
   if(!CurlProcess::request(soap, routeBuf, "delete"))
   {
     return false;
@@ -70,16 +72,16 @@ bool Execution::listExecutions(
     std::string studyIdentifier = api__listExecutions_->studyIdentifier;
     
     Config config = Config();
-    char routeBuf[config.URL_MAX_LEN];
+    char routeBuf[m_pconfig->URL_MAX_LEN];
     snprintf(routeBuf, sizeof(routeBuf), "%s/%s/executions",
-	     config.CATIWEB_WEBSERVICE_API, studyIdentifier.c_str());
+	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), studyIdentifier.c_str());
 
     if(!CurlProcess::request(soap, routeBuf, "get"))
     {
       return false;
     }
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << "route=" << routeBuf << std::endl;
       std::cout << m_resBuf << std::endl;
@@ -183,9 +185,9 @@ bool Execution::updateExecution(struct soap *soap,
 {
   Config config = Config();
 
-  char routeBuf[config.URL_MAX_LEN];
+  char routeBuf[m_pconfig->URL_MAX_LEN];
     snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
-	     config.CATIWEB_WEBSERVICE_API, executionId.c_str());
+	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
 
   rapidjson::Document document;
   document.SetObject();
@@ -214,7 +216,7 @@ bool Execution::updateExecution(struct soap *soap,
   rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
   document.Accept(writer);
 
-  if(config.VERBOSE)
+  if(m_pconfig->VERBOSE)
   {
     std::cout << buffer.GetString() << std::endl;
     std::cout << buffer.GetSize() << std::endl;
@@ -236,7 +238,7 @@ bool Execution::updateExecution(struct soap *soap,
     return false;
   }
 
-  if(config.VERBOSE)
+  if(m_pconfig->VERBOSE)
   {
     std::cout << "success parse_reponse_by_json" << std::endl;
   }
@@ -264,9 +266,9 @@ bool Execution::killExecution(struct soap *soap,
     /*
     Config config = Config();
 
-    char routeBuf[config.URL_MAX_LEN];
+    char routeBuf[m_pconfig->URL_MAX_LEN];
     snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
-	     config.CATIWEB_WEBSERVICE_API, executionId.c_str());
+	     m_pconfig->CATIWEB_WEBSERVICE_API, executionId.c_str());
 
     rapidjson::Document document;
     document.SetObject();
@@ -283,7 +285,7 @@ bool Execution::killExecution(struct soap *soap,
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     document.Accept(writer);
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << buffer.GetString() << std::endl;
       std::cout << buffer.GetSize() << std::endl;
@@ -305,7 +307,7 @@ bool Execution::killExecution(struct soap *soap,
       return false;
     }
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << "success parse_reponse_by_json" << std::endl;
     }
@@ -326,9 +328,9 @@ bool Execution::playExecution(struct soap *soap,
 
     Config config = Config();
 
-    char routeBuf[config.URL_MAX_LEN];
+    char routeBuf[m_pconfig->URL_MAX_LEN];
     snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
-	     config.CATIWEB_WEBSERVICE_API, executionId.c_str());
+	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
 
     rapidjson::Document document;
     document.SetObject();
@@ -345,7 +347,7 @@ bool Execution::playExecution(struct soap *soap,
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     document.Accept(writer);
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << buffer.GetString() << std::endl;
       std::cout << buffer.GetSize() << std::endl;
@@ -367,7 +369,7 @@ bool Execution::playExecution(struct soap *soap,
       return false;
     }
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << "success parse_reponse_by_json" << std::endl;
     }
@@ -387,9 +389,9 @@ bool Execution::getStdOutErr(struct soap *soap,
 {
     Config config = Config();
 
-    char routeBuf[config.URL_MAX_LEN];
+    char routeBuf[m_pconfig->URL_MAX_LEN];
     snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s/std_out_err",
-	     config.CATIWEB_WEBSERVICE_API, executionId.c_str());
+	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
 
     if(!CurlProcess::request(soap, routeBuf))
     {
@@ -401,7 +403,7 @@ bool Execution::getStdOutErr(struct soap *soap,
       return false;
     }
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << "success parse_reponse_by_json" << std::endl;
     }
@@ -437,9 +439,9 @@ bool Execution::getExecution(struct soap *soap,
 
     Config config = Config();
 
-    char routeBuf[config.URL_MAX_LEN];
+    char routeBuf[m_pconfig->URL_MAX_LEN];
     snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
-	     config.CATIWEB_WEBSERVICE_API, executionId.c_str());
+	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
 
     if(!CurlProcess::request(soap, routeBuf))
     {
@@ -451,7 +453,7 @@ bool Execution::getExecution(struct soap *soap,
       return false;
     }
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << "success parse_reponse_by_json" << std::endl;
     }
@@ -501,9 +503,9 @@ bool Execution::initExecution(
     std::string pipelineId = api__initExecution_-> pipelineId;
 
     Config config = Config();
-    char routeBuf[config.URL_MAX_LEN];
+    char routeBuf[m_pconfig->URL_MAX_LEN];
     snprintf(routeBuf, sizeof(routeBuf), "%s/%s/executions",
-	     config.CATIWEB_WEBSERVICE_API, studyId.c_str());
+	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), studyId.c_str());
 
     std::vector<api__StringKeyParameterValuePair*> &inputValue = api__initExecution_->inputValue;
 
@@ -526,14 +528,14 @@ bool Execution::initExecution(
     rapidjson::Value params;
     params.SetObject();
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << "params:" << std::endl;
     }
     for(int i=0; i < inputValue.size(); i += 1)
     {
       api__StringKeyParameterValuePair * api__StringKeyParameterValuePair = inputValue[i];
-      if(config.VERBOSE)
+      if(m_pconfig->VERBOSE)
       {
 	std::cout << api__StringKeyParameterValuePair->name << std::endl;
 	std::cout << api__StringKeyParameterValuePair->value << std::endl;
@@ -576,28 +578,28 @@ bool Execution::initExecution(
       {
 	std::string std_param_val = *api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueStr;
 	param_val.SetString(std_param_val.c_str(), std_param_val.length(), document.GetAllocator());
-	if(config.VERBOSE)
+	if(m_pconfig->VERBOSE)
 	{
 	  std::cout << param_val.GetString() << std::endl;
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==2)
       {
 	param_val.SetBool(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueBool);
-	if(config.VERBOSE)
+	if(m_pconfig->VERBOSE)
 	{
 	  std::cout << param_val.GetBool() << std::endl;
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==3)
       {
 	param_val.SetInt(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueInt);
-	if(config.VERBOSE)
+	if(m_pconfig->VERBOSE)
 	{
 	  std::cout << param_val.GetInt() << std::endl;
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==4)
       { // string
 	param_val.SetDouble(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueDouble);
-	if(config.VERBOSE)
+	if(m_pconfig->VERBOSE)
 	{
 	  std::cout << param_val.GetDouble() << std::endl;
 	}
@@ -628,7 +630,7 @@ bool Execution::initExecution(
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     document.Accept(writer);
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << buffer.GetString() << std::endl;
       std::cout << buffer.GetSize() << std::endl;
@@ -650,7 +652,7 @@ bool Execution::initExecution(
       return false;
     }
 
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << "success parse_reponse_by_json" << std::endl;
     }

@@ -6,11 +6,14 @@
 #include <vector>
 
 #include "soapH.h"
+#include "Config.h"
 
 class Pipelines: public CurlProcess
 {
     public:
-      Pipelines();
+      Pipelines(Config *pconfig);
+      Pipelines(Pipelines& pipelines, Config *pconfig);
+      Config *m_pconfig;
       bool request(struct soap *soap, const char * study_name);
     public:
       std::vector<api__ArrayOfPipelines*> * m_pPipelines;

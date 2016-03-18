@@ -6,6 +6,11 @@
 #include <stdlib.h>
 #include "Config.h"
 
+
+CatiwebAuth::CatiwebAuth(Config *config){
+  m_pconfig = config;
+}
+
 static void
 print_cookies(CURL *curl)
 {
@@ -40,8 +45,7 @@ bool CatiwebAuth::Login(const char * username,  const char * password, PCURL_SLI
      */
     m_error_message = "";
 
-    Config config = Config();
-    if(config.VERBOSE)
+    if(m_pconfig->VERBOSE)
     {
       std::cout << "CatiwebAuth::Login login:" << username << " password:" << password <<std::endl;
     }
@@ -54,15 +58,15 @@ bool CatiwebAuth::Login(const char * username,  const char * password, PCURL_SLI
     
     if (curl) {
 
-      char auth_url[config.URL_MAX_LEN];
-      snprintf(auth_url, sizeof(auth_url), "%s/login?login=%s&password=%s", config.CATIWEB_WEBSERVICE_API, username, password);
+      char auth_url[m_pconfig->URL_MAX_LEN];
+      snprintf(auth_url, sizeof(auth_url), "%s/login?login=%s&password=%s", m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), username, password);
 
-      if(config.VERBOSE){
+      if(m_pconfig->VERBOSE){
       std::cout << "auth_url=" << auth_url << std::endl;
       }
 
       curl_easy_setopt(curl, CURLOPT_URL, auth_url);
-      curl_easy_setopt(curl, CURLOPT_VERBOSE, config.VERBOSE);
+      curl_easy_setopt(curl, CURLOPT_VERBOSE, m_pconfig->VERBOSE);
       curl_easy_setopt(curl, CURLOPT_COOKIEFILE, ""); /* just to start the cookie engine */
       
       res = curl_easy_perform(curl);

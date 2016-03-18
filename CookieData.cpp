@@ -21,7 +21,7 @@ std::vector<std::string> CookieData::split_string(const char * c_data, const cha
 }
 
 
-CookieData::CookieData()
+CookieData::CookieData(Config * config)
 {
     // 3.5 What are all those entries in my cookies.txt file? 
     // http://www.cookiecentral.com/faq/#3.5
@@ -32,6 +32,7 @@ CookieData::CookieData()
     expiration = 0;
     name = "";
     value = "";
+    m_pconfig = config;
 }
 
 bool CookieData::parseData(const char * data)
@@ -81,20 +82,19 @@ bool CookieData::set_gsoap_cookie_to_curl_cookie(
       const char * name
 )
 {    
-    Config config = Config();
 
-    char curl_cookie_data[config.COOKIE_MAX_LEN];
+    char curl_cookie_data[m_pconfig->COOKIE_MAX_LEN];
 
     const char * cur_cookie_val = soap_cookie_value(
 	soap, name,
-	config.GSOAP_COOKIE_DOMAIN,
-	config.GSOAP_COOKIE_PATH);
+	m_pconfig->GSOAP_COOKIE_DOMAIN.c_str(),
+	m_pconfig->GSOAP_COOKIE_PATH.c_str());
 
     /* Netscape format cookie */
     snprintf(
       curl_cookie_data, sizeof(curl_cookie_data),
       "%s\t%s\t%s\t%s\t%lu\t%s\t%s",
-      config.CATIWEB_COOKIE_DOMAIN, "FALSE", "/", "FALSE", 0L, name, cur_cookie_val);
+      m_pconfig->CATIWEB_COOKIE_DOMAIN.c_str(), "FALSE", "/", "FALSE", 0L, name, cur_cookie_val);
 
     CURLcode res;
     res = curl_easy_setopt(curl, CURLOPT_COOKIELIST, curl_cookie_data);
@@ -110,7 +110,6 @@ void CookieData::set_curl_cookie_to_gsoap_cookie(
   PCURL_SLIST cookies_data
 )
 {
-  Config config = Config();
   // http://www.cookiecentral.com/faq/#3.5
   // 3.5 What are all those entries in my cookies.txt file? 
   printf("set_curl_cookie_to_gsoap_cookie\n");
@@ -120,17 +119,17 @@ void CookieData::set_curl_cookie_to_gsoap_cookie(
   nc = cookies_data, i = 1;
   while (nc) {
     printf("[%d]: %s\n", i, nc->data);
-    CookieData cookieData = CookieData();
+    CookieData cookieData = CookieData(m_pconfig);
     cookieData.parseData(nc->data);
     soap_set_cookie(soap, cookieData.name.c_str(),
 		    cookieData.value.c_str(),
-		    config.GSOAP_COOKIE_DOMAIN,
-		    config.GSOAP_COOKIE_PATH
+		    m_pconfig->GSOAP_COOKIE_DOMAIN.c_str(),
+		    m_pconfig->GSOAP_COOKIE_PATH.c_str()
  		   );
     soap_set_cookie_expire(soap, cookieData.name.c_str(),
 		    cookieData.expiration,
-		    config.GSOAP_COOKIE_DOMAIN,
-		    config.GSOAP_COOKIE_PATH
+		    m_pconfig->GSOAP_COOKIE_DOMAIN.c_str(),
+		    m_pconfig->GSOAP_COOKIE_PATH.c_str()
  		   );
     nc = nc->next;
     i++;

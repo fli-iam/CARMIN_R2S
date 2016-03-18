@@ -6,11 +6,14 @@
 #include <vector>
 
 #include "soapH.h"
+#include "Config.h"
 
 class Execution: public CurlProcess
 {
     public:
-      Execution();
+      Execution(Config *pconfig);
+      
+      Config *m_pconfig;
 
       bool initExecution(
 	struct soap *soap,

@@ -2,18 +2,18 @@
 #include "Config.h"
 
 
-Pipeline::Pipeline(){
-  
+Pipeline::Pipeline(Config *pconfig): CurlProcess(pconfig){
+  m_pconfig = pconfig;
 }
 
 bool Pipeline::request(struct soap *soap, const char * pipeline_name_or_uuid)
 {
-  Config config = Config();
-  char routeBuf[config.URL_MAX_LEN];
+  char routeBuf[m_pconfig->URL_MAX_LEN];
   snprintf(routeBuf, sizeof(routeBuf), "%s/pipelines/%s",
-	   config.CATIWEB_WEBSERVICE_API, pipeline_name_or_uuid);
+	   m_pconfig->CATIWEB_WEBSERVICE_API.c_str(),
+	   pipeline_name_or_uuid);
 
-  if (config.VERBOSE == 1L)
+  if (m_pconfig->VERBOSE == 1L)
   {
     std::cout << "pipelie route:" << routeBuf << std::endl;
   }
@@ -23,7 +23,7 @@ bool Pipeline::request(struct soap *soap, const char * pipeline_name_or_uuid)
     return false;
   }
   
-  if (config.VERBOSE == 1L)
+  if (m_pconfig->VERBOSE == 1L)
   {
     std::cout << this->m_resBuf << std::endl;
   }

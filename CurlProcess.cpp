@@ -34,13 +34,13 @@ static size_t read_callback(void *ptr, size_t size, size_t nmemb, void *userp)
   return 0;                          /* no more data left to deliver */ 
 }
 
-CurlProcess::CurlProcess()
+CurlProcess::CurlProcess(Config * pconfig)
 {
-  
+  this->m_pconfig = pconfig;
 }
 
 CurlProcess::CurlProcess(const CurlProcess& c){
-  
+  this->m_pconfig = c.m_pconfig;
 }
 
 bool CurlProcess::parse_reponse_by_json(){
@@ -76,7 +76,6 @@ bool CurlProcess::request(struct soap *soap,
   
   this->m_resBuf = "";
 
-  Config config = Config();
   CURL *curl;
   CURLcode res;
   curl_global_init(CURL_GLOBAL_ALL);
@@ -95,7 +94,7 @@ bool CurlProcess::request(struct soap *soap,
     std::string readBuffer;
 
     curl_easy_setopt(curl, CURLOPT_URL, route.c_str());
-    curl_easy_setopt(curl, CURLOPT_VERBOSE, config.VERBOSE);
+    curl_easy_setopt(curl, CURLOPT_VERBOSE, m_pconfig->VERBOSE);
     curl_easy_setopt(curl, CURLOPT_USERAGENT, "libcrp/0.1");
 
     const char buf[] = "Expect:";
@@ -143,9 +142,9 @@ bool CurlProcess::request(struct soap *soap,
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
     curl_easy_setopt(curl, CURLOPT_COOKIEFILE, ""); /* just to start the cookie engine */
 
-    CookieData cookieData = CookieData();
+    CookieData cookieData = CookieData(m_pconfig);
 
-    cookieData.set_gsoap_cookie_to_curl_cookie(soap, curl, config.COOKIE_NAME_AUTH);
+    cookieData.set_gsoap_cookie_to_curl_cookie(soap, curl, m_pconfig->COOKIE_NAME_AUTH.c_str());
     
     res = curl_easy_perform(curl);
 
@@ -163,7 +162,7 @@ bool CurlProcess::request(struct soap *soap,
     if(http_code == 200)
     {
       this->m_resBuf = readBuffer;
-      if(config.VERBOSE==1L)
+      if(m_pconfig->VERBOSE==1L)
       {
 	std::cout << "readBuffer=" << readBuffer << std::endl;
       }

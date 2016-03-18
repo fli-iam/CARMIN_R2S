@@ -6,11 +6,12 @@
 #define COOKIEDATA_H
 
 #include "CatiwebAuth.h"
+#include "Config.h"
 
 class CookieData
 {
     public:
-      CookieData();
+      CookieData(Config * config);
       bool parseData(const char * data);
       std::vector<std::string> split_string(const char * c_data, const char * c_delimiter="\t");
    
@@ -34,6 +35,7 @@ class CookieData
       unsigned long expiration;
       std::string name;
       std::string value;
+      Config * m_pconfig;
 };
 
 #endif

@@ -3,11 +3,12 @@
 
 #include <string>
 #include "rapidjson/document.h"
-
+#include "Config.h"
 
 class CurlProcess{
+ 
   public:
-    CurlProcess();
+    CurlProcess(Config * pconfig);
     CurlProcess(const CurlProcess&);
     std::string m_resBuf;
     std::string m_error_message;
@@ -22,6 +23,8 @@ class CurlProcess{
     bool parse_reponse_by_json();
 
     rapidjson::Document m_document;
+    
+    Config * m_pconfig;
 
 };
 
