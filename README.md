@@ -15,7 +15,9 @@ gSOAP
 
 Ubuntu Dependencies
 
+```
 $ sudo apt-get install bison flex
+```
 
 This module is based on gsoap. Therefore we first download the source of gsoap_2.7.17.zip.
 
@@ -29,12 +31,14 @@ We don't propose to use the latest version of 2.8 since the license has been cha
 
 Extract gsoap_2.7.17.zip into ~/local/sources
 
+```
 $ SOURCES=/root/local/sources
 $ INSTALL_PREFIX=/root/local
 $ mkdir -p $SOURCES
 $ mkdir -p $INSTALL_PREFIX
 $ unzip gsoap_2.7.17.zip -d $SOURCES
 $ cd $SOURCES/gsoap-2.7
+```
 
 Add the below codes in the beginning of the header file ./gsoap/stdsoap2.h
 
@@ -46,38 +50,46 @@ Add the below codes in the beginning of the header file ./gsoap/stdsoap2.h
 
 It is used for enabling the cookie module in gsoap.
 
+```
 $ ./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES
+```
 
 you may miss some packages, please install them and re-run `./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES`.
 
+```
 $ make
 $ make install
+```
+
 
 You can add your installed path bin in your PATH enviroment variable with ~/.bashrc
 
+```
 $ echo "export PATH=$INSTALL_PREFIX/bin:\$PATH" >> ~/.bashrc
-
+```
 
 rapidjson 
 =========
 
+```
 $ SOURCES=/root/local/sources
 $ INSTALL_PREFIX=/root/local
 
 $ git clone https://github.com/miloyip/rapidjson.git ${SOURCES}/rapidjson
 $ ln -s ${SOURCES}/rapidjson/include/rapidjson ${INSTALL_PREFIX}/include/
-
+```
 
 CARMIN_R2S
 ==========
 
-
+```
 $ SOURCES=/root/local/sources
 $ INSTALL_PREFIX=/root/local
 
 $ git clone https://github.com/fli-iam/CARMIN_R2S.git ${SOURCES}/CARMIN_R2S
 $ cd ${SOURCES}/CARMIN_R2S
 $ cp CMakeLists.txt.origin CMakeLists.txt
+```
 
 Modify LOCAL_INSTALL_PREFIX's value as the gsoap and rapidjson location in CMakeLists.txt.
 
@@ -85,17 +97,20 @@ Modify LOCAL_INSTALL_PREFIX's value as the gsoap and rapidjson location in CMake
 set(LOCAL_INSTALL_PREFIX "/root/local")
 ```
 
+```
 $ mkdir builds
 $ cd builds
 $ cmake ..
 $ make
+```
 
 Hope there is no error during compilation.
 
 If there is no error, you can start the server as below:
 
+```
 $ ${SOURCES}/CARMIN_R2S/builds/carmin_server ${SOURCES}/CARMIN_R2S/config_template/config_demo.ini
-
+```
 
 How to update the .h file from a .wsdl file
 ===========================================
