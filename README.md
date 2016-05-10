@@ -97,12 +97,9 @@ If there is no error, you can start the server as below:
 $ ${SOURCES}/CARMIN_R2S/builds/carmin_server ${SOURCES}/CARMIN_R2S/config_template/config_demo.ini
 
 
-Update CARMIN_R2S .h file in CARMIN_R2S
----------------------------------------
+How to update the .h file from a .wsdl file
+===========================================
 
-
-How to generate the .h file
-============================
 
 For example, you can start with a wsdl file for example api.wsdl.
 
