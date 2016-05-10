@@ -4,7 +4,7 @@ CARMIN_R2S
 CARMIN_R2S (CARMIN Rest server to Soap server)
 
 Assuming that your server is based on CARMIN rest (carmin.yaml in https://github.com/fli-iam/CARMIN),
-The CARMIN_R2S module is used for translating the rest server to the soap server (api.wsdl, https://github.com/fli-iam/CARMIN).
+CARMIN_R2S module is used for translating the rest server to the soap server (api.wsdl, https://github.com/fli-iam/CARMIN).
 
 
 Build from Source
