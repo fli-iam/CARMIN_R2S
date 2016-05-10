@@ -1,9 +1,8 @@
-
 CARMIN_R2S
 -----------
 
 Assuming that your server is based on CARMIN rest,
-The CARMIN_R2S module is used for translating the rest server to soap server.
+The CARMIN_R2S module is used for translating the rest server to the soap server.
 
 
 Build from Source
@@ -37,11 +36,15 @@ $ mkdir -p $INSTALL_PREFIX
 $ unzip gsoap_2.7.17.zip -d $SOURCES
 $ cd $SOURCES/gsoap-2.7
 
-Add `#define WITH_COOKIES` in the beginning of below file
+Add the below codes in the beginning of the header file ./gsoap/stdsoap2.h
 
-./gsoap/stdsoap2.h
+```
+#ifndef WITH_COOKIES
+#define WITH_COOKIES
+#endif
+```
 
-It is to enable the cookie module in gsoap.
+It is used for enabling the cookie module in gsoap.
 
 $ ./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES
 # you may miss some packages, please install them and re-run `./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES`.
@@ -50,7 +53,6 @@ $ make install
 
 You can add your installed path bin in your PATH enviroment variable with ~/.bashrc
 
-$ echo "export PATH=$INSTALL_PREFIX/bin:\$PATH" >> ~/.bashrc
 $ echo "export PATH=$INSTALL_PREFIX/bin:\$PATH" >> ~/.bashrc
 
 
@@ -64,9 +66,37 @@ $ git clone https://github.com/miloyip/rapidjson.git ${SOURCES}/rapidjson
 $ ln -s ${SOURCES}/rapidjson/include/rapidjson ${INSTALL_PREFIX}/include/
 
 
+CARMIN_R2S
+==========
 
-Start with a wsdl file
-----------------------
+
+$ SOURCES=/root/local/sources
+$ INSTALL_PREFIX=/root/local
+
+$ git clone https://github.com/fli-iam/CARMIN_R2S.git ${SOURCES}/CARMIN_R2S
+$ cd ${SOURCES}/CARMIN_R2S
+$ cp CMakeLists.txt.origin CMakeLists.txt
+
+Modify LOCAL_INSTALL_PREFIX's value as the gsoap and rapidjson location in CMakeLists.txt.
+
+```
+set(LOCAL_INSTALL_PREFIX "/root/local")
+```
+
+$ mkdir builds
+$ cd builds
+$ cmake ..
+$ make
+
+Hope there is no error during compilation.
+
+If there is no error, you can start the server as below:
+
+$ ${SOURCES}/CARMIN_R2S/builds/carmin_server ${SOURCES}/CARMIN_R2S/config_template/config_demo.ini
+
+
+Update CARMIN_R2S .h file in CARMIN_R2S
+---------------------------------------
 
 
 How to generate the .h file
@@ -115,14 +145,4 @@ How to generate .cpp file
 soapcpp2 -I/path/to/share/gsoap/import -S -x api.h
 ```
 
-
-Dependencies
-------------
-
-gSOAP 2.7
-libCurl
-rapidjson
-
-
----------
 
