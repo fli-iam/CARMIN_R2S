@@ -1,18 +1,1 @@
-cmake_minimum_required(VERSION 2.8.9)
-project (carmin_server)
-
-set(LOCAL_INSTALL_PREFIX "/root/local")
-
-add_definitions( -DWITH_COOKIES )
-
-file(GLOB SOURCES ./*.cpp)
-
-add_executable(carmin_server ${SOURCES})
-
-include_directories(AFTER 
-${LOCAL_INSTALL_PREFIX}/include
-)
-
-SET(ENV{LIBRARY_PATH} ${LOCAL_INSTALL_PREFIX}/lib)
-
-TARGET_LINK_LIBRARIES(carmin_server gsoap++ gsoapssl++ curl )
+CMakeLists.txt.origin
