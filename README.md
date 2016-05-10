@@ -10,7 +10,7 @@ Build from Source
 
 For the moment, this tutorial is only tested on Ubuntu 14.04 TLS.
 
-GSOAP
+gSOAP
 =====
 
 Ubuntu Dependencies
@@ -47,7 +47,9 @@ Add the below codes in the beginning of the header file ./gsoap/stdsoap2.h
 It is used for enabling the cookie module in gsoap.
 
 $ ./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES
-# you may miss some packages, please install them and re-run `./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES`.
+
+you may miss some packages, please install them and re-run `./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES`.
+
 $ make
 $ make install
 
