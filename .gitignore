@@ -3,3 +3,4 @@ builds
 curl_test_catidb
 lib_curl
 *.kate-swp
+CMakeLists.txt
