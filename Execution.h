@@ -12,7 +12,7 @@ class Execution: public CurlProcess
 {
     public:
       Execution(Config *pconfig);
-      
+
       Config *m_pconfig;
 
       bool initExecution(
@@ -28,11 +28,10 @@ class Execution: public CurlProcess
       bool deleteExecution(struct soap *soap,
 	api__deleteExecution*               api__deleteExecution_
       );
-      
+
       bool playExecution(struct soap *soap,
 	std::string executionId
       );
-      
 
       // It will return to m_api__Execution
       bool getExecution(struct soap *soap,
@@ -40,7 +39,7 @@ class Execution: public CurlProcess
       );
 
       api__ExecutionStatus convert_soma_workflow_status_to_carmin_status(std::string soma_workflow_status);
-      
+
       // It will return to m_api__Execution
       bool killExecution(struct soap *soap,
 	std::string executionId
@@ -48,6 +47,15 @@ class Execution: public CurlProcess
 
       bool getStdOutErr(struct soap *soap,
 	std::string executionId
+      );
+ 
+      bool getStdOut(struct soap *soap,
+        std::string executionId
+      );
+
+      bool getStdErr(
+        struct soap *soap,
+        std::string executionId
       );
 
       std::vector<std::string> * m_std_out;

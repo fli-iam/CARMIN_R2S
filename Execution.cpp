@@ -33,29 +33,51 @@ bool Execution::deleteExecution(
       struct soap                         *soap                          ;
   };
   */
-  
+
   std::string executionId = api__deleteExecution_->executionId;
   bool deleteFiles = api__deleteExecution_->deleteFiles;
-  
+
   Config config = Config();
   char routeBuf[m_pconfig->URL_MAX_LEN];
   snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
-	    m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
-  if(!CurlProcess::request(soap, routeBuf, "delete"))
+	   m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
+
+  std::string delete_files_json_str;
+
+  if(deleteFiles)
   {
-    return false;
+    if(m_pconfig->VERBOSE)
+    {
+      std::cout << "remove files" << std::endl;
+    }
+    delete_files_json_str = "{\"deleteFiles\": true}";
+    if(!CurlProcess::request(soap, routeBuf, "delete",
+      delete_files_json_str.c_str(), delete_files_json_str.length()))
+    {
+        return false;
+    }
+  }else{
+    if(m_pconfig->VERBOSE)
+    {
+      std::cout << "don't remove files" << std::endl;
+    }
+    delete_files_json_str = "{\"deleteFiles\": false}";
+    if(!CurlProcess::request(soap, routeBuf, "delete"))
+    {
+        return false;
+    }
   }
-  
-  if(!CurlProcess::parse_reponse_by_json())
-  {
-    return false;
-  }
-  
-  if(!m_document["is_success"].GetBool())
-  {
-    m_error_message = m_document["error_message"].GetString();
-    return false;
-  }
+
+//   if(!CurlProcess::parse_reponse_by_json())
+//   {
+//     return false;
+//   }
+//   if(!m_document["is_success"].GetBool())
+//   {
+//     m_error_message = m_document["error_message"].GetString();
+//     return false;
+//   }
+
   return true;
 }
 
@@ -73,7 +95,7 @@ bool Execution::listExecutions(
     
     Config config = Config();
     char routeBuf[m_pconfig->URL_MAX_LEN];
-    snprintf(routeBuf, sizeof(routeBuf), "%s/%s/executions",
+    snprintf(routeBuf, sizeof(routeBuf), "%s/studies/%s/executions",
 	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), studyIdentifier.c_str());
 
     if(!CurlProcess::request(soap, routeBuf, "get"))
@@ -133,11 +155,11 @@ bool Execution::listExecutions(
     {
 	api__Execution * api__Execution_ = soap_new_api__Execution(soap, 1);
 	char buf_identifier[256];
-	snprintf(buf_identifier, sizeof(buf_identifier), "%d", (*itr)["id"].GetInt());
+	snprintf(buf_identifier, sizeof(buf_identifier), "%s", (*itr)["executionId"].GetString());
 
 	api__Execution_->identifier = buf_identifier;
-	api__Execution_->name = (*itr)["pipeline_name"].GetString();
-	api__Execution_->pipelineIdentifier = (*itr)["pipeline_id"].GetString();
+	api__Execution_->name = (*itr)["pipelineName"].GetString();
+	api__Execution_->pipelineIdentifier = (*itr)["pipelineIdentifier"].GetString();
 
 	api__Execution_->status = this->convert_soma_workflow_status_to_carmin_status(
 	    (*itr)["status"].GetString());
@@ -151,29 +173,60 @@ bool Execution::listExecutions(
 
 api__ExecutionStatus Execution::convert_soma_workflow_status_to_carmin_status(std::string soma_workflow_status)
 {
-      api__ExecutionStatus execution_status ; 
-      if(soma_workflow_status=="workflow_done")
+
+  /*
+    "enum": ["initializing",
+          "ready",
+          "running",
+          "finished",
+          "initialization_failed",
+          "execution_failed",
+          "unknown",
+          "killed"]
+
+
+    enum api__ExecutionStatus
+    {
+            api__ExecutionStatus__Initializing,     ///< xs:string value="Initializing"
+            api__ExecutionStatus__Ready,    ///< xs:string value="Ready"
+            api__ExecutionStatus__Running,  ///< xs:string value="Running"
+            api__ExecutionStatus__Finished, ///< xs:string value="Finished"
+            api__ExecutionStatus__InitializationFailed,     ///< xs:string value="InitializationFailed"
+            api__ExecutionStatus__ExecutionFailed,  ///< xs:string value="ExecutionFailed"
+            api__ExecutionStatus__Unknown,  ///< xs:string value="Unknown"
+            api__ExecutionStatus__Killed,   ///< xs:string value="Killed"
+    };
+
+   */
+
+      api__ExecutionStatus execution_status ;
+
+      if(soma_workflow_status == "initializing")
       {
-	execution_status = api__ExecutionStatus__Finished;
-      }else if(soma_workflow_status=="worklflow_not_started")
+          execution_status = api__ExecutionStatus__Initializing;
+      }else if(soma_workflow_status == "ready")
       {
-	execution_status = api__ExecutionStatus__Ready;
-      }
-      else if(soma_workflow_status=="workflow_in_progress")
+          execution_status = api__ExecutionStatus__Ready;
+      }else if(soma_workflow_status == "running")
       {
-	execution_status = api__ExecutionStatus__Running;
-      }
-      else if(soma_workflow_status=="delete_pending")
+          execution_status = api__ExecutionStatus__Running;
+      }else if(soma_workflow_status == "finished")
       {
-	execution_status = api__ExecutionStatus__Killed;
-      }
-      else if(soma_workflow_status=="warning")
+          execution_status = api__ExecutionStatus__Finished;
+      }else if(soma_workflow_status == "initialization_failed")
       {
-	execution_status = api__ExecutionStatus__ExecutionFailed;
+          execution_status = api__ExecutionStatus__InitializationFailed;
+      }else if(soma_workflow_status == "execution_failed")
+      {
+          execution_status = api__ExecutionStatus__ExecutionFailed;
+      }else if(soma_workflow_status == "killed")
+      {
+          execution_status = api__ExecutionStatus__Killed;
+      }else
+      {
+          execution_status = api__ExecutionStatus__Unknown;
       }
-      else{
-	execution_status = api__ExecutionStatus__Unknown;
-      }
+
       return execution_status;
 }
 
@@ -186,31 +239,54 @@ bool Execution::updateExecution(struct soap *soap,
   Config config = Config();
 
   char routeBuf[m_pconfig->URL_MAX_LEN];
-    snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
+  snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
 	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
 
   rapidjson::Document document;
   document.SetObject();
 
   rapidjson::Value execution_op_name;
-  rapidjson::Value execution_op_value;
-
+  rapidjson::Value key_str("key");
   execution_op_name.SetString(
     name.c_str(),
     name.length(),
     document.GetAllocator()
   );
 
+
+  document.AddMember(
+      key_str,
+      execution_op_name,
+      document.GetAllocator()
+  );
+
+
+  rapidjson::Value execution_op_value;
+  execution_op_value.SetObject();
+  
+  rapidjson::Value execution_op_inner_value_obj;
+  execution_op_inner_value_obj.SetObject();
+  
+  rapidjson::Value value_str("value");
+  rapidjson::Value inner_value_str("value");
+
+  
   execution_op_value.SetString(
     value.c_str(),
     value.length(),
     document.GetAllocator()
   );
 
-  document.AddMember(execution_op_name,
-		     execution_op_value,
-		     document.GetAllocator());
+  execution_op_inner_value_obj.AddMember(
+    inner_value_str,
+    execution_op_value,
+    document.GetAllocator());
 
+  document.AddMember(
+      value_str,
+      execution_op_inner_value_obj,
+      document.GetAllocator()
+  );
 
   rapidjson::StringBuffer buffer;
   rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -226,7 +302,6 @@ bool Execution::updateExecution(struct soap *soap,
   //std::cout << json_buffer << std::endl;
 
   if(!CurlProcess::request(soap, routeBuf, "PUT",
-			    "UpdateExecution",
 			    buffer.GetString(),
 			    buffer.GetSize()))
   {
@@ -254,134 +329,84 @@ bool Execution::updateExecution(struct soap *soap,
 bool Execution::killExecution(struct soap *soap,
 	std::string executionId
       ){
-  
-    std::string name = "name";
-    std::string op = "kill";
-    return this->updateExecution(
-      soap,
-      executionId,
-      name, op
-    );
-
-    /*
-    Config config = Config();
-
-    char routeBuf[m_pconfig->URL_MAX_LEN];
-    snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
-	     m_pconfig->CATIWEB_WEBSERVICE_API, executionId.c_str());
-
-    rapidjson::Document document;
-    document.SetObject();
-
-    rapidjson::Value execution_op_name("name");
-    rapidjson::Value execution_op_value("kill");
-
-    document.AddMember(execution_op_name,
-		       execution_op_value,
-		       document.GetAllocator());
-
-
-    rapidjson::StringBuffer buffer;
-    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
-    document.Accept(writer);
-
-    if(m_pconfig->VERBOSE)
-    {
-      std::cout << buffer.GetString() << std::endl;
-      std::cout << buffer.GetSize() << std::endl;
-    }
-
-    //char json_buffer[] = "{\"pipeline_name\": \"ProcessDemo\", \"params\":{\"ff\": 14.0}}";
-    //std::cout << json_buffer << std::endl;
-
-    if(!CurlProcess::request(soap, routeBuf, "PUT",
-			     "UpdateExecution",
-			     buffer.GetString(),
-			     buffer.GetSize()))
-    {
-      return false;
-    }
-
-    if(!CurlProcess::parse_reponse_by_json())
-    {
-      return false;
-    }
-
-    if(m_pconfig->VERBOSE)
-    {
-      std::cout << "success parse_reponse_by_json" << std::endl;
-    }
-    
-    if(!m_document["is_success"].GetBool())
-    {
-      m_error_message = m_document["error_message"].GetString();
-      return false;
-    }
-
-    return true;*/
+  Config config = Config();
+  char routeBuf[m_pconfig->URL_MAX_LEN];
+  snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s/kill",
+           m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
+  if(!CurlProcess::request(soap, routeBuf))
+  {
+    return false;
+  }
+  return true;
 }
 
 bool Execution::playExecution(struct soap *soap,
 	std::string executionId
       )
 {
-
-    Config config = Config();
-
-    char routeBuf[m_pconfig->URL_MAX_LEN];
-    snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s",
-	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
-
-    rapidjson::Document document;
-    document.SetObject();
-
-    rapidjson::Value execution_op_name("name");
-    rapidjson::Value execution_op_value("start");
-
-    document.AddMember(execution_op_name,
-		       execution_op_value,
-		       document.GetAllocator());
-
-
-    rapidjson::StringBuffer buffer;
-    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
-    document.Accept(writer);
-
-    if(m_pconfig->VERBOSE)
-    {
-      std::cout << buffer.GetString() << std::endl;
-      std::cout << buffer.GetSize() << std::endl;
-    }
-
-    //char json_buffer[] = "{\"pipeline_name\": \"ProcessDemo\", \"params\":{\"ff\": 14.0}}";
-    //std::cout << json_buffer << std::endl;
-
-    if(!CurlProcess::request(soap, routeBuf, "PUT",
-			     "UpdateExecution",
-			     buffer.GetString(),
-			     buffer.GetSize()))
-    {
-      return false;
-    }
-
-    if(!CurlProcess::parse_reponse_by_json())
-    {
-      return false;
-    }
-
-    if(m_pconfig->VERBOSE)
-    {
-      std::cout << "success parse_reponse_by_json" << std::endl;
-    }
-    
-    if(!m_document["is_success"].GetBool())
-    {
-      m_error_message = m_document["error_message"].GetString();
-      return false;
-    }
-
-    return true;
+  Config config = Config();
+  char routeBuf[m_pconfig->URL_MAX_LEN];
+  snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s/play",
+           m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
+  if(!CurlProcess::request(soap, routeBuf))
+  {
+    return false;
+  }
+  return true;
 }
+
+bool Execution::getStdOut(
+        struct soap *soap,
+        std::string executionId
+     )
+{
+  Config config = Config();
+
+  char routeBuf[m_pconfig->URL_MAX_LEN];
+  snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s/stdout",
+           m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
+  if(!CurlProcess::request(soap, routeBuf))
+  {
+    return false;
+  }
+
+  if(this->m_std_out == NULL)
+  {
+    this->m_std_out = soap_new_std__vectorTemplateOfstd__string(soap, 1);
+  }
+
+  this->m_std_out->push_back(m_resBuf);
+  
+  return true;
+}
+
+
+bool Execution::getStdErr(
+        struct soap *soap,
+        std::string executionId
+     )
+{
+  Config config = Config();
+
+  char routeBuf[m_pconfig->URL_MAX_LEN];
+  snprintf(routeBuf, sizeof(routeBuf), "%s/executions/%s/stderr",
+           m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), executionId.c_str());
+  if(!CurlProcess::request(soap, routeBuf))
+  {
+    return false;
+  }
+  
+  if(this->m_std_err == NULL)
+  {
+    this->m_std_err = soap_new_std__vectorTemplateOfstd__string(soap, 1);
+  }
+
+  this->m_std_err->push_back(m_resBuf);
+  
+  return true;
+}
+  
+
 
 bool Execution::getStdOutErr(struct soap *soap,
 	std::string executionId
@@ -504,7 +529,7 @@ bool Execution::initExecution(
 
     Config config = Config();
     char routeBuf[m_pconfig->URL_MAX_LEN];
-    snprintf(routeBuf, sizeof(routeBuf), "%s/%s/executions",
+    snprintf(routeBuf, sizeof(routeBuf), "%s/studies/%s/executions",
 	     m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), studyId.c_str());
 
     std::vector<api__StringKeyParameterValuePair*> &inputValue = api__initExecution_->inputValue;
@@ -516,7 +541,7 @@ bool Execution::initExecution(
     rapidjson::Document document;
     document.SetObject();
 
-    rapidjson::Value pipeline_name("pipeline_name");
+    rapidjson::Value pipeline_name("pipelineIdentifier");
     rapidjson::Value pipeline_value;
     pipeline_value.SetString(pipelineId.c_str(), pipelineId.length());
 
@@ -524,14 +549,17 @@ bool Execution::initExecution(
 		       pipeline_value,
 		       document.GetAllocator());
 
-    rapidjson::Value params_str("params");
-    rapidjson::Value params;
-    params.SetObject();
+    rapidjson::Value param_key_str("key");
+    
+    rapidjson::Value params_str("inputValues");
 
+    rapidjson::Value params;
+    params.SetArray();
     if(m_pconfig->VERBOSE)
     {
       std::cout << "params:" << std::endl;
     }
+
     for(int i=0; i < inputValue.size(); i += 1)
     {
       api__StringKeyParameterValuePair * api__StringKeyParameterValuePair = inputValue[i];
@@ -541,12 +569,17 @@ bool Execution::initExecution(
 	std::cout << api__StringKeyParameterValuePair->value << std::endl;
 	std::cout << "type:" << api__StringKeyParameterValuePair->value->type << std::endl;
       }
+
+      rapidjson::Value param_val_obj;
+      param_val_obj.SetObject();
+      
       rapidjson::Value param_key;
       std::string std_param_name = api__StringKeyParameterValuePair->name;
       param_key.SetString(std_param_name.c_str(),
 			  std_param_name.length(),
 			  document.GetAllocator()
  			);
+
       rapidjson::Value param_val;
 
       /*
@@ -576,6 +609,7 @@ bool Execution::initExecution(
       
       if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==1)
       {
+
 	std::string std_param_val = *api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueStr;
 	param_val.SetString(std_param_val.c_str(), std_param_val.length(), document.GetAllocator());
 	if(m_pconfig->VERBOSE)
@@ -584,6 +618,7 @@ bool Execution::initExecution(
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==2)
       {
+
 	param_val.SetBool(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueBool);
 	if(m_pconfig->VERBOSE)
 	{
@@ -591,6 +626,7 @@ bool Execution::initExecution(
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==3)
       {
+
 	param_val.SetInt(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueInt);
 	if(m_pconfig->VERBOSE)
 	{
@@ -598,11 +634,9 @@ bool Execution::initExecution(
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==4)
       { // string
+
 	param_val.SetDouble(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueDouble);
-	if(m_pconfig->VERBOSE)
-	{
-	  std::cout << param_val.GetDouble() << std::endl;
-	}
+
       }else{
 	char buf_error_message[1024];
 	snprintf(buf_error_message,
@@ -615,11 +649,40 @@ bool Execution::initExecution(
 	return false;
       }
 
-      params.AddMember(
-	param_key,
-	param_val,
-	document.GetAllocator()
+      rapidjson::Value param_value_str("value");
+      param_val_obj.AddMember(
+          param_value_str,
+          param_val,
+          document.GetAllocator()
       );
+
+      /*
+       * param_obj = {"key": "ff", "value": {"value": 30.0}}
+       */
+
+      rapidjson::Value param_obj;
+      param_obj.SetObject();
+
+      param_obj.AddMember(
+        param_key_str,
+        param_key,
+        document.GetAllocator()
+      );
+
+      rapidjson::Value param_inner_val_str("value");
+      param_obj.AddMember(
+        param_inner_val_str,
+        param_val_obj,
+        document.GetAllocator()
+      );
+
+      params.PushBack(param_obj, document.GetAllocator());
+
+    }
+
+    if(m_pconfig->VERBOSE)
+    {
+      std::cout << "end params config" << std::endl;
     }
 
     document.AddMember(params_str,
@@ -640,35 +703,25 @@ bool Execution::initExecution(
     //std::cout << json_buffer << std::endl;
 
     if(!CurlProcess::request(soap, routeBuf, "post",
-			     "pipeline",
 			     buffer.GetString(),
 			     buffer.GetSize()))
     {
       return false;
     }
 
-    if(!CurlProcess::parse_reponse_by_json())
-    {
-      return false;
-    }
-
-    if(m_pconfig->VERBOSE)
-    {
-      std::cout << "success parse_reponse_by_json" << std::endl;
-    }
 
     if(this->m_api__Execution==NULL)
     {
       this->m_api__Execution = soap_new_api__Execution(soap, 1);
     }
-    
+
     char buf_identifier[256];
-    snprintf(buf_identifier, sizeof(buf_identifier), "%d", m_document["id"].GetInt());
-    
+    snprintf(buf_identifier, sizeof(buf_identifier), "%s", m_resBuf.c_str());
+
     this->m_api__Execution->identifier = buf_identifier;
     this->m_api__Execution->name = pipelineId;
     this->m_api__Execution->pipelineIdentifier = pipelineId;
-    
+
     //this->m_api__Execution->status = soap_new_std__string(soap, 1);
     //(*this->m_api__Execution->status) = api__ExecutionStatus__Running;
     this->m_api__Execution->status = api__ExecutionStatus__Running;
