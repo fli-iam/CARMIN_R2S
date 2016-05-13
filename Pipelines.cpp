@@ -22,7 +22,7 @@ Pipelines::Pipelines(Pipelines& pipelines, Config *pconfig):CurlProcess(pconfig)
 bool Pipelines::request(struct soap *soap, const char * study_name){
 
   char routeBuf[m_pconfig->URL_MAX_LEN];
-  snprintf(routeBuf, sizeof(routeBuf), "%s/%s/pipelines",
+  snprintf(routeBuf, sizeof(routeBuf), "%s/studies/%s/pipelines",
 	   m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), study_name);
 
   std::cout << "pipelie route:" << routeBuf << std::endl;
