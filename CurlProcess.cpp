@@ -69,17 +69,22 @@ bool CurlProcess::parse_reponse_by_json(){
 bool CurlProcess::request(struct soap *soap,
 			  const std::string &route,
 			  std::string method,
-			  const char * post_field_name,
 			  const char * post_data,
 			  const long post_data_size
  			){
   
+  if(m_pconfig->VERBOSE)
+  {
+    std::cout << route << std::endl;
+  }
   this->m_resBuf = "";
 
   CURL *curl;
   CURLcode res;
   curl_global_init(CURL_GLOBAL_ALL);
   curl = curl_easy_init();
+  
+  struct WriteThis pooh;
   
   boost::to_upper(method);
 
@@ -96,47 +101,45 @@ bool CurlProcess::request(struct soap *soap,
     curl_easy_setopt(curl, CURLOPT_URL, route.c_str());
     curl_easy_setopt(curl, CURLOPT_VERBOSE, m_pconfig->VERBOSE);
     curl_easy_setopt(curl, CURLOPT_USERAGENT, "libcrp/0.1");
-
-    const char buf[] = "Expect:";
-
-    if(post_field_name != NULL)
+    
+    if(post_data != NULL)
     {
-      headerlist = curl_slist_append(headerlist, buf);
-
-      curl_formadd(&formpost,
-		   &lastptr,
-		   CURLFORM_COPYNAME, post_field_name,
-		   CURLFORM_BUFFERPTR, post_data,
-		   CURLFORM_END);
-
-      curl_formadd(&formpost,
-		   &lastptr,
-		   CURLFORM_COPYNAME, post_field_name,
-		   CURLFORM_BUFFERLENGTH, post_data_size,
-		   CURLFORM_END);
-
-      curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headerlist);
-      curl_easy_setopt(curl, CURLOPT_HTTPPOST, formpost);
+      curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post_data);
+      headerlist = curl_slist_append(headerlist, "Expect:");
+      headerlist = curl_slist_append(headerlist, "Content-Type: application/json");
+      headerlist = curl_slist_append(headerlist, "charsets: utf-8");
     }
 
     if(method == "POST")
     {
-      /*
-      struct curl_slist *headers = NULL;
-      headers = curl_slist_append(headers, "Accept: application/json");
-      headers = curl_slist_append(headers, "Content-Type: application/json");
-      headers = curl_slist_append(headers, "charsets: utf-8");*/
+      if(m_pconfig->VERBOSE)
+      {
+          std::cout << "POST DATA:" << std::endl;
+          std::cout << post_data << std::endl;
+      }
+
+      curl_easy_setopt(curl, CURLOPT_POST, 1L);
+
+      pooh.readptr = post_data;
+      pooh.sizeleft = strlen(post_data);
+
+      //curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
+      //curl_easy_setopt(curl, CURLOPT_READDATA, &pooh);
 
     }else if(method=="DELETE")
     {
       curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "DELETE");
     }else if(method=="PUT")
     {
+      curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post_data);
+      headerlist = curl_slist_append(headerlist, "Expect:");
+      headerlist = curl_slist_append(headerlist, "Content-Type: application/json");
+      headerlist = curl_slist_append(headerlist, "charsets: utf-8");
+
       curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "PUT");
     }
-    
 
-
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headerlist);
     curl_easy_setopt(curl, CURLOPT_TIMEOUT, 20L);
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
@@ -145,7 +148,7 @@ bool CurlProcess::request(struct soap *soap,
     CookieData cookieData = CookieData(m_pconfig);
 
     cookieData.set_gsoap_cookie_to_curl_cookie(soap, curl, m_pconfig->COOKIE_NAME_AUTH.c_str());
-    
+
     res = curl_easy_perform(curl);
 
     long http_code = 0;
