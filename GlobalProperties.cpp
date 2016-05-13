@@ -77,12 +77,13 @@ bool GlobalProperties::request(struct soap *soap){
     {
       return false;
     }
-    
-    rapidjson::Value &val_apiErrorCodesAndMessages = m_document["apiErrorCodesAndMessages"];
+
+    rapidjson::Value &val_apiErrorCodesAndMessages = m_document["APIErrorCodesAndMessages"];
     for(int i=0; i< val_apiErrorCodesAndMessages.Size(); i+=1)
     {
-      int error_code = val_apiErrorCodesAndMessages[i][0].GetInt();
-      std::string error_msg = val_apiErrorCodesAndMessages[i][1].GetString();
+      int error_code = val_apiErrorCodesAndMessages[i]["code"].GetInt();
+      std::string error_msg = val_apiErrorCodesAndMessages[i]["message"].GetString();
+
       api__IntKeyStringValuePair * api__IntKeyStringValuePair_ = soap_new_api__IntKeyStringValuePair(soap, 1);
       api__IntKeyStringValuePair_->name = error_code;
       api__IntKeyStringValuePair_->value = error_msg;
@@ -119,7 +120,7 @@ bool GlobalProperties::request(struct soap *soap){
     (*m_api__GlobalProperties->email) = m_document["email"].GetString();
 
     m_api__GlobalProperties->platformDescription = soap_new_std__string(soap, 1);
-    (*m_api__GlobalProperties->platformDescription) = m_document["description"].GetString();
+    (*m_api__GlobalProperties->platformDescription) = m_document["platformDescription"].GetString();
     
     m_api__GlobalProperties->minAuthorizedExecutionTimeout = (int*)soap_malloc(soap, sizeof(int));
     (*m_api__GlobalProperties->minAuthorizedExecutionTimeout) = m_document["minAuthorizedExecutionTimeout"].GetInt();
