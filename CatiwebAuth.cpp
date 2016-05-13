@@ -59,7 +59,7 @@ bool CatiwebAuth::Login(const char * username,  const char * password, PCURL_SLI
     if (curl) {
 
       char auth_url[m_pconfig->URL_MAX_LEN];
-      snprintf(auth_url, sizeof(auth_url), "%s/login?login=%s&password=%s", m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), username, password);
+      snprintf(auth_url, sizeof(auth_url), "%s/login?username=%s&password=%s", m_pconfig->CATIWEB_WEBSERVICE_API.c_str(), username, password);
 
       if(m_pconfig->VERBOSE){
       std::cout << "auth_url=" << auth_url << std::endl;
