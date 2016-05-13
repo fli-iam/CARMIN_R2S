@@ -409,6 +409,10 @@ int __api__playExecution(
   // response parameters:
   api__playExecutionResponse*         api__playExecutionResponse_
 ){
+  if(config.VERBOSE)
+  {
+    std::cout << "__api__playExecution" << std::endl;
+  }
   api__playExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
   Execution execution = Execution(&config);
   bool is_success = execution.playExecution(soap, api__playExecution_->executionId);
@@ -439,7 +443,7 @@ int __api__getStdOut(
   api__getStdOutResponse_->return_ = soap_new_api__Response(soap, 1);
  
   Execution execution = Execution(&config);
-  bool is_success = execution.getStdOutErr(soap, api__getStdOut_->executionId);
+  bool is_success = execution.getStdOut(soap, api__getStdOut_->executionId);
 
   if(is_success)
   {
@@ -466,7 +470,7 @@ int __api__getStdErr(
   api__getStdErrResponse_->return_ = soap_new_api__Response(soap, 1);
  
   Execution execution = Execution(&config);
-  bool is_success = execution.getStdOutErr(soap, api__getStdErr_->executionId);
+  bool is_success = execution.getStdErr(soap, api__getStdErr_->executionId);
 
   if(is_success)
   {
@@ -559,20 +563,22 @@ int __api__updateExecution(
   // response parameters:
   api__updateExecutionResponse*       api__updateExecutionResponse_
 ){
+
   api__updateExecutionResponse_->return_ = soap_new_api__Response(soap, 1);
- 
+
   Execution execution = Execution(&config);
-  
+
   bool is_success = false;
-  
+
   bool type_error = false;
-  std::string type_error_message = "For the moment, only strint value can be accepted.";
+  
+  std::string type_error_message = "For the moment, only string value can be accepted.";
   
   if(api__updateExecution_->keyValuePair[0]->__union_StringKeyValuePair != 1)
   {
     type_error = true;
   }
-  
+
   is_success = execution.updateExecution(soap, api__updateExecution_->executionId,
     api__updateExecution_->keyValuePair[0]->name ,
     *(api__updateExecution_->keyValuePair[0]->union_StringKeyValuePair.valueStr)
