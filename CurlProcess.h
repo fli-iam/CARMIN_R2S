@@ -16,7 +16,6 @@ class CurlProcess{
     bool request(struct soap *soap,
 		 const std::string &route,
 		 std::string method = "get",
-		 const char * post_field_name = NULL,
 		 const char * post_data = NULL,
 		 const long post_data_size = 0);
 
