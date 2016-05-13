@@ -128,8 +128,8 @@ bool Pipeline::request(struct soap *soap, const char * pipeline_name_or_uuid)
   const rapidjson::Value & json_errorCodesAndMessages = m_document["errorCodesAndMessages"];
   for (rapidjson::SizeType i = 0; i < json_errorCodesAndMessages.Size(); i++){
     const rapidjson::Value & code_msg_pair = json_errorCodesAndMessages[i];
-    const rapidjson::Value & code = code_msg_pair[0];
-    const rapidjson::Value & msg = code_msg_pair[1];
+    const rapidjson::Value & code = code_msg_pair["code"];
+    const rapidjson::Value & msg = code_msg_pair["message"];
     
     api__IntKeyStringValuePair* api__IntKeyStringValuePair_ = soap_new_api__IntKeyStringValuePair(soap, 1);
     
