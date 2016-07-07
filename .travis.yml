@@ -1,6 +1,6 @@
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install curl libcurl libcurl4-openssl-dev
+  - sudo apt-get install curl libcurl4-openssl-dev
 language: cpp
 # Compiler selection
 compiler:
