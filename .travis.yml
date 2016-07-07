@@ -1,1 +1,14 @@
-language: C++
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install curl libcurl libcurl4-openssl-dev
+language: cpp
+# Compiler selection
+compiler:
+  - clang
+  - gcc
+# Build steps
+script:
+  - mkdir build
+  - cd build
+  - cmake .. && make
+
