@@ -28,6 +28,7 @@ compiler:
   - gcc
 # Build steps
 script:
+  - cp CMakeLists.txt.origin CMakeLists.txt
   - mkdir build
   - cd build
   - cmake .. && make
