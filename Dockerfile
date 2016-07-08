@@ -15,8 +15,7 @@ RUN apt-get install -y libcurl4-gnutls-dev
 RUN apt-get install -y autotools-dev
 RUN apt-get install -y libboost-dev
 RUN apt-get install -y openssh-server
-
-
+RUN apt-get install -y git
 
 RUN git clone https://github.com/miloyip/rapidjson /tmp/rapidjson
 RUN sudo cp -r /tmp/rapidjson/include/rapidjson /usr/include/
