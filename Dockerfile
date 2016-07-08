@@ -17,6 +17,7 @@ RUN apt-get install -y libboost-dev
 RUN apt-get install -y openssh-server
 RUN apt-get install -y git
 
+
 RUN git clone https://github.com/miloyip/rapidjson /tmp/rapidjson
 RUN sudo cp -r /tmp/rapidjson/include/rapidjson /usr/include/
 RUN git clone https://github.com/JinpengLI/gsoap.git /tmp/gsoap
@@ -31,6 +32,10 @@ RUN cd $PATH_GSOAP && ./configure
 RUN cd $PATH_GSOAP && make
 RUN cd $PATH_GSOAP && sudo make install
 
+RUN git clone https://github.com/JinpengLI/CARMIN_R2S.git /root/CARMIN_R2S
+ENV PATH_CARMIN_R2S /root/CARMIN_R2S
+RUN $PATH_CARMIN_R2S/CMakeLists.txt.origin $PATH_CARMIN_R2S/CMakeLists.txt
+RUN mkdir -p $PATH_CARMIN_R2S/build && cd $PATH_CARMIN_R2S/build && cmake .. && make
 
 
 
