@@ -8,11 +8,7 @@ before_install:
   - sudo apt-get install autotools-dev
   - sudo apt-get install libboost-dev
 
-  - git clone https://github.com/miloyip/rapidjson.git /tmp/rapidjson
   - sudo cp -r /tmp/rapidjson/include/rapidjson /usr/include/
-  - ./configure
-  - make && make install
-
 
   - git clone https://github.com/JinpengLI/gsoap.git /tmp/gsoap
   - cd /tmp/gsoap
@@ -22,7 +18,7 @@ before_install:
   - autoconf
   - automake
   - ./configure
-  - make && make install
+  - make
 
 
 language: cpp
