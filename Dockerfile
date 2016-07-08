@@ -16,6 +16,25 @@ RUN apt-get install -y autotools-dev
 RUN apt-get install -y libboost-dev
 RUN apt-get install -y openssh-server
 
+
+
+RUN git clone https://github.com/miloyip/rapidjson /tmp/rapidjson
+RUN sudo cp -r /tmp/rapidjson/include/rapidjson /usr/include/
+RUN git clone https://github.com/JinpengLI/gsoap.git /tmp/gsoap
+RUN cd /tmp/gsoap
+RUN sed -i '1i#ifndef WITH_COOKIES\n#define WITH_COOKIES\n#endif\n' ./gsoap/stdsoap2.h
+RUN aclocal
+RUN autoheader
+RUN automake --add-missing
+RUN autoconf
+RUN automake
+RUN ./configure
+RUN make
+RUN sudo make install
+
+
+
+
 RUN mkdir /var/run/sshd
 RUN echo 'root:screencast' | chpasswd
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
