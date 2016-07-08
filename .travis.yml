@@ -20,6 +20,8 @@ before_install:
   - automake
   - ./configure
   - make
+  - sudo make install
+
 
   - cd $CARMIN_R2S_DIR
   - cp CMakeLists.txt.origin CMakeLists.txt
