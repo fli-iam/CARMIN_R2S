@@ -7,11 +7,11 @@ before_install:
   - sudo apt-get install libcurl4-gnutls-dev
   - sudo apt-get install autotools-dev
   - sudo apt-get install libboost-dev
+
   - git clone https://github.com/miloyip/rapidjson.git /tmp/rapidjson
-  - cd /tmp/rapidjson
+  - cp -r /tmp/rapidjson/include/rapidjson /usr/include/
   - ./configure
   - make && make install
-
 
 
   - git clone https://github.com/JinpengLI/gsoap.git /tmp/gsoap
