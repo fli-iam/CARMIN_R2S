@@ -9,7 +9,7 @@ before_install:
   - sudo apt-get install libboost-dev
 
   - git clone https://github.com/miloyip/rapidjson.git /tmp/rapidjson
-  - cp -r /tmp/rapidjson/include/rapidjson /usr/include/
+  - sudo cp -r /tmp/rapidjson/include/rapidjson /usr/include/
   - ./configure
   - make && make install
 
