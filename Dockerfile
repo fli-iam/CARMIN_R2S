@@ -6,7 +6,8 @@ FROM ubuntu:14.04
 MAINTAINER Sven Dowideit <SvenDowideit@docker.com>
 
 RUN apt-get update
-RUN apt-get install curl libcurl4-openssl-dev
+RUN apt-get install curl
+RUN apt-get install libcurl4-openssl-dev
 RUN apt-get install build-essential
 RUN apt-get install automake
 RUN apt-get install bison flex
