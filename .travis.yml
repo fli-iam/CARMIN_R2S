@@ -1,5 +1,5 @@
 before_install:
-  - echo "deb http://us.archive.ubuntu.com/ubuntu vivid main universe" >> /etc/apt/sources.list
+  - sudo echo "deb http://us.archive.ubuntu.com/ubuntu vivid main universe" >> /etc/apt/sources.list
   - sudo apt-get -qq update
   - sudo apt-get install curl libcurl4-openssl-dev
   - sudo apt-get install build-essential
