@@ -13,6 +13,7 @@ before_install:
 
   - git clone https://github.com/JinpengLI/gsoap.git /tmp/gsoap
   - cd /tmp/gsoap
+  - sed -i '1i#ifndef WITH_COOKIES\n#define WITH_COOKIES\n#endif\n' ./gsoap/stdsoap2.h
   - aclocal
   - autoheader
   - automake --add-missing
