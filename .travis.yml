@@ -1,5 +1,5 @@
 before_install:
-  - pwd
+  - CARMIN_R2S_DIR=$(pwd)
   - sudo apt-get -qq update
   - sudo apt-get install curl libcurl4-openssl-dev
   - sudo apt-get install build-essential
@@ -21,7 +21,7 @@ before_install:
   - ./configure
   - make
 
-  - cd ~/JinpengLI/CARMIN_R2S
+  - cd $CARMIN_R2S_DIR
   - cp CMakeLists.txt.origin CMakeLists.txt
 
 language: cpp
