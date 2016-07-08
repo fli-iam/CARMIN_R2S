@@ -20,16 +20,16 @@ RUN apt-get install -y git
 RUN git clone https://github.com/miloyip/rapidjson /tmp/rapidjson
 RUN sudo cp -r /tmp/rapidjson/include/rapidjson /usr/include/
 RUN git clone https://github.com/JinpengLI/gsoap.git /tmp/gsoap
-RUN cd /tmp/gsoap
-RUN sed -i '1i#ifndef WITH_COOKIES\n#define WITH_COOKIES\n#endif\n' ./gsoap/stdsoap2.h
-RUN aclocal
-RUN autoheader
-RUN automake --add-missing
-RUN autoconf
-RUN automake
-RUN ./configure
-RUN make
-RUN sudo make install
+ENV PATH_GSOAP /tmp/gsoap
+RUN sed -i '1i#ifndef WITH_COOKIES\n#define WITH_COOKIES\n#endif\n' $PATH_GSOAP/gsoap/stdsoap2.h
+RUN cd $PATH_GSOAP && aclocal
+RUN cd $PATH_GSOAP && autoheader
+RUN cd $PATH_GSOAP && automake --add-missing
+RUN cd $PATH_GSOAP && autoconf
+RUN cd $PATH_GSOAP && automake
+RUN cd $PATH_GSOAP && ./configure
+RUN cd $PATH_GSOAP && make
+RUN cd $PATH_GSOAP && sudo make install
 
 
 
