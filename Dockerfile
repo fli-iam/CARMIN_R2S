@@ -32,12 +32,11 @@ RUN cd $PATH_GSOAP && ./configure
 RUN cd $PATH_GSOAP && make
 RUN cd $PATH_GSOAP && sudo make install
 
-RUN git clone https://github.com/JinpengLI/CARMIN_R2S.git /root/CARMIN_R2S
-ENV PATH_CARMIN_R2S /root/CARMIN_R2S
+RUN echo $(pwd)
+ENV PATH_CARMIN_R2S $(pwd)/CARMIN_R2S
+RUN git clone https://github.com/JinpengLI/CARMIN_R2S.git ${PATH_CARMIN_R2S}
 RUN $PATH_CARMIN_R2S/CMakeLists.txt.origin $PATH_CARMIN_R2S/CMakeLists.txt
 RUN mkdir -p $PATH_CARMIN_R2S/build && cd $PATH_CARMIN_R2S/build && cmake .. && make
-
-
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:screencast' | chpasswd
