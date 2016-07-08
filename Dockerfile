@@ -6,14 +6,14 @@ FROM ubuntu:14.04
 MAINTAINER Sven Dowideit <SvenDowideit@docker.com>
 
 RUN apt-get update
-RUN apt-get install curl
-RUN apt-get install libcurl4-openssl-dev
-RUN apt-get install build-essential
-RUN apt-get install automake
-RUN apt-get install bison flex
-RUN apt-get install libcurl4-gnutls-dev
-RUN apt-get install autotools-dev
-RUN apt-get install libboost-dev
+RUN apt-get install -y curl
+RUN apt-get install -y libcurl4-openssl-dev
+RUN apt-get install -y build-essential
+RUN apt-get install -y automake
+RUN apt-get install -y bison flex
+RUN apt-get install -y libcurl4-gnutls-dev
+RUN apt-get install -y autotools-dev
+RUN apt-get install -y libboost-dev
 RUN apt-get install -y openssh-server
 
 RUN mkdir /var/run/sshd
