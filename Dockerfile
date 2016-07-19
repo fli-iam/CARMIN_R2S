@@ -21,7 +21,7 @@ RUN apt-get install -y git
 RUN git clone https://github.com/miloyip/rapidjson /tmp/rapidjson
 RUN sudo cp -r /tmp/rapidjson/include/rapidjson /usr/include/
 RUN git clone https://github.com/JinpengLI/gsoap.git /tmp/gsoap
-ENV PATH_GSOAP /tmp/gsoap
+ENV PATH_GSOAP /root/gsoap
 RUN sed -i '1i#ifndef WITH_COOKIES\n#define WITH_COOKIES\n#endif\n' $PATH_GSOAP/gsoap/stdsoap2.h
 RUN cd $PATH_GSOAP && aclocal
 RUN cd $PATH_GSOAP && autoheader
@@ -32,10 +32,9 @@ RUN cd $PATH_GSOAP && ./configure
 RUN cd $PATH_GSOAP && make
 RUN cd $PATH_GSOAP && sudo make install
 
-RUN echo $(pwd)
-ENV PATH_CARMIN_R2S /tmp/CARMIN_R2S
+ENV PATH_CARMIN_R2S /root/CARMIN_R2S
 RUN git clone https://github.com/JinpengLI/CARMIN_R2S.git ${PATH_CARMIN_R2S}
-RUN $PATH_CARMIN_R2S/CMakeLists.txt.origin $PATH_CARMIN_R2S/CMakeLists.txt
+RUN cp $PATH_CARMIN_R2S/CMakeLists.txt.origin $PATH_CARMIN_R2S/CMakeLists.txt
 RUN mkdir -p $PATH_CARMIN_R2S/build && cd $PATH_CARMIN_R2S/build && cmake .. && make
 
 RUN mkdir /var/run/sshd
