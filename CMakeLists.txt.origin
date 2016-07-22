@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 2.8.7)
 project (carmin_server)
 
-set(LOCAL_INSTALL_PREFIX "/root/local")
+#set(LOCAL_INSTALL_PREFIX "/root/local")
 
 add_definitions( -DWITH_COOKIES )
 
@@ -14,7 +14,7 @@ ${LOCAL_INSTALL_PREFIX}/include
 )
 
 TARGET_LINK_LIBRARIES(carmin_server
-${LOCAL_INSTALL_PREFIX}/lib/libgsoap++.a
-${LOCAL_INSTALL_PREFIX}/lib/libgsoapssl++.a
+gsoap++
+gsoapssl++
 curl
 )
