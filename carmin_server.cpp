@@ -1,6 +1,8 @@
 #include "soapH.h"
 #include "CarminSoapBinding.nsmap"
 #include "CatiwebAuth.h"
+#include <sys/types.h>
+#include <sys/socket.h>
 #include <curl/curl.h>
 #include <string>
 #include <vector>
@@ -25,6 +27,19 @@
 Config config = Config();
 
 
+void *process_request(void *soap) 
+{ 
+   pthread_detach(pthread_self()); 
+   ((struct soap*)soap)->recv_timeout = 300; // Timeout after 5 minutes stall on recv 
+   ((struct soap*)soap)->send_timeout = 60; // Timeout after 1 minute stall on send 
+   soap_serve((struct soap*)soap); 
+   soap_destroy((struct soap*)soap); 
+   soap_end((struct soap*)soap); 
+   soap_free((struct soap*)soap); 
+   return NULL; 
+}
+
+
 int main(int argc, char **argv) 
 { 
    /*
@@ -42,12 +57,15 @@ int main(int argc, char **argv)
    std::cout << buffer.GetSize() << std::endl;
    */
 
-   struct soap soap; 
-   int m, s; 
-   soap_init(&soap); 
+   struct soap soap, *tsoap;
+   pthread_t tid;
+   int m, s;
+   soap_init2(&soap, SOAP_IO_KEEPALIVE, SOAP_IO_KEEPALIVE);
+   soap.max_keep_alive = 100;
+   soap.accept_timeout = 60;
    soap.cookie_domain = ".."; 
    soap.cookie_path = "/"; // the path which is used to filter/set cookies with this destination 
-   
+   int count = 0; 
    if (argc < 2)
    { 
 
@@ -65,18 +83,31 @@ int main(int argc, char **argv)
       {
 	exit(1);
       }
+
+
       m = soap_bind(&soap, NULL, config.GSOAP_SERVER_PORT, 100); 
       if (m < 0)
          exit(1);
-      for (int i = 1; ; i++) 
-      {
+
+      for (count = 0; count >= 0; count++) 
+      { 
+         soap.socket_flags = MSG_NOSIGNAL; // use this 
+         //soap.accept_flags = SO_NOSIGPIPE; // or this to prevent sigpipe 
          s = soap_accept(&soap); 
          if (s < 0) 
-            exit(1); 
-         soap_serve(&soap); 
-         soap_end(&soap);	// clean up 
-         soap_free_cookies(&soap);	// remove all old cookies from database so no interference occurs with the arrival of new cookies 
-      }
+         { 
+            if (soap.errnum) 
+               soap_print_fault(&soap, stderr); 
+            else
+               fprintf(stderr, "Server timed out\n"); // Assume timeout is long enough for threads to complete serving requests 
+            break; 
+         } 
+         fprintf(stderr, "Accepts socket %d connection from IP %d.%d.%d.%d\n", s, (int)(soap.ip >> 24)&0xFF, (int)(soap.ip >> 16)&0xFF, (int)(soap.ip >> 8)&0xFF, (int)soap.ip&0xFF); 
+         tsoap = soap_copy(&soap); 
+         pthread_create(&tid, NULL, (void*(*)(void*))process_request, (void*)tsoap); 
+      } 
+
+
    }
    return 0; 
 } 
