@@ -61,8 +61,8 @@ int main(int argc, char **argv)
    pthread_t tid;
    int m, s;
    soap_init2(&soap, SOAP_IO_KEEPALIVE, SOAP_IO_KEEPALIVE);
-   soap.max_keep_alive = 100;
-   soap.accept_timeout = 60;
+   soap.max_keep_alive = 10;
+   //soap.accept_timeout = 15;
    soap.cookie_domain = ".."; 
    soap.cookie_path = "/"; // the path which is used to filter/set cookies with this destination 
    int count = 0; 

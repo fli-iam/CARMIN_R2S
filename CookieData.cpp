@@ -82,7 +82,6 @@ bool CookieData::set_gsoap_cookie_to_curl_cookie(
       const char * name
 )
 {    
-
     char curl_cookie_data[m_pconfig->COOKIE_MAX_LEN];
 
     const char * cur_cookie_val = soap_cookie_value(
@@ -94,7 +93,9 @@ bool CookieData::set_gsoap_cookie_to_curl_cookie(
     snprintf(
       curl_cookie_data, sizeof(curl_cookie_data),
       "%s\t%s\t%s\t%s\t%lu\t%s\t%s",
-      m_pconfig->CATIWEB_COOKIE_DOMAIN.c_str(), "FALSE", "/", "FALSE", 0L, name, cur_cookie_val);
+      m_pconfig->CATIWEB_COOKIE_DOMAIN.c_str(), "FALSE", "/", "FALSE", 0L, name, curl_unescape(cur_cookie_val, strlen(cur_cookie_val)));
+
+    printf("curl_cookie_data=%s\n", curl_cookie_data);
 
     CURLcode res;
     res = curl_easy_setopt(curl, CURLOPT_COOKIELIST, curl_cookie_data);
@@ -112,7 +113,7 @@ void CookieData::set_curl_cookie_to_gsoap_cookie(
 {
   // http://www.cookiecentral.com/faq/#3.5
   // 3.5 What are all those entries in my cookies.txt file? 
-  printf("set_curl_cookie_to_gsoap_cookie\n");
+  //printf("set_curl_cookie_to_gsoap_cookie\n");
   std::string delimiter = "\t";
   struct curl_slist *nc;
   int i = 0;
@@ -121,13 +122,14 @@ void CookieData::set_curl_cookie_to_gsoap_cookie(
     printf("[%d]: %s\n", i, nc->data);
     CookieData cookieData = CookieData(m_pconfig);
     cookieData.parseData(nc->data);
+    printf("[%d]: name=%s, value=%s \n", i, cookieData.name.c_str(), cookieData.value.c_str());
     soap_set_cookie(soap, cookieData.name.c_str(),
 		    cookieData.value.c_str(),
 		    m_pconfig->GSOAP_COOKIE_DOMAIN.c_str(),
 		    m_pconfig->GSOAP_COOKIE_PATH.c_str()
  		   );
     soap_set_cookie_expire(soap, cookieData.name.c_str(),
-		    cookieData.expiration,
+		    3600,
 		    m_pconfig->GSOAP_COOKIE_DOMAIN.c_str(),
 		    m_pconfig->GSOAP_COOKIE_PATH.c_str()
  		   );
