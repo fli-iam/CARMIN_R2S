@@ -432,6 +432,7 @@ bool Execution::getStdOutErr(struct soap *soap,
     {
       std::cout << "success parse_reponse_by_json" << std::endl;
     }
+
     
     if(!m_document["is_success"].GetBool())
     {
@@ -461,7 +462,6 @@ bool Execution::getExecution(struct soap *soap,
 	std::string executionId
       )
 {
-
     Config config = Config();
 
     char routeBuf[m_pconfig->URL_MAX_LEN];
@@ -483,26 +483,24 @@ bool Execution::getExecution(struct soap *soap,
       std::cout << "success parse_reponse_by_json" << std::endl;
     }
     
-    if(!m_document["is_success"].GetBool())
-    {
-      m_error_message = m_document["error_message"].GetString();
-      return false;
-    }
-
     if(this->m_api__Execution==NULL)
     {
       this->m_api__Execution = soap_new_api__Execution(soap, 1);
     }
 
     char buf_identifier[256];
-    snprintf(buf_identifier, sizeof(buf_identifier), "%d", m_document["return"]["id"].GetInt());
+    snprintf(buf_identifier, sizeof(buf_identifier), "%d", atoi(m_document["executionId"].GetString()));
+
 
     this->m_api__Execution->identifier = buf_identifier;
-    this->m_api__Execution->name = m_document["return"]["pipeline_name"].GetString();
-    this->m_api__Execution->pipelineIdentifier = m_document["return"]["pipeline_id"].GetString();
+
+    this->m_api__Execution->name = m_document["pipelineName"].GetString();
+
+
+    this->m_api__Execution->pipelineIdentifier = m_document["pipelineIdentifier"].GetString();
 
     this->m_api__Execution->status = 
-      this->convert_soma_workflow_status_to_carmin_status(m_document["return"]["status"].GetString());
+      this->convert_soma_workflow_status_to_carmin_status(m_document["status"].GetString());
 
     return true;
 }

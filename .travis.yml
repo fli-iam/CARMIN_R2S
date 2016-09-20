@@ -1,0 +1,40 @@
+before_install:
+  - CARMIN_R2S_DIR=$(pwd)
+  - sudo apt-get -qq update
+  - sudo apt-get install curl libcurl4-openssl-dev
+  - sudo apt-get install build-essential
+  - sudo apt-get install automake
+  - sudo apt-get install bison flex
+  - sudo apt-get install libcurl4-gnutls-dev
+  - sudo apt-get install autotools-dev
+  - sudo apt-get install libboost-dev
+  - git clone https://github.com/miloyip/rapidjson /tmp/rapidjson
+  - sudo cp -r /tmp/rapidjson/include/rapidjson /usr/include/
+
+  - git clone https://github.com/JinpengLI/gsoap.git /tmp/gsoap
+  - cd /tmp/gsoap
+  - sed -i '1i#ifndef WITH_COOKIES\n#define WITH_COOKIES\n#endif\n' ./gsoap/stdsoap2.h
+  - aclocal
+  - autoheader
+  - automake --add-missing
+  - autoconf
+  - automake
+  - ./configure
+  - make
+  - sudo make install
+
+
+  - cd $CARMIN_R2S_DIR
+  - cp CMakeLists.txt.origin CMakeLists.txt
+
+language: cpp
+# Compiler selection
+compiler:
+  - clang
+  - gcc
+# Build steps
+script:
+  - mkdir build
+  - cd build
+  - cmake .. && make
+

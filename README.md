@@ -1,7 +1,7 @@
 CARMIN_R2S
 -----------
 
-CARMIN_R2S (CARMIN Rest server to Soap server)
+CARMIN_R2S (CARMIN Rest server to Soap server) <img src="https://travis-ci.org/JinpengLI/CARMIN_R2S.svg?branch=master">
 
 Assuming that your server is based on CARMIN rest (carmin.yaml in https://github.com/fli-iam/CARMIN),
 CARMIN_R2S module is used for translating the rest server to the soap server (api.wsdl, https://github.com/fli-iam/CARMIN).
@@ -19,6 +19,7 @@ Ubuntu Dependencies
 
 ```
 $ sudo apt-get install bison flex
+$ sudo apt-get install libcurl4-gnutls-dev
 ```
 
 This module is based on gsoap. Therefore we first download the source of gsoap_2.7.17.zip.
@@ -53,10 +54,10 @@ Add the below codes in the beginning of the header file ./gsoap/stdsoap2.h
 It is used for enabling the cookie module in gsoap.
 
 ```
-$ ./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES
+$ ./configure --prefix=$INSTALL_PREFIX
 ```
 
-you may miss some packages, please install them and re-run `./configure --prefix=$INSTALL_PREFIX -DWITH_COOKIES`.
+you may miss some packages, please install them and re-run `./configure --prefix=$INSTALL_PREFIX`.
 
 ```
 $ make
@@ -68,6 +69,7 @@ You can add your installed path bin in your PATH enviroment variable with ~/.bas
 
 ```
 $ echo "export PATH=$INSTALL_PREFIX/bin:\$PATH" >> ~/.bashrc
+$ echo "export LD_LIBRARY_PATH=$INSTALL_PREFIX/lib:\$LD_LIBRARY_PATH" >> ~/.bashrc
 ```
 
 rapidjson 
@@ -80,6 +82,44 @@ $ INSTALL_PREFIX=/root/local
 $ git clone https://github.com/miloyip/rapidjson.git ${SOURCES}/rapidjson
 $ ln -s ${SOURCES}/rapidjson/include/rapidjson ${INSTALL_PREFIX}/include/
 ```
+
+
+libcurl
+===========
+
+On ubuntu, you can install it via apt-get
+
+```
+$ apt-get install libcurl4-gnutls-dev
+$ apt-get install libcurl4-openssl-dev
+```
+
+or built it from sources
+
+```
+$ SOURCES=/root/local/sources
+$ INSTALL_PREFIX=/root/local
+
+$ cd $SOURCES
+$ wget https://curl.haxx.se/snapshots/curl-7.50.0-20160705.tar.gz
+$ tar -xvf curl-7.50.0-20160705.tar.gz
+$ cd curl-7.50.0-20160705
+$ ./configure --prefix=$INSTALL_PREFIX
+$ make
+$ make install
+
+```
+
+If you build libcurl from source, you have to modify TARGET_LINK_LIBRARIES as below in the CMakeLists.txt from the project CARMIN_R2S.
+
+```
+TARGET_LINK_LIBRARIES(carmin_server
+${LOCAL_INSTALL_PREFIX}/lib/libgsoap++.a
+${LOCAL_INSTALL_PREFIX}/lib/libgsoapssl++.a
+${LOCAL_INSTALL_PREFIX}/lib/libcurl.so
+)
+```
+
 
 CARMIN_R2S
 ==========
