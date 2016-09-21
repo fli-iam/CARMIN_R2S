@@ -69,7 +69,7 @@ class Config: ConfigData
     std::string CATIWEB_PIPELINES;
     
     std::string COOKIE_NAME_AUTH;
-
+    std::string WSDL_FILE_PATH;
     std::string get_route_catiweb_pipelines();
 
     static const int COOKIE_MAX_LEN=512;

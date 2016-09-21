@@ -99,6 +99,7 @@ bool Config::LoadFromFile(std::string path_config, bool is_need_exit){
 
     required_fields.push_back(std::string("CATIWEB_PIPELINES"));
     required_fields.push_back(std::string("COOKIE_NAME_AUTH"));
+    required_fields.push_back(std::string("WSDL_FILE_PATH"));
     required_fields.push_back(std::string("VERBOSE"));
 
     for(int i=0; i<required_fields.size(); i++)
@@ -139,6 +140,8 @@ bool Config::LoadFromFile(std::string path_config, bool is_need_exit){
     this->CATIWEB_PIPELINES = (*this)["CATIWEB_PIPELINES"];
     this->COOKIE_NAME_AUTH = (*this)["COOKIE_NAME_AUTH"];
 
+    this->WSDL_FILE_PATH = (*this)["WSDL_FILE_PATH"];
+   
     this->VERBOSE = atoi((*this)["VERBOSE"].c_str());
 
     if(this->VERBOSE)

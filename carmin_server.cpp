@@ -23,20 +23,47 @@
  * Global variables
  * ************************************************************/
 
-
 Config config = Config();
 
 
+int http_get(struct soap *soap) 
+{ 
+   FILE *fd = NULL;
+   char *s = strchr(soap->path, '?'); 
+   if (!s || strcmp(s, "?wsdl")) 
+      return SOAP_GET_METHOD; 
+   fd = fopen(config.WSDL_FILE_PATH.c_str(), "rb"); // open WSDL file to copy 
+   if (!fd) 
+      return 404; // return HTTP not found error 
+   soap->http_content = "text/xml"; // HTTP header with text/xml content 
+   soap_response(soap, SOAP_FILE); 
+   for (;;) 
+   { 
+      size_t r = fread(soap->tmpbuf, 1, sizeof(soap->tmpbuf), fd); 
+      if (!r) 
+         break; 
+      if (soap_send_raw(soap, soap->tmpbuf, r)) 
+         break; // can't send, but little we can do about that 
+   } 
+   fclose(fd); 
+   soap_end_send(soap); 
+   return SOAP_OK; 
+}
+
 void *process_request(void *soap) 
 { 
-   pthread_detach(pthread_self()); 
+   pthread_detach(pthread_self());
    ((struct soap*)soap)->recv_timeout = 300; // Timeout after 5 minutes stall on recv 
    ((struct soap*)soap)->send_timeout = 60; // Timeout after 1 minute stall on send 
-   soap_serve((struct soap*)soap); 
+
+   ((struct soap*)soap)->fget = http_get;
+   soap_serve((struct soap*)soap);
+ 
    soap_destroy((struct soap*)soap); 
    soap_end((struct soap*)soap); 
    soap_free((struct soap*)soap); 
-   return NULL; 
+   
+   return NULL;
 }
 
 
@@ -107,45 +134,9 @@ int main(int argc, char **argv)
          pthread_create(&tid, NULL, (void*(*)(void*))process_request, (void*)tsoap); 
       } 
 
-
    }
    return 0; 
 } 
-
-/*
-int main( int argc, char **argv )
-{ 
-	SOAP_SOCKET m, s; // master and slave sockets 
-	struct soap soap; // structure soap 
-
-	soap_init(&soap); // initialisation du serveur
-
-	m = soap_bind( &soap, NULL, 8080, 100); // liaison avec le master socket 
-	if ( !soap_valid_socket( m ) )
-	{ 
-		std::cout << "connection error" << std::endl << " click any button to continue";
-		std::cin.get();
-		return 1;
-	}
-
-	// boucle principale
-	std::cout << "successful connection = " << m << std::endl;
-	for ( ; ; )
-	{
-		s = soap_accept( &soap );
-		std::cout << "client connection ok: slave socket = " << s << std::endl;
-		if ( !soap_valid_socket( s ) )
-		{ 
-			std::cout << "error: socket problem" << std::endl << "click any button to quit";
-			return 1;
-		} 
-		soap_serve( &soap );
-		soap_end( &soap );
-	}
-
-	return 0;
-} */
-
 
 
 int __api__authenticateSession(
@@ -156,32 +147,6 @@ int __api__authenticateSession(
   api__authenticateSessionResponse*   api__authenticateSessionResponse_
 )
 {
-  /*
-  char *name = new char[100];
-  char *value = new char[100];
-  char *domain = new char[100];
-  char *path = new char[100];
- 
-  strcpy(name, "hello_world_name");
-  strcpy(value, "hello_world_value");
-  strcpy(domain, "hello_world_domain");
-  strcpy(path, "hello_world_path");
-  
-  struct soap_cookie * ret_cookies = soap_set_cookie(soap, name, value, domain, path);*/
-
-  /*
-  int n; 
-  const char *s; 
-
-  s = soap_cookie_value(soap, "demo", NULL, NULL); // cookie returned by client? 
-
-  if (!s) 
-    s = "init-value"; // no: set initial cookie value 
-
-  soap_set_cookie(soap, "demo", s, NULL, NULL); 
-  soap_set_cookie_expire(soap, "demo", 5, NULL, NULL); // cookie may expire at client-side in 5 seconds 
-  */
-
   //std::cout << "username:" << api__authenticateSession_->userName << std::endl;
   //std::cout << "password:" << api__authenticateSession_->password << std::endl;
   
