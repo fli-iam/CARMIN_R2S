@@ -68,16 +68,6 @@ bool Execution::deleteExecution(
     }
   }
 
-//   if(!CurlProcess::parse_reponse_by_json())
-//   {
-//     return false;
-//   }
-//   if(!m_document["is_success"].GetBool())
-//   {
-//     m_error_message = m_document["error_message"].GetString();
-//     return false;
-//   }
-
   return true;
 }
 
@@ -490,6 +480,7 @@ bool Execution::getExecution(struct soap *soap,
 
     char buf_identifier[256];
     snprintf(buf_identifier, sizeof(buf_identifier), "%d", atoi(m_document["executionId"].GetString()));
+    
 
 
     this->m_api__Execution->identifier = buf_identifier;
@@ -547,7 +538,7 @@ bool Execution::initExecution(
 		       pipeline_value,
 		       document.GetAllocator());
 
-    rapidjson::Value param_key_str("key");
+    
     
     rapidjson::Value params_str("inputValues");
 
@@ -560,6 +551,7 @@ bool Execution::initExecution(
 
     for(int i=0; i < inputValue.size(); i += 1)
     {
+      rapidjson::Value param_key_str("key");
       api__StringKeyParameterValuePair * api__StringKeyParameterValuePair = inputValue[i];
       if(m_pconfig->VERBOSE)
       {
@@ -611,7 +603,7 @@ bool Execution::initExecution(
 	std::string std_param_val = *api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueStr;
 	param_val.SetString(std_param_val.c_str(), std_param_val.length(), document.GetAllocator());
 	if(m_pconfig->VERBOSE)
-	{
+	{ std::cout << "__union_ParameterTypedValue==1" << std::endl;
 	  std::cout << param_val.GetString() << std::endl;
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==2)
@@ -620,6 +612,7 @@ bool Execution::initExecution(
 	param_val.SetBool(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueBool);
 	if(m_pconfig->VERBOSE)
 	{
+          std::cout << "__union_ParameterTypedValue==2" << std::endl;
 	  std::cout << param_val.GetBool() << std::endl;
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==3)
@@ -628,12 +621,17 @@ bool Execution::initExecution(
 	param_val.SetInt(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueInt);
 	if(m_pconfig->VERBOSE)
 	{
+          std::cout << "__union_ParameterTypedValue==3" << std::endl;
 	  std::cout << param_val.GetInt() << std::endl;
 	}
       }else if(api__StringKeyParameterValuePair->value->__union_ParameterTypedValue==4)
       { // string
 
 	param_val.SetDouble(api__StringKeyParameterValuePair->value->union_ParameterTypedValue.valueDouble);
+        if(m_pconfig->VERBOSE)
+        {
+          std::cout << "__union_ParameterTypedValue==4" << std::endl;
+        }
 
       }else{
 	char buf_error_message[1024];
@@ -647,25 +645,50 @@ bool Execution::initExecution(
 	return false;
       }
 
+      if(m_pconfig->VERBOSE)
+      {
+        std::cout << "DEBUG: add value into json" << std::endl;
+      }
+
       rapidjson::Value param_value_str("value");
+      //std::cout << "DEBUG: pt 10" << std::endl;
       param_val_obj.AddMember(
           param_value_str,
           param_val,
           document.GetAllocator()
       );
+      //std::cout << "DEBUG: pt 11" << std::endl;
 
       /*
        * param_obj = {"key": "ff", "value": {"value": 30.0}}
        */
 
       rapidjson::Value param_obj;
+      //std::cout << "DEBUG: pt 12" << std::endl;
       param_obj.SetObject();
+      //std::cout << "DEBUG: Pt 13" << std::endl;
+
+      //if(m_pconfig->VERBOSE)
+      //{
+      //  std::cout << "DEBUG: pt 14" << std::endl; 
+      //  std::cout << "param_key_str=" << param_key_str.GetString() << std::endl;
+      //  std::cout << "DEBUG: pt 15" << std::endl;
+      //  std::cout << "param_key=" << param_key.GetString() << std::endl;
+      //  std::cout << "DEBUG: pt 16" << std::endl;
+      //  std::cout << "DEBUG: add inner value into json" << std::endl;
+      //}
 
       param_obj.AddMember(
         param_key_str,
         param_key,
         document.GetAllocator()
       );
+
+      //if(m_pconfig->VERBOSE)
+      //{
+      //  std::cout << "DEBUG: add value into json" << std::endl;
+      //}
+
 
       rapidjson::Value param_inner_val_str("value");
       param_obj.AddMember(
@@ -678,10 +701,10 @@ bool Execution::initExecution(
 
     }
 
-    if(m_pconfig->VERBOSE)
-    {
-      std::cout << "end params config" << std::endl;
-    }
+    //if(m_pconfig->VERBOSE)
+    //{
+    //  std::cout << "end params config" << std::endl;
+    //}
 
     document.AddMember(params_str,
 		       params,
@@ -691,11 +714,11 @@ bool Execution::initExecution(
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     document.Accept(writer);
 
-    if(m_pconfig->VERBOSE)
-    {
-      std::cout << buffer.GetString() << std::endl;
-      std::cout << buffer.GetSize() << std::endl;
-    }
+    //if(m_pconfig->VERBOSE)
+    //{
+    //  std::cout << buffer.GetString() << std::endl;
+    //  std::cout << buffer.GetSize() << std::endl;
+    //}
 
     //char json_buffer[] = "{\"pipeline_name\": \"ProcessDemo\", \"params\":{\"ff\": 14.0}}";
     //std::cout << json_buffer << std::endl;
@@ -713,8 +736,24 @@ bool Execution::initExecution(
       this->m_api__Execution = soap_new_api__Execution(soap, 1);
     }
 
-    char buf_identifier[256];
+    const int len_buf_identifier = 256;
+    char buf_identifier[len_buf_identifier];
     snprintf(buf_identifier, sizeof(buf_identifier), "%s", m_resBuf.c_str());
+    //std::cout << "DEBUG buf_identifier=" << buf_identifier << std::endl;
+ 
+    int j = 0;
+    for(int i=0; i<len_buf_identifier;i++)
+    {
+       if(buf_identifier[i] != '"')
+       {
+          // buf_identifier[j] = 0;
+          buf_identifier[j] = buf_identifier[i];
+          j += 1;
+       }else
+       {
+          buf_identifier[i] = 0; 
+       }
+    }
 
     this->m_api__Execution->identifier = buf_identifier;
     this->m_api__Execution->name = pipelineId;
