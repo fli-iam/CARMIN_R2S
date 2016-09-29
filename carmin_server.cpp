@@ -104,6 +104,8 @@ int soap_fresponse(struct soap *soap, int status, size_t count)
   //int ret = old_freponse(soap, soap_error_code, count);
 
   //return ret;
+  std::cout << "debug status=" << status << std::endl;
+  status = 200;
 
 register int err;
 #ifdef WMW_RPM_IO
@@ -149,6 +151,9 @@ register int err;
   }
 else
   { const char *s = *soap_faultcode(soap);
+    //std::cout << "DEBUG status=" << status << std::endl;
+    //std::cout << "DEBUG SOAP_GET_METHOD=" << SOAP_GET_METHOD << std::endl;
+    //std::cout << "DEBUG SOAP_HTTP_METHOD=" << SOAP_HTTP_METHOD << std::endl;
     if (status >= SOAP_GET_METHOD && status <= SOAP_HTTP_METHOD)
       s = "405 Method Not Allowed";
     else if (soap->version == 2 && (!s || !strcmp(s, "SOAP-ENV:Sender")))
@@ -176,8 +181,21 @@ else
     return soap->error;
 #endif
 
-  if ((err = soap->fposthdr(soap, "Access-Control-Allow-Origin", "*")))
-      return err;
+  //if ((err = soap->fposthdr(soap, "Access-Control-Allow-Origin", "*")))
+  //    return err;
+
+  //if ((err = soap->fposthdr(soap, "Access-Control-Allow-Credentials", "true")))
+  //    return err;
+
+
+  //if ((err = soap->fposthdr(soap, "Access-Control-Allow-Headers", "origin,x-requested-with,access-control-request-headers,content-type,access-control-request-method,accept")))
+  //    return err;
+
+  //if ((err = soap->fposthdr(soap, "Access-Control-Allow-Methods", "POST,HEAD,GET,PUT,DELETE,OPTIONS")))
+  //    return err;
+
+  //if ((err = soap->fposthdr(soap, "Allow", "HEAD,GET,PUT,DELETE,OPTIONS")))
+  //    return err;
 
   return soap->fposthdr(soap, NULL, NULL);
 
@@ -187,6 +205,17 @@ else
 int soap_fhead(struct soap *soap)
 {
    //std::cout << "DEBUG soap_fhead" << std::endl;
+   return SOAP_OK;
+}
+
+int soap_foptions(struct soap *soap)
+{ 
+   int err=0; 
+   //std::cout << "DEBUG soap_foptions" << std::endl;
+   //if ((err = soap->fposthdr(soap, "Allow", "CONVERT")))
+   //    return err;
+   soap_response(soap, SOAP_OK); 
+   soap_end_send(soap);
    return SOAP_OK;
 }
 
@@ -232,12 +261,13 @@ void *process_request(void *soap)
 
    ((struct soap*)soap)->fget = http_get;
    ((struct soap*)soap)->fpost = http_post;
+   ((struct soap*)soap)->foptions = soap_foptions;
    old_freponse = ((struct soap*)soap)->fresponse;
-   ((struct soap*)soap)->fresponse = soap_fresponse;
 
+   ((struct soap*)soap)->fresponse = soap_fresponse;
    ((struct soap*)soap)->fhead = soap_fhead;
 
-
+   //std::cout << "DEBUG process_request pt1" << std::endl;
    soap_serve((struct soap*)soap);
  
    soap_destroy((struct soap*)soap); 
@@ -268,8 +298,8 @@ int main(int argc, char **argv)
    struct soap soap, *tsoap;
    pthread_t tid;
    int m, s;
-   soap_init2(&soap, SOAP_IO_KEEPALIVE, SOAP_IO_KEEPALIVE);
-   soap.max_keep_alive = 10;
+   //soap_init2(&soap, SOAP_IO_KEEPALIVE, SOAP_IO_KEEPALIVE);
+   //soap.max_keep_alive = 10;
    //soap.accept_timeout = 15;
    soap.cookie_domain = ".."; 
    soap.cookie_path = "/"; // the path which is used to filter/set cookies with this destination 
