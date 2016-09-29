@@ -83,11 +83,33 @@ bool CookieData::set_gsoap_cookie_to_curl_cookie(
 )
 {    
     char curl_cookie_data[m_pconfig->COOKIE_MAX_LEN];
-
+    std::cout << "debug name=" << name << std::endl;
+    //struct soap_cookie * cookie_pt = soap_cookie(
+    //soap, name,
+    //NULL, NULL
+    //);
+    //std::cout << cookie_pt << std::endl;
+    //const char * cur_cookie_val_all = soap_cookie_value(
+    //soap, name,
+    //NULL, NULL
+    //);
+    //if(!cur_cookie_val_all)
+    //{
+    //  std::cout << "debug set_gsoap_cookie_to_curl_cookie pt2.1" << std::endl;
+    //  return false;
+    //}
+    //std::cout << "debug cur_cookie_val_all=" << cur_cookie_val_all << std::endl;
     const char * cur_cookie_val = soap_cookie_value(
 	soap, name,
 	m_pconfig->GSOAP_COOKIE_DOMAIN.c_str(),
 	m_pconfig->GSOAP_COOKIE_PATH.c_str());
+
+    if(!cur_cookie_val)
+    {
+      std::cout << "cannot find the cookies..." << std::endl;
+      return false;
+    }
+
 
     /* Netscape format cookie */
     snprintf(
